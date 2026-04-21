@@ -16,6 +16,7 @@
       place-items: center;
       background: #f5f6f8;
       color: #111;
+      padding: 16px 0;
     }
 
     .app {
@@ -23,15 +24,30 @@
       text-align: center;
     }
 
+    .section {
+      background: #fff;
+      border: 1px solid #e5e6ea;
+      border-radius: 14px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin: 6px 0 10px;
+      font-size: 1rem;
+    }
+
     input,
+    select,
     button {
       width: 100%;
       box-sizing: border-box;
       border-radius: 12px;
       border: 1px solid #ccc;
       padding: 14px;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       margin-bottom: 10px;
+      background: #fff;
     }
 
     button {
@@ -42,18 +58,38 @@
     }
 
     #result {
-      margin-top: 18px;
+      margin-top: 10px;
       font-size: clamp(2rem, 10vw, 3rem);
       font-weight: 700;
       min-height: 1.3em;
+    }
+
+    #reportMsg {
+      min-height: 1.2em;
+      font-size: 0.95rem;
     }
   </style>
 </head>
 <body>
   <main class="app">
-    <input id="phoneInput" type="tel" placeholder="Phone number" autocomplete="off" />
-    <button id="searchBtn" type="button">Search</button>
-    <div id="result" aria-live="polite"></div>
+    <section class="section">
+      <h2>Search</h2>
+      <input id="phoneInput" type="tel" placeholder="Phone number" autocomplete="off" />
+      <button id="searchBtn" type="button">Search</button>
+      <div id="result" aria-live="polite"></div>
+    </section>
+
+    <section class="section">
+      <h2>Report</h2>
+      <input id="reportPhoneInput" type="tel" placeholder="Phone number" autocomplete="off" />
+      <select id="reportLabelInput" aria-label="Report label">
+        <option value="scam">Scam</option>
+        <option value="safe">Safe</option>
+        <option value="unknown">Unknown</option>
+      </select>
+      <button id="reportBtn" type="button">Save</button>
+      <div id="reportMsg" aria-live="polite"></div>
+    </section>
   </main>
 
   <script>
@@ -63,6 +99,8 @@
       unknown: { "zh-TW": "未知", en: "Unknown", "es-MX": "Desconocido" }
     };
 
+    const STORAGE_KEY = "phone_reports_v1";
+
     const getLang = () => {
       const lang = (navigator.language || "en").toLowerCase();
       if (lang === "zh-tw" || lang.startsWith("zh")) return "zh-TW";
@@ -71,6 +109,20 @@
     };
 
     const normalizePhone = (value) => value.replace(/[^\d+]/g, "");
+
+    const getLocalReports = () => {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        const parsed = raw ? JSON.parse(raw) : [];
+        return Array.isArray(parsed) ? parsed : [];
+      } catch {
+        return [];
+      }
+    };
+
+    const saveLocalReports = (reports) => {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(reports));
+    };
 
     async function loadRecords() {
       const response = await fetch("./scam_numbers.json");
@@ -82,12 +134,27 @@
     const resultEl = document.getElementById("result");
     const inputEl = document.getElementById("phoneInput");
     const searchBtn = document.getElementById("searchBtn");
+    const reportPhoneEl = document.getElementById("reportPhoneInput");
+    const reportLabelEl = document.getElementById("reportLabelInput");
+    const reportBtn = document.getElementById("reportBtn");
+    const reportMsgEl = document.getElementById("reportMsg");
 
     let records = [];
     let lang = getLang();
 
     const showLabel = (label) => {
       resultEl.textContent = LABELS[label][lang];
+    };
+
+    const findLatestLocalLabel = (phone) => {
+      const reports = getLocalReports();
+      for (let i = reports.length - 1; i >= 0; i -= 1) {
+        const item = reports[i];
+        if (normalizePhone(item.phone || "") === phone && LABELS[item.label]) {
+          return item.label;
+        }
+      }
+      return null;
     };
 
     const search = () => {
@@ -97,14 +164,42 @@
         return;
       }
 
+      const localLabel = findLatestLocalLabel(phone);
+      if (localLabel) {
+        showLabel(localLabel);
+        return;
+      }
+
       const found = records.find((r) => normalizePhone(r.phone) === phone);
       const label = found && LABELS[found.label] ? found.label : "unknown";
       showLabel(label);
     };
 
+    const submitReport = () => {
+      const phone = normalizePhone(reportPhoneEl.value.trim());
+      const label = reportLabelEl.value;
+
+      if (!phone || !LABELS[label]) {
+        reportMsgEl.textContent = "Enter number + label";
+        return;
+      }
+
+      const reports = getLocalReports();
+      reports.push({ phone, label, createdAt: Date.now() });
+      saveLocalReports(reports);
+      reportMsgEl.textContent = "Saved";
+      reportPhoneEl.value = "";
+      reportLabelEl.value = "scam";
+    };
+
     searchBtn.addEventListener("click", search);
     inputEl.addEventListener("keydown", (e) => {
       if (e.key === "Enter") search();
+    });
+
+    reportBtn.addEventListener("click", submitReport);
+    reportPhoneEl.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") submitReport();
     });
 
     loadRecords()
