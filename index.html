@@ -23,7 +23,16 @@
       text-align: center;
     }
 
+    .section {
+      margin-bottom: 18px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
     input,
+    select,
     button {
       width: 100%;
       box-sizing: border-box;
@@ -47,13 +56,32 @@
       font-weight: 700;
       min-height: 1.3em;
     }
+
+    .message {
+      min-height: 1.2em;
+      margin-top: 4px;
+      font-size: 0.95rem;
+    }
   </style>
 </head>
 <body>
   <main class="app">
-    <input id="phoneInput" type="tel" placeholder="Phone number" autocomplete="off" />
-    <button id="searchBtn" type="button">Search</button>
-    <div id="result" aria-live="polite"></div>
+    <section class="section">
+      <input id="phoneInput" type="tel" placeholder="Phone number" autocomplete="off" />
+      <button id="searchBtn" type="button">Search</button>
+      <div id="result" aria-live="polite"></div>
+    </section>
+
+    <section class="section">
+      <input id="reportPhoneInput" type="tel" placeholder="Report phone" autocomplete="off" />
+      <select id="reportLabel">
+        <option value="scam">Scam</option>
+        <option value="safe">Safe</option>
+        <option value="unknown">Unknown</option>
+      </select>
+      <button id="reportBtn" type="button">Save report</button>
+      <div id="reportMsg" class="message" aria-live="polite"></div>
+    </section>
   </main>
 
   <script>
@@ -71,6 +99,7 @@
     };
 
     const normalizePhone = (value) => value.replace(/[^\d+]/g, "");
+    const LOCAL_REPORTS_KEY = "phone_lookup_reports";
 
     async function loadRecords() {
       const response = await fetch("./scam_numbers.json");
@@ -79,9 +108,29 @@
       return data.records || [];
     }
 
+    const loadLocalReports = () => {
+      try {
+        const raw = localStorage.getItem(LOCAL_REPORTS_KEY);
+        const parsed = raw ? JSON.parse(raw) : [];
+        return Array.isArray(parsed) ? parsed : [];
+      } catch {
+        return [];
+      }
+    };
+
+    const saveLocalReport = (phone, label) => {
+      const reports = loadLocalReports();
+      reports.push({ phone, label, createdAt: Date.now() });
+      localStorage.setItem(LOCAL_REPORTS_KEY, JSON.stringify(reports));
+    };
+
     const resultEl = document.getElementById("result");
     const inputEl = document.getElementById("phoneInput");
     const searchBtn = document.getElementById("searchBtn");
+    const reportPhoneInputEl = document.getElementById("reportPhoneInput");
+    const reportLabelEl = document.getElementById("reportLabel");
+    const reportBtn = document.getElementById("reportBtn");
+    const reportMsgEl = document.getElementById("reportMsg");
 
     let records = [];
     let lang = getLang();
@@ -97,14 +146,41 @@
         return;
       }
 
+      const localReports = loadLocalReports();
+      const latestLocal = [...localReports]
+        .reverse()
+        .find((r) => normalizePhone(String(r.phone || "")) === phone && LABELS[r.label]);
+      if (latestLocal) {
+        showLabel(latestLocal.label);
+        return;
+      }
+
       const found = records.find((r) => normalizePhone(r.phone) === phone);
       const label = found && LABELS[found.label] ? found.label : "unknown";
       showLabel(label);
     };
 
+    const submitReport = () => {
+      const phone = normalizePhone(reportPhoneInputEl.value.trim());
+      const label = reportLabelEl.value;
+      if (!phone || !LABELS[label]) {
+        reportMsgEl.textContent = "Check phone and label.";
+        return;
+      }
+
+      saveLocalReport(phone, label);
+      reportMsgEl.textContent = "Saved.";
+      reportPhoneInputEl.value = "";
+      reportLabelEl.value = "scam";
+    };
+
     searchBtn.addEventListener("click", search);
+    reportBtn.addEventListener("click", submitReport);
     inputEl.addEventListener("keydown", (e) => {
       if (e.key === "Enter") search();
+    });
+    reportPhoneInputEl.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") submitReport();
     });
 
     loadRecords()
