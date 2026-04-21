@@ -1,0 +1,50 @@
+{
+  "version": "mvp-1",
+  "records": [
+    {
+      "phone": "+1-202-555-0101",
+      "label": "scam",
+      "tag": {
+        "zh-TW": "詐騙",
+        "en": "Scam",
+        "es-MX": "Estafa"
+      }
+    },
+    {
+      "phone": "+1-202-555-0102",
+      "label": "safe",
+      "tag": {
+        "zh-TW": "安全",
+        "en": "Safe",
+        "es-MX": "Seguro"
+      }
+    },
+    {
+      "phone": "+1-202-555-0103",
+      "label": "unknown",
+      "tag": {
+        "zh-TW": "未知",
+        "en": "Unknown",
+        "es-MX": "Desconocido"
+      }
+    },
+    {
+      "phone": "+1-202-555-0104",
+      "label": "scam",
+      "tag": {
+        "zh-TW": "可疑",
+        "en": "Risk",
+        "es-MX": "Riesgo"
+      }
+    },
+    {
+      "phone": "+1-202-555-0105",
+      "label": "safe",
+      "tag": {
+        "zh-TW": "可信",
+        "en": "Trusted",
+        "es-MX": "Confiable"
+      }
+    }
+  ]
+}
