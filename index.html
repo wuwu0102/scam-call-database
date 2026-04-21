@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phone Lookup</title>
+  <style>
+    :root {
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #f5f6f8;
+      color: #111;
+    }
+
+    .app {
+      width: min(92vw, 420px);
+      text-align: center;
+    }
+
+    input,
+    button {
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      padding: 14px;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background: #111;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 18px;
+      font-size: clamp(2rem, 10vw, 3rem);
+      font-weight: 700;
+      min-height: 1.3em;
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <input id="phoneInput" type="tel" placeholder="Phone number" autocomplete="off" />
+    <button id="searchBtn" type="button">Search</button>
+    <div id="result" aria-live="polite"></div>
+  </main>
+
+  <script>
+    const LABELS = {
+      scam: { "zh-TW": "詐騙", en: "Scam", "es-MX": "Estafa" },
+      safe: { "zh-TW": "安全", en: "Safe", "es-MX": "Seguro" },
+      unknown: { "zh-TW": "未知", en: "Unknown", "es-MX": "Desconocido" }
+    };
+
+    const getLang = () => {
+      const lang = (navigator.language || "en").toLowerCase();
+      if (lang === "zh-tw" || lang.startsWith("zh")) return "zh-TW";
+      if (lang === "es-mx" || lang.startsWith("es")) return "es-MX";
+      return "en";
+    };
+
+    const normalizePhone = (value) => value.replace(/[^\d+]/g, "");
+
+    async function loadRecords() {
+      const response = await fetch("./scam_numbers.json");
+      if (!response.ok) throw new Error("Failed to load data");
+      const data = await response.json();
+      return data.records || [];
+    }
+
+    const resultEl = document.getElementById("result");
+    const inputEl = document.getElementById("phoneInput");
+    const searchBtn = document.getElementById("searchBtn");
+
+    let records = [];
+    let lang = getLang();
+
+    const showLabel = (label) => {
+      resultEl.textContent = LABELS[label][lang];
+    };
+
+    const search = () => {
+      const phone = normalizePhone(inputEl.value.trim());
+      if (!phone) {
+        showLabel("unknown");
+        return;
+      }
+
+      const found = records.find((r) => normalizePhone(r.phone) === phone);
+      const label = found && LABELS[found.label] ? found.label : "unknown";
+      showLabel(label);
+    };
+
+    searchBtn.addEventListener("click", search);
+    inputEl.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") search();
+    });
+
+    loadRecords()
+      .then((loaded) => {
+        records = loaded;
+      })
+      .catch(() => {
+        records = [];
+      });
+  </script>
+</body>
+</html>
