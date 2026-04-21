@@ -109,6 +109,7 @@
     };
 
     const normalizePhone = (value) => value.replace(/[^\d+]/g, "");
+    const isKnownLabel = (label) => Boolean(LABELS[label]);
 
     const getLocalReports = () => {
       try {
@@ -150,7 +151,7 @@
       const reports = getLocalReports();
       for (let i = reports.length - 1; i >= 0; i -= 1) {
         const item = reports[i];
-        if (normalizePhone(item.phone || "") === phone && LABELS[item.label]) {
+        if (normalizePhone(item.phone || "") === phone && isKnownLabel(item.label)) {
           return item.label;
         }
       }
@@ -171,7 +172,7 @@
       }
 
       const found = records.find((r) => normalizePhone(r.phone) === phone);
-      const label = found && LABELS[found.label] ? found.label : "unknown";
+      const label = found && isKnownLabel(found.label) ? found.label : "unknown";
       showLabel(label);
     };
 
@@ -179,7 +180,7 @@
       const phone = normalizePhone(reportPhoneEl.value.trim());
       const label = reportLabelEl.value;
 
-      if (!phone || !LABELS[label]) {
+      if (!phone || !isKnownLabel(label)) {
         reportMsgEl.textContent = "Enter number + label";
         return;
       }
