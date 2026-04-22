@@ -64,9 +64,15 @@
       min-height: 1.3em;
     }
 
+    #setupMsg,
     #reportMsg {
       min-height: 1.2em;
       font-size: 0.95rem;
+    }
+
+    #setupMsg {
+      color: #a33;
+      margin-bottom: 8px;
     }
   </style>
 </head>
@@ -74,6 +80,7 @@
   <main class="app">
     <section class="section">
       <h2>Search</h2>
+      <div id="setupMsg" aria-live="polite"></div>
       <input id="phoneInput" type="tel" placeholder="Phone number" autocomplete="off" />
       <button id="searchBtn" type="button">Search</button>
       <div id="result" aria-live="polite"></div>
@@ -93,6 +100,20 @@
   </main>
 
   <script>
+    window.__firebaseConfigMissing = false;
+  </script>
+  <script src="./firebase-config.js" onerror="window.__firebaseConfigMissing = true"></script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+    import {
+      collection,
+      getDocs,
+      getFirestore,
+      query,
+      where,
+      addDoc
+    } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
     const LABELS = {
       scam: { "zh-TW": "詐騙", en: "Scam", "es-MX": "Estafa" },
       safe: { "zh-TW": "安全", en: "Safe", "es-MX": "Seguro" },
@@ -101,6 +122,7 @@
     const STORAGE_KEY = "phone_reports_v1";
 
     const resultEl = document.getElementById("result");
+    const setupMsgEl = document.getElementById("setupMsg");
     const inputEl = document.getElementById("phoneInput");
     const searchBtn = document.getElementById("searchBtn");
     const reportPhoneEl = document.getElementById("reportPhoneInput");
@@ -127,11 +149,13 @@
       }
       return keys;
     };
+
     const isPhoneMatch = (left, right) => {
       const leftKeys = buildPhoneKeys(left);
       const rightKeys = buildPhoneKeys(right);
       return leftKeys.some((leftKey) => rightKeys.includes(leftKey));
     };
+
     const isKnownLabel = (label) => Object.hasOwn(LABELS, label);
 
     const readReports = () => {
@@ -144,10 +168,6 @@
       }
     };
 
-    const writeReports = (reports) => {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(reports));
-    };
-
     const showLabel = (label) => {
       const normalizedLabel = isKnownLabel(label) ? label : "unknown";
       resultEl.textContent = LABELS[normalizedLabel][lang];
@@ -158,7 +178,7 @@
       let latest = null;
 
       for (const report of reports) {
-        const reportPhone = report.normalizedPhone || report.phone || "";
+        const reportPhone = report.phoneNormalized || report.normalizedPhone || report.phone || "";
         if (!isPhoneMatch(reportPhone, phone) || !isKnownLabel(report.label)) {
           continue;
         }
@@ -171,12 +191,69 @@
       return latest ? latest.label : null;
     };
 
+    const hasFirebaseConfig = () => {
+      if (window.__firebaseConfigMissing) {
+        setupMsgEl.textContent = "Firebase setup needed";
+        return false;
+      }
+
+      const config = window.FIREBASE_WEB_CONFIG;
+      if (!config || typeof config !== "object" || !config.apiKey || config.apiKey.includes("YOUR_")) {
+        setupMsgEl.textContent = "Firebase config missing";
+        return false;
+      }
+
+      return true;
+    };
+
+    let firestore = null;
     let records = [];
 
-    const search = () => {
+    if (hasFirebaseConfig()) {
+      try {
+        const app = initializeApp(window.FIREBASE_WEB_CONFIG);
+        firestore = getFirestore(app);
+      } catch {
+        setupMsgEl.textContent = "Firebase init failed";
+      }
+    }
+
+    const findLatestFirestoreLabel = async (phoneNormalized) => {
+      if (!firestore) return null;
+
+      try {
+        const q = query(
+          collection(firestore, "phone_reports"),
+          where("phoneNormalized", "==", phoneNormalized)
+        );
+        const snapshot = await getDocs(q);
+
+        let latest = null;
+        snapshot.forEach((docItem) => {
+          const report = docItem.data();
+          if (!isKnownLabel(report.label)) return;
+
+          if (!latest || Number(report.createdAt || 0) > Number(latest.createdAt || 0)) {
+            latest = report;
+          }
+        });
+
+        return latest ? latest.label : null;
+      } catch {
+        return null;
+      }
+    };
+
+    const search = async () => {
       const phone = normalizePhoneNumber(inputEl.value.trim());
       if (!phone) {
         showLabel("unknown");
+        return;
+      }
+
+      const firestoreLabel = await findLatestFirestoreLabel(phone);
+      if (firestoreLabel) {
+        showLabel(firestoreLabel);
         return;
       }
 
@@ -190,7 +267,7 @@
       showLabel(fromJson && isKnownLabel(fromJson.label) ? fromJson.label : "unknown");
     };
 
-    const submitReport = () => {
+    const submitReport = async () => {
       const originalPhone = reportPhoneEl.value.trim();
       const normalizedPhone = normalizePhoneNumber(originalPhone);
       const label = reportLabelEl.value;
@@ -200,21 +277,41 @@
         return;
       }
 
-      const reports = readReports();
-      reports.push({ phone: originalPhone, normalizedPhone, label, createdAt: Date.now() });
-      writeReports(reports);
+      if (!firestore) {
+        reportMsgEl.textContent = "Cloud report unavailable";
+        return;
+      }
 
-      reportPhoneEl.value = "";
-      reportLabelEl.value = "scam";
-      reportMsgEl.textContent = "Saved";
+      try {
+        await addDoc(collection(firestore, "phone_reports"), {
+          phoneOriginal: originalPhone,
+          phoneNormalized: normalizedPhone,
+          label,
+          createdAt: Date.now(),
+          source: "web",
+          lang
+        });
+
+        reportPhoneEl.value = "";
+        reportLabelEl.value = "scam";
+        reportMsgEl.textContent = "Saved to cloud";
+      } catch {
+        reportMsgEl.textContent = "Cloud save failed";
+      }
     };
 
-    searchBtn.addEventListener("click", search);
+    searchBtn.addEventListener("click", () => {
+      search();
+    });
+
     inputEl.addEventListener("keydown", (event) => {
       if (event.key === "Enter") search();
     });
 
-    reportBtn.addEventListener("click", submitReport);
+    reportBtn.addEventListener("click", () => {
+      submitReport();
+    });
+
     reportPhoneEl.addEventListener("keydown", (event) => {
       if (event.key === "Enter") submitReport();
     });
