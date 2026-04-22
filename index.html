@@ -28,13 +28,15 @@
       background: #fff;
       border: 1px solid #e5e6ea;
       border-radius: 14px;
-      padding: 12px;
-      margin-bottom: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+      text-align: left;
     }
 
     h2 {
-      margin: 6px 0 10px;
+      margin: 6px 0 12px;
       font-size: 1rem;
+      text-align: center;
     }
 
     input,
@@ -55,24 +57,107 @@
       color: #fff;
       border: none;
       cursor: pointer;
+      margin-bottom: 0;
     }
 
-    #result {
-      margin-top: 10px;
-      font-size: clamp(2rem, 10vw, 3rem);
+    .result-card {
+      margin-top: 12px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      padding: 12px;
+      background: #f3f4f6;
+      min-height: 88px;
+    }
+
+    .result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+    }
+
+    .result-badge {
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 0.8rem;
       font-weight: 700;
-      min-height: 1.3em;
+      color: #fff;
+      text-transform: capitalize;
+    }
+
+    .result-text {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.2;
+      word-break: break-word;
+    }
+
+    .result-note {
+      margin-top: 8px;
+      font-size: 0.92rem;
+      color: #444;
+      line-height: 1.35;
+      word-break: break-word;
+    }
+
+    .result-scam {
+      border-color: #fecaca;
+      background: #fef2f2;
+    }
+
+    .result-scam .result-badge {
+      background: #dc2626;
+    }
+
+    .result-suspicious {
+      border-color: #fed7aa;
+      background: #fff7ed;
+    }
+
+    .result-suspicious .result-badge {
+      background: #ea580c;
+    }
+
+    .result-safe {
+      border-color: #bbf7d0;
+      background: #f0fdf4;
+    }
+
+    .result-safe .result-badge {
+      background: #16a34a;
+    }
+
+    .result-unknown {
+      border-color: #d1d5db;
+      background: #f9fafb;
+    }
+
+    .result-unknown .result-badge {
+      background: #6b7280;
     }
 
     #setupMsg,
     #reportMsg {
       min-height: 1.2em;
       font-size: 0.95rem;
+      margin-top: 8px;
     }
 
     #setupMsg {
       color: #a33;
       margin-bottom: 8px;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    #reportMsg.success {
+      color: #0a7a31;
+    }
+
+    #reportMsg.error {
+      color: #a33;
     }
   </style>
 </head>
@@ -83,7 +168,14 @@
       <div id="setupMsg" aria-live="polite"></div>
       <input id="phoneInput" type="tel" placeholder="Phone number" autocomplete="off" />
       <button id="searchBtn" type="button">Search</button>
-      <div id="result" aria-live="polite"></div>
+      <div id="resultCard" class="result-card result-unknown" aria-live="polite">
+        <div class="result-header">
+          <span>Lookup result</span>
+          <span id="resultBadge" class="result-badge">unknown</span>
+        </div>
+        <div id="resultText" class="result-text">Unknown</div>
+        <div id="resultNote" class="result-note"></div>
+      </div>
     </section>
 
     <section class="section">
@@ -91,6 +183,7 @@
       <input id="reportPhoneInput" type="tel" placeholder="Phone number" autocomplete="off" />
       <select id="reportLabelInput" aria-label="Report label">
         <option value="scam">Scam</option>
+        <option value="suspicious">Suspicious</option>
         <option value="safe">Safe</option>
         <option value="unknown">Unknown</option>
       </select>
@@ -120,12 +213,16 @@
 
     const LABELS = {
       scam: { "zh-TW": "詐騙", en: "Scam", "es-MX": "Estafa" },
+      suspicious: { "zh-TW": "可疑", en: "Suspicious", "es-MX": "Sospechoso" },
       safe: { "zh-TW": "安全", en: "Safe", "es-MX": "Seguro" },
       unknown: { "zh-TW": "未知", en: "Unknown", "es-MX": "Desconocido" }
     };
     const COLLECTION_NAME = "phone_numbers";
 
-    const resultEl = document.getElementById("result");
+    const resultCardEl = document.getElementById("resultCard");
+    const resultBadgeEl = document.getElementById("resultBadge");
+    const resultTextEl = document.getElementById("resultText");
+    const resultNoteEl = document.getElementById("resultNote");
     const setupMsgEl = document.getElementById("setupMsg");
     const inputEl = document.getElementById("phoneInput");
     const searchBtn = document.getElementById("searchBtn");
@@ -163,12 +260,36 @@
 
     const isKnownLabel = (label) => Object.hasOwn(LABELS, label);
 
-    const showTag = (tag) => {
-      if (isKnownLabel(tag)) {
-        resultEl.textContent = LABELS[tag][lang];
-        return;
+    const getDisplayLabel = (tag) => {
+      const normalized = String(tag || "").toLowerCase();
+      if (isKnownLabel(normalized)) {
+        return LABELS[normalized][lang];
       }
-      resultEl.textContent = tag || LABELS.unknown[lang];
+      return tag || LABELS.unknown[lang];
+    };
+
+    const getStyleKey = (tag) => {
+      const normalized = String(tag || "").toLowerCase();
+      if (["scam", "suspicious", "safe", "unknown"].includes(normalized)) {
+        return normalized;
+      }
+      return "unknown";
+    };
+
+    const showResult = (tag, note = "") => {
+      const styleKey = getStyleKey(tag);
+      const displayLabel = getDisplayLabel(tag || "unknown");
+      const badgeText = String(tag || "unknown").toLowerCase() || "unknown";
+
+      resultCardEl.className = `result-card result-${styleKey}`;
+      resultBadgeEl.textContent = badgeText;
+      resultTextEl.textContent = displayLabel;
+      resultNoteEl.textContent = note ? `Note: ${note}` : "";
+    };
+
+    const setReportMessage = (message, type) => {
+      reportMsgEl.textContent = message;
+      reportMsgEl.className = type ? type : "";
     };
 
     let firestore = null;
@@ -208,18 +329,19 @@
     const search = async () => {
       const phone = normalizePhoneNumber(inputEl.value.trim());
       if (!phone) {
-        showTag("unknown");
+        showResult("unknown");
         return;
       }
 
       const firestoreRecord = await findLatestFirestoreRecord(phone);
       if (firestoreRecord && firestoreRecord.tag) {
-        showTag(firestoreRecord.tag);
+        showResult(firestoreRecord.tag, firestoreRecord.note || "");
         return;
       }
 
       const fromJson = records.find((record) => isPhoneMatch(record.normalizedPhone || record.phone || "", phone));
-      showTag(fromJson && fromJson.label ? fromJson.label : "unknown");
+      const fallbackTag = fromJson && fromJson.label ? fromJson.label : "unknown";
+      showResult(fallbackTag, fromJson && fromJson.note ? fromJson.note : "");
     };
 
     const submitReport = async () => {
@@ -229,12 +351,12 @@
       const note = reportNoteEl.value.trim();
 
       if (!normalizedPhone || !isKnownLabel(tag)) {
-        reportMsgEl.textContent = "Enter number + label";
+        setReportMessage("Enter number + label", "error");
         return;
       }
 
       if (!firestore) {
-        reportMsgEl.textContent = "Cloud report unavailable";
+        setReportMessage("Cloud report unavailable", "error");
         return;
       }
 
@@ -251,9 +373,9 @@
         reportPhoneEl.value = "";
         reportLabelEl.value = "scam";
         reportNoteEl.value = "";
-        reportMsgEl.textContent = "Saved to cloud";
+        setReportMessage("Saved to cloud", "success");
       } catch {
-        reportMsgEl.textContent = "Cloud save failed";
+        setReportMessage("Cloud save failed", "error");
       }
     };
 
