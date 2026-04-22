@@ -94,32 +94,36 @@
         <option value="safe">Safe</option>
         <option value="unknown">Unknown</option>
       </select>
+      <input id="reportNoteInput" type="text" placeholder="Note (optional)" autocomplete="off" />
       <button id="reportBtn" type="button">Save</button>
       <div id="reportMsg" aria-live="polite"></div>
     </section>
   </main>
-
-  <script>
-    window.__firebaseConfigMissing = false;
-  </script>
-  <script src="./firebase-config.js" onerror="window.__firebaseConfigMissing = true"></script>
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
     import {
       collection,
-      getDocs,
       getFirestore,
-      query,
-      where,
+      getDocs,
       addDoc
     } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA5uH0wpdpgQHiKlrHp5DgrF7cgEXLHm5w",
+      authDomain: "phone-lookup-app-f8f33.firebaseapp.com",
+      projectId: "phone-lookup-app-f8f33",
+      storageBucket: "phone-lookup-app-f8f33.firebasestorage.app",
+      messagingSenderId: "161960355251",
+      appId: "1:161960355251:web:4fa3b7ccb25dfbf63957c6",
+      measurementId: "G-0KLSX77SM7"
+    };
 
     const LABELS = {
       scam: { "zh-TW": "詐騙", en: "Scam", "es-MX": "Estafa" },
       safe: { "zh-TW": "安全", en: "Safe", "es-MX": "Seguro" },
       unknown: { "zh-TW": "未知", en: "Unknown", "es-MX": "Desconocido" }
     };
-    const STORAGE_KEY = "phone_reports_v1";
+    const COLLECTION_NAME = "phone_numbers";
 
     const resultEl = document.getElementById("result");
     const setupMsgEl = document.getElementById("setupMsg");
@@ -127,6 +131,7 @@
     const searchBtn = document.getElementById("searchBtn");
     const reportPhoneEl = document.getElementById("reportPhoneInput");
     const reportLabelEl = document.getElementById("reportLabelInput");
+    const reportNoteEl = document.getElementById("reportNoteInput");
     const reportBtn = document.getElementById("reportBtn");
     const reportMsgEl = document.getElementById("reportMsg");
 
@@ -158,88 +163,44 @@
 
     const isKnownLabel = (label) => Object.hasOwn(LABELS, label);
 
-    const readReports = () => {
-      try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        const parsed = raw ? JSON.parse(raw) : [];
-        return Array.isArray(parsed) ? parsed : [];
-      } catch {
-        return [];
+    const showTag = (tag) => {
+      if (isKnownLabel(tag)) {
+        resultEl.textContent = LABELS[tag][lang];
+        return;
       }
-    };
-
-    const showLabel = (label) => {
-      const normalizedLabel = isKnownLabel(label) ? label : "unknown";
-      resultEl.textContent = LABELS[normalizedLabel][lang];
-    };
-
-    const findLatestLocalLabel = (phone) => {
-      const reports = readReports();
-      let latest = null;
-
-      for (const report of reports) {
-        const reportPhone = report.phoneNormalized || report.normalizedPhone || report.phone || "";
-        if (!isPhoneMatch(reportPhone, phone) || !isKnownLabel(report.label)) {
-          continue;
-        }
-
-        if (!latest || Number(report.createdAt || 0) > Number(latest.createdAt || 0)) {
-          latest = report;
-        }
-      }
-
-      return latest ? latest.label : null;
-    };
-
-    const hasFirebaseConfig = () => {
-      if (window.__firebaseConfigMissing) {
-        setupMsgEl.textContent = "Firebase setup needed";
-        return false;
-      }
-
-      const config = window.FIREBASE_WEB_CONFIG;
-      if (!config || typeof config !== "object" || !config.apiKey || config.apiKey.includes("YOUR_")) {
-        setupMsgEl.textContent = "Firebase config missing";
-        return false;
-      }
-
-      return true;
+      resultEl.textContent = tag || LABELS.unknown[lang];
     };
 
     let firestore = null;
     let records = [];
 
-    if (hasFirebaseConfig()) {
-      try {
-        const app = initializeApp(window.FIREBASE_WEB_CONFIG);
-        firestore = getFirestore(app);
-      } catch {
-        setupMsgEl.textContent = "Firebase init failed";
-      }
+    try {
+      const app = initializeApp(firebaseConfig);
+      firestore = getFirestore(app);
+    } catch {
+      setupMsgEl.textContent = "Cloud lookup unavailable. Using local fallback.";
     }
 
-    const findLatestFirestoreLabel = async (phoneNormalized) => {
+    const findLatestFirestoreRecord = async (phoneNormalized) => {
       if (!firestore) return null;
 
       try {
-        const q = query(
-          collection(firestore, "phone_reports"),
-          where("phoneNormalized", "==", phoneNormalized)
-        );
-        const snapshot = await getDocs(q);
+        const snapshot = await getDocs(collection(firestore, COLLECTION_NAME));
 
         let latest = null;
         snapshot.forEach((docItem) => {
-          const report = docItem.data();
-          if (!isKnownLabel(report.label)) return;
+          const record = docItem.data();
+          const recordNumber = record.normalizedNumber || record.number || "";
+          if (!isPhoneMatch(recordNumber, phoneNormalized)) return;
 
-          if (!latest || Number(report.createdAt || 0) > Number(latest.createdAt || 0)) {
-            latest = report;
+          if (!latest || Number(record.createdAt || 0) > Number(latest.createdAt || 0)) {
+            latest = record;
           }
         });
 
-        return latest ? latest.label : null;
+        return latest;
       } catch {
+        setupMsgEl.textContent = "Cloud lookup failed. Showing local results.";
         return null;
       }
     };
@@ -247,32 +208,27 @@
     const search = async () => {
       const phone = normalizePhoneNumber(inputEl.value.trim());
       if (!phone) {
-        showLabel("unknown");
+        showTag("unknown");
         return;
       }
 
-      const firestoreLabel = await findLatestFirestoreLabel(phone);
-      if (firestoreLabel) {
-        showLabel(firestoreLabel);
-        return;
-      }
-
-      const localLabel = findLatestLocalLabel(phone);
-      if (localLabel) {
-        showLabel(localLabel);
+      const firestoreRecord = await findLatestFirestoreRecord(phone);
+      if (firestoreRecord && firestoreRecord.tag) {
+        showTag(firestoreRecord.tag);
         return;
       }
 
       const fromJson = records.find((record) => isPhoneMatch(record.normalizedPhone || record.phone || "", phone));
-      showLabel(fromJson && isKnownLabel(fromJson.label) ? fromJson.label : "unknown");
+      showTag(fromJson && fromJson.label ? fromJson.label : "unknown");
     };
 
     const submitReport = async () => {
       const originalPhone = reportPhoneEl.value.trim();
       const normalizedPhone = normalizePhoneNumber(originalPhone);
-      const label = reportLabelEl.value;
+      const tag = reportLabelEl.value;
+      const note = reportNoteEl.value.trim();
 
-      if (!normalizedPhone || !isKnownLabel(label)) {
+      if (!normalizedPhone || !isKnownLabel(tag)) {
         reportMsgEl.textContent = "Enter number + label";
         return;
       }
@@ -283,17 +239,18 @@
       }
 
       try {
-        await addDoc(collection(firestore, "phone_reports"), {
-          phoneOriginal: originalPhone,
-          phoneNormalized: normalizedPhone,
-          label,
+        await addDoc(collection(firestore, COLLECTION_NAME), {
+          number: originalPhone,
+          normalizedNumber: normalizedPhone,
+          tag,
+          lang,
+          note,
           createdAt: Date.now(),
-          source: "web",
-          lang
         });
 
         reportPhoneEl.value = "";
         reportLabelEl.value = "scam";
+        reportNoteEl.value = "";
         reportMsgEl.textContent = "Saved to cloud";
       } catch {
         reportMsgEl.textContent = "Cloud save failed";

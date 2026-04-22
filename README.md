@@ -1,41 +1,49 @@
 # scam-call-database
 
-## Firebase Firestore setup (GitHub Pages friendly)
+## Firestore-backed phone lookup (GitHub Pages friendly)
 
-This project now reads/writes crowd reports from Firestore collection `phone_reports`.
+This app is still a plain static frontend (`index.html` + `scam_numbers.json`) and now reads/writes phone data from Firebase Firestore collection `phone_numbers` using the Firebase Web SDK CDN modules.
 
-### 1) Create Firebase project
-1. Go to Firebase Console.
-2. Create a new project.
-3. Add a **Web app** in Project Settings.
-4. Copy the Firebase web config fields.
+### What changed
+- Lookup now checks Firestore collection `phone_numbers` first.
+- Report form now writes directly to Firestore `phone_numbers`.
+- Existing JSON data (`scam_numbers.json`) remains as fallback if Firestore is unavailable.
+- No npm/build/backend is required, so GitHub Pages deployment still works.
 
-### 2) Enable Firestore
-1. In Firebase Console, open **Firestore Database**.
-2. Create database (start in test mode for MVP if needed).
-3. Keep collection name as `phone_reports`.
+### Firestore collection and fields
 
-Document fields used by this site:
-- `phoneOriginal` (string)
-- `phoneNormalized` (string)
-- `label` (`scam` / `safe` / `unknown`)
+Collection:
+- `phone_numbers`
+
+Document fields currently read/written:
+- `number` (string)
+- `normalizedNumber` (string, added by this app for faster matching)
+- `tag` (string; supports `scam` / `safe` / `unknown`, can display other tags too)
+- `lang` (string)
+- `note` (string)
 - `createdAt` (number timestamp)
-- `source` (`web`)
-- `lang` (`zh-TW` / `en` / `es-MX`)
 
-### 3) Create `firebase-config.js`
-1. Copy `firebase-config.example.js` to `firebase-config.js`.
-2. Replace placeholder values with your own Firebase config.
-3. Keep `firebase-config.js` in repo root next to `index.html`.
+### 🔥 REQUIRED: Firestore Rules Setup
 
-Example command:
+To enable frontend read/write access for this GitHub Pages app:
 
-```bash
-cp firebase-config.example.js firebase-config.js
+1. Go to **Firebase Console**.
+2. Open **Firestore Database**.
+3. Click **Rules**.
+4. Paste the exact rules below.
+5. Click **Publish**.
+
+```text
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /phone_numbers/{document} {
+      allow read, write: if true;
+    }
+
+  }
+}
 ```
 
-### 4) Deploy safely on GitHub Pages
-- Do not commit private backend secrets (none are required for this MVP).
-- Firebase web config is public app config, but still use your real project values only in `firebase-config.js`.
-- Make sure Firestore security rules are set intentionally before production launch.
-- Push `index.html`, `scam_numbers.json`, and your Firebase config file with your Pages deployment flow.
+> Important: the above rule is open and intended only for MVP/testing. Tighten rules before production.
