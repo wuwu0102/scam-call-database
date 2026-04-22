@@ -116,7 +116,22 @@
     };
 
     const lang = getLang();
-    const normalizePhone = (value) => value.replace(/[^\d+]/g, "");
+    const normalizePhoneNumber = (value) => String(value || "").replace(/\D/g, "");
+    const buildPhoneKeys = (value) => {
+      const normalized = normalizePhoneNumber(value);
+      if (!normalized) return [];
+
+      const keys = [normalized];
+      if (normalized.length === 11 && normalized.startsWith("1")) {
+        keys.push(normalized.slice(1));
+      }
+      return keys;
+    };
+    const isPhoneMatch = (left, right) => {
+      const leftKeys = buildPhoneKeys(left);
+      const rightKeys = buildPhoneKeys(right);
+      return leftKeys.some((leftKey) => rightKeys.includes(leftKey));
+    };
     const isKnownLabel = (label) => Object.hasOwn(LABELS, label);
 
     const readReports = () => {
@@ -143,7 +158,8 @@
       let latest = null;
 
       for (const report of reports) {
-        if (normalizePhone(report.phone || "") !== phone || !isKnownLabel(report.label)) {
+        const reportPhone = report.normalizedPhone || report.phone || "";
+        if (!isPhoneMatch(reportPhone, phone) || !isKnownLabel(report.label)) {
           continue;
         }
 
@@ -158,7 +174,7 @@
     let records = [];
 
     const search = () => {
-      const phone = normalizePhone(inputEl.value.trim());
+      const phone = normalizePhoneNumber(inputEl.value.trim());
       if (!phone) {
         showLabel("unknown");
         return;
@@ -170,21 +186,22 @@
         return;
       }
 
-      const fromJson = records.find((record) => normalizePhone(record.phone || "") === phone);
+      const fromJson = records.find((record) => isPhoneMatch(record.normalizedPhone || record.phone || "", phone));
       showLabel(fromJson && isKnownLabel(fromJson.label) ? fromJson.label : "unknown");
     };
 
     const submitReport = () => {
-      const phone = normalizePhone(reportPhoneEl.value.trim());
+      const originalPhone = reportPhoneEl.value.trim();
+      const normalizedPhone = normalizePhoneNumber(originalPhone);
       const label = reportLabelEl.value;
 
-      if (!phone || !isKnownLabel(label)) {
+      if (!normalizedPhone || !isKnownLabel(label)) {
         reportMsgEl.textContent = "Enter number + label";
         return;
       }
 
       const reports = readReports();
-      reports.push({ phone, label, createdAt: Date.now() });
+      reports.push({ phone: originalPhone, normalizedPhone, label, createdAt: Date.now() });
       writeReports(reports);
 
       reportPhoneEl.value = "";
@@ -210,7 +227,11 @@
         return response.json();
       })
       .then((data) => {
-        records = Array.isArray(data.records) ? data.records : [];
+        const loaded = Array.isArray(data.records) ? data.records : [];
+        records = loaded.map((record) => ({
+          ...record,
+          normalizedPhone: normalizePhoneNumber(record.phone || "")
+        }));
       })
       .catch(() => {
         records = [];
