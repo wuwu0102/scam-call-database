@@ -98,39 +98,7 @@
       safe: { "zh-TW": "安全", en: "Safe", "es-MX": "Seguro" },
       unknown: { "zh-TW": "未知", en: "Unknown", "es-MX": "Desconocido" }
     };
-
     const STORAGE_KEY = "phone_reports_v1";
-
-    const getLang = () => {
-      const lang = (navigator.language || "en").toLowerCase();
-      if (lang === "zh-tw" || lang.startsWith("zh")) return "zh-TW";
-      if (lang === "es-mx" || lang.startsWith("es")) return "es-MX";
-      return "en";
-    };
-
-    const normalizePhone = (value) => value.replace(/[^\d+]/g, "");
-    const isKnownLabel = (label) => Boolean(LABELS[label]);
-
-    const getLocalReports = () => {
-      try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        const parsed = raw ? JSON.parse(raw) : [];
-        return Array.isArray(parsed) ? parsed : [];
-      } catch {
-        return [];
-      }
-    };
-
-    const saveLocalReports = (reports) => {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(reports));
-    };
-
-    async function loadRecords() {
-      const response = await fetch("./scam_numbers.json");
-      if (!response.ok) throw new Error("Failed to load data");
-      const data = await response.json();
-      return data.records || [];
-    }
 
     const resultEl = document.getElementById("result");
     const inputEl = document.getElementById("phoneInput");
@@ -140,23 +108,54 @@
     const reportBtn = document.getElementById("reportBtn");
     const reportMsgEl = document.getElementById("reportMsg");
 
-    let records = [];
-    let lang = getLang();
+    const getLang = () => {
+      const lang = (navigator.language || "en").toLowerCase();
+      if (lang === "zh-tw" || lang.startsWith("zh")) return "zh-TW";
+      if (lang === "es-mx" || lang.startsWith("es")) return "es-MX";
+      return "en";
+    };
+
+    const lang = getLang();
+    const normalizePhone = (value) => value.replace(/[^\d+]/g, "");
+    const isKnownLabel = (label) => Object.hasOwn(LABELS, label);
+
+    const readReports = () => {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        const parsed = raw ? JSON.parse(raw) : [];
+        return Array.isArray(parsed) ? parsed : [];
+      } catch {
+        return [];
+      }
+    };
+
+    const writeReports = (reports) => {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(reports));
+    };
 
     const showLabel = (label) => {
-      resultEl.textContent = LABELS[label][lang];
+      const normalizedLabel = isKnownLabel(label) ? label : "unknown";
+      resultEl.textContent = LABELS[normalizedLabel][lang];
     };
 
     const findLatestLocalLabel = (phone) => {
-      const reports = getLocalReports();
-      for (let i = reports.length - 1; i >= 0; i -= 1) {
-        const item = reports[i];
-        if (normalizePhone(item.phone || "") === phone && isKnownLabel(item.label)) {
-          return item.label;
+      const reports = readReports();
+      let latest = null;
+
+      for (const report of reports) {
+        if (normalizePhone(report.phone || "") !== phone || !isKnownLabel(report.label)) {
+          continue;
+        }
+
+        if (!latest || Number(report.createdAt || 0) > Number(latest.createdAt || 0)) {
+          latest = report;
         }
       }
-      return null;
+
+      return latest ? latest.label : null;
     };
+
+    let records = [];
 
     const search = () => {
       const phone = normalizePhone(inputEl.value.trim());
@@ -171,9 +170,8 @@
         return;
       }
 
-      const found = records.find((r) => normalizePhone(r.phone) === phone);
-      const label = found && isKnownLabel(found.label) ? found.label : "unknown";
-      showLabel(label);
+      const fromJson = records.find((record) => normalizePhone(record.phone || "") === phone);
+      showLabel(fromJson && isKnownLabel(fromJson.label) ? fromJson.label : "unknown");
     };
 
     const submitReport = () => {
@@ -185,27 +183,34 @@
         return;
       }
 
-      const reports = getLocalReports();
+      const reports = readReports();
       reports.push({ phone, label, createdAt: Date.now() });
-      saveLocalReports(reports);
-      reportMsgEl.textContent = "Saved";
+      writeReports(reports);
+
       reportPhoneEl.value = "";
       reportLabelEl.value = "scam";
+      reportMsgEl.textContent = "Saved";
     };
 
     searchBtn.addEventListener("click", search);
-    inputEl.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") search();
+    inputEl.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") search();
     });
 
     reportBtn.addEventListener("click", submitReport);
-    reportPhoneEl.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") submitReport();
+    reportPhoneEl.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") submitReport();
     });
 
-    loadRecords()
-      .then((loaded) => {
-        records = loaded;
+    fetch("./scam_numbers.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to load data");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        records = Array.isArray(data.records) ? data.records : [];
       })
       .catch(() => {
         records = [];
