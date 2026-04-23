@@ -1,0 +1,10 @@
+Replace all placeholders with your Apple Developer values.
+
+TEAM_ID: ABCDE12345
+HOST_APP_BUNDLE_ID: com.wuwu0102.scamcall
+EXTENSION_BUNDLE_ID: com.wuwu0102.scamcall.CallDirectoryExtension
+APP_GROUP_ID: group.com.wuwu0102.scamcall
+
+Suggested target names:
+- ScamCallerID (iOS App)
+- ScamCallerIDCallDirectoryExtension (Call Directory Extension)
