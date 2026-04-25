@@ -2,7 +2,10 @@ const fs = require('fs');
 const path = require('path');
 
 const COLLECTION = 'phone_numbers';
-const INPUT_PATH = path.join(__dirname, '..', 'data', 'mexico_seed_phone_numbers.json');
+const INPUT_PATHS = [
+  path.join(__dirname, '..', 'data', 'mexico_seed_phone_numbers.json'),
+  path.join(__dirname, '..', 'data', 'collected_mexico_numbers.json'),
+];
 const ALLOWED_FIELDS = [
   'number',
   'normalizedNumber',
@@ -13,7 +16,10 @@ const ALLOWED_FIELDS = [
   'confidence',
   'source',
   'sourceUrl',
+  'sources',
   'note',
+  'reviewStatus',
+  'collectedAt',
   'updatedAt',
   'importedAt',
 ];
@@ -40,15 +46,57 @@ function readServiceAccountFromEnv() {
   }
 }
 
-function readSeedRecords() {
-  const raw = fs.readFileSync(INPUT_PATH, 'utf8');
+function readRecordsFromPath(inputPath) {
+  if (!fs.existsSync(inputPath)) {
+    return [];
+  }
+
+  const raw = fs.readFileSync(inputPath, 'utf8');
   const parsed = JSON.parse(raw);
 
   if (!Array.isArray(parsed)) {
-    throw new Error('Expected mexico_seed_phone_numbers.json to contain an array');
+    throw new Error(`Expected ${path.basename(inputPath)} to contain an array`);
   }
 
   return parsed;
+}
+
+function isImportableRecord(record) {
+  const tag = String(record.tag || '').toLowerCase();
+  const type = String(record.type || record.sourceType || '').toLowerCase();
+  const reviewStatus = String(record.reviewStatus || '').toLowerCase();
+  const importableTag = tag === 'scam' || tag === 'suspicious';
+  const importableTrust = reviewStatus === 'auto_approved' || type === 'official';
+
+  return importableTag && importableTrust;
+}
+
+function mergeByNormalizedNumber(records) {
+  const merged = new Map();
+
+  for (const record of records) {
+    const normalized = String(record.normalizedNumber || '').trim();
+    const key = normalized || `generated:${JSON.stringify(record)}`;
+
+    if (!merged.has(key)) {
+      merged.set(key, record);
+      continue;
+    }
+
+    const existing = merged.get(key);
+    merged.set(key, {
+      ...existing,
+      ...record,
+      sources: [...(existing.sources || []), ...(record.sources || [])],
+    });
+  }
+
+  return Array.from(merged.values());
+}
+
+function readSeedRecords() {
+  const allRecords = INPUT_PATHS.flatMap(readRecordsFromPath);
+  return mergeByNormalizedNumber(allRecords).filter(isImportableRecord);
 }
 
 function buildPayload(record, importedAt) {
@@ -58,11 +106,14 @@ function buildPayload(record, importedAt) {
     country: record.country,
     tag: record.tag,
     label: record.label,
-    type: record.type,
+    type: record.type || record.sourceType,
     confidence: record.confidence,
-    source: record.source,
+    source: record.source || record.sourceName,
     sourceUrl: record.sourceUrl,
+    sources: record.sources,
     note: record.note,
+    reviewStatus: record.reviewStatus,
+    collectedAt: record.collectedAt,
     updatedAt: record.updatedAt || new Date().toISOString().slice(0, 10),
     importedAt,
   };
@@ -103,7 +154,7 @@ async function main() {
 
   if (dryRun) {
     const importedAt = new Date().toISOString();
-    console.log(`Dry run enabled. Found ${records.length} records in ${INPUT_PATH}.`);
+    console.log(`Dry run enabled. Found ${records.length} importable records in configured inputs.`);
 
     records.forEach((record, index) => {
       const normalized = String(record.normalizedNumber || '').trim();

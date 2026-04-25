@@ -1,0 +1,52 @@
+{
+  "startedAt": "2026-04-25T15:29:04.569Z",
+  "completedAt": "2026-04-25T15:29:05.388Z",
+  "collectedAt": "2026-04-25",
+  "sources": [
+    {
+      "source": "SAT México",
+      "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+      "status": "error",
+      "extractedCandidates": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "error": "fetch failed"
+    },
+    {
+      "source": "Seguridad BC",
+      "sourceUrl": "https://seguridadbc.gob.mx/ExtorsionTelefonica/index.php",
+      "status": "error",
+      "extractedCandidates": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "error": "fetch failed"
+    },
+    {
+      "source": "Seguridad BC",
+      "sourceUrl": "https://www.seguridadbc.gob.mx/ExtorsionTelefonica/engano.php",
+      "status": "error",
+      "extractedCandidates": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "error": "fetch failed"
+    },
+    {
+      "source": "Seguridad BC (histórico 2022)",
+      "sourceUrl": "https://www.seguridadbc.gob.mx/ExtorsionTelefonica/engano2022.php",
+      "status": "error",
+      "extractedCandidates": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "error": "fetch failed"
+    }
+  ],
+  "totals": {
+    "extractedCandidates": 0,
+    "acceptedRecords": 0,
+    "reviewQueue": 0,
+    "autoApproved": 0,
+    "rejected": 0,
+    "deduplicated": 0
+  },
+  "rejectedSamples": []
+}
