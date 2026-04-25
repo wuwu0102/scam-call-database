@@ -1,79 +1,67 @@
 # scam-call-database
 
+Cross-platform anti-scam caller ID planning repository with a working GitHub Pages web/PWA, shared seed data, and side project scaffolds for Flutter/iOS/Android.
+
 ## Project structure
 
-This repository now contains:
-- A **working static web app** for GitHub Pages (`index.html` + `scam_numbers.json`)
-- A **Flutter app starter** at `side_projects/flutter-phone-lookup-app`
+- **Web/PWA**
+  - root `index.html`
+  - root `manifest.json`
+- **Shared data**
+  - `data/mexico_seed_phone_numbers.json`
+- **Firebase**
+  - Firestore collection `phone_numbers`
+- **Flutter app**
+  - `side_projects/flutter-phone-lookup-app`
+- **iPhone caller ID**
+  - `side_projects/ios-phone-callerid`
+- **Android future caller ID**
+  - `side_projects/android-callerid`
 
-## Static web app (GitHub Pages friendly)
+## Web/PWA lookup behavior
 
-The existing web app remains plain static frontend and still works on GitHub Pages without npm/build/backend.
+Lookup order is:
+1. Firestore collection `phone_numbers`
+2. `data/mexico_seed_phone_numbers.json`
+3. fallback `scam_numbers.json`
+4. unknown result
 
-### Web lookup/report behavior
-- Lookup checks Firestore collection `phone_numbers` first.
-- Report writes directly to Firestore collection `phone_numbers`.
-- JSON file `scam_numbers.json` remains the fallback source if Firestore is unavailable.
-- Phone normalization and matching behavior are preserved.
+The report form still writes to Firestore collection `phone_numbers`.
 
-### Web UI upgrade
-- Improved mobile-first card spacing/readability.
-- Search result now shows colored status card:
-  - `scam` = red
-  - `suspicious` = orange
-  - `safe` = green
-  - `unknown` = gray
-- Optional note is shown below the result if present.
-- Save/report feedback now shows clearer success/error messages.
+## Shared Mexico seed database
 
-## Flutter app starter
+- Seed file: `data/mexico_seed_phone_numbers.json`
+- Source references: `data/mexico_seed_sources.md`
+- Shared schema: `data/schema.md`
+- Normalization helper: `data/normalize_phone.js`
 
-Path:
-- `side_projects/flutter-phone-lookup-app`
+## Firestore admin docs
 
-Includes:
-- Search phone screen
-- Report phone screen
-- Firestore service using same collection: `phone_numbers`
-- Basic phone normalization utility
-- README with setup steps and Firebase file placement instructions
+- `admin/README.md`
+- `admin/import_mexico_seed_to_firestore.md`
+- `admin/firestore_fields.md`
 
-> This is a skeleton only (no native caller-ID / CallKit / Android call screening integration yet).
+These explain manual import for required fields in `phone_numbers`.
 
-## Firestore collection and fields
+## Roadmap
 
-Collection:
-- `phone_numbers`
+### Phase 1
+Web/PWA + Firebase + Mexico seed DB
 
-Document fields currently read/written:
-- `number` (string)
-- `normalizedNumber` (string)
-- `tag` (string; supports `scam` / `suspicious` / `safe` / `unknown`, can display other tags too)
-- `lang` (string)
-- `note` (string)
-- `createdAt` (number timestamp)
+### Phase 2
+Flutter app for iPhone/Android normal app lookup/report
 
-## 🔥 REQUIRED: Firestore Rules Setup
+### Phase 3
+iOS Call Directory Extension for incoming-call display
 
-To enable frontend read/write access for this GitHub Pages app:
+### Phase 4
+Android native caller ID/call screening
 
-1. Go to **Firebase Console**.
-2. Open **Firestore Database**.
-3. Click **Rules**.
-4. Paste the exact rules below.
-5. Click **Publish**.
+### Phase 5
+Automated Mexico source update pipeline
 
-```text
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
+## Important platform notes
 
-    match /phone_numbers/{document} {
-      allow read, write: if true;
-    }
-
-  }
-}
-```
-
-> Important: the above rule is open and intended only for MVP/testing. Tighten rules before production.
+- iOS real incoming-call caller ID requires native iOS Call Directory Extension, Xcode, Apple signing, and real device testing.
+- Android incoming-call caller ID requires native Android call screening/caller-ID integration and policy review.
+- This repository does not claim App Store/Play Store build verification in this environment.
