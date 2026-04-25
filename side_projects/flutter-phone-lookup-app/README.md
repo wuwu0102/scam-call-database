@@ -1,43 +1,52 @@
-# Flutter Phone Lookup App (Skeleton)
+# Flutter Phone Lookup App (Cross-Platform UI Plan)
 
-This folder contains a minimal Flutter starter app that uses Firebase + Firestore collection `phone_numbers` (same collection as the static web app).
+This folder contains a Flutter app scaffold intended for a normal iPhone/Android app lookup and report UI.
 
-## Scope in this skeleton
-- Search phone number from Firestore
-- Report phone number to Firestore
-- Two tabs: **Search phone** and **Report phone**
-- Service layer (`lib/services/firestore_service.dart`) to keep room for future caller-ID features
+## Scope of this Flutter app
+
+- Cross-platform lookup/report interface for iPhone and Android.
+- Uses Firestore collection `phone_numbers` (same shared collection as web/PWA).
+- Supports tag values: `scam`, `suspicious`, `safe`, `unknown`.
+
+## Important limitations
+
+- This Flutter app **does NOT by itself** create iPhone incoming-call caller ID.
+- iPhone incoming-call caller ID requires the native iOS Call Directory Extension scaffold in `side_projects/ios-phone-callerid`.
+- Android incoming-call caller ID/screening requires native Android integration later.
+
+## Shared-data direction
+
+- This Flutter app should continue to consume the same Firestore collection: `phone_numbers`.
+- Shared schema is documented in `data/schema.md`.
+- Mexico seed records can be imported to Firestore and become immediately queryable by this app.
+
+## Current features in scaffold
+
+- Search phone number from Firestore.
+- Report phone number to Firestore.
+- Two tabs: **Search phone** and **Report phone**.
+- Service layer (`lib/services/firestore_service.dart`) for future expansion.
 
 ## Packages
-Add with `pubspec.yaml` (already included):
+
+Defined in `pubspec.yaml`:
 - `firebase_core`
 - `cloud_firestore`
 
 ## How to run
+
 1. Install Flutter SDK and platform toolchains.
-2. In this folder, run:
+2. In this folder run:
    ```bash
    flutter pub get
    flutter run
    ```
 
-## Firebase setup you still need to do manually
-This repo does **not** include real Firebase platform config files.
+## Firebase setup (manual)
 
-You must add your own files generated from your Firebase project (`phone-lookup-app-f8f33`):
+You must add your own Firebase config files from your Firebase project:
 
 - Android: `android/app/google-services.json`
 - iOS: `ios/Runner/GoogleService-Info.plist`
-- (Optional for desktop/web): add corresponding configs and update init flow.
 
-Then follow standard Firebase Flutter setup:
-- Add Firebase apps for Android/iOS in Firebase Console.
-- Configure native Gradle/Xcode Firebase integration.
-- Ensure Firestore is enabled and uses collection `phone_numbers`.
-
-## Notes for future caller-ID app extension
-Current code keeps search/report logic in `FirestoreService`. This makes it easier to later add:
-- call event ingestion
-- caller-ID overlay logic
-- local cache/blocklist sync
-without rewriting UI screens.
+Then complete standard Firebase Flutter setup for Android/iOS and ensure Firestore is enabled.

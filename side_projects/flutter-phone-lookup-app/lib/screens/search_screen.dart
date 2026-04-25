@@ -14,6 +14,8 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   final _phoneController = TextEditingController();
   bool _loading = false;
+  static const _allowedTags = {'scam', 'suspicious', 'safe', 'unknown'};
+
   String _status = 'unknown';
   String _note = '';
   String _message = '';
@@ -30,7 +32,8 @@ class _SearchScreenState extends State<SearchScreen> {
     try {
       final record = await widget.service.findLatestByPhone(_phoneController.text.trim());
       setState(() {
-        _status = (record?['tag'] ?? 'unknown').toString();
+        final rawTag = (record?['tag'] ?? 'unknown').toString();
+        _status = _allowedTags.contains(rawTag) ? rawTag : 'unknown';
         _note = (record?['note'] ?? '').toString();
       });
     } catch (_) {

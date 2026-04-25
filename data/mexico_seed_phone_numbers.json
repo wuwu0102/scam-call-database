@@ -1,0 +1,65 @@
+[
+  {
+    "number": "5525866584",
+    "normalizedNumber": "525525866584",
+    "country": "MX",
+    "tag": "scam",
+    "label": {
+      "zh-TW": "可疑／疑似詐騙",
+      "en": "Suspicious / possible scam",
+      "es-MX": "Sospechoso / posible estafa"
+    },
+    "sourceType": "crowd_report",
+    "sourceName": "Tellows México",
+    "sourceUrl": "https://www.tellows.mx/",
+    "note": {
+      "zh-TW": "Tellows.mx 群眾回報提及 INFONAVIT 詐騙。",
+      "en": "Public crowd report shown on Tellows.mx mentioning INFONAVIT fraud.",
+      "es-MX": "Reporte público en Tellows.mx que menciona fraude de INFONAVIT."
+    },
+    "confidence": "medium",
+    "createdAt": "2026-04-25"
+  },
+  {
+    "number": "5598935165",
+    "normalizedNumber": "525598935165",
+    "country": "MX",
+    "tag": "scam",
+    "label": {
+      "zh-TW": "可疑／疑似詐騙",
+      "en": "Suspicious / possible scam",
+      "es-MX": "Sospechoso / posible estafa"
+    },
+    "sourceType": "crowd_report",
+    "sourceName": "Tellows México",
+    "sourceUrl": "https://www.tellows.mx/",
+    "note": {
+      "zh-TW": "Tellows.mx 群眾回報標示為詐騙／estafa。",
+      "en": "Public crowd report shown on Tellows.mx as scam/estafa.",
+      "es-MX": "Reporte público en Tellows.mx marcado como estafa."
+    },
+    "confidence": "medium",
+    "createdAt": "2026-04-25"
+  },
+  {
+    "number": "5632910475",
+    "normalizedNumber": "525632910475",
+    "country": "MX",
+    "tag": "scam",
+    "label": {
+      "zh-TW": "可疑／疑似詐騙",
+      "en": "Suspicious / possible scam",
+      "es-MX": "Sospechoso / posible estafa"
+    },
+    "sourceType": "official",
+    "sourceName": "SAT México",
+    "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+    "note": {
+      "zh-TW": "SAT 公布此號碼涉及假 SAT 連結簡訊。",
+      "en": "SAT reported this number for SMS with fake SAT link.",
+      "es-MX": "El SAT reportó este número por SMS con enlace falso del SAT."
+    },
+    "confidence": "high",
+    "createdAt": "2026-04-25"
+  }
+]

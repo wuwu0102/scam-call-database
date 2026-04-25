@@ -94,6 +94,14 @@
       word-break: break-word;
     }
 
+    .result-meta {
+      margin-top: 8px;
+      font-size: 0.88rem;
+      color: #333;
+      line-height: 1.35;
+      word-break: break-word;
+    }
+
     .result-note {
       margin-top: 8px;
       font-size: 0.92rem;
@@ -174,6 +182,7 @@
           <span id="resultBadge" class="result-badge">unknown</span>
         </div>
         <div id="resultText" class="result-text">Unknown</div>
+        <div id="resultMeta" class="result-meta"></div>
         <div id="resultNote" class="result-note"></div>
       </div>
     </section>
@@ -222,6 +231,7 @@
     const resultCardEl = document.getElementById("resultCard");
     const resultBadgeEl = document.getElementById("resultBadge");
     const resultTextEl = document.getElementById("resultText");
+    const resultMetaEl = document.getElementById("resultMeta");
     const resultNoteEl = document.getElementById("resultNote");
     const setupMsgEl = document.getElementById("setupMsg");
     const inputEl = document.getElementById("phoneInput");
@@ -260,8 +270,11 @@
 
     const isKnownLabel = (label) => Object.hasOwn(LABELS, label);
 
-    const getDisplayLabel = (tag) => {
+    const getDisplayLabel = (tag, label) => {
       const normalized = String(tag || "").toLowerCase();
+      if (label && typeof label === "object") {
+        return label[lang] || label.en || LABELS.unknown[lang];
+      }
       if (isKnownLabel(normalized)) {
         return LABELS[normalized][lang];
       }
@@ -276,15 +289,31 @@
       return "unknown";
     };
 
-    const showResult = (tag, note = "") => {
+    const getLocalizedNote = (note) => {
+      if (!note) return "";
+      if (typeof note === "object") {
+        return note[lang] || note.en || "";
+      }
+      return String(note);
+    };
+
+    const showResult = ({ tag = "unknown", label = null, note = "", sourceName = "", sourceType = "", confidence = "" } = {}) => {
       const styleKey = getStyleKey(tag);
-      const displayLabel = getDisplayLabel(tag || "unknown");
+      const displayLabel = getDisplayLabel(tag || "unknown", label);
       const badgeText = String(tag || "unknown").toLowerCase() || "unknown";
 
       resultCardEl.className = `result-card result-${styleKey}`;
       resultBadgeEl.textContent = badgeText;
       resultTextEl.textContent = displayLabel;
-      resultNoteEl.textContent = note ? `Note: ${note}` : "";
+
+      const metaBits = [];
+      if (sourceName) metaBits.push(`Source: ${sourceName}`);
+      if (sourceType) metaBits.push(`Type: ${sourceType}`);
+      if (confidence) metaBits.push(`Confidence: ${confidence}`);
+      resultMetaEl.textContent = metaBits.join(" · ");
+
+      const resolvedNote = getLocalizedNote(note);
+      resultNoteEl.textContent = resolvedNote ? `Note: ${resolvedNote}` : "";
     };
 
     const setReportMessage = (message, type) => {
@@ -293,7 +322,8 @@
     };
 
     let firestore = null;
-    let records = [];
+    let mexicoSeedRecords = [];
+    let fallbackRecords = [];
 
     try {
       const app = initializeApp(firebaseConfig);
@@ -326,22 +356,49 @@
       }
     };
 
+    const findRecordFromArray = (records, phoneNormalized) =>
+      records.find((record) => isPhoneMatch(record.normalizedNumber || record.normalizedPhone || record.number || record.phone || "", phoneNormalized));
+
     const search = async () => {
       const phone = normalizePhoneNumber(inputEl.value.trim());
       if (!phone) {
-        showResult("unknown");
+        showResult();
         return;
       }
 
       const firestoreRecord = await findLatestFirestoreRecord(phone);
       if (firestoreRecord && firestoreRecord.tag) {
-        showResult(firestoreRecord.tag, firestoreRecord.note || "");
+        showResult({
+          tag: firestoreRecord.tag,
+          label: firestoreRecord.label,
+          note: firestoreRecord.note || "",
+          sourceName: firestoreRecord.sourceName || "Firestore user report",
+          sourceType: firestoreRecord.sourceType || "user_report",
+          confidence: firestoreRecord.confidence || "user-submitted"
+        });
         return;
       }
 
-      const fromJson = records.find((record) => isPhoneMatch(record.normalizedPhone || record.phone || "", phone));
-      const fallbackTag = fromJson && fromJson.label ? fromJson.label : "unknown";
-      showResult(fallbackTag, fromJson && fromJson.note ? fromJson.note : "");
+      const mexicoSeedRecord = findRecordFromArray(mexicoSeedRecords, phone);
+      if (mexicoSeedRecord && mexicoSeedRecord.tag) {
+        showResult(mexicoSeedRecord);
+        return;
+      }
+
+      const fallbackRecord = findRecordFromArray(fallbackRecords, phone);
+      if (fallbackRecord) {
+        showResult({
+          tag: fallbackRecord.label || "unknown",
+          label: fallbackRecord.tag || null,
+          note: fallbackRecord.note || "",
+          sourceName: fallbackRecord.sourceName || "scam_numbers.json",
+          sourceType: fallbackRecord.sourceType || "fallback_json",
+          confidence: fallbackRecord.confidence || "legacy"
+        });
+        return;
+      }
+
+      showResult();
     };
 
     const submitReport = async () => {
@@ -395,22 +452,36 @@
       if (event.key === "Enter") submitReport();
     });
 
+    fetch("./data/mexico_seed_phone_numbers.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to load mexico seed data");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        mexicoSeedRecords = Array.isArray(data) ? data : [];
+      })
+      .catch(() => {
+        mexicoSeedRecords = [];
+      });
+
     fetch("./scam_numbers.json")
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Failed to load data");
+          throw new Error("Failed to load fallback data");
         }
         return response.json();
       })
       .then((data) => {
         const loaded = Array.isArray(data.records) ? data.records : [];
-        records = loaded.map((record) => ({
+        fallbackRecords = loaded.map((record) => ({
           ...record,
           normalizedPhone: normalizePhoneNumber(record.phone || "")
         }));
       })
       .catch(() => {
-        records = [];
+        fallbackRecords = [];
       });
   </script>
 </body>
