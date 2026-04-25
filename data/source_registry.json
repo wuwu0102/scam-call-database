@@ -1,0 +1,30 @@
+[
+  {
+    "source": "SAT México",
+    "classification": "official",
+    "defaultConfidence": "high",
+    "refreshPolicy": "manual",
+    "guidance": "manual refresh preferred"
+  },
+  {
+    "source": "Seguridad BC Extorsión Telefónica",
+    "classification": "official",
+    "defaultConfidence": "medium",
+    "refreshPolicy": "monthly",
+    "guidance": "refresh monthly"
+  },
+  {
+    "source": "SSP Michoacán",
+    "classification": "official",
+    "defaultConfidence": "medium",
+    "refreshPolicy": "historical_seed",
+    "guidance": "historical seed"
+  },
+  {
+    "source": "Tellows México",
+    "classification": "community",
+    "defaultConfidence": "low_medium",
+    "refreshPolicy": "manual_review_only",
+    "guidance": "do not auto-import without review"
+  }
+]
