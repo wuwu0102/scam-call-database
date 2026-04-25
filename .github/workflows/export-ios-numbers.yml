@@ -39,13 +39,18 @@ jobs:
         run: mkdir -p data
 
       - name: Write Firebase service account credentials
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
         run: |
-          printf '%s' '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}' > "$RUNNER_TEMP/firebase-service-account.json"
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT_JSON" > "$RUNNER_TEMP/firebase-service-account.json"
 
       - name: Export iOS caller ID JSON from Firestore
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-service-account.json
         run: node scripts/export_ios_numbers_from_firestore.js
+
+      - name: Validate generated iOS JSON
+        run: node -e "JSON.parse(require('fs').readFileSync('data/ios_numbers.json','utf8')); console.log('ios_numbers.json valid')"
 
       - name: Commit updated iOS caller ID export
         run: |
@@ -55,7 +60,7 @@ jobs:
           fi
 
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
           git add data/ios_numbers.json
           git commit -m "Update iOS caller ID export"
