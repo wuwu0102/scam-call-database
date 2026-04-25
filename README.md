@@ -65,3 +65,15 @@ Automated Mexico source update pipeline
 - iOS real incoming-call caller ID requires native iOS Call Directory Extension, Xcode, Apple signing, and real device testing.
 - Android incoming-call caller ID requires native Android call screening/caller-ID integration and policy review.
 - This repository does not claim App Store/Play Store build verification in this environment.
+
+## GitHub Actions: iOS caller ID export
+
+This repository includes `.github/workflows/export-ios-numbers.yml` to export `data/ios_numbers.json` from Firestore on every push to `main` (and via manual `workflow_dispatch`).
+
+### Required GitHub Secret
+
+Set the repository secret `FIREBASE_SERVICE_ACCOUNT_JSON` to a valid Firebase service account JSON string.
+
+- The workflow writes this secret to a temporary file at runtime.
+- The script reads credentials from `GOOGLE_APPLICATION_CREDENTIALS`.
+- Do **not** hardcode credentials in the repository.

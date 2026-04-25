@@ -1,0 +1,62 @@
+name: Export iOS caller ID JSON
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  export-ios-numbers:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate required secret
+        run: |
+          if [ -z "${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}" ]; then
+            echo "Missing required secret: FIREBASE_SERVICE_ACCOUNT_JSON"
+            exit 1
+          fi
+
+      - name: Ensure firebase-admin dependency is available
+        run: |
+          node -e "require.resolve('firebase-admin')" 2>/dev/null || npm install firebase-admin --no-save
+
+      - name: Ensure data directory exists
+        run: mkdir -p data
+
+      - name: Write Firebase service account credentials
+        run: |
+          printf '%s' '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}' > "$RUNNER_TEMP/firebase-service-account.json"
+
+      - name: Export iOS caller ID JSON from Firestore
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-service-account.json
+        run: node scripts/export_ios_numbers_from_firestore.js
+
+      - name: Commit updated iOS caller ID export
+        run: |
+          if git diff --quiet -- data/ios_numbers.json; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/ios_numbers.json
+          git commit -m "Update iOS caller ID export"
+          git push origin HEAD:main
