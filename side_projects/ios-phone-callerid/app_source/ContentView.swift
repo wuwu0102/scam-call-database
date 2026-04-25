@@ -46,10 +46,10 @@ struct ContentView: View {
                     }
                     .buttonStyle(.borderedProminent)
 
-                    Button("Import bundled sample JSON into shared app group") {
+                    Button("Import bundled ios_numbers.json into shared app group") {
                         do {
                             try SharedPhoneNumberStore.copyBundledFallbackToSharedContainer()
-                            importResultMessage = "Imported phone_numbers_sample.json into shared app group container."
+                            importResultMessage = "Imported ios_numbers.json into shared app group container."
                         } catch {
                             importResultMessage = "Import failed: \(error.localizedDescription)"
                         }
