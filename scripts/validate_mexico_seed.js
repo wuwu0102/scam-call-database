@@ -8,12 +8,12 @@ const requiredTopFields = [
   'country',
   'tag',
   'label',
-  'sourceType',
-  'sourceName',
+  'type',
+  'confidence',
+  'source',
   'sourceUrl',
   'note',
-  'confidence',
-  'createdAt',
+  'updatedAt',
 ];
 const allowedTags = new Set(['scam', 'suspicious', 'safe', 'unknown']);
 

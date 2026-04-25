@@ -1,0 +1,32 @@
+name: Merge seed database
+
+on:
+  workflow_dispatch:
+
+jobs:
+  merge-seed-database:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Merge seed database
+        run: node scripts/merge_seed_database.js
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scam_numbers.json data/ios_numbers.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "chore: merge mexico seed database"
+          git push

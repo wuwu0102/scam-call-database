@@ -77,3 +77,15 @@ Set the repository secret `FIREBASE_SERVICE_ACCOUNT_JSON` to a valid Firebase se
 - The workflow writes this secret to a temporary file at runtime.
 - The script reads credentials from `GOOGLE_APPLICATION_CREDENTIALS`.
 - Do **not** hardcode credentials in the repository.
+
+## Mexico phone database strategy
+
+- Official sources are imported as high/medium confidence seed records.
+- Community sources require manual review before merge.
+- Firebase user reports are not automatically trusted.
+- iOS caller ID export uses only reviewed `scam`/`suspicious` records.
+- Automation command:
+
+```bash
+node scripts/merge_seed_database.js
+```
