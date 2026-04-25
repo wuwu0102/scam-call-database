@@ -78,6 +78,21 @@ Set the repository secret `FIREBASE_SERVICE_ACCOUNT_JSON` to a valid Firebase se
 - The script reads credentials from `GOOGLE_APPLICATION_CREDENTIALS`.
 - Do **not** hardcode credentials in the repository.
 
+## Import Mexico seed data to Firestore
+
+Use `scripts/import_mexico_seed_to_firestore.js` to import records from `data/mexico_seed_phone_numbers.json` into Firestore collection `phone_numbers`.
+
+### GitHub Secret required
+
+- `FIREBASE_SERVICE_ACCOUNT_JSON`
+
+### Local command
+
+```bash
+node scripts/import_mexico_seed_to_firestore.js --dry-run
+node scripts/import_mexico_seed_to_firestore.js
+```
+
 ## Mexico phone database strategy
 
 - Official sources are imported as high/medium confidence seed records.

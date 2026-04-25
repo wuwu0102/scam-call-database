@@ -1,0 +1,37 @@
+name: Import Mexico seed to Firestore
+
+on:
+  workflow_dispatch:
+
+jobs:
+  import-mexico-seed:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate required secret
+        run: |
+          if [ -z "${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}" ]; then
+            echo "Missing required secret: FIREBASE_SERVICE_ACCOUNT_JSON"
+            exit 1
+          fi
+
+      - name: Install firebase-admin
+        run: npm install firebase-admin --no-save
+
+      - name: Dry run import
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+        run: node scripts/import_mexico_seed_to_firestore.js --dry-run
+
+      - name: Import Mexico seed to Firestore
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+        run: node scripts/import_mexico_seed_to_firestore.js
