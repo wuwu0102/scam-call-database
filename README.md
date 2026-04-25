@@ -93,6 +93,17 @@ node scripts/import_mexico_seed_to_firestore.js --dry-run
 node scripts/import_mexico_seed_to_firestore.js
 ```
 
+
+## Automated Mexico number collection
+
+The workflow `.github/workflows/collect-and-import-mexico-numbers.yml` runs every 5 days at 03:00 UTC (`0 3 */5 * *`) and can also be started manually with `workflow_dispatch`.
+
+- Public official sources are collected and normalized automatically.
+- Official records can be auto-imported to Firestore with confidence metadata.
+- Community/social source records are written to a review queue and are **not** auto-imported.
+- User reports still require trust/review gating before caller ID export.
+- This review pipeline reduces false positives and abuse risk.
+
 ## Mexico phone database strategy
 
 - Official sources are imported as high/medium confidence seed records.

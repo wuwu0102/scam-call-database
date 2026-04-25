@@ -1,0 +1,62 @@
+name: Collect and import Mexico numbers
+
+on:
+  schedule:
+    - cron: '0 3 */5 * *'
+  workflow_dispatch:
+
+jobs:
+  collect-and-import:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate required secret
+        run: |
+          if [ -z "${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}" ]; then
+            echo "Missing required secret: FIREBASE_SERVICE_ACCOUNT_JSON"
+            exit 1
+          fi
+
+      - name: Install firebase-admin
+        run: npm install firebase-admin --no-save
+
+      - name: Collect Mexico public phone sources
+        run: node scripts/collect_mexico_phone_sources.js
+
+      - name: Dry run import to Firestore
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+        run: node scripts/import_mexico_seed_to_firestore.js --dry-run
+
+      - name: Import to Firestore
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+        run: node scripts/import_mexico_seed_to_firestore.js
+
+      - name: Commit updated data files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add \
+            data/collected_mexico_numbers.json \
+            data/review_queue_mexico_numbers.json \
+            data/collector_run_log.json \
+            data/ios_numbers.json \
+            scam_numbers.json
+
+          if git diff --cached --quiet; then
+            echo "No data file changes to commit."
+            exit 0
+          fi
+
+          git commit -m "chore: update collected mexico numbers"
+          git push
