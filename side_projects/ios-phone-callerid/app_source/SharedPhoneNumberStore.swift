@@ -3,8 +3,8 @@ import Foundation
 struct SharedPhoneNumberStore {
     // REPLACE with your real app group identifier.
     static let appGroupIdentifier = "group.com.wuwu0102.scamcall"
-    static let sharedJSONFileName = "phone_numbers.json"
-    static let bundledFallbackJSONName = "phone_numbers_sample"
+    static let sharedJSONFileName = "ios_numbers.json"
+    static let bundledFallbackJSONName = "ios_numbers"
 
     static func sharedJSONFileURL() throws -> URL {
         guard let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupIdentifier) else {
