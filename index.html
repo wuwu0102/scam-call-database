@@ -230,52 +230,6 @@
       text-align: center;
     }
 
-    .result-actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .result-actions button {
-      flex: 1;
-      border: 0;
-      border-radius: 10px;
-      padding: 12px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    #copyResultBtn {
-      background: #f1f5f9;
-      color: #111;
-    }
-
-    #shareWhatsappBtn {
-      background: #25D366;
-      color: #fff;
-    }
-
-    #reportShareBlock {
-      margin-top: 10px;
-      padding: 10px;
-      border-radius: 10px;
-      background: #f0fdf4;
-      color: #166534;
-      font-size: 0.9rem;
-      line-height: 1.35;
-    }
-
-    #reportShareBtn {
-      margin-top: 8px;
-      background: #25D366;
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      padding: 10px 12px;
-      font-weight: 700;
-      width: 100%;
-      cursor: pointer;
-    }
 
     @media (max-width: 600px) {
       body {
@@ -305,9 +259,6 @@
         font-size: 11px;
       }
 
-      .result-actions {
-        flex-direction: column;
-      }
     }
   </style>
 </head>
@@ -339,10 +290,6 @@
         <div id="resultMeta" class="result-meta"></div>
         <div id="resultNote" class="result-note"></div>
       </div>
-      <div id="resultActions" class="result-actions" hidden>
-        <button id="copyResultBtn" type="button">Copiar resultado</button>
-        <button id="shareWhatsappBtn" type="button">Compartir por WhatsApp</button>
-      </div>
     </section>
 
     <section class="section">
@@ -358,10 +305,6 @@
       <input id="reportNoteInput" type="text" placeholder="Nota opcional" autocomplete="off" />
       <button id="reportBtn" type="button">Guardar reporte</button>
       <div id="reportMsg" aria-live="polite"></div>
-      <div id="reportShareBlock" hidden>
-        <div>Gracias. Tu reporte ayuda a proteger a más personas.</div>
-        <button id="reportShareBtn" type="button">Compartir este número por WhatsApp</button>
-      </div>
     </section>
     <p class="disclaimer">Los reportes son informativos. Verifica antes de responder o devolver llamadas.</p>
   </main>
@@ -409,11 +352,6 @@
     const reportNoteEl = document.getElementById("reportNoteInput");
     const reportBtn = document.getElementById("reportBtn");
     const reportMsgEl = document.getElementById("reportMsg");
-    const resultActionsEl = document.getElementById("resultActions");
-    const copyResultBtn = document.getElementById("copyResultBtn");
-    const shareWhatsappBtn = document.getElementById("shareWhatsappBtn");
-    const reportShareBlockEl = document.getElementById("reportShareBlock");
-    const reportShareBtn = document.getElementById("reportShareBtn");
 
     const lang = "es-MX";
     function normalizeMXNumber(input) {
@@ -502,9 +440,6 @@
       return typeMap[normalized] || typeMap[rawValue.toLowerCase()] || rawValue;
     };
 
-    let currentShareText = "";
-    let currentResultKnown = false;
-    let lastReportedNumber = "";
 
     const getResolvedMeta = ({ sourceType = "", confidence = "", reviewStatus = "" } = {}) => {
       const normalizedType = String(sourceType || "user_report").toLowerCase();
@@ -522,8 +457,6 @@
       const displayLabel = getDisplayLabel(tag || "unknown", label);
       const badgeText = LABELS[styleKey][lang];
       const trustedMeta = getResolvedMeta({ sourceType, confidence, reviewStatus });
-      currentResultKnown = styleKey !== "unknown";
-      currentShareText = `Alerta Número MX: el número ${number || "desconocido"} aparece como ${displayLabel}. Fuente: ${sourceName || "Usuario"}. Verifica antes de responder.`;
 
       resultCardEl.className = `result-card result-${styleKey}`;
       resultBadgeEl.textContent = badgeText;
@@ -538,7 +471,6 @@
 
       const resolvedNote = getLocalizedNote(note);
       resultNoteEl.textContent = resolvedNote ? `Nota: ${resolvedNote}` : "";
-      resultActionsEl.hidden = !currentResultKnown;
     };
 
     const setReportMessage = (message, type) => {
@@ -642,7 +574,6 @@
     const search = async () => {
       const phone = normalizeMXNumber(inputEl.value.trim());
       searchMsgEl.textContent = "";
-      reportShareBlockEl.hidden = true;
       if (!phone) {
         searchMsgEl.textContent = "Ingresa un número válido de México";
         showResult();
@@ -697,7 +628,6 @@
       const normalizedPhone = normalizeMXNumber(originalPhone);
       const tag = reportLabelEl.value;
       const note = reportNoteEl.value.trim();
-      reportShareBlockEl.hidden = true;
 
       if (!normalizedPhone) {
         setReportMessage("Ingresa un número válido de México", "error");
@@ -745,35 +675,11 @@
         reportPhoneEl.value = "";
         reportLabelEl.value = "scam";
         reportNoteEl.value = "";
-        setReportMessage("Reporte guardado", "success");
-        lastReportedNumber = normalizedPhone;
-        reportShareBlockEl.hidden = false;
+        setReportMessage("Gracias. Tu reporte ayuda a proteger a más personas.", "success");
       } catch {
         setReportMessage("No se pudo guardar el reporte", "error");
       }
     };
-
-    copyResultBtn.addEventListener("click", async () => {
-      if (!currentResultKnown || !currentShareText) return;
-      try {
-        await navigator.clipboard.writeText(currentShareText);
-        searchMsgEl.textContent = "Resultado copiado";
-      } catch {
-        searchMsgEl.textContent = "No se pudo copiar el resultado";
-      }
-    });
-
-    shareWhatsappBtn.addEventListener("click", () => {
-      if (!currentResultKnown || !currentShareText) return;
-      const url = `https://wa.me/?text=${encodeURIComponent(currentShareText)}`;
-      window.open(url, "_blank", "noopener");
-    });
-
-    reportShareBtn.addEventListener("click", () => {
-      const text = `Acabo de reportar este número en Alerta Número MX: ${lastReportedNumber}. Puedes revisarlo aquí: https://wuwu0102.github.io/scam-call-database/`;
-      const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
-      window.open(url, "_blank", "noopener");
-    });
 
     searchBtn.addEventListener("click", () => {
       search();
