@@ -193,33 +193,45 @@
     }
 
     #statusPanel {
-      position: fixed;
-      top: 12px;
-      right: 16px;
-      font-size: 12px;
-      color: #333;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 10px 12px;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-      z-index: 999;
-      line-height: 1.4;
+      max-width: 680px;
+      margin: 12px auto 18px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      color: #444;
+      font-size: 13px;
+      line-height: 1.5;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
     #statusPanel div {
-      margin-bottom: 4px;
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 600px) {
+      #statusPanel {
+        margin: 8px 16px 16px;
+        font-size: 12px;
+        gap: 6px 12px;
+      }
     }
   </style>
 </head>
 <body>
-  <div id="statusPanel">
-    <div id="nextUpdate"></div>
-    <div id="totalCount"></div>
-    <div id="todayCount"></div>
-  </div>
   <main class="app">
     <h1>Alerta Número MX</h1>
     <p class="subtitle">Consulta y reporta números sospechosos en México.</p>
+    <div id="statusPanel">
+      <div id="nextUpdate"></div>
+      <div id="totalCount"></div>
+      <div id="todayCount"></div>
+    </div>
     <section class="section">
       <h2>Buscar número</h2>
       <div id="setupMsg" aria-live="polite"></div>
