@@ -192,6 +192,13 @@
       line-height: 1.4;
     }
 
+    .input-helper {
+      margin: -6px 0 10px;
+      font-size: 0.83rem;
+      color: #4b5563;
+      text-align: left;
+    }
+
     #statusPanel {
       max-width: 680px;
       margin: 12px auto 18px;
@@ -235,7 +242,8 @@
     <section class="section">
       <h2>Buscar número</h2>
       <div id="setupMsg" aria-live="polite"></div>
-      <input id="phoneInput" type="tel" placeholder="Número de teléfono" autocomplete="off" />
+      <input id="phoneInput" type="tel" placeholder="Número de teléfono (con o sin +52)" autocomplete="off" />
+      <p class="input-helper">Puedes escribirlo con o sin +52.</p>
       <button id="searchBtn" type="button">Buscar</button>
       <div id="searchMsg" aria-live="polite"></div>
       <div id="resultCard" class="result-card result-unknown" aria-live="polite">
@@ -251,7 +259,8 @@
 
     <section class="section">
       <h2>Reportar número</h2>
-      <input id="reportPhoneInput" type="tel" placeholder="Número de teléfono" autocomplete="off" />
+      <input id="reportPhoneInput" type="tel" placeholder="Número de teléfono (con o sin +52)" autocomplete="off" />
+      <p class="input-helper">Puedes escribirlo con o sin +52.</p>
       <select id="reportLabelInput" aria-label="Tipo de reporte">
         <option value="scam">Fraude</option>
         <option value="suspicious">Sospechoso</option>
@@ -270,7 +279,10 @@
       collection,
       getFirestore,
       getDocs,
-      addDoc
+      addDoc,
+      query,
+      where,
+      limit
     } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
     const firebaseConfig = {
@@ -307,22 +319,37 @@
     const reportMsgEl = document.getElementById("reportMsg");
 
     const lang = "es-MX";
-    const normalizePhoneNumber = (value) => String(value || "").replace(/\D/g, "");
-    const buildPhoneKeys = (value) => {
-      const normalized = normalizePhoneNumber(value);
-      if (!normalized) return [];
+    function normalizeMXNumber(input) {
+      if (!input) return "";
 
-      const keys = [normalized];
-      if (normalized.length === 11 && normalized.startsWith("1")) {
-        keys.push(normalized.slice(1));
+      let num = String(input).replace(/\D/g, "");
+
+      if (num.length === 12 && num.startsWith("52")) {
+        num = num.slice(2);
       }
-      return keys;
-    };
+
+      if (num.length === 13 && num.startsWith("521")) {
+        num = num.slice(3);
+      }
+
+      if (num.length > 10) {
+        num = num.slice(-10);
+      }
+
+      return num;
+    }
+
+    function isValidMXNumber(num) {
+      return /^\d{10}$/.test(num);
+    }
 
     const isPhoneMatch = (left, right) => {
-      const leftKeys = buildPhoneKeys(left);
-      const rightKeys = buildPhoneKeys(right);
-      return leftKeys.some((leftKey) => rightKeys.includes(leftKey));
+      const leftNormalized = normalizeMXNumber(left);
+      const rightNormalized = normalizeMXNumber(right);
+      if (!isValidMXNumber(leftNormalized) || !isValidMXNumber(rightNormalized)) {
+        return false;
+      }
+      return leftNormalized === rightNormalized;
     };
 
     const isKnownLabel = (label) => Object.hasOwn(LABELS, label);
@@ -486,10 +513,15 @@
       records.find((record) => isPhoneMatch(record.normalizedNumber || record.normalizedPhone || record.number || record.phone || "", phoneNormalized));
 
     const search = async () => {
-      const phone = normalizePhoneNumber(inputEl.value.trim());
+      const phone = normalizeMXNumber(inputEl.value.trim());
       searchMsgEl.textContent = "";
       if (!phone) {
         searchMsgEl.textContent = "Ingresa un número de teléfono";
+        showResult();
+        return;
+      }
+      if (!isValidMXNumber(phone)) {
+        searchMsgEl.textContent = "Ingresa un número válido de México";
         showResult();
         return;
       }
@@ -531,12 +563,16 @@
 
     const submitReport = async () => {
       const originalPhone = reportPhoneEl.value.trim();
-      const normalizedPhone = normalizePhoneNumber(originalPhone);
+      const normalizedPhone = normalizeMXNumber(originalPhone);
       const tag = reportLabelEl.value;
       const note = reportNoteEl.value.trim();
 
-      if (!normalizedPhone || !isKnownLabel(tag)) {
+      if (!normalizedPhone) {
         setReportMessage("Ingresa un número de teléfono", "error");
+        return;
+      }
+      if (!isValidMXNumber(normalizedPhone) || !isKnownLabel(tag)) {
+        setReportMessage("Ingresa un número válido de México", "error");
         return;
       }
 
@@ -546,8 +582,21 @@
       }
 
       try {
+        const existingSnapshot = await getDocs(
+          query(
+            collection(firestore, COLLECTION_NAME),
+            where("normalizedNumber", "==", normalizedPhone),
+            limit(1)
+          )
+        );
+
+        if (!existingSnapshot.empty) {
+          setReportMessage("Este número ya fue reportado", "success");
+          return;
+        }
+
         await addDoc(collection(firestore, COLLECTION_NAME), {
-          number: originalPhone,
+          number: normalizedPhone,
           normalizedNumber: normalizedPhone,
           tag,
           lang,
@@ -605,7 +654,7 @@
         const loaded = Array.isArray(data.records) ? data.records : [];
         fallbackRecords = loaded.map((record) => ({
           ...record,
-          normalizedPhone: normalizePhoneNumber(record.phone || "")
+          normalizedPhone: normalizeMXNumber(record.phone || "")
         }));
       })
       .catch(() => {
