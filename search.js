@@ -12,13 +12,33 @@ const UNKNOWN_RESULT = {
   }
 };
 
-function normalizePhoneNumber(value) {
-  return String(value || '').replace(/\D/g, '');
+function normalizeMXNumber(input) {
+  if (!input) return '';
+
+  let num = String(input).replace(/\D/g, '');
+
+  if (num.length === 12 && num.startsWith('52')) {
+    num = num.slice(2);
+  }
+
+  if (num.length === 13 && num.startsWith('521')) {
+    num = num.slice(3);
+  }
+
+  if (num.length > 10) {
+    num = num.slice(-10);
+  }
+
+  return num;
+}
+
+function isValidMXNumber(num) {
+  return /^\d{10}$/.test(num);
 }
 
 async function lookupPhoneNumber(phoneNumber, options = {}) {
-  const normalizedNumber = normalizePhoneNumber(phoneNumber);
-  if (!normalizedNumber) {
+  const normalizedNumber = normalizeMXNumber(phoneNumber);
+  if (!isValidMXNumber(normalizedNumber)) {
     return { ...UNKNOWN_RESULT };
   }
 
@@ -87,7 +107,8 @@ async function lookupPhoneNumber(phoneNumber, options = {}) {
 
 module.exports = {
   COLLECTION_NAME,
-  normalizePhoneNumber,
+  normalizeMXNumber,
+  isValidMXNumber,
   lookupPhoneNumber,
   UNKNOWN_RESULT
 };
