@@ -5,76 +5,73 @@ const admin = require('firebase-admin');
 const OUTPUT_PATH = path.join(__dirname, '..', 'data', 'ios_numbers.json');
 const COLLECTION = 'phone_numbers';
 
-function normalizeToE164Digits(value) {
+function normalizeToNumeric(value) {
   const digits = String(value || '').replace(/\D/g, '');
-  if (!digits) return null;
+  if (!/^\d{10,15}$/.test(digits)) return null;
 
   const number = Number(digits);
-  if (!Number.isSafeInteger(number)) {
-    return null;
-  }
-
+  if (!Number.isSafeInteger(number)) return null;
   return number;
 }
 
-function extractLabel(record) {
-  const note = record.note;
-
-  if (typeof note === 'string' && note.trim()) {
-    return note.trim();
+function resolveLabel(record) {
+  if (typeof record.label === 'string' && record.label.trim()) {
+    return record.label.trim();
   }
 
-  if (note && typeof note === 'object' && !Array.isArray(note)) {
-    const preferredKeys = ['en', 'es-MX', 'zh-TW'];
+  const tag = String(record.tag || '').toLowerCase();
+  if (tag === 'scam') return 'Posible fraude';
+  if (tag === 'suspicious') return 'Número sospechoso';
+  if (tag === 'safe') return 'Seguro';
+  return 'Desconocido';
+}
 
-    for (const key of preferredKeys) {
-      const value = note[key];
-      if (typeof value === 'string' && value.trim()) {
-        return value.trim();
-      }
-    }
-
-    for (const value of Object.values(note)) {
-      if (typeof value === 'string' && value.trim()) {
-        return value.trim();
-      }
-    }
+function resolveUpdatedAt(record) {
+  if (typeof record.updatedAt === 'string' && record.updatedAt.trim()) {
+    return record.updatedAt.trim();
   }
 
-  return 'Scam';
+  if (record.updatedAt && typeof record.updatedAt.toDate === 'function') {
+    return record.updatedAt.toDate().toISOString().slice(0, 10);
+  }
+
+  return '';
 }
 
 async function main() {
   if (!admin.apps.length) {
-    admin.initializeApp();
+    const raw = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
+    if (raw && raw.trim()) {
+      admin.initializeApp({
+        credential: admin.credential.cert(JSON.parse(raw)),
+      });
+    } else {
+      admin.initializeApp();
+    }
   }
 
   const db = admin.firestore();
   const snapshot = await db.collection(COLLECTION).get();
-
   const deduped = new Map();
 
   snapshot.forEach((doc) => {
     const record = doc.data() || {};
-    if (String(record.tag || '').toLowerCase() !== 'scam') {
-      return;
-    }
+    const number = normalizeToNumeric(record.normalizedNumber || record.number);
+    if (number === null) return;
 
-    const number = normalizeToE164Digits(record.normalizedNumber);
-    if (number === null) {
-      return;
-    }
+    const next = {
+      number,
+      label: resolveLabel(record),
+      updatedAt: resolveUpdatedAt(record),
+    };
 
-    const label = extractLabel(record);
     const existing = deduped.get(number);
-
-    if (!existing || (existing.label === 'Scam' && label !== 'Scam')) {
-      deduped.set(number, { number, label });
+    if (!existing || (!existing.updatedAt && next.updatedAt)) {
+      deduped.set(number, next);
     }
   });
 
   const output = Array.from(deduped.values()).sort((a, b) => a.number - b.number);
-
   fs.writeFileSync(OUTPUT_PATH, `${JSON.stringify(output, null, 2)}\n`, 'utf8');
   console.log(`Exported ${output.length} records to ${OUTPUT_PATH}`);
 }
