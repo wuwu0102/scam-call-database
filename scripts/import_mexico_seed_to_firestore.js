@@ -19,15 +19,12 @@ const ALLOWED_FIELDS = [
   'sources',
   'note',
   'reviewStatus',
-  'collectedAt',
   'updatedAt',
   'importedAt',
 ];
 
 function parseArgs(argv) {
-  return {
-    dryRun: argv.includes('--dry-run'),
-  };
+  return { dryRun: argv.includes('--dry-run') };
 }
 
 function readServiceAccountFromEnv() {
@@ -40,54 +37,109 @@ function readServiceAccountFromEnv() {
 
   try {
     return JSON.parse(raw);
-  } catch (error) {
+  } catch {
     console.error('Invalid FIREBASE_SERVICE_ACCOUNT_JSON: must be valid JSON');
     process.exit(1);
   }
 }
 
 function readRecordsFromPath(inputPath) {
-  if (!fs.existsSync(inputPath)) {
-    return [];
-  }
-
-  const raw = fs.readFileSync(inputPath, 'utf8');
-  const parsed = JSON.parse(raw);
-
+  if (!fs.existsSync(inputPath)) return [];
+  const parsed = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
   if (!Array.isArray(parsed)) {
     throw new Error(`Expected ${path.basename(inputPath)} to contain an array`);
   }
-
   return parsed;
 }
 
-function isImportableRecord(record) {
-  const tag = String(record.tag || '').toLowerCase();
-  const type = String(record.type || record.sourceType || '').toLowerCase();
-  const reviewStatus = String(record.reviewStatus || '').toLowerCase();
-  const importableTag = tag === 'scam' || tag === 'suspicious';
-  const importableTrust = reviewStatus === 'auto_approved' || type === 'official';
+function normalizeMXNumber(input) {
+  if (!input) return '';
+  let num = String(input).replace(/\D/g, '');
+  if (num.length === 12 && num.startsWith('52')) num = num.slice(2);
+  if (num.length === 13 && num.startsWith('521')) num = num.slice(3);
+  if (num.length > 10) num = num.slice(-10);
+  return num;
+}
 
-  return importableTag && importableTrust;
+function isValidMXNumber(num) {
+  return /^\d{10}$/.test(num);
+}
+
+function priority(record) {
+  const type = String(record.type || '').toLowerCase();
+  const confidence = String(record.confidence || '').toLowerCase();
+
+  if (type === 'official' && confidence === 'high') return 5;
+  if (type === 'official' && confidence === 'medium') return 4;
+  if (type === 'media' && confidence === 'medium') return 3;
+  if (type === 'web' && confidence === 'low') return 2;
+  if (type === 'user_report') return 1;
+  return 0;
+}
+
+function sanitizeImportRecord(record) {
+  const normalized = normalizeMXNumber(record.normalizedNumber || record.number || '');
+  if (!isValidMXNumber(normalized)) return null;
+
+  const type = String(record.type || record.sourceType || '').toLowerCase();
+  const reviewStatus = String(record.reviewStatus || (type === 'official' ? 'auto_approved' : '')).toLowerCase();
+  let tag = String(record.tag || '').toLowerCase();
+
+  if (type === 'official' && reviewStatus === 'auto_approved') {
+    if (!['scam', 'suspicious'].includes(tag)) {
+      tag = 'scam';
+    }
+  } else if ((type === 'media' || type === 'web') && reviewStatus === 'pending_review') {
+    tag = 'suspicious';
+  } else {
+    return null;
+  }
+
+  const source = record.source || record.sourceName || 'Fuente pública';
+  const sourceUrl = record.sourceUrl || '';
+
+  return {
+    number: normalized,
+    normalizedNumber: normalized,
+    country: record.country || 'MX',
+    tag,
+    label: record.label || (tag === 'scam' ? 'Posible fraude' : 'Número sospechoso'),
+    type: type || 'official',
+    confidence: record.confidence || (type === 'official' ? 'medium' : 'low'),
+    source,
+    sourceUrl,
+    sources: Array.isArray(record.sources)
+      ? record.sources
+      : [{ source, sourceUrl, type: type || 'official', confidence: record.confidence || 'medium' }],
+    note: record.note || 'Número detectado en fuente pública.',
+    reviewStatus,
+    updatedAt: record.updatedAt || new Date().toISOString().slice(0, 10),
+  };
 }
 
 function mergeByNormalizedNumber(records) {
   const merged = new Map();
 
   for (const record of records) {
-    const normalized = String(record.normalizedNumber || '').trim();
-    const key = normalized || `generated:${JSON.stringify(record)}`;
+    const sanitized = sanitizeImportRecord(record);
+    if (!sanitized) continue;
 
-    if (!merged.has(key)) {
-      merged.set(key, record);
+    const existing = merged.get(sanitized.normalizedNumber);
+    if (!existing) {
+      merged.set(sanitized.normalizedNumber, sanitized);
       continue;
     }
 
-    const existing = merged.get(key);
-    merged.set(key, {
-      ...existing,
-      ...record,
-      sources: [...(existing.sources || []), ...(record.sources || [])],
+    const sourceMap = new Map();
+    [...(existing.sources || []), ...(sanitized.sources || [])].forEach((sourceRef) => {
+      const key = `${sourceRef.sourceUrl || ''}::${sourceRef.source || ''}`;
+      sourceMap.set(key, sourceRef);
+    });
+
+    const keep = priority(existing) >= priority(sanitized) ? existing : sanitized;
+    merged.set(sanitized.normalizedNumber, {
+      ...keep,
+      sources: Array.from(sourceMap.values()),
     });
   }
 
@@ -96,56 +148,20 @@ function mergeByNormalizedNumber(records) {
 
 function readSeedRecords() {
   const allRecords = INPUT_PATHS.flatMap(readRecordsFromPath);
-  return mergeByNormalizedNumber(allRecords).filter(isImportableRecord);
+  return mergeByNormalizedNumber(allRecords);
 }
 
 function buildPayload(record, importedAt) {
   const payload = {
-    number: record.number,
-    normalizedNumber: record.normalizedNumber,
-    country: record.country,
-    tag: record.tag,
-    label: record.label,
-    type: record.type || record.sourceType,
-    confidence: record.confidence,
-    source: record.source || record.sourceName,
-    sourceUrl: record.sourceUrl,
-    sources: record.sources,
-    note: record.note,
-    reviewStatus: record.reviewStatus,
-    collectedAt: record.collectedAt,
-    updatedAt: record.updatedAt || new Date().toISOString().slice(0, 10),
+    ...record,
     importedAt,
   };
 
   const cleaned = {};
-
   for (const field of ALLOWED_FIELDS) {
-    if (payload[field] !== undefined) {
-      cleaned[field] = payload[field];
-    }
+    if (payload[field] !== undefined) cleaned[field] = payload[field];
   }
-
   return cleaned;
-}
-
-function resolveDocRef(collectionRef, record) {
-  const normalized = String(record.normalizedNumber || '').trim();
-
-  if (normalized) {
-    return {
-      docRef: collectionRef.doc(normalized),
-      docId: normalized,
-      usedNormalizedId: true,
-    };
-  }
-
-  const generated = collectionRef.doc();
-  return {
-    docRef: generated,
-    docId: generated.id,
-    usedNormalizedId: false,
-  };
 }
 
 async function main() {
@@ -154,16 +170,11 @@ async function main() {
 
   if (dryRun) {
     const importedAt = new Date().toISOString();
-    console.log(`Dry run enabled. Found ${records.length} importable records in configured inputs.`);
-
+    console.log(`Dry run enabled. Found ${records.length} importable records.`);
     records.forEach((record, index) => {
-      const normalized = String(record.normalizedNumber || '').trim();
-      const docId = normalized || '[auto-generated-id]';
       const payload = buildPayload(record, importedAt);
-      console.log(`[#${index + 1}] docId=${docId} merge=true payload=${JSON.stringify(payload)}`);
+      console.log(`[#${index + 1}] docId=${record.normalizedNumber} merge=true payload=${JSON.stringify(payload)}`);
     });
-
-    console.log('Dry run complete. No changes were written to Firestore.');
     return;
   }
 
@@ -171,17 +182,14 @@ async function main() {
 
   let admin;
   try {
-    // firebase-admin is only required for actual writes.
     admin = require('firebase-admin');
-  } catch (error) {
+  } catch {
     console.error('Missing dependency: firebase-admin. Install with: npm install firebase-admin');
     process.exit(1);
   }
 
   if (!admin.apps.length) {
-    admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount),
-    });
+    admin.initializeApp({ credential: admin.credential.cert(serviceAccount) });
   }
 
   const db = admin.firestore();
@@ -189,29 +197,14 @@ async function main() {
   const importedAt = admin.firestore.FieldValue.serverTimestamp();
 
   let importedCount = 0;
-  let usedNormalizedIdCount = 0;
-  let generatedIdCount = 0;
-
   for (const record of records) {
-    const { docRef, usedNormalizedId, docId } = resolveDocRef(collectionRef, record);
     const payload = buildPayload(record, importedAt);
-
-    await docRef.set(payload, { merge: true });
-
+    await collectionRef.doc(record.normalizedNumber).set(payload, { merge: true });
     importedCount += 1;
-    if (usedNormalizedId) {
-      usedNormalizedIdCount += 1;
-    } else {
-      generatedIdCount += 1;
-    }
-
-    console.log(`Imported record ${importedCount}/${records.length} -> ${docId} (merge=true)`);
+    console.log(`Imported record ${importedCount}/${records.length} -> ${record.normalizedNumber}`);
   }
 
-  console.log(
-    `Import complete. Imported ${importedCount} records into ${COLLECTION}. ` +
-      `normalizedNumber IDs: ${usedNormalizedIdCount}, generated IDs: ${generatedIdCount}`,
-  );
+  console.log(`Import complete. Imported ${importedCount} records into ${COLLECTION}.`);
 }
 
 main().catch((error) => {

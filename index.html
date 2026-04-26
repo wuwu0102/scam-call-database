@@ -201,7 +201,7 @@
 
     #statusPanel {
       max-width: 680px;
-      margin: 12px auto 18px;
+      margin: 12px auto 8px;
       padding: 10px 14px;
       border-radius: 14px;
       background: rgba(255,255,255,0.95);
@@ -221,11 +221,92 @@
       white-space: nowrap;
     }
 
+    #sourceNotice {
+      max-width: 680px;
+      margin: 0 auto 18px;
+      padding: 0 16px;
+      font-size: 12px;
+      color: #666;
+      text-align: center;
+    }
+
+    .result-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .result-actions button {
+      flex: 1;
+      border: 0;
+      border-radius: 10px;
+      padding: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    #copyResultBtn {
+      background: #f1f5f9;
+      color: #111;
+    }
+
+    #shareWhatsappBtn {
+      background: #25D366;
+      color: #fff;
+    }
+
+    #reportShareBlock {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      background: #f0fdf4;
+      color: #166534;
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    #reportShareBtn {
+      margin-top: 8px;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-weight: 700;
+      width: 100%;
+      cursor: pointer;
+    }
+
     @media (max-width: 600px) {
+      body {
+        padding-top: max(24px, env(safe-area-inset-top));
+      }
+
+      h1 {
+        font-size: 32px;
+        line-height: 1.1;
+        margin-top: 18px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+        line-height: 1.35;
+        padding: 0 16px;
+      }
+
       #statusPanel {
-        margin: 8px 16px 16px;
+        margin: 10px 16px 8px;
         font-size: 12px;
         gap: 6px 12px;
+      }
+
+      #sourceNotice {
+        margin-bottom: 14px;
+        font-size: 11px;
+      }
+
+      .result-actions {
+        flex-direction: column;
       }
     }
   </style>
@@ -238,6 +319,9 @@
       <div id="nextUpdate"></div>
       <div id="totalCount"></div>
       <div id="todayCount"></div>
+    </div>
+    <div id="sourceNotice">
+      Los números de fuentes no oficiales se marcan como sospechosos hasta revisión.
     </div>
     <section class="section">
       <h2>Buscar número</h2>
@@ -255,6 +339,10 @@
         <div id="resultMeta" class="result-meta"></div>
         <div id="resultNote" class="result-note"></div>
       </div>
+      <div id="resultActions" class="result-actions" hidden>
+        <button id="copyResultBtn" type="button">Copiar resultado</button>
+        <button id="shareWhatsappBtn" type="button">Compartir por WhatsApp</button>
+      </div>
     </section>
 
     <section class="section">
@@ -270,6 +358,10 @@
       <input id="reportNoteInput" type="text" placeholder="Nota opcional" autocomplete="off" />
       <button id="reportBtn" type="button">Guardar reporte</button>
       <div id="reportMsg" aria-live="polite"></div>
+      <div id="reportShareBlock" hidden>
+        <div>Gracias. Tu reporte ayuda a proteger a más personas.</div>
+        <button id="reportShareBtn" type="button">Compartir este número por WhatsApp</button>
+      </div>
     </section>
     <p class="disclaimer">Los reportes son informativos. Verifica antes de responder o devolver llamadas.</p>
   </main>
@@ -317,6 +409,11 @@
     const reportNoteEl = document.getElementById("reportNoteInput");
     const reportBtn = document.getElementById("reportBtn");
     const reportMsgEl = document.getElementById("reportMsg");
+    const resultActionsEl = document.getElementById("resultActions");
+    const copyResultBtn = document.getElementById("copyResultBtn");
+    const shareWhatsappBtn = document.getElementById("shareWhatsappBtn");
+    const reportShareBlockEl = document.getElementById("reportShareBlock");
+    const reportShareBtn = document.getElementById("reportShareBtn");
 
     const lang = "es-MX";
     function normalizeMXNumber(input) {
@@ -382,16 +479,20 @@
     };
 
     const SOURCE_TYPE_LABELS = {
-      user_report: "reportado por usuario",
-      user_submitted: "reportado por usuario",
-      official: "fuente oficial",
-      community: "comunidad"
+      official: "Oficial",
+      media: "Medio",
+      web: "Web",
+      user_report: "Usuario",
+      community: "Comunidad"
     };
     const CONFIDENCE_LABELS = {
       high: "alta",
       medium: "media",
-      low: "baja",
-      "user-submitted": "reportado por usuario"
+      low: "baja"
+    };
+    const REVIEW_STATUS_LABELS = {
+      auto_approved: "verificado",
+      pending_review: "pendiente de revisión"
     };
 
     const getSpanishMetaValue = (value, typeMap = {}) => {
@@ -401,23 +502,43 @@
       return typeMap[normalized] || typeMap[rawValue.toLowerCase()] || rawValue;
     };
 
-    const showResult = ({ tag = "unknown", label = null, note = "", sourceName = "", sourceType = "", confidence = "" } = {}) => {
+    let currentShareText = "";
+    let currentResultKnown = false;
+    let lastReportedNumber = "";
+
+    const getResolvedMeta = ({ sourceType = "", confidence = "", reviewStatus = "" } = {}) => {
+      const normalizedType = String(sourceType || "user_report").toLowerCase();
+      const fallbackConfidence = normalizedType === "official" ? "medium" : "low";
+      const fallbackReview = normalizedType === "official" ? "auto_approved" : "pending_review";
+      return {
+        sourceType: SOURCE_TYPE_LABELS[normalizedType] || "Usuario",
+        confidence: CONFIDENCE_LABELS[String(confidence || fallbackConfidence).toLowerCase()] || "baja",
+        reviewStatus: REVIEW_STATUS_LABELS[String(reviewStatus || fallbackReview).toLowerCase()] || "pendiente de revisión"
+      };
+    };
+
+    const showResult = ({ number = "", tag = "unknown", label = null, note = "", sourceName = "", sourceType = "", confidence = "", reviewStatus = "" } = {}) => {
       const styleKey = getStyleKey(tag);
       const displayLabel = getDisplayLabel(tag || "unknown", label);
       const badgeText = LABELS[styleKey][lang];
+      const trustedMeta = getResolvedMeta({ sourceType, confidence, reviewStatus });
+      currentResultKnown = styleKey !== "unknown";
+      currentShareText = `Alerta Número MX: el número ${number || "desconocido"} aparece como ${displayLabel}. Fuente: ${sourceName || "Usuario"}. Verifica antes de responder.`;
 
       resultCardEl.className = `result-card result-${styleKey}`;
       resultBadgeEl.textContent = badgeText;
       resultTextEl.textContent = displayLabel;
 
       const metaBits = [];
-      if (sourceName) metaBits.push(`Fuente: ${sourceName}`);
-      if (sourceType) metaBits.push(`Tipo: ${getSpanishMetaValue(sourceType, SOURCE_TYPE_LABELS)}`);
-      if (confidence) metaBits.push(`Confianza: ${getSpanishMetaValue(confidence, CONFIDENCE_LABELS)}`);
+      metaBits.push(`Fuente: ${trustedMeta.sourceType}`);
+      metaBits.push(`Confianza: ${trustedMeta.confidence}`);
+      metaBits.push(`Estado: ${trustedMeta.reviewStatus}`);
+      if (sourceName) metaBits.push(`Referencia: ${sourceName}`);
       resultMetaEl.textContent = metaBits.join(" · ");
 
       const resolvedNote = getLocalizedNote(note);
       resultNoteEl.textContent = resolvedNote ? `Nota: ${resolvedNote}` : "";
+      resultActionsEl.hidden = !currentResultKnown;
     };
 
     const setReportMessage = (message, type) => {
@@ -489,7 +610,13 @@
       if (!firestore) return null;
 
       try {
-        const snapshot = await getDocs(collection(firestore, COLLECTION_NAME));
+        const snapshot = await getDocs(
+          query(
+            collection(firestore, COLLECTION_NAME),
+            where("normalizedNumber", "==", phoneNormalized),
+            limit(1)
+          )
+        );
 
         let latest = null;
         snapshot.forEach((docItem) => {
@@ -515,8 +642,9 @@
     const search = async () => {
       const phone = normalizeMXNumber(inputEl.value.trim());
       searchMsgEl.textContent = "";
+      reportShareBlockEl.hidden = true;
       if (!phone) {
-        searchMsgEl.textContent = "Ingresa un número de teléfono";
+        searchMsgEl.textContent = "Ingresa un número válido de México";
         showResult();
         return;
       }
@@ -530,18 +658,20 @@
       if (firestoreRecord && firestoreRecord.tag) {
         showResult({
           tag: firestoreRecord.tag,
+          number: phone,
           label: firestoreRecord.label,
           note: firestoreRecord.note || "",
-          sourceName: firestoreRecord.sourceName || "Firestore user report",
-          sourceType: firestoreRecord.sourceType || "user_report",
-          confidence: firestoreRecord.confidence || "user-submitted"
+          sourceName: firestoreRecord.source || firestoreRecord.sourceName || "Reporte de usuario",
+          sourceType: firestoreRecord.type || firestoreRecord.sourceType || "user_report",
+          confidence: firestoreRecord.confidence || "",
+          reviewStatus: firestoreRecord.reviewStatus || ""
         });
         return;
       }
 
       const mexicoSeedRecord = findRecordFromArray(mexicoSeedRecords, phone);
       if (mexicoSeedRecord && mexicoSeedRecord.tag) {
-        showResult(mexicoSeedRecord);
+        showResult({ ...mexicoSeedRecord, number: phone });
         return;
       }
 
@@ -549,6 +679,7 @@
       if (fallbackRecord) {
         showResult({
           tag: fallbackRecord.label || "unknown",
+          number: phone,
           label: fallbackRecord.tag || null,
           note: fallbackRecord.note || "",
           sourceName: fallbackRecord.sourceName || "scam_numbers.json",
@@ -566,9 +697,10 @@
       const normalizedPhone = normalizeMXNumber(originalPhone);
       const tag = reportLabelEl.value;
       const note = reportNoteEl.value.trim();
+      reportShareBlockEl.hidden = true;
 
       if (!normalizedPhone) {
-        setReportMessage("Ingresa un número de teléfono", "error");
+        setReportMessage("Ingresa un número válido de México", "error");
         return;
       }
       if (!isValidMXNumber(normalizedPhone) || !isKnownLabel(tag)) {
@@ -599,8 +731,14 @@
           number: normalizedPhone,
           normalizedNumber: normalizedPhone,
           tag,
+          label: getDisplayLabel(tag, null),
+          type: "user_report",
+          confidence: "low",
+          source: "Reporte de usuario",
+          reviewStatus: "pending_review",
           lang,
           note,
+          updatedAt: new Date().toISOString().slice(0, 10),
           createdAt: Date.now(),
         });
 
@@ -608,10 +746,34 @@
         reportLabelEl.value = "scam";
         reportNoteEl.value = "";
         setReportMessage("Reporte guardado", "success");
+        lastReportedNumber = normalizedPhone;
+        reportShareBlockEl.hidden = false;
       } catch {
         setReportMessage("No se pudo guardar el reporte", "error");
       }
     };
+
+    copyResultBtn.addEventListener("click", async () => {
+      if (!currentResultKnown || !currentShareText) return;
+      try {
+        await navigator.clipboard.writeText(currentShareText);
+        searchMsgEl.textContent = "Resultado copiado";
+      } catch {
+        searchMsgEl.textContent = "No se pudo copiar el resultado";
+      }
+    });
+
+    shareWhatsappBtn.addEventListener("click", () => {
+      if (!currentResultKnown || !currentShareText) return;
+      const url = `https://wa.me/?text=${encodeURIComponent(currentShareText)}`;
+      window.open(url, "_blank", "noopener");
+    });
+
+    reportShareBtn.addEventListener("click", () => {
+      const text = `Acabo de reportar este número en Alerta Número MX: ${lastReportedNumber}. Puedes revisarlo aquí: https://wuwu0102.github.io/scam-call-database/`;
+      const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+      window.open(url, "_blank", "noopener");
+    });
 
     searchBtn.addEventListener("click", () => {
       search();
