@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="es-MX">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phone Lookup</title>
+  <title>Alerta Número MX</title>
   <style>
     :root {
       font-family: Arial, sans-serif;
@@ -22,6 +22,17 @@
     .app {
       width: min(92vw, 420px);
       text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 4px;
+      font-size: 1.6rem;
+    }
+
+    .subtitle {
+      margin: 0 0 12px;
+      color: #374151;
+      font-size: 0.96rem;
     }
 
     .section {
@@ -147,6 +158,7 @@
     }
 
     #setupMsg,
+    #searchMsg,
     #reportMsg {
       min-height: 1.2em;
       font-size: 0.95rem;
@@ -160,6 +172,11 @@
       text-align: center;
     }
 
+    #searchMsg {
+      color: #a33;
+      text-align: center;
+    }
+
     #reportMsg.success {
       color: #0a7a31;
     }
@@ -167,39 +184,50 @@
     #reportMsg.error {
       color: #a33;
     }
+
+    .disclaimer {
+      margin: 4px 8px 0;
+      color: #4b5563;
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
   </style>
 </head>
 <body>
   <main class="app">
+    <h1>Alerta Número MX</h1>
+    <p class="subtitle">Consulta y reporta números sospechosos en México.</p>
     <section class="section">
-      <h2>Search</h2>
+      <h2>Buscar número</h2>
       <div id="setupMsg" aria-live="polite"></div>
-      <input id="phoneInput" type="tel" placeholder="Phone number" autocomplete="off" />
-      <button id="searchBtn" type="button">Search</button>
+      <input id="phoneInput" type="tel" placeholder="Número de teléfono" autocomplete="off" />
+      <button id="searchBtn" type="button">Buscar</button>
+      <div id="searchMsg" aria-live="polite"></div>
       <div id="resultCard" class="result-card result-unknown" aria-live="polite">
         <div class="result-header">
-          <span>Lookup result</span>
-          <span id="resultBadge" class="result-badge">unknown</span>
+          <span>Resultado</span>
+          <span id="resultBadge" class="result-badge">Desconocido</span>
         </div>
-        <div id="resultText" class="result-text">Unknown</div>
+        <div id="resultText" class="result-text">Desconocido</div>
         <div id="resultMeta" class="result-meta"></div>
         <div id="resultNote" class="result-note"></div>
       </div>
     </section>
 
     <section class="section">
-      <h2>Report</h2>
-      <input id="reportPhoneInput" type="tel" placeholder="Phone number" autocomplete="off" />
-      <select id="reportLabelInput" aria-label="Report label">
-        <option value="scam">Scam</option>
-        <option value="suspicious">Suspicious</option>
-        <option value="safe">Safe</option>
-        <option value="unknown">Unknown</option>
+      <h2>Reportar número</h2>
+      <input id="reportPhoneInput" type="tel" placeholder="Número de teléfono" autocomplete="off" />
+      <select id="reportLabelInput" aria-label="Tipo de reporte">
+        <option value="scam">Fraude</option>
+        <option value="suspicious">Sospechoso</option>
+        <option value="safe">Seguro</option>
+        <option value="unknown">Desconocido</option>
       </select>
-      <input id="reportNoteInput" type="text" placeholder="Note (optional)" autocomplete="off" />
-      <button id="reportBtn" type="button">Save</button>
+      <input id="reportNoteInput" type="text" placeholder="Nota opcional" autocomplete="off" />
+      <button id="reportBtn" type="button">Guardar reporte</button>
       <div id="reportMsg" aria-live="polite"></div>
     </section>
+    <p class="disclaimer">Los reportes son informativos. Verifica antes de responder o devolver llamadas.</p>
   </main>
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
@@ -221,7 +249,7 @@
     };
 
     const LABELS = {
-      scam: { "zh-TW": "詐騙", en: "Scam", "es-MX": "Estafa" },
+      scam: { "zh-TW": "詐騙", en: "Scam", "es-MX": "Fraude" },
       suspicious: { "zh-TW": "可疑", en: "Suspicious", "es-MX": "Sospechoso" },
       safe: { "zh-TW": "安全", en: "Safe", "es-MX": "Seguro" },
       unknown: { "zh-TW": "未知", en: "Unknown", "es-MX": "Desconocido" }
@@ -234,6 +262,7 @@
     const resultMetaEl = document.getElementById("resultMeta");
     const resultNoteEl = document.getElementById("resultNote");
     const setupMsgEl = document.getElementById("setupMsg");
+    const searchMsgEl = document.getElementById("searchMsg");
     const inputEl = document.getElementById("phoneInput");
     const searchBtn = document.getElementById("searchBtn");
     const reportPhoneEl = document.getElementById("reportPhoneInput");
@@ -242,14 +271,7 @@
     const reportBtn = document.getElementById("reportBtn");
     const reportMsgEl = document.getElementById("reportMsg");
 
-    const getLang = () => {
-      const lang = (navigator.language || "en").toLowerCase();
-      if (lang === "zh-tw" || lang.startsWith("zh")) return "zh-TW";
-      if (lang === "es-mx" || lang.startsWith("es")) return "es-MX";
-      return "en";
-    };
-
-    const lang = getLang();
+    const lang = "es-MX";
     const normalizePhoneNumber = (value) => String(value || "").replace(/\D/g, "");
     const buildPhoneKeys = (value) => {
       const normalized = normalizePhoneNumber(value);
@@ -297,23 +319,43 @@
       return String(note);
     };
 
+    const SOURCE_TYPE_LABELS = {
+      user_report: "reportado por usuario",
+      user_submitted: "reportado por usuario",
+      official: "fuente oficial",
+      community: "comunidad"
+    };
+    const CONFIDENCE_LABELS = {
+      high: "alta",
+      medium: "media",
+      low: "baja",
+      "user-submitted": "reportado por usuario"
+    };
+
+    const getSpanishMetaValue = (value, typeMap = {}) => {
+      const rawValue = String(value || "");
+      if (!rawValue) return "";
+      const normalized = rawValue.toLowerCase().replace(/\s+/g, "_");
+      return typeMap[normalized] || typeMap[rawValue.toLowerCase()] || rawValue;
+    };
+
     const showResult = ({ tag = "unknown", label = null, note = "", sourceName = "", sourceType = "", confidence = "" } = {}) => {
       const styleKey = getStyleKey(tag);
       const displayLabel = getDisplayLabel(tag || "unknown", label);
-      const badgeText = String(tag || "unknown").toLowerCase() || "unknown";
+      const badgeText = LABELS[styleKey][lang];
 
       resultCardEl.className = `result-card result-${styleKey}`;
       resultBadgeEl.textContent = badgeText;
       resultTextEl.textContent = displayLabel;
 
       const metaBits = [];
-      if (sourceName) metaBits.push(`Source: ${sourceName}`);
-      if (sourceType) metaBits.push(`Type: ${sourceType}`);
-      if (confidence) metaBits.push(`Confidence: ${confidence}`);
+      if (sourceName) metaBits.push(`Fuente: ${sourceName}`);
+      if (sourceType) metaBits.push(`Tipo: ${getSpanishMetaValue(sourceType, SOURCE_TYPE_LABELS)}`);
+      if (confidence) metaBits.push(`Confianza: ${getSpanishMetaValue(confidence, CONFIDENCE_LABELS)}`);
       resultMetaEl.textContent = metaBits.join(" · ");
 
       const resolvedNote = getLocalizedNote(note);
-      resultNoteEl.textContent = resolvedNote ? `Note: ${resolvedNote}` : "";
+      resultNoteEl.textContent = resolvedNote ? `Nota: ${resolvedNote}` : "";
     };
 
     const setReportMessage = (message, type) => {
@@ -329,7 +371,7 @@
       const app = initializeApp(firebaseConfig);
       firestore = getFirestore(app);
     } catch {
-      setupMsgEl.textContent = "Cloud lookup unavailable. Using local fallback.";
+      setupMsgEl.textContent = "Configuración de Firebase pendiente";
     }
 
     const findLatestFirestoreRecord = async (phoneNormalized) => {
@@ -351,7 +393,7 @@
 
         return latest;
       } catch {
-        setupMsgEl.textContent = "Cloud lookup failed. Showing local results.";
+        setupMsgEl.textContent = "Configuración de Firebase pendiente";
         return null;
       }
     };
@@ -361,7 +403,9 @@
 
     const search = async () => {
       const phone = normalizePhoneNumber(inputEl.value.trim());
+      searchMsgEl.textContent = "";
       if (!phone) {
+        searchMsgEl.textContent = "Ingresa un número de teléfono";
         showResult();
         return;
       }
@@ -408,12 +452,12 @@
       const note = reportNoteEl.value.trim();
 
       if (!normalizedPhone || !isKnownLabel(tag)) {
-        setReportMessage("Enter number + label", "error");
+        setReportMessage("Ingresa un número de teléfono", "error");
         return;
       }
 
       if (!firestore) {
-        setReportMessage("Cloud report unavailable", "error");
+        setReportMessage("Configuración de Firebase pendiente", "error");
         return;
       }
 
@@ -430,9 +474,9 @@
         reportPhoneEl.value = "";
         reportLabelEl.value = "scam";
         reportNoteEl.value = "";
-        setReportMessage("Saved to cloud", "success");
+        setReportMessage("Reporte guardado", "success");
       } catch {
-        setReportMessage("Cloud save failed", "error");
+        setReportMessage("No se pudo guardar el reporte", "error");
       }
     };
 
