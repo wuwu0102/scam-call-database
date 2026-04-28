@@ -115,3 +115,14 @@ The workflow `.github/workflows/collect-and-import-mexico-numbers.yml` runs ever
 ```bash
 node scripts/merge_seed_database.js
 ```
+
+## Mexico scam number collection pipeline
+
+- The system automatically collects suspicious phone numbers from public sources every 5 days.
+- All collected data first goes to `data/pending_numbers.json`.
+- Pending records do **not** mean a number is certainly a scam number.
+- High-confidence records still require manual review.
+- Low-confidence sources are reference-only signals.
+- User-facing copy should use: 「可疑 / 被回報 / 未確認」.
+- Do not directly label a number owner as a scammer.
+- Lookup/CAPTCHA sources are respected and are not forcefully bypassed.

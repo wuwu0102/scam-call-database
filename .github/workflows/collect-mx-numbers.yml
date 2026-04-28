@@ -1,0 +1,29 @@
+on:
+  schedule:
+    - cron: '0 3 */5 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Collect Mexico scam numbers
+        run: node scripts/collect_mx_numbers.js
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/pending_numbers.json data/manual_import_numbers.csv
+          git commit -m "Update pending Mexico scam numbers" || echo "No changes to commit"
+          git push
