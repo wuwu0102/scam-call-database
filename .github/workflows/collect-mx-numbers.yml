@@ -24,6 +24,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/pending_numbers.json data/manual_import_numbers.csv
+          git add data/pending_numbers.json data/manual_import_numbers.csv data/collection_report.json
           git commit -m "Update pending Mexico scam numbers" || echo "No changes to commit"
           git push

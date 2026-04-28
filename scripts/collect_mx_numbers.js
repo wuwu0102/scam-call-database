@@ -4,6 +4,7 @@ const path = require('path');
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const PENDING_PATH = path.join(DATA_DIR, 'pending_numbers.json');
 const MANUAL_CSV_PATH = path.join(DATA_DIR, 'manual_import_numbers.csv');
+const COLLECTION_REPORT_PATH = path.join(DATA_DIR, 'collection_report.json');
 
 const SOURCE_CONFIDENCE_MAP = {
   official_federal: 0.9,
@@ -59,7 +60,21 @@ async function fetchHtml(url) {
 
 function extractPhoneNumbersFromText(text) {
   if (!text) return [];
-  const matches = text.match(/(\+?52[\s\-\.]*)?(\(?\d{2,3}\)?[\s\-\.]*)?\d{3,4}[\s\-\.]*\d{4}/g) || [];
+
+  const regexes = [
+    /\+?52[\s\-\.]?\(?\d{2,3}\)?[\s\-\.]?\d{3,4}[\s\-\.]?\d{4}/g,
+    /\(?\d{2,3}\)?[\s\-\.]?\d{3,4}[\s\-\.]?\d{4}/g,
+    /\b\d{10}\b/g,
+    /\b52\d{10}\b/g,
+    /\b521\d{10}\b/g,
+  ];
+
+  const matches = [];
+  for (const regex of regexes) {
+    const found = text.match(regex) || [];
+    matches.push(...found);
+  }
+
   return Array.from(new Set(matches));
 }
 
@@ -134,12 +149,21 @@ function loadManualImportCsv() {
 async function collectFromSource(source) {
   const collectedAt = new Date().toISOString();
   const records = [];
-  let matches = [];
+  const report = {
+    name: source.name,
+    mode: source.mode,
+    fetchOk: false,
+    htmlLength: 0,
+    rawMatches: 0,
+    validNumbers: 0,
+    error: null,
+    skippedReason: null,
+  };
 
   if (source.mode === 'csv_import') {
     const rows = loadManualImportCsv();
-    matches = rows.map((row) => row.number);
-    console.log(`Source: ${source.name}, raw matches: ${matches.length}`);
+    const matches = rows.map((row) => row.number);
+
     for (const row of rows) {
       const normalized = normalizeMXNumber(row.number);
       if (!isValidMXNumber(normalized)) continue;
@@ -166,14 +190,28 @@ async function collectFromSource(source) {
         note: row.note || '',
       });
     }
-    records.rawCount = matches.length;
-    records.validCount = records.length;
+
+    report.fetchOk = true;
+    report.rawMatches = matches.length;
+    report.validNumbers = records.length;
+    const skipped = report.validNumbers === 0 ? 'no valid numbers in csv rows' : null;
+    report.skippedReason = skipped;
+    const skippedText = skipped ? `, skipped: ${skipped}` : '';
+    console.log(`[${source.name}] csv import, raw matches: ${report.rawMatches}, valid: ${report.validNumbers}${skippedText}`);
+
+    records.rawCount = report.rawMatches;
+    records.validCount = report.validNumbers;
+    records.report = report;
     return records;
   }
 
+  const isLookup = source.mode === 'lookup_source' || source.mode === 'captcha_lookup_source';
+
   const html = await fetchHtml(source.url);
-  matches = extractPhoneNumbersFromText(html);
-  console.log(`Source: ${source.name}, raw matches: ${matches.length}`);
+  const matches = extractPhoneNumbersFromText(html);
+  report.fetchOk = true;
+  report.htmlLength = html.length;
+  report.rawMatches = matches.length;
 
   for (const candidate of matches) {
     const normalized = normalizeMXNumber(candidate);
@@ -203,8 +241,19 @@ async function collectFromSource(source) {
     });
   }
 
-  records.rawCount = matches.length;
-  records.validCount = records.length;
+  report.validNumbers = records.length;
+  if (report.validNumbers === 0) {
+    report.skippedReason = isLookup ? 'lookup source, metadata only' : 'no valid numbers parsed from page';
+  }
+
+  const skippedText = report.skippedReason ? `, skipped: ${report.skippedReason}` : '';
+  console.log(
+    `[${source.name}] fetch ok, html length: ${report.htmlLength}, raw matches: ${report.rawMatches}, valid: ${report.validNumbers}${skippedText}`,
+  );
+
+  records.rawCount = report.rawMatches;
+  records.validCount = report.validNumbers;
+  records.report = report;
   return records;
 }
 
@@ -282,71 +331,82 @@ function mergeWithExistingPending(newItems) {
 async function run() {
   const allNewItems = [];
   const sourceResults = [];
-  let rawCount = 0;
-  let validCount = 0;
+  const perSourceCounts = [];
+  let totalRawMatches = 0;
+  let totalValidNumbers = 0;
 
   for (const source of SOURCES) {
     try {
       const collected = await collectFromSource(source);
       allNewItems.push(...collected);
-      rawCount += Number(collected.rawCount || 0);
-      validCount += Number(collected.validCount || collected.length || 0);
-      sourceResults.push({ source: source.name, mode: source.mode, success: true, count: collected.length });
-    } catch (error) {
-      console.warn(`Source failed: ${source.name} (${source.mode}) - ${error.message}`);
-      sourceResults.push({ source: source.name, mode: source.mode, success: false, count: 0, error: error.message });
-    }
-  }
 
-  if (allNewItems.length === 0) {
-    console.log('No new numbers collected, injecting fallback sample data');
-    const collectedAt = new Date().toISOString();
-    const fallbackSamples = [
-      '5512345678',
-      '5587654321',
-      '5543216789',
-    ];
-    for (const sample of fallbackSamples) {
-      const normalized = normalizeMXNumber(sample);
-      if (!isValidMXNumber(normalized)) continue;
-      allNewItems.push({
-        number: normalized,
-        label: 'suspicious',
-        country: 'MX',
-        sourceType: 'fallback_test',
-        sourceName: 'Fallback Sample Data',
-        sourceUrl: 'fallback://sample-data',
-        confidence: 0.3,
-        status: 'pending_review',
-        evidenceCount: 1,
-        sources: [{
-          sourceName: 'Fallback Sample Data',
-          sourceType: 'fallback_test',
-          sourceUrl: 'fallback://sample-data',
-          confidence: 0.3,
-          mode: 'fallback',
-          collectedAt,
-        }],
-        firstSeenAt: collectedAt,
-        updatedAt: collectedAt,
-        note: 'Injected fallback sample data',
+      const report = collected.report || {
+        name: source.name,
+        mode: source.mode,
+        fetchOk: false,
+        htmlLength: 0,
+        rawMatches: 0,
+        validNumbers: 0,
+        error: null,
+        skippedReason: null,
+      };
+
+      totalRawMatches += Number(report.rawMatches || 0);
+      totalValidNumbers += Number(report.validNumbers || 0);
+
+      perSourceCounts.push({
+        name: report.name,
+        mode: report.mode,
+        fetchOk: report.fetchOk,
+        htmlLength: report.htmlLength,
+        rawMatches: report.rawMatches,
+        validNumbers: report.validNumbers,
+        error: report.error,
       });
+
+      sourceResults.push({ source: source.name, mode: source.mode, success: true, count: report.validNumbers });
+    } catch (error) {
+      const failedReport = {
+        name: source.name,
+        mode: source.mode,
+        fetchOk: false,
+        htmlLength: 0,
+        rawMatches: 0,
+        validNumbers: 0,
+        error: error.message,
+      };
+
+      perSourceCounts.push(failedReport);
+      sourceResults.push({ source: source.name, mode: source.mode, success: false, count: 0, error: error.message });
+      console.warn(`[${source.name}] fetch failed, html length: 0, raw matches: 0, valid: 0, error: ${error.message}`);
     }
-    rawCount += fallbackSamples.length;
-    validCount += allNewItems.length;
   }
 
   const merged = mergeWithExistingPending(allNewItems);
   fs.writeFileSync(PENDING_PATH, `${JSON.stringify(merged, null, 2)}\n`, 'utf8');
-  console.log(`Collected ${allNewItems.length} raw items, pending total ${merged.length}`);
-  console.log(`Total collected before normalize: ${rawCount}`);
-  console.log(`Total valid MX numbers: ${validCount}`);
+
+  const reportPayload = {
+    collectedAt: new Date().toISOString(),
+    totalSources: SOURCES.length,
+    sources: perSourceCounts,
+    totalRawMatches,
+    totalValidNumbers,
+    totalPendingNumbers: merged.length,
+  };
+  fs.writeFileSync(COLLECTION_REPORT_PATH, `${JSON.stringify(reportPayload, null, 2)}\n`, 'utf8');
+
+  console.log(`Collected valid items this run: ${allNewItems.length}`);
+  console.log(`Total raw matches: ${totalRawMatches}`);
+  console.log(`Total valid MX numbers: ${totalValidNumbers}`);
+  console.log(`Pending total: ${merged.length}`);
 
   const successSources = sourceResults.filter((r) => r.success).map((r) => r.source);
   const failedSources = sourceResults.filter((r) => !r.success).map((r) => r.source);
   console.log(`Sources success: ${successSources.length}`);
   console.log(`Sources failed: ${failedSources.length}`);
   if (failedSources.length) console.log(`Failed list: ${failedSources.join(' | ')}`);
+
+  return { merged, reportPayload, sourceResults };
 }
 
 if (require.main === module) {
