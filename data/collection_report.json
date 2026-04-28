@@ -1,0 +1,144 @@
+{
+  "collectedAt": "2026-04-28T04:36:06.437Z",
+  "totalSources": 15,
+  "sources": [
+    {
+      "name": "Baja California Seguridad",
+      "mode": "list_scrape",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawMatches": 0,
+      "validNumbers": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "Baja California Engaño",
+      "mode": "list_scrape",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawMatches": 0,
+      "validNumbers": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "Baja California Legacy Engaño",
+      "mode": "announcement_scrape",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawMatches": 0,
+      "validNumbers": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "SAT Números telefónicos falsos",
+      "mode": "list_scrape",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawMatches": 0,
+      "validNumbers": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "SAT Correos falsos identificados",
+      "mode": "announcement_scrape",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawMatches": 0,
+      "validNumbers": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "Chihuahua Consulta Extorsión",
+      "mode": "lookup_source",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawMatches": 0,
+      "validNumbers": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "Tamaulipas Consulta de Números de Extorsión",
+      "mode": "lookup_source",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawMatches": 0,
+      "validNumbers": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "Guanajuato Consulta de Reportes de Extorsión",
+      "mode": "lookup_source",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawMatches": 0,
+      "validNumbers": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "Aguascalientes C5i Búsqueda de Números de Extorsión",
+      "mode": "lookup_source",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawMatches": 0,
+      "validNumbers": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "Tlaxcala Números de Extorsión",
+      "mode": "captcha_lookup_source",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawMatches": 0,
+      "validNumbers": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "Veracruz C4 Extorsión / Engaño Telefónico",
+      "mode": "lookup_source",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawMatches": 0,
+      "validNumbers": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "Sonora Gobierno Antiextorsión",
+      "mode": "announcement_scrape",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawMatches": 0,
+      "validNumbers": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "Campeche 0 Extorsión 911",
+      "mode": "announcement_scrape",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawMatches": 0,
+      "validNumbers": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "Coatzacoalcos Reporte Ciudadano de Números de Extorsión",
+      "mode": "lookup_source",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawMatches": 0,
+      "validNumbers": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "Manual Import CSV",
+      "mode": "csv_import",
+      "fetchOk": true,
+      "htmlLength": 0,
+      "rawMatches": 3,
+      "validNumbers": 3,
+      "error": null
+    }
+  ],
+  "totalRawMatches": 3,
+  "totalValidNumbers": 3,
+  "totalPendingNumbers": 3
+}

@@ -16,11 +16,11 @@
         "sourceUrl": "manual://data/manual_import_numbers.csv",
         "confidence": 0.5,
         "mode": "csv_import",
-        "collectedAt": "2026-04-28T02:47:16.730Z"
+        "collectedAt": "2026-04-28T04:36:06.410Z"
       }
     ],
     "firstSeenAt": "2026-04-28T02:47:16.730Z",
-    "updatedAt": "2026-04-28T02:47:16.730Z",
+    "updatedAt": "2026-04-28T04:36:06.413Z",
     "note": "Reported by trusted friend"
   },
   {
@@ -40,11 +40,11 @@
         "sourceUrl": "manual://data/manual_import_numbers.csv",
         "confidence": 0.5,
         "mode": "csv_import",
-        "collectedAt": "2026-04-28T02:47:16.730Z"
+        "collectedAt": "2026-04-28T04:36:06.410Z"
       }
     ],
     "firstSeenAt": "2026-04-28T02:47:16.730Z",
-    "updatedAt": "2026-04-28T02:47:16.730Z",
+    "updatedAt": "2026-04-28T04:36:06.413Z",
     "note": "Public warning post"
   },
   {
@@ -64,11 +64,11 @@
         "sourceUrl": "manual://data/manual_import_numbers.csv",
         "confidence": 0.5,
         "mode": "csv_import",
-        "collectedAt": "2026-04-28T02:47:16.730Z"
+        "collectedAt": "2026-04-28T04:36:06.410Z"
       }
     ],
     "firstSeenAt": "2026-04-28T02:47:16.730Z",
-    "updatedAt": "2026-04-28T02:47:16.730Z",
+    "updatedAt": "2026-04-28T04:36:06.413Z",
     "note": "Forwarded warning message"
   }
 ]
