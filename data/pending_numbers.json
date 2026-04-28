@@ -1,0 +1,74 @@
+[
+  {
+    "number": "+525512345678",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "manual_import",
+    "sourceName": "Manual Import",
+    "sourceUrl": "manual://data/manual_import_numbers.csv",
+    "confidence": 0.5,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "Manual Import",
+        "sourceType": "manual_import",
+        "sourceUrl": "manual://data/manual_import_numbers.csv",
+        "confidence": 0.5,
+        "mode": "csv_import",
+        "collectedAt": "2026-04-28T02:47:16.730Z"
+      }
+    ],
+    "firstSeenAt": "2026-04-28T02:47:16.730Z",
+    "updatedAt": "2026-04-28T02:47:16.730Z",
+    "note": "Reported by trusted friend"
+  },
+  {
+    "number": "+525512345679",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "manual_import",
+    "sourceName": "Manual Import",
+    "sourceUrl": "manual://data/manual_import_numbers.csv",
+    "confidence": 0.5,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "Manual Import",
+        "sourceType": "manual_import",
+        "sourceUrl": "manual://data/manual_import_numbers.csv",
+        "confidence": 0.5,
+        "mode": "csv_import",
+        "collectedAt": "2026-04-28T02:47:16.730Z"
+      }
+    ],
+    "firstSeenAt": "2026-04-28T02:47:16.730Z",
+    "updatedAt": "2026-04-28T02:47:16.730Z",
+    "note": "Public warning post"
+  },
+  {
+    "number": "+525512345680",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "manual_import",
+    "sourceName": "Manual Import",
+    "sourceUrl": "manual://data/manual_import_numbers.csv",
+    "confidence": 0.5,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "Manual Import",
+        "sourceType": "manual_import",
+        "sourceUrl": "manual://data/manual_import_numbers.csv",
+        "confidence": 0.5,
+        "mode": "csv_import",
+        "collectedAt": "2026-04-28T02:47:16.730Z"
+      }
+    ],
+    "firstSeenAt": "2026-04-28T02:47:16.730Z",
+    "updatedAt": "2026-04-28T02:47:16.730Z",
+    "note": "Forwarded warning message"
+  }
+]

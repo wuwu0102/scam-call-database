@@ -1,0 +1,4 @@
+number,label,source,note
+5512345678,suspicious,friend_report,Reported by trusted friend
++525512345679,suspicious,facebook_public_post,Public warning post
+5215512345680,suspicious,whatsapp_forward,Forwarded warning message
