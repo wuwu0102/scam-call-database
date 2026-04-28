@@ -1,7 +1,7 @@
 [
   {
-    "number": "1443564751",
-    "normalizedNumber": "1443564751",
+    "number": "1777350169",
+    "normalizedNumber": "1777350169",
     "country": "MX",
     "tag": "scam",
     "label": "Posible fraude",
@@ -9,163 +9,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
-  },
-  {
-    "number": "1777190876",
-    "normalizedNumber": "1777190876",
-    "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
-    "type": "official",
-    "confidence": "high",
-    "source": "SAT México",
-    "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
-    "sources": [
-      {
-        "source": "SAT México",
-        "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
-      }
-    ]
-  },
-  {
-    "number": "2025103114",
-    "normalizedNumber": "2025103114",
-    "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
-    "type": "official",
-    "confidence": "high",
-    "source": "SAT México",
-    "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
-    "sources": [
-      {
-        "source": "SAT México",
-        "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
-      }
-    ]
-  },
-  {
-    "number": "2025112617",
-    "normalizedNumber": "2025112617",
-    "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
-    "type": "official",
-    "confidence": "high",
-    "source": "SAT México",
-    "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
-    "sources": [
-      {
-        "source": "SAT México",
-        "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
-      }
-    ]
-  },
-  {
-    "number": "2026011414",
-    "normalizedNumber": "2026011414",
-    "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
-    "type": "official",
-    "confidence": "high",
-    "source": "SAT México",
-    "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
-    "sources": [
-      {
-        "source": "SAT México",
-        "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
-      }
-    ]
-  },
-  {
-    "number": "2026012116",
-    "normalizedNumber": "2026012116",
-    "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
-    "type": "official",
-    "confidence": "high",
-    "source": "SAT México",
-    "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
-    "sources": [
-      {
-        "source": "SAT México",
-        "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
-      }
-    ]
-  },
-  {
-    "number": "2026032415",
-    "normalizedNumber": "2026032415",
-    "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
-    "type": "official",
-    "confidence": "high",
-    "source": "SAT México",
-    "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
-    "sources": [
-      {
-        "source": "SAT México",
-        "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
-      }
-    ]
-  },
-  {
-    "number": "2026041509",
-    "normalizedNumber": "2026041509",
-    "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
-    "type": "official",
-    "confidence": "high",
-    "source": "SAT México",
-    "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
-    "sources": [
-      {
-        "source": "SAT México",
-        "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
-      }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "3314867721",
@@ -177,16 +33,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "3329259354",
@@ -198,16 +57,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "3330319175",
@@ -219,16 +81,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "3330328932",
@@ -240,16 +105,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "4183470737",
@@ -261,16 +129,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5515141779",
@@ -282,16 +153,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5515759635",
@@ -303,16 +177,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5516588674",
@@ -324,16 +201,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5518478832",
@@ -345,16 +225,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5518539697",
@@ -366,16 +249,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5518554268",
@@ -387,16 +273,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5519267332",
@@ -408,16 +297,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5519384429",
@@ -429,16 +321,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5519735168",
@@ -450,16 +345,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5520777967",
@@ -471,16 +369,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5521394059",
@@ -492,16 +393,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5522668942",
@@ -513,16 +417,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5522738348",
@@ -534,16 +441,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5522855293",
@@ -555,16 +465,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5530274718",
@@ -576,16 +489,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5535829037",
@@ -597,16 +513,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5535911521",
@@ -618,16 +537,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5537729393",
@@ -639,16 +561,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5549113076",
@@ -660,16 +585,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5550541439",
@@ -681,16 +609,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5551018192",
@@ -702,16 +633,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5552109291",
@@ -723,16 +657,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5552157184",
@@ -744,16 +681,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5552886964",
@@ -765,16 +705,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5553174175",
@@ -786,16 +729,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5554011271",
@@ -807,16 +753,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5556786051",
@@ -828,16 +777,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5559043950",
@@ -849,16 +801,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5559398157",
@@ -870,16 +825,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5559784594",
@@ -891,16 +849,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5564118147",
@@ -912,16 +873,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5566144166",
@@ -933,16 +897,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5566177334",
@@ -954,16 +921,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5566276726",
@@ -975,16 +945,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5566556676",
@@ -996,16 +969,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5566996248",
@@ -1017,16 +993,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5567487982",
@@ -1038,16 +1017,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5567504863",
@@ -1059,16 +1041,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5567608128",
@@ -1080,16 +1065,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5567721862",
@@ -1101,16 +1089,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5570074941",
@@ -1122,16 +1113,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5570539797",
@@ -1143,16 +1137,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5576135051",
@@ -1164,16 +1161,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5576816320",
@@ -1185,16 +1185,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5577807435",
@@ -1206,16 +1209,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5577899223",
@@ -1227,16 +1233,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5578144567",
@@ -1248,16 +1257,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5581372190",
@@ -1269,16 +1281,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5581718562",
@@ -1290,16 +1305,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5581831543",
@@ -1311,16 +1329,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5582410238",
@@ -1332,16 +1353,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5583611075",
@@ -1353,16 +1377,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5584216502",
@@ -1374,16 +1401,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5585047563",
@@ -1395,16 +1425,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5585511304",
@@ -1416,16 +1449,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5586036634",
@@ -1437,16 +1473,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5587231809",
@@ -1458,16 +1497,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5588083012",
@@ -1479,16 +1521,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5588522222",
@@ -1500,16 +1545,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5588550472",
@@ -1521,16 +1569,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5588552805",
@@ -1542,16 +1593,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5590633982",
@@ -1563,16 +1617,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5592291691",
@@ -1584,16 +1641,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5592292548",
@@ -1605,16 +1665,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5592310177",
@@ -1626,16 +1689,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5592310558",
@@ -1647,16 +1713,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5592310704",
@@ -1668,16 +1737,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5593330504",
@@ -1689,16 +1761,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5593330650",
@@ -1710,16 +1785,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5593330990",
@@ -1731,16 +1809,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5593346184",
@@ -1752,16 +1833,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5593346330",
@@ -1773,16 +1857,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5593346516",
@@ -1794,16 +1881,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5594519032",
@@ -1815,16 +1905,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5594519096",
@@ -1836,16 +1929,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5595912413",
@@ -1857,16 +1953,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5596023228",
@@ -1878,16 +1977,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5596024109",
@@ -1899,16 +2001,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5596024348",
@@ -1920,16 +2025,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5596930105",
@@ -1941,16 +2049,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5599637553",
@@ -1962,16 +2073,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5599907817",
@@ -1983,16 +2097,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5599907834",
@@ -2004,16 +2121,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5611132311",
@@ -2025,16 +2145,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5611416120",
@@ -2046,16 +2169,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5611548822",
@@ -2067,16 +2193,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5612267348",
@@ -2088,16 +2217,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5612859384",
@@ -2109,16 +2241,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5613461135",
@@ -2130,16 +2265,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5614871861",
@@ -2151,16 +2289,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5617369399",
@@ -2172,16 +2313,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5618163002",
@@ -2193,16 +2337,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5618284383",
@@ -2214,16 +2361,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5618403376",
@@ -2235,16 +2385,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5618641202",
@@ -2256,16 +2409,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5620269434",
@@ -2277,16 +2433,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5620289049",
@@ -2298,16 +2457,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5623694368",
@@ -2319,16 +2481,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5623951997",
@@ -2340,16 +2505,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5624214410",
@@ -2361,16 +2529,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5624425445",
@@ -2382,16 +2553,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5627293937",
@@ -2403,16 +2577,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5628176958",
@@ -2424,16 +2601,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5632656100",
@@ -2445,16 +2625,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5632910475",
@@ -2466,16 +2649,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5633274073",
@@ -2487,16 +2673,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5633829444",
@@ -2508,16 +2697,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5633992087",
@@ -2529,16 +2721,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5634174440",
@@ -2550,16 +2745,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5635464655",
@@ -2571,16 +2769,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5635834222",
@@ -2592,16 +2793,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5636031050",
@@ -2613,16 +2817,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5636307355",
@@ -2634,16 +2841,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5636748972",
@@ -2655,16 +2865,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5636773963",
@@ -2676,16 +2889,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5636806119",
@@ -2697,16 +2913,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5636857134",
@@ -2718,16 +2937,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5637127185",
@@ -2739,16 +2961,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5639831700",
@@ -2760,16 +2985,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5642988536",
@@ -2781,16 +3009,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5643269519",
@@ -2802,16 +3033,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5643284775",
@@ -2823,16 +3057,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5643326129",
@@ -2844,16 +3081,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5643928885",
@@ -2865,16 +3105,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5643945628",
@@ -2886,16 +3129,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5643973698",
@@ -2907,16 +3153,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5645758122",
@@ -2928,16 +3177,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5647340419",
@@ -2949,16 +3201,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5647362462",
@@ -2970,16 +3225,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5647709182",
@@ -2991,16 +3249,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5648016234",
@@ -3012,16 +3273,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5648044707",
@@ -3033,16 +3297,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5648579297",
@@ -3054,16 +3321,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5648746134",
@@ -3075,16 +3345,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5651269539",
@@ -3096,16 +3369,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5651316339",
@@ -3117,16 +3393,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5651371156",
@@ -3138,16 +3417,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5651511320",
@@ -3159,16 +3441,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5651517978",
@@ -3180,16 +3465,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5651843969",
@@ -3201,16 +3489,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5651917212",
@@ -3222,16 +3513,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5652455900",
@@ -3243,16 +3537,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5654340704",
@@ -3264,16 +3561,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5659202376",
@@ -3285,16 +3585,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5661004047",
@@ -3306,16 +3609,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5663641645",
@@ -3327,16 +3633,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "5664567266",
@@ -3348,16 +3657,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "6144950861",
@@ -3369,16 +3681,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "6865598000",
@@ -3388,28 +3703,28 @@
     "label": "Posible fraude",
     "type": "official",
     "confidence": "medium",
-    "source": "Seguridad BC",
+    "source": "Seguridad BC - Extorsión Telefónica",
     "sourceUrl": "https://seguridadbc.gob.mx/ExtorsionTelefonica/index.php",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
-        "source": "Seguridad BC",
+        "source": "Seguridad BC - Extorsión Telefónica",
         "sourceUrl": "https://seguridadbc.gob.mx/ExtorsionTelefonica/index.php",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "medium",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       },
       {
-        "source": "Seguridad BC",
-        "sourceUrl": "https://www.seguridadbc.gob.mx/ExtorsionTelefonica/engano.php",
-        "collectedAt": "2026-04-26"
-      },
-      {
-        "source": "Seguridad BC (histórico 2022)",
+        "source": "Seguridad BC - Histórico 2022",
         "sourceUrl": "https://www.seguridadbc.gob.mx/ExtorsionTelefonica/engano2022.php",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "medium",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "7532240063",
@@ -3421,16 +3736,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "7532240134",
@@ -3442,16 +3760,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "7532240777",
@@ -3463,16 +3784,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "7719140555",
@@ -3484,16 +3808,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "8000240384",
@@ -3505,16 +3832,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "8127707393",
@@ -3526,16 +3856,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "8146932873",
@@ -3547,16 +3880,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "8147627604",
@@ -3568,16 +3904,19 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   },
   {
     "number": "8261870572",
@@ -3589,15 +3928,18 @@
     "confidence": "high",
     "source": "SAT México",
     "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "note": "Número detectado en fuente pública oficial.",
-    "collectedAt": "2026-04-26",
-    "reviewStatus": "auto_approved",
     "sources": [
       {
         "source": "SAT México",
         "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "collectedAt": "2026-04-26"
+        "type": "official",
+        "confidence": "high",
+        "collectedAt": "2026-04-28T04:22:49.207Z"
       }
-    ]
+    ],
+    "note": "Número detectado en fuente pública.",
+    "updatedAt": "2026-04-28",
+    "collectedAt": "2026-04-28T04:22:49.207Z",
+    "reviewStatus": "auto_approved"
   }
 ]
