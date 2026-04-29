@@ -1,36 +1,97 @@
 {
-  "lastRunAt": "2026-04-28T04:22:49.207Z",
-  "sourceCounts": {
-    "SAT México": {
-      "accepted": 166,
-      "error": null
-    },
-    "Seguridad BC - Extorsión Telefónica": {
-      "accepted": 1,
-      "error": null
-    },
-    "Seguridad BC - Histórico 2022": {
-      "accepted": 1,
-      "error": null
-    },
-    "Informador - lista pública": {
-      "accepted": 133,
-      "error": null
-    },
-    "Noroeste - lista pública": {
-      "accepted": 22,
-      "error": null
-    },
-    "Tellows México": {
+  "generatedAt": "2026-04-29T13:19:27.832Z",
+  "totalAutoImport": 0,
+  "totalCrowdSignals": 0,
+  "sources": [
+    {
+      "source": "SAT México",
+      "url": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
       "accepted": 0,
-      "error": "Request failed with status code 403"
+      "duplicates": 0,
+      "invalid": 0,
+      "errors": [
+        "fetch failed"
+      ]
     },
-    "QuienHabla México": {
+    {
+      "source": "Seguridad BC actual",
+      "url": "https://seguridadbc.gob.mx/ExtorsionTelefonica/index.php",
       "accepted": 0,
-      "error": "Request failed with status code 403"
+      "duplicates": 0,
+      "invalid": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Seguridad BC histórico 2022",
+      "url": "https://www.seguridadbc.gob.mx/ExtorsionTelefonica/engano2022.php",
+      "accepted": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "SSP Zacatecas extorsión",
+      "url": "https://ssp.zacatecas.gob.mx/gobierno-de-zacatecas-alerta-sobre-numeros-telefonicos-usados-para-la-comision-del-delito-de-extorsion/",
+      "accepted": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "SSP Zacatecas alerta",
+      "url": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
+      "accepted": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Informador lista pública",
+      "url": "https://www.informador.mx/mexico/Lista-completa-de-los-31-numeros-telefonicos-usados-para-extorsionar-en-Mexico-20240507-0216.html",
+      "accepted": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Noroeste lista pública",
+      "url": "https://www.noroeste.com.mx/nacional/conozca-los-10-numeros-telefonicos-mas-usados-para-extorsionar-LMNO940812",
+      "accepted": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Tellows México",
+      "url": "https://www.tellows.mx/",
+      "accepted": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "QuienHabla México",
+      "url": "https://www.quienhabla.mx/",
+      "accepted": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "errors": [
+        "fetch failed"
+      ]
     }
-  },
-  "autoApprovedCount": 164,
-  "pendingReviewCount": 102,
-  "totalCollectedCount": 266
+  ]
 }

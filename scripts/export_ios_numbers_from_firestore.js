@@ -38,6 +38,19 @@ function resolveUpdatedAt(record) {
   return '';
 }
 
+function shouldExport(record) {
+  const tag = String(record.tag || '').toLowerCase();
+  const confidence = String(record.confidence || '').toLowerCase();
+  const type = String(record.type || '').toLowerCase();
+  const reportCount = Number(record.reportCount || 0);
+  const safeReports = Number(record.safeReports || 0);
+
+  if (tag === 'scam' && ['high', 'medium'].includes(confidence)) return true;
+  if (tag === 'suspicious' && confidence === 'medium') return true;
+  if (type === 'user_signal' && reportCount >= 3 && safeReports === 0) return true;
+  return false;
+}
+
 async function main() {
   if (!admin.apps.length) {
     const raw = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
@@ -57,7 +70,7 @@ async function main() {
   snapshot.forEach((doc) => {
     const record = doc.data() || {};
     const number = normalizeToNumeric(record.normalizedNumber || record.number);
-    if (number === null) return;
+    if (number === null || !shouldExport(record)) return;
 
     const next = {
       number,

@@ -82,21 +82,20 @@ function sanitizeImportRecord(record) {
   if (!isValidMXNumber(normalized)) return null;
 
   const type = String(record.type || record.sourceType || '').toLowerCase();
-  const reviewStatus = String(record.reviewStatus || (type === 'official' ? 'auto_approved' : '')).toLowerCase();
+  const reviewStatus = String(record.reviewStatus || '').toLowerCase();
+  const confidence = String(record.confidence || '').toLowerCase();
   let tag = String(record.tag || '').toLowerCase();
 
-  if (type === 'official' && reviewStatus === 'auto_approved') {
-    if (!['scam', 'suspicious'].includes(tag)) {
-      tag = 'scam';
-    }
-  } else if ((type === 'media' || type === 'web') && reviewStatus === 'pending_review') {
-    tag = 'suspicious';
-  } else {
-    return null;
-  }
+  const sourceUrl = String(record.sourceUrl || '').trim();
+  if (!sourceUrl) return null;
+
+  const allowedOfficial = type === 'official' && ['high', 'medium'].includes(confidence) && ['scam', 'suspicious'].includes(tag);
+  const allowedMedia = type === 'media' && confidence === 'medium' && tag === 'suspicious';
+  if (!allowedOfficial && !allowedMedia) return null;
+
+  
 
   const source = record.source || record.sourceName || 'Fuente pública';
-  const sourceUrl = record.sourceUrl || '';
 
   return {
     number: normalized,
@@ -105,7 +104,7 @@ function sanitizeImportRecord(record) {
     tag,
     label: record.label || (tag === 'scam' ? 'Posible fraude' : 'Número sospechoso'),
     type: type || 'official',
-    confidence: record.confidence || (type === 'official' ? 'medium' : 'low'),
+    confidence: confidence || (type === 'official' ? 'medium' : 'low'),
     source,
     sourceUrl,
     sources: Array.isArray(record.sources)
