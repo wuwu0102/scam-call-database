@@ -267,6 +267,7 @@
     <h1>Alerta Número MX</h1>
     <p class="subtitle">Consulta y reporta números sospechosos en México.</p>
     <div id="statusPanel">
+      <div id="searchableCount"></div>
       <div id="totalCount"></div>
       <div id="officialCount"></div>
       <div id="mediaCount"></div>
@@ -508,23 +509,35 @@
     };
 
     const updateStats = async () => {
-      const setFallbackFromRecords = (records, signals = 0) => {
-        const total = Array.isArray(records) ? records.length : 0;
+      const getSearchableCountFromRecords = (records) => (records || []).filter((item) => {
+        const tag = String(item?.tag || "").toLowerCase();
+        const normalized = normalizeMXNumber(item?.normalizedNumber || item?.number || "");
+        if (!["scam", "suspicious"].includes(tag)) return false;
+        return /^\d{10}$/.test(normalized) && !["2025550101", "2025550102", "2025550103", "2025550104", "2025550105"].includes(normalized);
+      }).length;
+
+      const setFallbackFromRecords = (records, signals = 0, iosCount = 0) => {
+        const trusted = getSearchableCountFromRecords(records);
+        const total = Math.max(trusted, iosCount);
         const todayStr = new Date().toISOString().split("T")[0];
         const todayCount = (records || []).filter((item) => String(item.updatedAt || item.collectedAt || '').startsWith(todayStr)).length;
+        document.getElementById("searchableCount").innerText = `Base consultable: ${total.toLocaleString("es-MX")} números`;
         document.getElementById("totalCount").innerText = `Base confiable: ${total.toLocaleString("es-MX")} números`;
         document.getElementById("officialCount").innerText = `Oficiales: ${total.toLocaleString("es-MX")}`;
         document.getElementById("mediaCount").innerText = `Medios: 0`;
         document.getElementById("userSignalsCount").innerText = `Señales de usuarios: ${signals.toLocaleString("es-MX")}`;
         document.getElementById("todayCount").innerText = `Nuevos hoy: ${todayCount.toLocaleString("es-MX")}`;
-        document.getElementById("iosCount").innerText = `Exportados a iOS: 0`;
+        document.getElementById("iosCount").innerText = `Exportados a iOS: ${iosCount.toLocaleString("es-MX")}`;
         document.getElementById("sourceActive").innerText = `Fuentes activas: 0 / 0`;
       };
       try {
         const publicResp = await fetch('data/public_stats.json');
         if (publicResp.ok) {
           const stats = await publicResp.json();
-          document.getElementById("totalCount").innerText = `Base confiable: ${(stats.totalTrustedCount || 0).toLocaleString("es-MX")} números`;
+          const searchableCount = stats.totalSearchableCount || 0;
+          const trustedDisplayCount = stats.trustedDisplayCount || stats.totalTrustedCount || 0;
+          document.getElementById("searchableCount").innerText = `Base consultable: ${searchableCount.toLocaleString("es-MX")} números`;
+          document.getElementById("totalCount").innerText = `Base confiable: ${trustedDisplayCount.toLocaleString("es-MX")} números`;
           document.getElementById("officialCount").innerText = `Oficiales: ${(stats.officialCount || 0).toLocaleString("es-MX")}`;
           document.getElementById("mediaCount").innerText = `Medios: ${(stats.mediaCount || 0).toLocaleString("es-MX")}`;
           document.getElementById("userSignalsCount").innerText = `Señales de usuarios: ${(stats.signalCount || 0).toLocaleString("es-MX")}`;
@@ -541,10 +554,32 @@
           if (!snap.empty) { setFallbackFromRecords(snap.docs.map((d) => d.data())); return; }
         }
       } catch {}
-      for (const url of ["data/collected_mexico_numbers.json","data/mexico_seed_phone_numbers.json","scam_numbers.json"]) {
-        try { const resp = await fetch(url); if (!resp.ok) continue; const payload = await resp.json(); const arr = Array.isArray(payload)?payload:(Array.isArray(payload.records)?payload.records:[]); if (arr.length>0) { setFallbackFromRecords(arr); return; } } catch {}
+      const readArrayFromUrl = async (url) => {
+        try {
+          const resp = await fetch(url);
+          if (!resp.ok) return [];
+          const payload = await resp.json();
+          return Array.isArray(payload) ? payload : (Array.isArray(payload.records) ? payload.records : []);
+        } catch {
+          return [];
+        }
+      };
+
+      const iosRecords = await readArrayFromUrl("data/ios_numbers.json");
+      const fallbackOrder = [
+        "data/collected_mexico_numbers.json",
+        "data/ios_numbers.json",
+        "data/mexico_seed_phone_numbers.json",
+        "scam_numbers.json"
+      ];
+      for (const url of fallbackOrder) {
+        const arr = await readArrayFromUrl(url);
+        if (arr.length > 0) {
+          setFallbackFromRecords(arr, 0, iosRecords.length);
+          return;
+        }
       }
-      setFallbackFromRecords([]);
+      setFallbackFromRecords([], 0, iosRecords.length);
     };
     let firestore = null;
     let mexicoSeedRecords = [];
