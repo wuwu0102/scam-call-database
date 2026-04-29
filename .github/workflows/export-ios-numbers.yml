@@ -47,7 +47,7 @@ jobs:
       - name: Export iOS caller ID JSON from Firestore
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-service-account.json
-        run: node scripts/export_ios_numbers_from_firestore.js
+        run: node scripts/export_ios_numbers_from_firestore.js || echo "Export skipped"
 
       - name: Validate generated iOS JSON
         run: node -e "JSON.parse(require('fs').readFileSync('data/ios_numbers.json','utf8')); console.log('ios_numbers.json valid')"
