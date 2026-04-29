@@ -65,9 +65,8 @@ const scamSearchableCount = getValidSearchableCount(scamNumbers);
 const totalSearchableCount = collectedSearchableCount;
 const trustedDisplayCount = trusted.length;
 
-const baseGeneratedAt = previousPublicStats?.generatedAt ? new Date(previousPublicStats.generatedAt) : new Date();
 const generatedAt = new Date().toISOString();
-const nextUpdateAt = new Date(baseGeneratedAt.getTime() + 5 * 24 * 60 * 60 * 1000).toISOString();
+const nextUpdateAt = new Date(new Date(generatedAt).getTime() + 5 * 24 * 60 * 60 * 1000).toISOString();
 
 const output = {
   generatedAt,
