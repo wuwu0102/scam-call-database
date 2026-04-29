@@ -126,3 +126,13 @@ node scripts/merge_seed_database.js
 - User-facing copy should use: 「可疑 / 被回報 / 未確認」.
 - Do not directly label a number owner as a scammer.
 - Lookup/CAPTCHA sources are respected and are not forcefully bypassed.
+
+## 全自動墨西哥可疑號碼擴充策略
+
+- 本專案採全自動資料擴充。
+- 官方/政府來源自動匯入正式資料庫（high/medium confidence）。
+- 可信媒體來源自動匯入，但僅標記為 `suspicious`。
+- 群眾來源/使用者回報作為訊號資料，不會單次直接定罪。
+- 使用者回報達門檻（suspicious/fraud >= 3 且 safe = 0）才會自動升級為可疑。
+- iOS caller ID 僅輸出可信來源或達門檻之使用者訊號資料。
+- 本服務僅提供風險提示，不做法律定罪。

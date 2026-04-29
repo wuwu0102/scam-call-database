@@ -56,7 +56,7 @@ jobs:
 
           git add \
             data/collected_mexico_numbers.json \
-            data/review_queue_mexico_numbers.json \
+            data/crowd_signal_mexico_numbers.json \
             data/collector_run_log.json \
             data/ios_numbers.json
 

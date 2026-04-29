@@ -267,12 +267,13 @@
     <h1>Alerta Número MX</h1>
     <p class="subtitle">Consulta y reporta números sospechosos en México.</p>
     <div id="statusPanel">
-      <div id="nextUpdate"></div>
       <div id="totalCount"></div>
       <div id="todayCount"></div>
+      <div id="userSignalsCount"></div>
+      <div id="nextUpdate"></div>
     </div>
     <div id="sourceNotice">
-      Los números de fuentes no oficiales se marcan como sospechosos hasta revisión.
+      Servicio de alerta: muestra riesgo potencial, no confirmación legal.
     </div>
     <section class="section">
       <h2>Buscar número</h2>
@@ -315,6 +316,8 @@
       getFirestore,
       getDocs,
       addDoc,
+      doc,
+      setDoc,
       query,
       where,
       limit
@@ -331,12 +334,13 @@
     };
 
     const LABELS = {
-      scam: { "zh-TW": "詐騙", en: "Scam", "es-MX": "Fraude" },
-      suspicious: { "zh-TW": "可疑", en: "Suspicious", "es-MX": "Sospechoso" },
+      scam: { "zh-TW": "可疑詐騙", en: "Possible scam", "es-MX": "Posible fraude" },
+      suspicious: { "zh-TW": "可疑", en: "Suspicious", "es-MX": "Número sospechoso" },
       safe: { "zh-TW": "安全", en: "Safe", "es-MX": "Seguro" },
       unknown: { "zh-TW": "未知", en: "Unknown", "es-MX": "Desconocido" }
     };
     const COLLECTION_NAME = "phone_numbers";
+    const REPORT_COLLECTION_NAME = "phone_number_reports";
 
     const resultCardEl = document.getElementById("resultCard");
     const resultBadgeEl = document.getElementById("resultBadge");
@@ -421,6 +425,7 @@
       media: "Medio",
       web: "Web",
       user_report: "Usuario",
+      user_signal: "Señal de usuarios",
       community: "Comunidad"
     };
     const CONFIDENCE_LABELS = {
@@ -430,7 +435,8 @@
     };
     const REVIEW_STATUS_LABELS = {
       auto_approved: "verificado",
-      pending_review: "pendiente de revisión"
+      pending_review: "pendiente de revisión",
+      auto_promoted: "auto-promovido"
     };
 
     const getSpanishMetaValue = (value, typeMap = {}) => {
@@ -493,35 +499,26 @@
       const nextUpdateEl = document.getElementById("nextUpdate");
 
       if (nextUpdateEl) {
-        nextUpdateEl.innerText = `Actualización: ${formatDateMX(next)}`;
+        nextUpdateEl.innerText = `Última actualización: ${formatDateMX(new Date())}`;
       }
     };
 
     const updateStats = async () => {
       try {
-        const response = await fetch("data/ios_numbers.json");
-        const data = await response.json();
+        const [iosResp, reportsSnapshot] = await Promise.all([
+          fetch("data/ios_numbers.json"),
+          firestore ? getDocs(collection(firestore, REPORT_COLLECTION_NAME)) : Promise.resolve({ size: 0 })
+        ]);
+        const data = await iosResp.json();
         const safeData = Array.isArray(data) ? data : [];
         const total = safeData.length;
         const todayStr = new Date().toISOString().split("T")[0];
-
         let todayCount = 0;
-        safeData.forEach((item) => {
-          if (item.updatedAt && String(item.updatedAt).startsWith(todayStr)) {
-            todayCount += 1;
-          }
-        });
+        safeData.forEach((item) => { if (item.updatedAt && String(item.updatedAt).startsWith(todayStr)) todayCount += 1; });
 
-        const totalEl = document.getElementById("totalCount");
-        const todayEl = document.getElementById("todayCount");
-
-        if (totalEl) {
-          totalEl.innerText = `Total: ${total.toLocaleString("es-MX")} números`;
-        }
-
-        if (todayEl) {
-          todayEl.innerText = `Hoy: +${todayCount.toLocaleString("es-MX")}`;
-        }
+        document.getElementById("totalCount").innerText = `Total: ${total.toLocaleString("es-MX")}`;
+        document.getElementById("todayCount").innerText = `Hoy: +${todayCount.toLocaleString("es-MX")}`;
+        document.getElementById("userSignalsCount").innerText = `Señales de usuarios: ${(reportsSnapshot.size || 0).toLocaleString("es-MX")}`;
       } catch (error) {
         console.error("Stats error", error);
       }
@@ -624,58 +621,52 @@
     };
 
     const submitReport = async () => {
-      const originalPhone = reportPhoneEl.value.trim();
-      const normalizedPhone = normalizeMXNumber(originalPhone);
-      const tag = reportLabelEl.value;
+      const normalizedPhone = normalizeMXNumber(reportPhoneEl.value.trim());
+      const reportType = reportLabelEl.value;
       const note = reportNoteEl.value.trim();
-
-      if (!normalizedPhone) {
-        setReportMessage("Ingresa un número válido de México", "error");
-        return;
-      }
-      if (!isValidMXNumber(normalizedPhone) || !isKnownLabel(tag)) {
-        setReportMessage("Ingresa un número válido de México", "error");
-        return;
-      }
-
-      if (!firestore) {
-        setReportMessage("Configuración de Firebase pendiente", "error");
-        return;
-      }
+      if (!isValidMXNumber(normalizedPhone) || !isKnownLabel(reportType)) return setReportMessage("Ingresa un número válido de México", "error");
+      if (!firestore) return setReportMessage("Configuración de Firebase pendiente", "error");
 
       try {
-        const existingSnapshot = await getDocs(
-          query(
-            collection(firestore, COLLECTION_NAME),
-            where("normalizedNumber", "==", normalizedPhone),
-            limit(1)
-          )
-        );
-
-        if (!existingSnapshot.empty) {
-          setReportMessage("Este número ya fue reportado", "success");
-          return;
-        }
-
-        await addDoc(collection(firestore, COLLECTION_NAME), {
-          number: normalizedPhone,
+        const userAgentHash = btoa(navigator.userAgent || "").slice(0, 24);
+        await addDoc(collection(firestore, REPORT_COLLECTION_NAME), {
           normalizedNumber: normalizedPhone,
-          tag,
-          label: getDisplayLabel(tag, null),
-          type: "user_report",
-          confidence: "low",
-          source: "Reporte de usuario",
-          reviewStatus: "pending_review",
-          lang,
+          reportType,
           note,
-          updatedAt: new Date().toISOString().slice(0, 10),
           createdAt: Date.now(),
+          userAgentHash,
+          locale: lang,
+          status: "unverified"
         });
 
-        reportPhoneEl.value = "";
-        reportLabelEl.value = "scam";
-        reportNoteEl.value = "";
-        setReportMessage("Gracias. Tu reporte ayuda a proteger a más personas.", "success");
+        const reportsSnapshot = await getDocs(query(collection(firestore, REPORT_COLLECTION_NAME), where("normalizedNumber", "==", normalizedPhone)));
+        let suspiciousOrFraud = 0;
+        let safe = 0;
+        reportsSnapshot.forEach((d) => {
+          const rt = String((d.data() || {}).reportType || "").toLowerCase();
+          if (rt === "scam" || rt === "suspicious") suspiciousOrFraud += 1;
+          if (rt === "safe") safe += 1;
+        });
+
+        if (suspiciousOrFraud >= 3 && safe === 0 && safe < suspiciousOrFraud) {
+          await setDoc(doc(firestore, COLLECTION_NAME, normalizedPhone), {
+            number: normalizedPhone,
+            normalizedNumber: normalizedPhone,
+            tag: "suspicious",
+            label: "Número sospechoso",
+            type: "user_signal",
+            confidence: "low",
+            source: "User reports",
+            reviewStatus: "auto_promoted",
+            reportCount: suspiciousOrFraud,
+            safeReports: safe,
+            note: "Número marcado como sospechoso por múltiples reportes de usuarios. No confirmado oficialmente.",
+            updatedAt: new Date().toISOString().slice(0, 10)
+          }, { merge: true });
+        }
+
+        reportPhoneEl.value = ""; reportLabelEl.value = "scam"; reportNoteEl.value = "";
+        setReportMessage("Gracias. Tu reporte fue registrado como señal de riesgo.", "success");
       } catch {
         setReportMessage("No se pudo guardar el reporte", "error");
       }
