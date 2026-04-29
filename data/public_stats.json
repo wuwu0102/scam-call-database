@@ -1,5 +1,6 @@
 {
-  "generatedAt": "2026-04-29T14:52:17.857Z",
+  "generatedAt": "2026-04-29T15:08:04.582Z",
+  "nextUpdateAt": "2026-05-04T14:52:17.857Z",
   "totalSearchableCount": 17,
   "trustedDisplayCount": 17,
   "officialCount": 17,
@@ -14,9 +15,9 @@
   "lastCollectorStatus": "preserved",
   "fallbackCounts": {
     "collected": 17,
-    "ios": 0,
+    "ios": 17,
     "seed": 17,
-    "scam": 0
+    "scam": 22
   },
   "topSources": [
     {
