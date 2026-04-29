@@ -1,24 +1,90 @@
 {
-  "generatedAt": "2026-04-29T14:05:32.766Z",
-  "totalAutoImport": 187,
-  "totalCrowdSignals": 0,
+  "generatedAt": "2026-04-29T14:29:00.014Z",
   "sources": [
     {
-      "source": "SAT México",
-      "url": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+      "source": "ADN40",
+      "url": "https://www.adn40.mx/",
       "accepted": 0,
-      "duplicates": 0,
-      "invalid": 0,
       "errors": [
         "fetch failed"
       ]
     },
     {
-      "source": "Seguridad BC actual",
+      "source": "Debate",
+      "url": "https://www.debate.com.mx/",
+      "accepted": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "El Universal",
+      "url": "https://www.eluniversal.com.mx/",
+      "accepted": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Excélsior",
+      "url": "https://www.excelsior.com.mx/",
+      "accepted": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Infobae México",
+      "url": "https://www.infobae.com/mexico/",
+      "accepted": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Informador",
+      "url": "https://www.informador.mx/mexico/Lista-completa-de-los-31-numeros-telefonicos-usados-para-extorsionar-en-Mexico-20240507-0216.html",
+      "accepted": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Milenio",
+      "url": "https://www.milenio.com/",
+      "accepted": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Noroeste",
+      "url": "https://www.noroeste.com.mx/nacional/conozca-los-10-numeros-telefonicos-mas-usados-para-extorsionar-LMNO940812",
+      "accepted": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Publimetro México",
+      "url": "https://www.publimetro.com.mx/",
+      "accepted": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "SAT México",
+      "url": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+      "accepted": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Seguridad BC extorsión telefónica",
       "url": "https://seguridadbc.gob.mx/ExtorsionTelefonica/index.php",
       "accepted": 0,
-      "duplicates": 0,
-      "invalid": 0,
       "errors": [
         "fetch failed"
       ]
@@ -27,18 +93,14 @@
       "source": "Seguridad BC histórico 2022",
       "url": "https://www.seguridadbc.gob.mx/ExtorsionTelefonica/engano2022.php",
       "accepted": 0,
-      "duplicates": 0,
-      "invalid": 0,
       "errors": [
         "fetch failed"
       ]
     },
     {
-      "source": "SSP Zacatecas extorsión",
-      "url": "https://ssp.zacatecas.gob.mx/gobierno-de-zacatecas-alerta-sobre-numeros-telefonicos-usados-para-la-comision-del-delito-de-extorsion/",
+      "source": "SSP Michoacán extorsión",
+      "url": "https://www.michoacan.gob.mx/ssp/",
       "accepted": 0,
-      "duplicates": 0,
-      "invalid": 0,
       "errors": [
         "fetch failed"
       ]
@@ -47,53 +109,34 @@
       "source": "SSP Zacatecas alerta",
       "url": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
       "accepted": 0,
-      "duplicates": 0,
-      "invalid": 0,
       "errors": [
         "fetch failed"
       ]
     },
     {
-      "source": "Informador lista pública",
-      "url": "https://www.informador.mx/mexico/Lista-completa-de-los-31-numeros-telefonicos-usados-para-extorsionar-en-Mexico-20240507-0216.html",
+      "source": "SSP Zacatecas extorsión",
+      "url": "https://ssp.zacatecas.gob.mx/gobierno-de-zacatecas-alerta-sobre-numeros-telefonicos-usados-para-la-comision-del-delito-de-extorsion/",
       "accepted": 0,
-      "duplicates": 0,
-      "invalid": 0,
       "errors": [
         "fetch failed"
       ]
     },
     {
-      "source": "Noroeste lista pública",
-      "url": "https://www.noroeste.com.mx/nacional/conozca-los-10-numeros-telefonicos-mas-usados-para-extorsionar-LMNO940812",
+      "source": "TV Azteca Noticias",
+      "url": "https://www.tvazteca.com/aztecanoticias/",
       "accepted": 0,
-      "duplicates": 0,
-      "invalid": 0,
       "errors": [
         "fetch failed"
       ]
     },
     {
-      "source": "Tellows México",
-      "url": "https://www.tellows.mx/",
+      "source": "UnoTV",
+      "url": "https://www.unotv.com/",
       "accepted": 0,
-      "duplicates": 0,
-      "invalid": 0,
-      "errors": [
-        "fetch failed"
-      ]
-    },
-    {
-      "source": "QuienHabla México",
-      "url": "https://www.quienhabla.mx/",
-      "accepted": 0,
-      "duplicates": 0,
-      "invalid": 0,
       "errors": [
         "fetch failed"
       ]
     }
   ],
-  "skippedWrite": true,
-  "reason": "All sources failed or no records collected; preserved previous data files."
+  "lastCollectorStatus": "preserved"
 }

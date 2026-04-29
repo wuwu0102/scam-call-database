@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-04-29T14:29:00.005Z",
+  "officialCount": 17,
+  "mediaCount": 0,
+  "signalCount": 0,
+  "totalTrustedCount": 17,
+  "todayAddedCount": 0,
+  "iosExportCount": 182,
+  "sourceCount": 17,
+  "sourceSuccessCount": 0,
+  "sourceFailedCount": 17,
+  "lastCollectorStatus": "preserved",
+  "topSources": [
+    {
+      "source": "SAT México",
+      "count": 9
+    },
+    {
+      "source": "SSP Michoacán",
+      "count": 6
+    },
+    {
+      "source": "Seguridad BC",
+      "count": 2
+    }
+  ]
+}
