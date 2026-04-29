@@ -33,6 +33,7 @@ const scamNumbers = readRecords('scam_numbers.json');
 const signals = readRecords('data/crowd_signal_mexico_numbers.json');
 const catalog = readRecords('data/source_catalog_mexico.json');
 const runLog = readJson('data/collector_run_log.json', { sources: [] });
+const previousPublicStats = readJson('data/public_stats.json', {});
 
 const today = new Date().toISOString().slice(0, 10);
 const trusted = collected.filter((r) =>
@@ -61,11 +62,16 @@ const iosSearchableCount = getValidSearchableCount(ios);
 const seedSearchableCount = getValidSearchableCount(seed);
 const scamSearchableCount = getValidSearchableCount(scamNumbers);
 
-const totalSearchableCount = Math.max(collectedSearchableCount, ios.length);
+const totalSearchableCount = collectedSearchableCount;
 const trustedDisplayCount = trusted.length;
 
+const baseGeneratedAt = previousPublicStats?.generatedAt ? new Date(previousPublicStats.generatedAt) : new Date();
+const generatedAt = new Date().toISOString();
+const nextUpdateAt = new Date(baseGeneratedAt.getTime() + 5 * 24 * 60 * 60 * 1000).toISOString();
+
 const output = {
-  generatedAt: new Date().toISOString(),
+  generatedAt,
+  nextUpdateAt,
   totalSearchableCount,
   trustedDisplayCount,
   officialCount,
@@ -79,10 +85,10 @@ const output = {
   sourceFailedCount: fail,
   lastCollectorStatus: runLog.lastCollectorStatus || 'partial',
   fallbackCounts: {
-    collected: collectedSearchableCount,
-    ios: iosSearchableCount,
-    seed: seedSearchableCount,
-    scam: scamSearchableCount
+    collected: collected.length,
+    ios: ios.length,
+    seed: seed.length,
+    scam: scamNumbers.length
   },
   topSources
 };
