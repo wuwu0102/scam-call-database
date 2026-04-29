@@ -1,20 +1,5 @@
 [
   {
-    "number": 912345678,
-    "label": "Número sospechoso",
-    "updatedAt": ""
-  },
-  {
-    "number": 987654321,
-    "label": "Posible fraude",
-    "updatedAt": ""
-  },
-  {
-    "number": 999999999,
-    "label": "Posible fraude",
-    "updatedAt": ""
-  },
-  {
     "number": 1443564751,
     "label": "Posible fraude",
     "updatedAt": "2026-04-26"
@@ -113,11 +98,6 @@
     "number": 4439077470,
     "label": "Posible fraude",
     "updatedAt": "2026-04-25"
-  },
-  {
-    "number": 5512345678,
-    "label": "Posible fraude",
-    "updatedAt": ""
   },
   {
     "number": 5515141779,
@@ -513,11 +493,6 @@
     "number": 5596024348,
     "label": "Posible fraude",
     "updatedAt": "2026-04-28"
-  },
-  {
-    "number": 5596531658,
-    "label": "Desconocido",
-    "updatedAt": "2026-04-26"
   },
   {
     "number": 5596930105,
