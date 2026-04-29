@@ -34,6 +34,9 @@ jobs:
       - name: Collect Mexico public phone sources
         run: node scripts/collect_mexico_phone_sources.js
 
+      - name: Safety check collected data
+        run: node scripts/check_data_safety.js
+
       - name: Dry run import to Firestore
         env:
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}

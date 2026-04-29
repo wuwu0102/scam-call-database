@@ -7,6 +7,8 @@ const DATA_DIR = path.join(__dirname, '..', 'data');
 const COLLECTED_OUTPUT_PATH = path.join(DATA_DIR, 'collected_mexico_numbers.json');
 const CROWD_OUTPUT_PATH = path.join(DATA_DIR, 'crowd_signal_mexico_numbers.json');
 const RUN_LOG_OUTPUT_PATH = path.join(DATA_DIR, 'collector_run_log.json');
+const SEED_PATH = path.join(DATA_DIR, 'mexico_seed_phone_numbers.json');
+const SCAM_NUMBERS_PATH = path.join(__dirname, '..', 'scam_numbers.json');
 
 const SOURCES = [
   { name: 'SAT México', url: 'https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos', type: 'official', confidence: 'high', autoImport: true, tag: 'scam', label: 'Posible fraude' },
@@ -45,6 +47,24 @@ async function fetchPublicPage(url) {
   if (!r.ok) throw new Error(`HTTP ${r.status}`);
   return await r.text();
 }
+const readJsonArray = (filePath, key = null) => {
+  if (!fs.existsSync(filePath)) return [];
+  const parsed = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  if (Array.isArray(parsed)) return parsed;
+  if (key && Array.isArray(parsed[key])) return parsed[key];
+  return [];
+};
+
+function priority(record) {
+  const type = String(record.type || '').toLowerCase();
+  const confidence = String(record.confidence || '').toLowerCase();
+  if (type === 'official' && confidence === 'high') return 5;
+  if (type === 'official' && confidence === 'medium') return 4;
+  if (type === 'media' && confidence === 'medium') return 3;
+  if (type === 'web' && confidence === 'low') return 2;
+  if (type === 'user_report') return 1;
+  return 0;
+}
 
 function buildRecord(normalizedNumber, source, collectedAtIso, updatedAt) {
   const tag = source.type === 'media' ? 'suspicious' : source.tag;
@@ -55,6 +75,50 @@ function buildRecord(normalizedNumber, source, collectedAtIso, updatedAt) {
     note: 'Número detectado en fuente pública.', updatedAt, collectedAt: collectedAtIso,
     reviewStatus: source.autoImport ? 'auto_imported' : 'signal_only'
   };
+}
+
+function sanitizeSeedLikeRecord(record) {
+  const normalized = normalizeMXNumber(record.normalizedNumber || record.number || record.phone || '');
+  if (!isValidMXNumber(normalized) || isInvalidPattern(normalized)) return null;
+  const country = String(record.country || '').toUpperCase();
+  if (country && country !== 'MX') return null;
+  return {
+    ...record,
+    number: normalized,
+    normalizedNumber: normalized,
+    country: 'MX',
+    tag: record.tag || 'suspicious',
+    label: record.label || 'Número sospechoso',
+    type: record.type || record.sourceType || 'official',
+    confidence: record.confidence || 'medium',
+    source: record.source || record.sourceName || 'Imported seed',
+    sourceUrl: record.sourceUrl || 'local://seed',
+    reviewStatus: record.reviewStatus || 'auto_imported',
+    updatedAt: record.updatedAt || toDateString(new Date()),
+  };
+}
+
+function mergeRecords(...collections) {
+  const merged = new Map();
+  for (const records of collections) {
+    for (const raw of records) {
+      const record = sanitizeSeedLikeRecord(raw);
+      if (!record) continue;
+      const existing = merged.get(record.normalizedNumber);
+      if (!existing) {
+        merged.set(record.normalizedNumber, record);
+        continue;
+      }
+      const keep = priority(existing) >= priority(record) ? existing : record;
+      const sourceMap = new Map();
+      [...(existing.sources || []), ...(record.sources || [])].forEach((src) => {
+        const key = `${src.sourceUrl || ''}::${src.source || ''}`;
+        sourceMap.set(key, src);
+      });
+      merged.set(record.normalizedNumber, { ...keep, sources: Array.from(sourceMap.values()) });
+    }
+  }
+  return Array.from(merged.values()).sort((a, b) => a.normalizedNumber.localeCompare(b.normalizedNumber));
 }
 
 async function main() {
@@ -84,10 +148,33 @@ async function main() {
     runLog.sources.push(log);
   }
 
-  const autoImportRecords = Array.from(autoByNumber.values()).sort((a,b)=>a.normalizedNumber.localeCompare(b.normalizedNumber));
-  const crowdSignals = Array.from(crowdByNumber.values()).sort((a,b)=>a.normalizedNumber.localeCompare(b.normalizedNumber));
+  const harvestedAutoRecords = Array.from(autoByNumber.values());
+  const harvestedCrowdRecords = Array.from(crowdByNumber.values()).sort((a, b) => a.normalizedNumber.localeCompare(b.normalizedNumber));
+
+  const existingCollected = readJsonArray(COLLECTED_OUTPUT_PATH);
+  const seedRecords = readJsonArray(SEED_PATH);
+  const scamFallback = readJsonArray(SCAM_NUMBERS_PATH, 'records').filter((record) => {
+    const normalized = normalizeMXNumber(record.normalizedNumber || record.number || record.phone || '');
+    return isValidMXNumber(normalized) && (String(record.country || '').toUpperCase() === 'MX' || normalized.length === 10);
+  });
+
+  const autoImportRecords = mergeRecords(seedRecords, existingCollected, scamFallback, harvestedAutoRecords);
+  const crowdSignals = mergeRecords(readJsonArray(CROWD_OUTPUT_PATH), harvestedCrowdRecords);
+
   runLog.totalAutoImport = autoImportRecords.length;
   runLog.totalCrowdSignals = crowdSignals.length;
+
+  const sourceFetchFailures = runLog.sources.every((entry) => Array.isArray(entry.errors) && entry.errors.length > 0);
+  const noRecordsCollected = harvestedAutoRecords.length === 0 && harvestedCrowdRecords.length === 0;
+  if (sourceFetchFailures || noRecordsCollected) {
+    runLog.skippedWrite = true;
+    runLog.reason = 'All sources failed or no records collected; preserved previous data files.';
+    fs.writeFileSync(RUN_LOG_OUTPUT_PATH, `${JSON.stringify(runLog, null, 2)}\n`, 'utf8');
+    console.log(runLog.reason);
+    console.log(`Collected auto-import records: ${autoImportRecords.length} (preserved)`);
+    console.log(`Collected crowd signals: ${crowdSignals.length} (preserved)`);
+    return;
+  }
 
   fs.writeFileSync(COLLECTED_OUTPUT_PATH, `${JSON.stringify(autoImportRecords, null, 2)}\n`, 'utf8');
   fs.writeFileSync(CROWD_OUTPUT_PATH, `${JSON.stringify(crowdSignals, null, 2)}\n`, 'utf8');
@@ -97,4 +184,4 @@ async function main() {
   console.log(`Collected crowd signals: ${crowdSignals.length}`);
 }
 
-main().catch((e)=>{ console.error(e); process.exit(1); });
+main().catch((e) => { console.error(e); process.exit(1); });

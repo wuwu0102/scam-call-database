@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-29T13:19:27.832Z",
-  "totalAutoImport": 0,
+  "generatedAt": "2026-04-29T14:05:32.766Z",
+  "totalAutoImport": 187,
   "totalCrowdSignals": 0,
   "sources": [
     {
@@ -93,5 +93,7 @@
         "fetch failed"
       ]
     }
-  ]
+  ],
+  "skippedWrite": true,
+  "reason": "All sources failed or no records collected; preserved previous data files."
 }

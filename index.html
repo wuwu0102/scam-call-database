@@ -505,16 +505,46 @@
 
     const updateStats = async () => {
       try {
-        const [iosResp, reportsSnapshot] = await Promise.all([
-          fetch("data/ios_numbers.json"),
-          firestore ? getDocs(collection(firestore, REPORT_COLLECTION_NAME)) : Promise.resolve({ size: 0 })
-        ]);
-        const data = await iosResp.json();
-        const safeData = Array.isArray(data) ? data : [];
-        const total = safeData.length;
+        const reportsSnapshot = firestore ? await getDocs(collection(firestore, REPORT_COLLECTION_NAME)) : { size: 0 };
         const todayStr = new Date().toISOString().split("T")[0];
+
+        let records = [];
+        if (firestore) {
+          try {
+            const firestoreSnapshot = await getDocs(collection(firestore, COLLECTION_NAME));
+            records = firestoreSnapshot.docs.map((docItem) => docItem.data());
+          } catch {
+            records = [];
+          }
+        }
+
+        if (!Array.isArray(records) || records.length === 0) {
+          const fallbackUrls = [
+            "data/collected_mexico_numbers.json",
+            "data/mexico_seed_phone_numbers.json",
+            "scam_numbers.json"
+          ];
+          for (const url of fallbackUrls) {
+            try {
+              const resp = await fetch(url);
+              if (!resp.ok) continue;
+              const payload = await resp.json();
+              const arrayData = Array.isArray(payload) ? payload : (Array.isArray(payload.records) ? payload.records : []);
+              if (arrayData.length > 0) {
+                records = arrayData;
+                break;
+              }
+            } catch {
+              // try next fallback source
+            }
+          }
+        }
+
+        const total = Array.isArray(records) ? records.length : 0;
         let todayCount = 0;
-        safeData.forEach((item) => { if (item.updatedAt && String(item.updatedAt).startsWith(todayStr)) todayCount += 1; });
+        (Array.isArray(records) ? records : []).forEach((item) => {
+          if (item.updatedAt && String(item.updatedAt).startsWith(todayStr)) todayCount += 1;
+        });
 
         document.getElementById("totalCount").innerText = `Total: ${total.toLocaleString("es-MX")}`;
         document.getElementById("todayCount").innerText = `Hoy: +${todayCount.toLocaleString("es-MX")}`;
