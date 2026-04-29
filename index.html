@@ -199,7 +199,7 @@
       text-align: left;
     }
 
-    #statusPanel {
+    #stats-card {
       max-width: 680px;
       margin: 12px auto 8px;
       padding: 12px 14px;
@@ -214,7 +214,7 @@
       gap: 6px;
     }
 
-    #statusPanel div {
+    #stats-card div {
       margin: 0;
       white-space: normal;
       overflow-wrap: anywhere;
@@ -247,7 +247,7 @@
         padding: 0 16px;
       }
 
-      #statusPanel {
+      #stats-card {
         margin: 10px 16px 8px;
         font-size: 13px;
         padding: 12px;
@@ -266,9 +266,9 @@
   <main class="app">
     <h1>Alerta Número MX</h1>
     <p class="subtitle">Consulta y reporta números sospechosos en México.</p>
-    <div id="statusPanel">
-      <div id="searchableCount"></div>
-      <div id="nextUpdate"></div>
+    <div id="stats-card">
+      <div id="registered-count">Números sospechosos registrados: cargando...</div>
+      <div id="next-update">Próxima actualización: cargando...</div>
     </div>
     <div id="sourceNotice">
       Servicio de alerta: muestra riesgo potencial, no confirmación legal.
@@ -491,35 +491,49 @@
         minute: "2-digit"
       });
 
-    const resolveSuspiciousCount = (stats = {}, fallbackCounts = {}) => {
-      const candidates = [
-        Number(stats.totalSearchableCount || 0),
-        Number(stats.iosExportCount || 0),
-        Number(fallbackCounts.ios || 0),
-        Number(fallbackCounts.collected || 0),
-        Number(fallbackCounts.seed || 0)
-      ];
-      return candidates.find((value) => value > 0) || 0;
-    };
-
-    const setSimpleStats = (count = 0, nextUpdateAt = null) => {
-      document.getElementById("searchableCount").innerText = `Números sospechosos registrados: ${count.toLocaleString("es-MX")}`;
-      const targetDate = nextUpdateAt ? new Date(nextUpdateAt) : new Date();
-      document.getElementById("nextUpdate").innerText = `Próxima actualización: ${formatDateMX(targetDate)}`;
-    };
-
-    const updateStats = async () => {
+    const getArrayLengthFromFile = async (path) => {
       try {
-        const publicResp = await fetch('data/public_stats.json');
-        if (publicResp.ok) {
-          const stats = await publicResp.json();
-          const suspiciousCount = resolveSuspiciousCount(stats, stats.fallbackCounts || {});
-          const nextUpdateAt = stats.nextUpdateAt || null;
-          setSimpleStats(suspiciousCount, nextUpdateAt);
-          return;
-        }
-      } catch {}
-      setSimpleStats(0, null);
+        const resp = await fetch(path);
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const data = await resp.json();
+        if (Array.isArray(data)) return data.length;
+        if (data && Array.isArray(data.records)) return data.records.length;
+      } catch (error) {
+        console.warn(`Failed to load ${path}`, error);
+      }
+      return 0;
+    };
+
+    const setStatsText = (count = 0, nextUpdateAt = null) => {
+      const registeredCountEl = document.getElementById("registered-count");
+      const nextUpdateEl = document.getElementById("next-update");
+      const safeCount = Number.isFinite(Number(count)) ? Number(count) : 0;
+      const parsedDate = nextUpdateAt ? new Date(nextUpdateAt) : new Date(Date.now() + 5 * 24 * 60 * 60 * 1000);
+      const safeDate = Number.isNaN(parsedDate.getTime()) ? new Date(Date.now() + 5 * 24 * 60 * 60 * 1000) : parsedDate;
+
+      registeredCountEl.innerText = `Números sospechosos registrados: ${safeCount.toLocaleString("es-MX")}`;
+      nextUpdateEl.innerText = `Próxima actualización: ${formatDateMX(safeDate)}`;
+    };
+
+    const loadStats = async () => {
+      let stats = {};
+      try {
+        const publicResp = await fetch("data/public_stats.json");
+        if (!publicResp.ok) throw new Error(`HTTP ${publicResp.status}`);
+        stats = await publicResp.json();
+      } catch (error) {
+        console.warn("Failed to load data/public_stats.json", error);
+      }
+
+      let suspiciousCount = Number(stats.totalSearchableCount || 0);
+      if (suspiciousCount <= 0) suspiciousCount = Number(stats.iosExportCount || 0);
+      if (suspiciousCount <= 0) suspiciousCount = await getArrayLengthFromFile("data/ios_numbers.json");
+      if (suspiciousCount <= 0) suspiciousCount = await getArrayLengthFromFile("data/collected_mexico_numbers.json");
+      if (suspiciousCount <= 0) suspiciousCount = await getArrayLengthFromFile("data/mexico_seed_phone_numbers.json");
+      if (suspiciousCount <= 0) suspiciousCount = 0;
+
+      const nextUpdateAt = stats.nextUpdateAt || new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString();
+      setStatsText(suspiciousCount, nextUpdateAt);
     };
     let firestore = null;
     let mexicoSeedRecords = [];
@@ -717,9 +731,9 @@
         fallbackRecords = [];
       });
 
-    window.addEventListener("load", () => {
+    document.addEventListener("DOMContentLoaded", () => {
       updateNextRunTime();
-      updateStats();
+      loadStats();
     });
   </script>
 </body>
