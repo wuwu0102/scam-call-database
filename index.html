@@ -482,59 +482,81 @@
       reportMsgEl.className = type ? type : "";
     };
 
-    const formatDateMX = (date) =>
-      date.toLocaleString("es-MX", {
-        day: "2-digit",
-        month: "short",
-        year: "numeric",
-        hour: "2-digit",
-        minute: "2-digit"
-      });
+    document.addEventListener("DOMContentLoaded", loadStats);
 
-    const getArrayLengthFromFile = async (path) => {
+    async function loadStats() {
+      const countEl = document.getElementById("registered-count");
+      const nextEl = document.getElementById("next-update");
+
+      let count = 0;
+
+      // ✅ 1. 嘗試抓 public_stats
       try {
-        const resp = await fetch(path);
-        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-        const data = await resp.json();
-        if (Array.isArray(data)) return data.length;
-        if (data && Array.isArray(data.records)) return data.records.length;
-      } catch (error) {
-        console.warn(`Failed to load ${path}`, error);
-      }
-      return 0;
-    };
+        const res = await fetch("./data/public_stats.json");
+        if (res.ok) {
+          const data = await res.json();
+          count = data.totalSearchableCount || data.iosExportCount || 0;
 
-    const setStatsText = (count = 0, nextUpdateAt = null) => {
-      const registeredCountEl = document.getElementById("registered-count");
-      const nextUpdateEl = document.getElementById("next-update");
-      const safeCount = Number.isFinite(Number(count)) ? Number(count) : 0;
-      const parsedDate = nextUpdateAt ? new Date(nextUpdateAt) : new Date(Date.now() + 5 * 24 * 60 * 60 * 1000);
-      const safeDate = Number.isNaN(parsedDate.getTime()) ? new Date(Date.now() + 5 * 24 * 60 * 60 * 1000) : parsedDate;
-
-      registeredCountEl.innerText = `Números sospechosos registrados: ${safeCount.toLocaleString("es-MX")}`;
-      nextUpdateEl.innerText = `Próxima actualización: ${formatDateMX(safeDate)}`;
-    };
-
-    const loadStats = async () => {
-      let stats = {};
-      try {
-        const publicResp = await fetch("data/public_stats.json");
-        if (!publicResp.ok) throw new Error(`HTTP ${publicResp.status}`);
-        stats = await publicResp.json();
-      } catch (error) {
-        console.warn("Failed to load data/public_stats.json", error);
+          if (data.nextUpdateAt) {
+            nextEl.innerText =
+              "Próxima actualización: " +
+              new Date(data.nextUpdateAt).toLocaleString("es-MX");
+          }
+        }
+      } catch (e) {
+        console.warn("public_stats failed");
       }
 
-      let suspiciousCount = Number(stats.totalSearchableCount || 0);
-      if (suspiciousCount <= 0) suspiciousCount = Number(stats.iosExportCount || 0);
-      if (suspiciousCount <= 0) suspiciousCount = await getArrayLengthFromFile("data/ios_numbers.json");
-      if (suspiciousCount <= 0) suspiciousCount = await getArrayLengthFromFile("data/collected_mexico_numbers.json");
-      if (suspiciousCount <= 0) suspiciousCount = await getArrayLengthFromFile("data/mexico_seed_phone_numbers.json");
-      if (suspiciousCount <= 0) suspiciousCount = 0;
+      // ✅ 2. fallback → ios_numbers
+      if (count === 0) {
+        try {
+          const res = await fetch("./data/ios_numbers.json");
+          if (res.ok) {
+            const data = await res.json();
+            count = data.length || 0;
+          }
+        } catch (e) {
+          console.warn("ios_numbers failed");
+        }
+      }
 
-      const nextUpdateAt = stats.nextUpdateAt || new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString();
-      setStatsText(suspiciousCount, nextUpdateAt);
-    };
+      // ✅ 3. fallback → collected
+      if (count === 0) {
+        try {
+          const res = await fetch("./data/collected_mexico_numbers.json");
+          if (res.ok) {
+            const data = await res.json();
+            count = data.length || 0;
+          }
+        } catch (e) {
+          console.warn("collected failed");
+        }
+      }
+
+      // ✅ 4. fallback → seed
+      if (count === 0) {
+        try {
+          const res = await fetch("./data/mexico_seed_phone_numbers.json");
+          if (res.ok) {
+            const data = await res.json();
+            count = data.length || 0;
+          }
+        } catch (e) {
+          console.warn("seed failed");
+        }
+      }
+
+      // ✅ 最終一定顯示
+      countEl.innerText = "Números sospechosos registrados: " + count;
+
+      if (!nextEl.innerText.includes("Próxima")) {
+        const next = new Date();
+        next.setDate(next.getDate() + 5);
+        nextEl.innerText =
+          "Próxima actualización: " +
+          next.toLocaleString("es-MX");
+      }
+    }
     let firestore = null;
     let mexicoSeedRecords = [];
     let fallbackRecords = [];
@@ -731,10 +753,7 @@
         fallbackRecords = [];
       });
 
-    document.addEventListener("DOMContentLoaded", () => {
-      updateNextRunTime();
-      loadStats();
-    });
+
   </script>
 </body>
 </html>
