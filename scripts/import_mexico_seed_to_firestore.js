@@ -146,7 +146,17 @@ function mergeByNormalizedNumber(records) {
 }
 
 function readSeedRecords() {
-  const allRecords = INPUT_PATHS.flatMap(readRecordsFromPath);
+  const seedRecords = readRecordsFromPath(INPUT_PATHS[0]);
+  const collectedRecords = readRecordsFromPath(INPUT_PATHS[1]);
+
+  if (collectedRecords.length === 0) {
+    console.warn('collected_mexico_numbers.json is empty. Preserving Firestore data by importing seed records only.');
+  }
+
+  const allRecords = collectedRecords.length > 0
+    ? [...seedRecords, ...collectedRecords]
+    : [...seedRecords];
+
   return mergeByNormalizedNumber(allRecords);
 }
 

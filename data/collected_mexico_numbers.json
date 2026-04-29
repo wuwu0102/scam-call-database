@@ -1,1 +1,4136 @@
-[]
+[
+  {
+    "number": "1443564751",
+    "normalizedNumber": "1443564751",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-26"
+  },
+  {
+    "number": "1777132068",
+    "normalizedNumber": "1777132068",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "1777132447",
+    "normalizedNumber": "1777132447",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "1777190876",
+    "normalizedNumber": "1777190876",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-26"
+  },
+  {
+    "number": "1777350169",
+    "normalizedNumber": "1777350169",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "2025103114",
+    "normalizedNumber": "2025103114",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-26"
+  },
+  {
+    "number": "2025112617",
+    "normalizedNumber": "2025112617",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-26"
+  },
+  {
+    "number": "2025550101",
+    "normalizedNumber": "2025550101",
+    "country": "MX",
+    "tag": {
+      "zh-TW": "詐騙",
+      "en": "Scam",
+      "es-MX": "Estafa"
+    },
+    "label": "scam",
+    "type": "community",
+    "confidence": "low",
+    "source": "Unknown source",
+    "sourceUrl": "local://scam_numbers",
+    "sources": [
+      {
+        "source": "Unknown source",
+        "sourceUrl": "local://scam_numbers",
+        "type": "community",
+        "confidence": "low"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "2025550102",
+    "normalizedNumber": "2025550102",
+    "country": "MX",
+    "tag": {
+      "zh-TW": "安全",
+      "en": "Safe",
+      "es-MX": "Seguro"
+    },
+    "label": "safe",
+    "type": "community",
+    "confidence": "low",
+    "source": "Unknown source",
+    "sourceUrl": "local://scam_numbers",
+    "sources": [
+      {
+        "source": "Unknown source",
+        "sourceUrl": "local://scam_numbers",
+        "type": "community",
+        "confidence": "low"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "2025550103",
+    "normalizedNumber": "2025550103",
+    "country": "MX",
+    "tag": {
+      "zh-TW": "未知",
+      "en": "Unknown",
+      "es-MX": "Desconocido"
+    },
+    "label": "unknown",
+    "type": "community",
+    "confidence": "low",
+    "source": "Unknown source",
+    "sourceUrl": "local://scam_numbers",
+    "sources": [
+      {
+        "source": "Unknown source",
+        "sourceUrl": "local://scam_numbers",
+        "type": "community",
+        "confidence": "low"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "2025550104",
+    "normalizedNumber": "2025550104",
+    "country": "MX",
+    "tag": {
+      "zh-TW": "可疑",
+      "en": "Risk",
+      "es-MX": "Riesgo"
+    },
+    "label": "scam",
+    "type": "community",
+    "confidence": "low",
+    "source": "Unknown source",
+    "sourceUrl": "local://scam_numbers",
+    "sources": [
+      {
+        "source": "Unknown source",
+        "sourceUrl": "local://scam_numbers",
+        "type": "community",
+        "confidence": "low"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "2025550105",
+    "normalizedNumber": "2025550105",
+    "country": "MX",
+    "tag": {
+      "zh-TW": "可信",
+      "en": "Trusted",
+      "es-MX": "Confiable"
+    },
+    "label": "safe",
+    "type": "community",
+    "confidence": "low",
+    "source": "Unknown source",
+    "sourceUrl": "local://scam_numbers",
+    "sources": [
+      {
+        "source": "Unknown source",
+        "sourceUrl": "local://scam_numbers",
+        "type": "community",
+        "confidence": "low"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "2026011414",
+    "normalizedNumber": "2026011414",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-26"
+  },
+  {
+    "number": "2026012116",
+    "normalizedNumber": "2026012116",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-26"
+  },
+  {
+    "number": "2026032415",
+    "normalizedNumber": "2026032415",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-26"
+  },
+  {
+    "number": "2026041509",
+    "normalizedNumber": "2026041509",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-26"
+  },
+  {
+    "number": "3314867721",
+    "normalizedNumber": "3314867721",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "3324521539",
+    "normalizedNumber": "3324521539",
+    "country": "MX",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "SSP Michoacán",
+    "sourceUrl": "https://ssp.michoacan.gob.mx/ssp-difunde-lista-de-numeros-telefonicos-senalados-por-la-emision-de-extorsiones/",
+    "sources": [
+      {
+        "source": "SSP Michoacán",
+        "sourceUrl": "https://ssp.michoacan.gob.mx/ssp-difunde-lista-de-numeros-telefonicos-senalados-por-la-emision-de-extorsiones/",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número publicado en lista de números señalados por emisión de extorsiones.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "3329259354",
+    "normalizedNumber": "3329259354",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "3330319175",
+    "normalizedNumber": "3330319175",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "3330328932",
+    "normalizedNumber": "3330328932",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "4183470737",
+    "normalizedNumber": "4183470737",
+    "country": "MX",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "high",
+    "source": "SAT México",
+    "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+    "sources": [
+      {
+        "source": "SAT México",
+        "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+        "type": "official",
+        "confidence": "high"
+      }
+    ],
+    "note": "Número telefónico falso reportado por SAT.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "4428347016",
+    "normalizedNumber": "4428347016",
+    "country": "MX",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "SSP Michoacán",
+    "sourceUrl": "https://ssp.michoacan.gob.mx/ssp-difunde-lista-de-numeros-telefonicos-senalados-por-la-emision-de-extorsiones/",
+    "sources": [
+      {
+        "source": "SSP Michoacán",
+        "sourceUrl": "https://ssp.michoacan.gob.mx/ssp-difunde-lista-de-numeros-telefonicos-senalados-por-la-emision-de-extorsiones/",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número publicado en lista de números señalados por emisión de extorsiones.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "4435461550",
+    "normalizedNumber": "4435461550",
+    "country": "MX",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "SSP Michoacán",
+    "sourceUrl": "https://ssp.michoacan.gob.mx/ssp-difunde-lista-de-numeros-telefonicos-senalados-por-la-emision-de-extorsiones/",
+    "sources": [
+      {
+        "source": "SSP Michoacán",
+        "sourceUrl": "https://ssp.michoacan.gob.mx/ssp-difunde-lista-de-numeros-telefonicos-senalados-por-la-emision-de-extorsiones/",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número publicado en lista de números señalados por emisión de extorsiones.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "4439077470",
+    "normalizedNumber": "4439077470",
+    "country": "MX",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "SSP Michoacán",
+    "sourceUrl": "https://ssp.michoacan.gob.mx/ssp-difunde-lista-de-numeros-telefonicos-senalados-por-la-emision-de-extorsiones/",
+    "sources": [
+      {
+        "source": "SSP Michoacán",
+        "sourceUrl": "https://ssp.michoacan.gob.mx/ssp-difunde-lista-de-numeros-telefonicos-senalados-por-la-emision-de-extorsiones/",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número publicado en lista de números señalados por emisión de extorsiones.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "5515141779",
+    "normalizedNumber": "5515141779",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5515759635",
+    "normalizedNumber": "5515759635",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5516588674",
+    "normalizedNumber": "5516588674",
+    "country": "MX",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "high",
+    "source": "SAT México",
+    "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+    "sources": [
+      {
+        "source": "SAT México",
+        "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+        "type": "official",
+        "confidence": "high"
+      }
+    ],
+    "note": "Número telefónico falso reportado por SAT.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "5518478832",
+    "normalizedNumber": "5518478832",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5518539697",
+    "normalizedNumber": "5518539697",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5518554268",
+    "normalizedNumber": "5518554268",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5519267332",
+    "normalizedNumber": "5519267332",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5519384429",
+    "normalizedNumber": "5519384429",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5519735168",
+    "normalizedNumber": "5519735168",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5520777967",
+    "normalizedNumber": "5520777967",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5521394059",
+    "normalizedNumber": "5521394059",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5522668942",
+    "normalizedNumber": "5522668942",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5522738348",
+    "normalizedNumber": "5522738348",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5522855293",
+    "normalizedNumber": "5522855293",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5530274718",
+    "normalizedNumber": "5530274718",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5535829037",
+    "normalizedNumber": "5535829037",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5535911521",
+    "normalizedNumber": "5535911521",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5537729393",
+    "normalizedNumber": "5537729393",
+    "country": "MX",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "high",
+    "source": "SAT México",
+    "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+    "sources": [
+      {
+        "source": "SAT México",
+        "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+        "type": "official",
+        "confidence": "high"
+      }
+    ],
+    "note": "Número telefónico falso reportado por SAT.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "5549113076",
+    "normalizedNumber": "5549113076",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5550541439",
+    "normalizedNumber": "5550541439",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5551018192",
+    "normalizedNumber": "5551018192",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5552109291",
+    "normalizedNumber": "5552109291",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5552157184",
+    "normalizedNumber": "5552157184",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5552886964",
+    "normalizedNumber": "5552886964",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5553174175",
+    "normalizedNumber": "5553174175",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5554011271",
+    "normalizedNumber": "5554011271",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5556786051",
+    "normalizedNumber": "5556786051",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5559043950",
+    "normalizedNumber": "5559043950",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5559398157",
+    "normalizedNumber": "5559398157",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5559784594",
+    "normalizedNumber": "5559784594",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5564118147",
+    "normalizedNumber": "5564118147",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5566144166",
+    "normalizedNumber": "5566144166",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5566177334",
+    "normalizedNumber": "5566177334",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5566276726",
+    "normalizedNumber": "5566276726",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5566556676",
+    "normalizedNumber": "5566556676",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5566996248",
+    "normalizedNumber": "5566996248",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5567487982",
+    "normalizedNumber": "5567487982",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5567504863",
+    "normalizedNumber": "5567504863",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5567608128",
+    "normalizedNumber": "5567608128",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5567721862",
+    "normalizedNumber": "5567721862",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5570074941",
+    "normalizedNumber": "5570074941",
+    "country": "MX",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "high",
+    "source": "SAT México",
+    "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+    "sources": [
+      {
+        "source": "SAT México",
+        "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+        "type": "official",
+        "confidence": "high"
+      }
+    ],
+    "note": "Número telefónico falso reportado por SAT.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "5570539797",
+    "normalizedNumber": "5570539797",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5576135051",
+    "normalizedNumber": "5576135051",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5576816320",
+    "normalizedNumber": "5576816320",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5577807435",
+    "normalizedNumber": "5577807435",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5577899223",
+    "normalizedNumber": "5577899223",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5578144567",
+    "normalizedNumber": "5578144567",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5581372190",
+    "normalizedNumber": "5581372190",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5581718562",
+    "normalizedNumber": "5581718562",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5581831543",
+    "normalizedNumber": "5581831543",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5582410238",
+    "normalizedNumber": "5582410238",
+    "country": "MX",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "high",
+    "source": "SAT México",
+    "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+    "sources": [
+      {
+        "source": "SAT México",
+        "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+        "type": "official",
+        "confidence": "high"
+      }
+    ],
+    "note": "Número telefónico falso reportado por SAT.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "5583611075",
+    "normalizedNumber": "5583611075",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5584216502",
+    "normalizedNumber": "5584216502",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5585047563",
+    "normalizedNumber": "5585047563",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5585511304",
+    "normalizedNumber": "5585511304",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5586036634",
+    "normalizedNumber": "5586036634",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5587231809",
+    "normalizedNumber": "5587231809",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5588083012",
+    "normalizedNumber": "5588083012",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5588522222",
+    "normalizedNumber": "5588522222",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5588550472",
+    "normalizedNumber": "5588550472",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5588552805",
+    "normalizedNumber": "5588552805",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5590633982",
+    "normalizedNumber": "5590633982",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5592291691",
+    "normalizedNumber": "5592291691",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5592292548",
+    "normalizedNumber": "5592292548",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5592310177",
+    "normalizedNumber": "5592310177",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5592310558",
+    "normalizedNumber": "5592310558",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5592310704",
+    "normalizedNumber": "5592310704",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5593330504",
+    "normalizedNumber": "5593330504",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5593330650",
+    "normalizedNumber": "5593330650",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5593330990",
+    "normalizedNumber": "5593330990",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5593346184",
+    "normalizedNumber": "5593346184",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5593346330",
+    "normalizedNumber": "5593346330",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5593346516",
+    "normalizedNumber": "5593346516",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5594519032",
+    "normalizedNumber": "5594519032",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5594519096",
+    "normalizedNumber": "5594519096",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5595912413",
+    "normalizedNumber": "5595912413",
+    "country": "MX",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "high",
+    "source": "SAT México",
+    "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+    "sources": [
+      {
+        "source": "SAT México",
+        "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+        "type": "official",
+        "confidence": "high"
+      }
+    ],
+    "note": "Número telefónico falso reportado por SAT.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "5596023228",
+    "normalizedNumber": "5596023228",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5596024109",
+    "normalizedNumber": "5596024109",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5596024348",
+    "normalizedNumber": "5596024348",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5596930105",
+    "normalizedNumber": "5596930105",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5599637553",
+    "normalizedNumber": "5599637553",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5599907817",
+    "normalizedNumber": "5599907817",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5599907834",
+    "normalizedNumber": "5599907834",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5611132311",
+    "normalizedNumber": "5611132311",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5611416120",
+    "normalizedNumber": "5611416120",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5611548822",
+    "normalizedNumber": "5611548822",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5612267348",
+    "normalizedNumber": "5612267348",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5612859384",
+    "normalizedNumber": "5612859384",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5613461135",
+    "normalizedNumber": "5613461135",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5614871861",
+    "normalizedNumber": "5614871861",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5617369399",
+    "normalizedNumber": "5617369399",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5618163002",
+    "normalizedNumber": "5618163002",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5618284383",
+    "normalizedNumber": "5618284383",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5618403376",
+    "normalizedNumber": "5618403376",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5618641202",
+    "normalizedNumber": "5618641202",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5620269434",
+    "normalizedNumber": "5620269434",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5620289049",
+    "normalizedNumber": "5620289049",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5623694368",
+    "normalizedNumber": "5623694368",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5623951997",
+    "normalizedNumber": "5623951997",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5624214410",
+    "normalizedNumber": "5624214410",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5624425445",
+    "normalizedNumber": "5624425445",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5627293937",
+    "normalizedNumber": "5627293937",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5628176958",
+    "normalizedNumber": "5628176958",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5632656100",
+    "normalizedNumber": "5632656100",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5632910475",
+    "normalizedNumber": "5632910475",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5633274073",
+    "normalizedNumber": "5633274073",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5633829444",
+    "normalizedNumber": "5633829444",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5633992087",
+    "normalizedNumber": "5633992087",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5634174440",
+    "normalizedNumber": "5634174440",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5635464655",
+    "normalizedNumber": "5635464655",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5635834222",
+    "normalizedNumber": "5635834222",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5636031050",
+    "normalizedNumber": "5636031050",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5636307355",
+    "normalizedNumber": "5636307355",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5636748972",
+    "normalizedNumber": "5636748972",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5636773963",
+    "normalizedNumber": "5636773963",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5636806119",
+    "normalizedNumber": "5636806119",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5636857134",
+    "normalizedNumber": "5636857134",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5637127185",
+    "normalizedNumber": "5637127185",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5639831700",
+    "normalizedNumber": "5639831700",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5642397061",
+    "normalizedNumber": "5642397061",
+    "country": "MX",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "SSP Michoacán",
+    "sourceUrl": "https://ssp.michoacan.gob.mx/ssp-difunde-lista-de-numeros-telefonicos-senalados-por-la-emision-de-extorsiones/",
+    "sources": [
+      {
+        "source": "SSP Michoacán",
+        "sourceUrl": "https://ssp.michoacan.gob.mx/ssp-difunde-lista-de-numeros-telefonicos-senalados-por-la-emision-de-extorsiones/",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número publicado en lista de números señalados por emisión de extorsiones.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "5642988536",
+    "normalizedNumber": "5642988536",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5643269519",
+    "normalizedNumber": "5643269519",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5643284775",
+    "normalizedNumber": "5643284775",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5643326129",
+    "normalizedNumber": "5643326129",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5643928885",
+    "normalizedNumber": "5643928885",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5643945628",
+    "normalizedNumber": "5643945628",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5643973698",
+    "normalizedNumber": "5643973698",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5645758122",
+    "normalizedNumber": "5645758122",
+    "country": "MX",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "high",
+    "source": "SAT México",
+    "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+    "sources": [
+      {
+        "source": "SAT México",
+        "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+        "type": "official",
+        "confidence": "high"
+      }
+    ],
+    "note": "Número telefónico falso reportado por SAT.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "5647340419",
+    "normalizedNumber": "5647340419",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5647362462",
+    "normalizedNumber": "5647362462",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5647709182",
+    "normalizedNumber": "5647709182",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5648016234",
+    "normalizedNumber": "5648016234",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5648044707",
+    "normalizedNumber": "5648044707",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5648579297",
+    "normalizedNumber": "5648579297",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5648746134",
+    "normalizedNumber": "5648746134",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5651269539",
+    "normalizedNumber": "5651269539",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5651316339",
+    "normalizedNumber": "5651316339",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5651371156",
+    "normalizedNumber": "5651371156",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5651511320",
+    "normalizedNumber": "5651511320",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5651517978",
+    "normalizedNumber": "5651517978",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5651843969",
+    "normalizedNumber": "5651843969",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5651917212",
+    "normalizedNumber": "5651917212",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5652455900",
+    "normalizedNumber": "5652455900",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5654340704",
+    "normalizedNumber": "5654340704",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5659202376",
+    "normalizedNumber": "5659202376",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5661004047",
+    "normalizedNumber": "5661004047",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5663641645",
+    "normalizedNumber": "5663641645",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "5664567266",
+    "normalizedNumber": "5664567266",
+    "country": "MX",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "high",
+    "source": "SAT México",
+    "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+    "sources": [
+      {
+        "source": "SAT México",
+        "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+        "type": "official",
+        "confidence": "high"
+      }
+    ],
+    "note": "Número telefónico falso reportado por SAT.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "6144950861",
+    "normalizedNumber": "6144950861",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "6653164566",
+    "normalizedNumber": "6653164566",
+    "country": "MX",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "Seguridad BC",
+    "sourceUrl": "https://seguridadbc.gob.mx/ExtorsionTelefonica/index.php",
+    "sources": [
+      {
+        "source": "Seguridad BC",
+        "sourceUrl": "https://seguridadbc.gob.mx/ExtorsionTelefonica/index.php",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número incluido en teléfonos más denunciados por extorsión telefónica, revisar actualización periódica.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "6864024858",
+    "normalizedNumber": "6864024858",
+    "country": "MX",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "Seguridad BC",
+    "sourceUrl": "https://seguridadbc.gob.mx/ExtorsionTelefonica/index.php",
+    "sources": [
+      {
+        "source": "Seguridad BC",
+        "sourceUrl": "https://seguridadbc.gob.mx/ExtorsionTelefonica/index.php",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número incluido en teléfonos más denunciados por extorsión telefónica, revisar actualización periódica.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "6865598000",
+    "normalizedNumber": "6865598000",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "7532240063",
+    "normalizedNumber": "7532240063",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "7532240134",
+    "normalizedNumber": "7532240134",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "7532240777",
+    "normalizedNumber": "7532240777",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "7719140555",
+    "normalizedNumber": "7719140555",
+    "country": "MX",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "high",
+    "source": "SAT México",
+    "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+    "sources": [
+      {
+        "source": "SAT México",
+        "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+        "type": "official",
+        "confidence": "high"
+      }
+    ],
+    "note": "Número telefónico falso reportado por SAT.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "number": "8000240384",
+    "normalizedNumber": "8000240384",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "8127707393",
+    "normalizedNumber": "8127707393",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "8146932873",
+    "normalizedNumber": "8146932873",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "8147627604",
+    "normalizedNumber": "8147627604",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "8261870572",
+    "normalizedNumber": "8261870572",
+    "country": "MX",
+    "tag": "Posible fraude",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "ios_numbers",
+    "sourceUrl": "local://ios_numbers",
+    "sources": [
+      {
+        "source": "ios_numbers",
+        "sourceUrl": "local://ios_numbers",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número detectado en fuente pública.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "number": "8994472009",
+    "normalizedNumber": "8994472009",
+    "country": "MX",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "type": "official",
+    "confidence": "medium",
+    "source": "SSP Michoacán",
+    "sourceUrl": "https://ssp.michoacan.gob.mx/ssp-difunde-lista-de-numeros-telefonicos-senalados-por-la-emision-de-extorsiones/",
+    "sources": [
+      {
+        "source": "SSP Michoacán",
+        "sourceUrl": "https://ssp.michoacan.gob.mx/ssp-difunde-lista-de-numeros-telefonicos-senalados-por-la-emision-de-extorsiones/",
+        "type": "official",
+        "confidence": "medium"
+      }
+    ],
+    "note": "Número publicado en lista de números señalados por emisión de extorsiones.",
+    "reviewStatus": "auto_imported",
+    "updatedAt": "2026-04-25"
+  }
+]
