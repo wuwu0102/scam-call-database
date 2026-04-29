@@ -1,15 +1,23 @@
 {
-  "generatedAt": "2026-04-29T14:29:00.005Z",
+  "generatedAt": "2026-04-29T14:52:17.857Z",
+  "totalSearchableCount": 17,
+  "trustedDisplayCount": 17,
   "officialCount": 17,
   "mediaCount": 0,
+  "iosExportCount": 17,
   "signalCount": 0,
   "totalTrustedCount": 17,
   "todayAddedCount": 0,
-  "iosExportCount": 182,
   "sourceCount": 17,
   "sourceSuccessCount": 0,
   "sourceFailedCount": 17,
   "lastCollectorStatus": "preserved",
+  "fallbackCounts": {
+    "collected": 17,
+    "ios": 0,
+    "seed": 17,
+    "scam": 0
+  },
   "topSources": [
     {
       "source": "SAT México",
