@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const COLLECTION = 'phone_numbers';
+const { BLOCKED_LOCAL_SOURCES, TRUSTED_TYPES, TRUSTED_CONFIDENCE, normalizeMXNumber, isInvalidNumber, isHttpUrl } = require('./data_rules');
 const INPUT_PATHS = [
   path.join(__dirname, '..', 'data', 'mexico_seed_phone_numbers.json'),
   path.join(__dirname, '..', 'data', 'collected_mexico_numbers.json'),
@@ -52,19 +53,6 @@ function readRecordsFromPath(inputPath) {
   return parsed;
 }
 
-function normalizeMXNumber(input) {
-  if (!input) return '';
-  let num = String(input).replace(/\D/g, '');
-  if (num.length === 12 && num.startsWith('52')) num = num.slice(2);
-  if (num.length === 13 && num.startsWith('521')) num = num.slice(3);
-  if (num.length > 10) num = num.slice(-10);
-  return num;
-}
-
-function isValidMXNumber(num) {
-  return /^\d{10}$/.test(num);
-}
-
 function priority(record) {
   const type = String(record.type || '').toLowerCase();
   const confidence = String(record.confidence || '').toLowerCase();
@@ -79,7 +67,7 @@ function priority(record) {
 
 function sanitizeImportRecord(record) {
   const normalized = normalizeMXNumber(record.normalizedNumber || record.number || '');
-  if (!isValidMXNumber(normalized)) return null;
+  if (isInvalidNumber(normalized)) return null;
 
   const type = String(record.type || record.sourceType || '').toLowerCase();
   const reviewStatus = String(record.reviewStatus || '').toLowerCase();
@@ -87,13 +75,12 @@ function sanitizeImportRecord(record) {
   let tag = String(record.tag || '').toLowerCase();
 
   const sourceUrl = String(record.sourceUrl || '').trim();
-  if (!sourceUrl) return null;
+  if (!isHttpUrl(sourceUrl) || BLOCKED_LOCAL_SOURCES.has(sourceUrl)) return null;
+  if (typeof record.tag === 'object') return null;
+  if (!TRUSTED_TYPES.has(type) || !TRUSTED_CONFIDENCE.has(confidence)) return null;
+  if (!['scam','suspicious'].includes(tag)) return null;
+  if (['safe','unknown'].includes(tag) || ['user_report','crowd_signal','community'].includes(type)) return null;
 
-  const allowedOfficial = type === 'official' && ['high', 'medium'].includes(confidence) && ['scam', 'suspicious'].includes(tag);
-  const allowedMedia = type === 'media' && confidence === 'medium' && tag === 'suspicious';
-  if (!allowedOfficial && !allowedMedia) return null;
-
-  
 
   const source = record.source || record.sourceName || 'Fuente pública';
 

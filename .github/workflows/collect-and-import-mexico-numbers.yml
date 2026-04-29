@@ -31,6 +31,9 @@ jobs:
       - name: Install dependencies
         run: npm install firebase-admin axios --no-save
 
+      - name: Expand source catalog
+        run: node scripts/expand_source_catalog_mexico.js
+
       - name: Collect Mexico public phone sources
         run: node scripts/collect_mexico_phone_sources.js
 
@@ -52,15 +55,20 @@ jobs:
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
         run: node scripts/export_ios_numbers_from_firestore.js
 
+      - name: Generate public stats
+        run: node scripts/generate_public_stats.js
+
       - name: Commit updated data files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add \
+            data/source_catalog_mexico.json \
             data/collected_mexico_numbers.json \
             data/crowd_signal_mexico_numbers.json \
             data/collector_run_log.json \
+            data/public_stats.json \
             data/ios_numbers.json
 
           if git diff --cached --quiet; then

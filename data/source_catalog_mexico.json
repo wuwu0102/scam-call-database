@@ -1,0 +1,155 @@
+[
+  {
+    "name": "ADN40",
+    "url": "https://www.adn40.mx/",
+    "type": "media",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "Debate",
+    "url": "https://www.debate.com.mx/",
+    "type": "media",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "El Universal",
+    "url": "https://www.eluniversal.com.mx/",
+    "type": "media",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "Excélsior",
+    "url": "https://www.excelsior.com.mx/",
+    "type": "media",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "Infobae México",
+    "url": "https://www.infobae.com/mexico/",
+    "type": "media",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "Informador",
+    "url": "https://www.informador.mx/mexico/Lista-completa-de-los-31-numeros-telefonicos-usados-para-extorsionar-en-Mexico-20240507-0216.html",
+    "type": "media",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "Milenio",
+    "url": "https://www.milenio.com/",
+    "type": "media",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "Noroeste",
+    "url": "https://www.noroeste.com.mx/nacional/conozca-los-10-numeros-telefonicos-mas-usados-para-extorsionar-LMNO940812",
+    "type": "media",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "Publimetro México",
+    "url": "https://www.publimetro.com.mx/",
+    "type": "media",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "SAT México",
+    "url": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
+    "type": "official",
+    "confidence": "high",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "autoImport": true
+  },
+  {
+    "name": "Seguridad BC extorsión telefónica",
+    "url": "https://seguridadbc.gob.mx/ExtorsionTelefonica/index.php",
+    "type": "police",
+    "confidence": "high",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "autoImport": true
+  },
+  {
+    "name": "Seguridad BC histórico 2022",
+    "url": "https://www.seguridadbc.gob.mx/ExtorsionTelefonica/engano2022.php",
+    "type": "police",
+    "confidence": "medium",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "autoImport": true
+  },
+  {
+    "name": "SSP Michoacán extorsión",
+    "url": "https://www.michoacan.gob.mx/ssp/",
+    "type": "police",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "SSP Zacatecas alerta",
+    "url": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
+    "type": "police",
+    "confidence": "high",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "autoImport": true
+  },
+  {
+    "name": "SSP Zacatecas extorsión",
+    "url": "https://ssp.zacatecas.gob.mx/gobierno-de-zacatecas-alerta-sobre-numeros-telefonicos-usados-para-la-comision-del-delito-de-extorsion/",
+    "type": "police",
+    "confidence": "high",
+    "tag": "scam",
+    "label": "Posible fraude",
+    "autoImport": true
+  },
+  {
+    "name": "TV Azteca Noticias",
+    "url": "https://www.tvazteca.com/aztecanoticias/",
+    "type": "media",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "UnoTV",
+    "url": "https://www.unotv.com/",
+    "type": "media",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true
+  }
+]
