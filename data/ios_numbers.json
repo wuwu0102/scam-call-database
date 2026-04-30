@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "number": 3324521539,
+    "label": "Número sospechoso",
+    "updatedAt": "2026-04-30"
+  },
+  {
+    "number": 4428347016,
+    "label": "Número sospechoso",
+    "updatedAt": "2026-04-30"
+  },
+  {
+    "number": 4435461550,
+    "label": "Número sospechoso",
+    "updatedAt": "2026-04-30"
+  },
+  {
+    "number": 4439077470,
+    "label": "Número sospechoso",
+    "updatedAt": "2026-04-30"
+  },
+  {
+    "number": 5642397061,
+    "label": "Número sospechoso",
+    "updatedAt": "2026-04-30"
+  },
+  {
+    "number": 6653164566,
+    "label": "Número sospechoso",
+    "updatedAt": "2026-04-30"
+  },
+  {
+    "number": 6864024858,
+    "label": "Número sospechoso",
+    "updatedAt": "2026-04-30"
+  },
+  {
+    "number": 8994472009,
+    "label": "Número sospechoso",
+    "updatedAt": "2026-04-30"
+  }
+]
