@@ -313,5 +313,15 @@
     "tag": "suspicious",
     "label": "Número sospechoso",
     "autoImport": true
+  },
+  {
+    "name": "auto discovered source",
+    "url": "https://duckduckgo.com/",
+    "type": "media",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true,
+    "discoveredAt": "2026-04-30"
   }
 ]
