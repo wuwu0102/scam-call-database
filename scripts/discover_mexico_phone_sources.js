@@ -3,8 +3,22 @@ const path = require('path');
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const CATALOG_PATH = path.join(DATA_DIR, 'source_catalog_mexico.json');
-const MAX_ADD = 100;
+const args = process.argv.slice(2);
+const MAX_ADD = Number((args.find(a => a.startsWith('--max-add=')) || '--max-add=300').split('=')[1]);
+const MAX_PAGES = 20;
 const QUERIES = [
+  "site:tellows.mx México extorsión teléfono",
+  "site:tellows.mx México fraude teléfono",
+  "site:tellows.mx número sospechoso México",
+  "site:quienhabla.mx teléfono sospechoso",
+  "site:quienhabla.mx extorsión",
+  "site:listaspam.com México extorsión",
+  "site:listaspam.com México fraude",
+  "número sospechoso México teléfono",
+  "teléfono reportado extorsión México",
+  "números usados para extorsión México",
+  "lista números extorsión México",
+  "números fraude WhatsApp México",
   "números usados para extorsión México",
   "lista de números extorsión telefónica México",
   "números telefónicos falsos México",
@@ -62,10 +76,20 @@ function parseResultUrls(html) {
 }
 
 async function searchDDG(query) {
-  const url = `https://duckduckgo.com/html/?q=${encodeURIComponent(query)}`;
-  const res = await fetch(url, { headers: ua });
-  if (!res.ok) throw new Error(`DDG ${res.status}`);
-  return parseResultUrls(await res.text());
+  const all = new Set();
+  for (let page = 0; page < MAX_PAGES; page++) {
+    const start = page * 30;
+    const url = `https://duckduckgo.com/html/?q=${encodeURIComponent(query)}&s=${start}`;
+    const res = await fetch(url, { headers: ua });
+    if (!res.ok) throw new Error(`DDG ${res.status}`);
+    const urls = parseResultUrls(await res.text());
+    if (!urls.length) break;
+    const before = all.size;
+    urls.forEach((u)=>all.add(u));
+    if (all.size === before) break;
+    if (all.size >= MAX_ADD) break;
+  }
+  return Array.from(all);
 }
 
 (async () => {

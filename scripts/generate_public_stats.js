@@ -1,19 +1,23 @@
 const fs = require('fs');
 const path = require('path');
 const root = path.join(__dirname, '..');
+const args = process.argv.slice(2);
+const min = Number((args.find(a => a.startsWith('--min=')) || '--min=300').split('=')[1]);
+const allowLow = args.includes('--allow-low-count');
 const read=(p,d)=>{const f=path.join(root,p); return fs.existsSync(f)?JSON.parse(fs.readFileSync(f,'utf8')):d;};
 const collected = read('data/collected_mexico_numbers.json',[]);
-const ios = read('data/ios_numbers.json',[]);
-const seed = read('data/mexico_seed_phone_numbers.json',[]);
 const catalog = read('data/source_catalog_mexico.json',[]);
 const runLog = read('data/collector_run_log.json', { sources: [], lastCollectorStatus:'partial' });
-const firestoreCount = Number(process.env.FIRESTORE_TOTAL_COUNT || 0);
-const generatedAt = new Date().toISOString();
-const nextUpdateAt = new Date(Date.now()+5*24*60*60*1000).toISOString();
-let total = collected.length || 0;
-if (ios.length > total) total = ios.length;
-if (firestoreCount > total) total = firestoreCount;
-if (!total) total = seed.length || 0;
-const output = { generatedAt, nextUpdateAt, totalSearchableCount: total, collectedCount: collected.length, firestoreImportedCount: firestoreCount, iosExportCount: ios.length, sourceCount: catalog.length, sourceSuccessCount: (runLog.sources||[]).filter(s=>(s.accepted||0)>0).length, sourceFailedCount: (runLog.sources||[]).filter(s=>(s.errors||[]).length>0).length, lastCollectorStatus: runLog.lastCollectorStatus || 'partial' };
+const output = {
+  generatedAt: new Date().toISOString(),
+  nextUpdateAt: new Date(Date.now()+5*24*60*60*1000).toISOString(),
+  totalSearchableCount: collected.length,
+  collectedCount: collected.length,
+  sourceCount: catalog.length,
+  sourceSuccessCount: (runLog.sources||[]).filter(s=>(s.accepted||0)>0).length,
+  sourceFailedCount: (runLog.sources||[]).filter(s=>(s.errors||[]).length>0).length,
+  lastCollectorStatus: runLog.lastCollectorStatus || 'partial'
+};
 fs.writeFileSync(path.join(root,'data/public_stats.json'), `${JSON.stringify(output,null,2)}\n`);
-console.log(`stats generated total=${total}`);
+console.log(`stats generated total=${output.totalSearchableCount} min=${min}`);
+if (!allowLow && output.totalSearchableCount < min) process.exit(1);

@@ -17,9 +17,11 @@ jobs:
         with:
           node-version: '20'
       - run: npm install firebase-admin axios --no-save
-      - run: node scripts/discover_mexico_phone_sources.js || echo "source discovery warning"
-      - run: node scripts/collect_mexico_phone_sources.js --target=1000 --max-minutes=10 || echo "collector warning"
-      - run: node scripts/check_data_safety.js
+      - run: node scripts/discover_mexico_phone_sources.js
+      - run: node scripts/collect_mexico_phone_sources.js --target=1000 --min=300 --max-minutes=10
+      - run: node scripts/pull_firestore_phone_numbers.js || echo "firestore pull skipped"
+      - run: node scripts/rebuild_searchable_database.js --min=300 --target=1000
+      - run: node scripts/check_data_safety.js --min=300
       - env:
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
         run: node scripts/import_mexico_seed_to_firestore.js --dry-run
@@ -28,8 +30,8 @@ jobs:
         run: node scripts/import_mexico_seed_to_firestore.js
       - env:
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
-        run: node scripts/export_ios_numbers_from_firestore.js || echo "ios export warning"
-      - run: node scripts/generate_public_stats.js
+        run: node scripts/export_ios_numbers_from_firestore.js || echo "ios export skipped"
+      - run: node scripts/generate_public_stats.js --min=300
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
