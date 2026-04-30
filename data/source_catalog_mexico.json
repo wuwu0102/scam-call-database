@@ -151,5 +151,167 @@
     "tag": "suspicious",
     "label": "Número sospechoso",
     "autoImport": true
+  },
+  {
+    "name": "Fiscalía Jalisco extorsión telefónica números",
+    "url": "https://fiscalia.jalisco.gob.mx/",
+    "type": "fiscalia",
+    "confidence": "high",
+    "tag": "scam",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "Fiscalía Nuevo León extorsión telefónica números",
+    "url": "https://fiscalianl.gob.mx/",
+    "type": "fiscalia",
+    "confidence": "high",
+    "tag": "scam",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "Fiscalía CDMX extorsión telefónica números",
+    "url": "https://www.fgjcdmx.gob.mx/",
+    "type": "fiscalia",
+    "confidence": "high",
+    "tag": "scam",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "Fiscalía Estado de México extorsión telefónica números",
+    "url": "https://fgjem.edomex.gob.mx/",
+    "type": "fiscalia",
+    "confidence": "high",
+    "tag": "scam",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "Fiscalía Guanajuato extorsión telefónica números",
+    "url": "https://fgeguanajuato.gob.mx/",
+    "type": "fiscalia",
+    "confidence": "high",
+    "tag": "scam",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "Fiscalía Puebla extorsión telefónica números",
+    "url": "https://fiscalia.puebla.gob.mx/",
+    "type": "fiscalia",
+    "confidence": "high",
+    "tag": "scam",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "Fiscalía Veracruz extorsión telefónica números",
+    "url": "https://fiscaliaveracruz.gob.mx/",
+    "type": "fiscalia",
+    "confidence": "high",
+    "tag": "scam",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "Policía Cibernética México números fraude",
+    "url": "https://www.gob.mx/gncertmx",
+    "type": "police",
+    "confidence": "high",
+    "tag": "scam",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "CONDUSEF números falsos fraude",
+    "url": "https://www.condusef.gob.mx/",
+    "type": "government",
+    "confidence": "high",
+    "tag": "scam",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "PROFECO números falsos fraude",
+    "url": "https://www.gob.mx/profeco",
+    "type": "government",
+    "confidence": "high",
+    "tag": "scam",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "SSP Michoacán extorsión",
+    "url": "https://ssp.michoacan.gob.mx/ssp-difunde-lista-de-numeros-telefonicos-senalados-por-la-emision-de-extorsiones/",
+    "type": "police",
+    "confidence": "high",
+    "tag": "scam",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "SSP Zacatecas extorsión",
+    "url": "https://ssp.zacatecas.gob.mx/",
+    "type": "police",
+    "confidence": "high",
+    "tag": "scam",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "El Financiero",
+    "url": "https://www.elfinanciero.com.mx/",
+    "type": "media",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "Aristegui Noticias",
+    "url": "https://aristeguinoticias.com/",
+    "type": "media",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "Tellows México",
+    "url": "https://www.tellows.mx/",
+    "type": "crowd",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "QuienHabla México",
+    "url": "https://quienhabla.mx/",
+    "type": "crowd",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "ListaSpam México",
+    "url": "https://www.listaspam.com/busca.php?telefono=55",
+    "type": "crowd",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true
+  },
+  {
+    "name": "Páginas públicas reportes sospechosos",
+    "url": "https://www.quien-llama.mx/",
+    "type": "crowd",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true
   }
 ]

@@ -1,8 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-let axios = null;
-try { axios = require('axios'); } catch {}
-const { normalizeMXNumber, isInvalidNumber, isHttpUrl, sanitizeTag, TRUSTED_TYPES, TRUSTED_CONFIDENCE } = require('./data_rules');
+const { normalizeMXNumber, isInvalidNumber, isHttpUrl } = require('./data_rules');
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const COLLECTED = path.join(DATA_DIR, 'collected_mexico_numbers.json');
@@ -10,66 +8,89 @@ const CROWD = path.join(DATA_DIR, 'crowd_signal_mexico_numbers.json');
 const LOG = path.join(DATA_DIR, 'collector_run_log.json');
 const CATALOG = path.join(DATA_DIR, 'source_catalog_mexico.json');
 
-const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36', Accept: 'text/html,application/xhtml+xml', 'Accept-Language': 'es-MX,es;q=0.9,en;q=0.8', 'Cache-Control': 'no-cache' };
+const args = process.argv.slice(2);
+const targetArg = args.find((a) => a.startsWith('--target='));
+const target = targetArg ? Number(targetArg.split('=')[1]) : 0;
+const maxMs = 10 * 60 * 1000;
+const startedAt = Date.now();
+
 const readArray = (p) => fs.existsSync(p) ? (JSON.parse(fs.readFileSync(p, 'utf8')) || []) : [];
-const extract = (t) => String(t || '').match(/(?:\+?52[\s\-]?)?(?:\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{4}|\d{10})/g) || [];
+const writeJson = (p, d) => fs.writeFileSync(p, JSON.stringify(d, null, 2) + '\n');
 
-async function fetchPublicPage(url) {
-  if (axios) {
-    try { const r = await axios.get(url, { headers, timeout: 20000 }); return String(r.data || ''); } catch {}
-  }
-  const r = await fetch(url, { headers });
-  if (!r.ok) throw new Error(`HTTP ${r.status}`);
-  return r.text();
-}
+const trustedTypes = new Set(['official', 'government', 'police', 'fiscalia']);
+const mediaTypes = new Set(['media']);
+const crowdTypes = new Set(['crowd']);
 
-function isTrusted(rec) {
-  return TRUSTED_TYPES.has(String(rec.type || '').toLowerCase()) && TRUSTED_CONFIDENCE.has(String(rec.confidence || '').toLowerCase()) && ['scam', 'suspicious'].includes(String(rec.tag || '').toLowerCase()) && isHttpUrl(rec.sourceUrl) && !isInvalidNumber(rec.normalizedNumber);
-}
+const phoneRegex = /(?:\+?52[\s\-]?)?(?:\(?\d{2,3}\)?[\s\-]?\d{3,4}[\s\-]?\d{4}|\d{10})/g;
 
-function cleanRecord(raw, source, nowIso, nowDate) {
-  const normalizedNumber = normalizeMXNumber(raw);
-  if (isInvalidNumber(normalizedNumber)) return null;
+function extractPhones(text) { return String(text || '').match(phoneRegex) || []; }
+
+function recordFor(source, normalized, nowIso, nowDate) {
   const type = String(source.type || '').toLowerCase();
-  const tag = sanitizeTag(source.tag, type);
-  if (!tag) return null;
-  const rec = { number: normalizedNumber, normalizedNumber, country: 'MX', tag, label: tag === 'scam' ? 'Posible fraude' : 'Número sospechoso', type, confidence: String(source.confidence || 'medium').toLowerCase(), source: source.name, sourceUrl: source.url, collectedAt: nowIso, updatedAt: nowDate };
-  return rec;
+  let tag = 'suspicious';
+  let confidence = 'medium';
+  if (trustedTypes.has(type)) { tag = String(source.tag || 'scam').toLowerCase() === 'suspicious' ? 'suspicious' : 'scam'; confidence = String(source.confidence || 'high').toLowerCase() === 'medium' ? 'medium' : 'high'; }
+  else if (mediaTypes.has(type)) { tag = 'suspicious'; confidence = 'medium'; }
+  else { tag = 'suspicious'; confidence = 'low'; }
+  return { number: normalized, normalizedNumber: normalized, country: 'MX', tag, label: tag === 'scam' ? 'Posible fraude' : 'Número sospechoso', type, confidence, source: source.name, sourceUrl: source.url, sources: [{ source: source.name, sourceUrl: source.url, type, confidence }], note: 'Número detectado en fuente pública.', reviewStatus: 'auto_imported', collectedAt: nowIso, updatedAt: nowDate };
+}
+
+async function fetchHtml(url) {
+  const r = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0', 'Accept-Language': 'es-MX,es;q=0.9' } });
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  return await r.text();
 }
 
 (async () => {
-  const sources = readArray(CATALOG);
-  const runLog = { generatedAt: new Date().toISOString(), sources: [] };
+  const sources = readArray(CATALOG).filter((s) => isHttpUrl(s.url));
   const oldCollected = readArray(COLLECTED);
   const oldCrowd = readArray(CROWD);
-  const trusted = new Map(oldCollected.filter(isTrusted).map((r) => [r.normalizedNumber, r]));
-  const crowd = new Map(oldCrowd.map((r) => [r.normalizedNumber, r]));
-  const nowIso = new Date().toISOString(); const nowDate = nowIso.slice(0, 10);
-  let added = 0;
+  const byNumber = new Map(oldCollected.map((r) => [r.normalizedNumber, r]));
+  const crowdSignals = new Map(oldCrowd.map((r) => [r.normalizedNumber, r]));
+  const crowdEvidence = new Map();
+  const runLog = { generatedAt: new Date().toISOString(), target, sources: [], warnings: [] };
+  const nowIso = new Date().toISOString();
+  const nowDate = nowIso.slice(0, 10);
 
   for (const s of sources) {
-    const log = { source: s.name, url: s.url, accepted: 0, errors: [] };
+    if (Date.now() - startedAt > maxMs) { runLog.warnings.push('timeout_reached'); break; }
+    if (target > 0 && byNumber.size >= target) break;
+    const log = { source: s.name, url: s.url, accepted: 0, crowdOnly: 0, errors: [] };
     try {
-      const html = await fetchPublicPage(s.url);
-      for (const c of extract(html)) {
-        const rec = cleanRecord(c, s, nowIso, nowDate); if (!rec) continue;
-        if (isTrusted(rec)) {
-          if (!trusted.has(rec.normalizedNumber)) { trusted.set(rec.normalizedNumber, rec); added++; log.accepted++; }
-        } else {
-          if (!crowd.has(rec.normalizedNumber)) crowd.set(rec.normalizedNumber, { ...rec, tag: 'suspicious', confidence: 'low', type: 'crowd_signal' });
+      const html = await fetchHtml(s.url);
+      const hits = extractPhones(html);
+      for (const raw of hits) {
+        const normalized = normalizeMXNumber(raw);
+        if (isInvalidNumber(normalized)) continue;
+        const rec = recordFor(s, normalized, nowIso, nowDate);
+        const existing = byNumber.get(normalized);
+        if (trustedTypes.has(rec.type) || mediaTypes.has(rec.type)) {
+          if (!existing) { byNumber.set(normalized, rec); log.accepted++; }
+          else {
+            const srcs = new Map((existing.sources || []).map((x) => [`${x.sourceUrl}|${x.source}`, x]));
+            for (const src of rec.sources) srcs.set(`${src.sourceUrl}|${src.source}`, src);
+            existing.sources = Array.from(srcs.values());
+            existing.updatedAt = nowDate;
+          }
+        } else if (crowdTypes.has(rec.type)) {
+          const set = crowdEvidence.get(normalized) || new Set();
+          set.add(rec.sourceUrl); crowdEvidence.set(normalized, set);
+          if (!crowdSignals.has(normalized)) crowdSignals.set(normalized, { ...rec, type: 'crowd_signal', confidence: 'low' });
+          if (set.size >= 2 && !byNumber.has(normalized)) {
+            byNumber.set(normalized, { ...rec, confidence: 'medium', tag: 'suspicious', type: 'crowd' });
+            log.accepted++;
+          } else log.crowdOnly++;
         }
       }
     } catch (e) { log.errors.push(String(e.message || e)); }
     runLog.sources.push(log);
   }
 
-  const allFailed = runLog.sources.length > 0 && runLog.sources.every((s) => s.errors.length > 0);
-  runLog.lastCollectorStatus = allFailed ? 'preserved' : (added > 0 ? 'ok' : 'partial');
-  const outputTrusted = Array.from(trusted.values()).filter(isTrusted).sort((a, b) => a.normalizedNumber.localeCompare(b.normalizedNumber));
-  if (outputTrusted.length > 0) {
-    fs.writeFileSync(COLLECTED, JSON.stringify(outputTrusted, null, 2) + '\n');
-  }
-  if (!allFailed) fs.writeFileSync(CROWD, JSON.stringify(Array.from(crowd.values()), null, 2) + '\n');
-  fs.writeFileSync(LOG, JSON.stringify(runLog, null, 2) + '\n');
-  console.log(`trusted=${trusted.size} added=${added} status=${runLog.lastCollectorStatus}`);
+  const outCollected = Array.from(byNumber.values()).filter((r) => /^\d{10}$/.test(String(r.normalizedNumber || '')));
+  writeJson(COLLECTED, outCollected.sort((a, b) => a.normalizedNumber.localeCompare(b.normalizedNumber)));
+  writeJson(CROWD, Array.from(crowdSignals.values()).sort((a, b) => a.normalizedNumber.localeCompare(b.normalizedNumber)));
+  runLog.lastCollectorStatus = outCollected.length > 0 ? 'ok' : 'partial';
+  runLog.finalCount = outCollected.length;
+  writeJson(LOG, runLog);
+  console.log(`collected=${outCollected.length} crowd=${crowdSignals.size} target=${target}`);
 })();

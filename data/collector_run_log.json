@@ -1,10 +1,12 @@
 {
-  "generatedAt": "2026-04-29T14:29:00.014Z",
+  "generatedAt": "2026-04-29T23:57:07.612Z",
+  "target": 1000,
   "sources": [
     {
       "source": "ADN40",
       "url": "https://www.adn40.mx/",
       "accepted": 0,
+      "crowdOnly": 0,
       "errors": [
         "fetch failed"
       ]
@@ -13,6 +15,7 @@
       "source": "Debate",
       "url": "https://www.debate.com.mx/",
       "accepted": 0,
+      "crowdOnly": 0,
       "errors": [
         "fetch failed"
       ]
@@ -21,6 +24,7 @@
       "source": "El Universal",
       "url": "https://www.eluniversal.com.mx/",
       "accepted": 0,
+      "crowdOnly": 0,
       "errors": [
         "fetch failed"
       ]
@@ -29,6 +33,7 @@
       "source": "Excélsior",
       "url": "https://www.excelsior.com.mx/",
       "accepted": 0,
+      "crowdOnly": 0,
       "errors": [
         "fetch failed"
       ]
@@ -37,6 +42,7 @@
       "source": "Infobae México",
       "url": "https://www.infobae.com/mexico/",
       "accepted": 0,
+      "crowdOnly": 0,
       "errors": [
         "fetch failed"
       ]
@@ -45,6 +51,7 @@
       "source": "Informador",
       "url": "https://www.informador.mx/mexico/Lista-completa-de-los-31-numeros-telefonicos-usados-para-extorsionar-en-Mexico-20240507-0216.html",
       "accepted": 0,
+      "crowdOnly": 0,
       "errors": [
         "fetch failed"
       ]
@@ -53,6 +60,7 @@
       "source": "Milenio",
       "url": "https://www.milenio.com/",
       "accepted": 0,
+      "crowdOnly": 0,
       "errors": [
         "fetch failed"
       ]
@@ -61,6 +69,7 @@
       "source": "Noroeste",
       "url": "https://www.noroeste.com.mx/nacional/conozca-los-10-numeros-telefonicos-mas-usados-para-extorsionar-LMNO940812",
       "accepted": 0,
+      "crowdOnly": 0,
       "errors": [
         "fetch failed"
       ]
@@ -69,6 +78,7 @@
       "source": "Publimetro México",
       "url": "https://www.publimetro.com.mx/",
       "accepted": 0,
+      "crowdOnly": 0,
       "errors": [
         "fetch failed"
       ]
@@ -77,6 +87,7 @@
       "source": "SAT México",
       "url": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
       "accepted": 0,
+      "crowdOnly": 0,
       "errors": [
         "fetch failed"
       ]
@@ -85,6 +96,7 @@
       "source": "Seguridad BC extorsión telefónica",
       "url": "https://seguridadbc.gob.mx/ExtorsionTelefonica/index.php",
       "accepted": 0,
+      "crowdOnly": 0,
       "errors": [
         "fetch failed"
       ]
@@ -93,6 +105,7 @@
       "source": "Seguridad BC histórico 2022",
       "url": "https://www.seguridadbc.gob.mx/ExtorsionTelefonica/engano2022.php",
       "accepted": 0,
+      "crowdOnly": 0,
       "errors": [
         "fetch failed"
       ]
@@ -101,6 +114,7 @@
       "source": "SSP Michoacán extorsión",
       "url": "https://www.michoacan.gob.mx/ssp/",
       "accepted": 0,
+      "crowdOnly": 0,
       "errors": [
         "fetch failed"
       ]
@@ -109,6 +123,7 @@
       "source": "SSP Zacatecas alerta",
       "url": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
       "accepted": 0,
+      "crowdOnly": 0,
       "errors": [
         "fetch failed"
       ]
@@ -117,6 +132,7 @@
       "source": "SSP Zacatecas extorsión",
       "url": "https://ssp.zacatecas.gob.mx/gobierno-de-zacatecas-alerta-sobre-numeros-telefonicos-usados-para-la-comision-del-delito-de-extorsion/",
       "accepted": 0,
+      "crowdOnly": 0,
       "errors": [
         "fetch failed"
       ]
@@ -125,6 +141,7 @@
       "source": "TV Azteca Noticias",
       "url": "https://www.tvazteca.com/aztecanoticias/",
       "accepted": 0,
+      "crowdOnly": 0,
       "errors": [
         "fetch failed"
       ]
@@ -133,10 +150,175 @@
       "source": "UnoTV",
       "url": "https://www.unotv.com/",
       "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Fiscalía Jalisco extorsión telefónica números",
+      "url": "https://fiscalia.jalisco.gob.mx/",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Fiscalía Nuevo León extorsión telefónica números",
+      "url": "https://fiscalianl.gob.mx/",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Fiscalía CDMX extorsión telefónica números",
+      "url": "https://www.fgjcdmx.gob.mx/",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Fiscalía Estado de México extorsión telefónica números",
+      "url": "https://fgjem.edomex.gob.mx/",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Fiscalía Guanajuato extorsión telefónica números",
+      "url": "https://fgeguanajuato.gob.mx/",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Fiscalía Puebla extorsión telefónica números",
+      "url": "https://fiscalia.puebla.gob.mx/",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Fiscalía Veracruz extorsión telefónica números",
+      "url": "https://fiscaliaveracruz.gob.mx/",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Policía Cibernética México números fraude",
+      "url": "https://www.gob.mx/gncertmx",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "CONDUSEF números falsos fraude",
+      "url": "https://www.condusef.gob.mx/",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "PROFECO números falsos fraude",
+      "url": "https://www.gob.mx/profeco",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "SSP Michoacán extorsión",
+      "url": "https://ssp.michoacan.gob.mx/ssp-difunde-lista-de-numeros-telefonicos-senalados-por-la-emision-de-extorsiones/",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "SSP Zacatecas extorsión",
+      "url": "https://ssp.zacatecas.gob.mx/",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "El Financiero",
+      "url": "https://www.elfinanciero.com.mx/",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Aristegui Noticias",
+      "url": "https://aristeguinoticias.com/",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Tellows México",
+      "url": "https://www.tellows.mx/",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "QuienHabla México",
+      "url": "https://quienhabla.mx/",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "ListaSpam México",
+      "url": "https://www.listaspam.com/busca.php?telefono=55",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Páginas públicas reportes sospechosos",
+      "url": "https://www.quien-llama.mx/",
+      "accepted": 0,
+      "crowdOnly": 0,
       "errors": [
         "fetch failed"
       ]
     }
   ],
-  "lastCollectorStatus": "preserved"
+  "warnings": [],
+  "lastCollectorStatus": "ok",
+  "finalCount": 17
 }

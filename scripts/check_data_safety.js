@@ -1,30 +1,29 @@
 const fs = require('fs');
 const path = require('path');
 const { BLOCKED_LOCAL_SOURCES, normalizeMXNumber, isInvalidNumber } = require('./data_rules');
-const files = ['data/collected_mexico_numbers.json','data/mexico_seed_phone_numbers.json','scam_numbers.json','data/ios_numbers.json'];
+
+const root = path.join(__dirname, '..');
+const collectedPath = path.join(root, 'data/collected_mexico_numbers.json');
+const statsPath = path.join(root, 'data/public_stats.json');
+
+const collected = fs.existsSync(collectedPath) ? JSON.parse(fs.readFileSync(collectedPath, 'utf8')) : [];
+const prevStats = fs.existsSync(statsPath) ? JSON.parse(fs.readFileSync(statsPath, 'utf8')) : {};
+
 let fatal = false;
-const read = (p) => {
-  const full = path.join(__dirname, '..', p);
-  if (!fs.existsSync(full)) return [];
-  const j = JSON.parse(fs.readFileSync(full, 'utf8'));
-  return Array.isArray(j) ? j : (Array.isArray(j.records) ? j.records : []);
-};
-const collected = read(files[0]);
-if (collected.length === 0) { console.error('FATAL: collected cannot be empty'); fatal = true; }
+if (collected.length < 17) { console.error('FATAL: collected cannot be below 17'); fatal = true; }
+
+const prevCount = Number(prevStats.fallbackCounts?.collected || prevStats.totalTrustedCount || 0);
+if (prevCount > 0 && collected.length < Math.floor(prevCount * 0.7)) { console.error(`FATAL: collected dropped over 30%. prev=${prevCount} now=${collected.length}`); fatal = true; }
+
 for (const r of collected) {
   const sourceUrl = String(r.sourceUrl || '');
   const tag = r.tag;
-  if (BLOCKED_LOCAL_SOURCES.has(sourceUrl)) { console.error(`FATAL: blocked local source ${sourceUrl}`); fatal = true; }
-  if (typeof tag === 'object') { console.error('FATAL: tag object found'); fatal = true; }
-  if (['safe','unknown'].includes(String(tag || '').toLowerCase())) { console.error(`FATAL: invalid tag ${tag}`); fatal = true; }
+  if (BLOCKED_LOCAL_SOURCES.has(sourceUrl)) fatal = true, console.error(`FATAL: blocked local source ${sourceUrl}`);
+  if (typeof tag === 'object') fatal = true, console.error('FATAL: tag object found');
+  if (['safe', 'unknown'].includes(String(tag || '').toLowerCase())) fatal = true, console.error(`FATAL: invalid tag ${tag}`);
   const n = normalizeMXNumber(r.normalizedNumber || r.number || '');
-  if (isInvalidNumber(n)) { console.error(`FATAL: invalid number ${n}`); fatal = true; }
+  if (!/^\d{10}$/.test(n) || isInvalidNumber(n)) fatal = true, console.error(`FATAL: invalid number ${n}`);
 }
-for (const p of files.slice(1)) {
-  for (const r of read(p)) {
-    const n = normalizeMXNumber(r.normalizedNumber || r.number || r.phone || '');
-    if (n && isInvalidNumber(n)) console.warn(`WARN ${p}: suspicious number ${n}`);
-  }
-}
+
 if (fatal) process.exit(1);
 console.log('Data safety checks passed');

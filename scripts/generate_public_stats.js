@@ -62,7 +62,8 @@ const iosSearchableCount = getValidSearchableCount(ios);
 const seedSearchableCount = getValidSearchableCount(seed);
 const scamSearchableCount = getValidSearchableCount(scamNumbers);
 
-const totalSearchableCount = collectedSearchableCount;
+const firestoreOverride = Number(process.env.FIRESTORE_TOTAL_COUNT || 0);
+const totalSearchableCount = firestoreOverride > collectedSearchableCount ? firestoreOverride : collectedSearchableCount;
 const trustedDisplayCount = trusted.length;
 
 const generatedAt = new Date().toISOString();
