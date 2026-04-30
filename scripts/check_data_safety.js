@@ -8,9 +8,9 @@ const log = read('data/collector_run_log.json', {});
 const prev = read('data/public_stats.json', {});
 let fatal = false;
 const prevCount = Number(prev.collectedCount || prev.totalSearchableCount || 0);
-if (prevCount && now.length < prevCount) console.warn(`warning: collected dropped prev=${prevCount} now=${now.length}`);
+if (prevCount && now.length < prevCount) { console.error(`FATAL collected dropped prev=${prevCount} now=${now.length}`); fatal = true; }
 if (now.length < 17) { console.error('FATAL: collected below 17'); fatal = true; }
-if (Number(log.target || 0) === 1000 && now.length < 1000) console.warn('warning: below target 1000 (allowed)');
+if (Number(log.target || 0) > 0 && now.length < Number(log.target || 0)) console.warn(`warning: below target ${Number(log.target || 0)} (allowed)`);
 const test = new Set(['0000000000','1111111111','1234567890','5555555555','9999999999','2025550101','2025550102','2025550103','2025550104','2025550105']);
 for (const r of now) {
   const n = normalizeMXNumber(r.normalizedNumber || r.number || '');
