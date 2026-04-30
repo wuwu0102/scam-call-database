@@ -57,13 +57,16 @@ function toRecord(raw) {
   };
 }
 
+const staticData = read('data/static_bulk_numbers.json', []);
+
 const merged = [
   ...read('data/collected_mexico_numbers.json'),
   ...read('data/crowd_signal_mexico_numbers.json'),
   ...read('data/mexico_seed_phone_numbers.json'),
   ...read('data/firestore_phone_numbers_snapshot.json'),
   ...read('data/ios_numbers.json'),
-  ...read('scam_numbers.json')
+  ...read('scam_numbers.json'),
+  ...staticData
 ];
 
 const byNumber = new Map();
