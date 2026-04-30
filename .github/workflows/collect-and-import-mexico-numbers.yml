@@ -18,7 +18,7 @@ jobs:
           node-version: '20'
       - run: npm install firebase-admin axios --no-save
       - run: node scripts/discover_mexico_phone_sources.js
-      - run: node scripts/collect_mexico_phone_sources.js --target=1000 --min=300 --max-minutes=10
+      - run: node scripts/collect_mexico_phone_sources.js --target=1000 --min=300 --max-minutes=10 || echo "collector failed"
       - run: node scripts/pull_firestore_phone_numbers.js || echo "firestore pull skipped"
       - run: node scripts/rebuild_searchable_database.js --min=300 --target=1000
       - run: node scripts/check_data_safety.js --min=300

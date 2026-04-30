@@ -131,14 +131,21 @@ async function fetchPage(url) {
   }
 
   const nextCollected = Array.from(byNumber.values()).filter(r => valid(String(r.normalizedNumber || '')) && isHttpUrl(r.sourceUrl));
-  const finalCollected = nextCollected.length < prevCollected.length ? prevCollected : nextCollected;
-  if (nextCollected.length < prevCollected.length) runLog.warnings.push(`preserved_old_collected prev=${prevCollected.length} new=${nextCollected.length}`);
-  runLog.lastCollectorStatus = runLog.sources.every(s => (s.errors || []).length) ? 'failed' : (nextCollected.length < prevCollected.length ? 'preserved' : (nextCollected.length >= target ? 'ok' : 'partial'));
-  runLog.finalCount = finalCollected.length;
+  if (nextCollected.length < prevCollected.length) {
+    console.log('⚠️ Skip overwrite: new data smaller than existing');
+    runLog.warnings.push(`preserved_old_collected prev=${prevCollected.length} new=${nextCollected.length}`);
+    runLog.lastCollectorStatus = runLog.sources.every(s => (s.errors || []).length) ? 'failed' : 'preserved';
+    runLog.finalCount = prevCollected.length;
+    write(LOG, runLog);
+    return;
+  }
 
-  write(COLLECTED, finalCollected.sort((a,b)=>String(a.normalizedNumber).localeCompare(String(b.normalizedNumber))));
+  runLog.lastCollectorStatus = runLog.sources.every(s => (s.errors || []).length) ? 'failed' : (nextCollected.length >= target ? 'ok' : 'partial');
+  runLog.finalCount = nextCollected.length;
+
+  write(COLLECTED, nextCollected.sort((a,b)=>String(a.normalizedNumber).localeCompare(String(b.normalizedNumber))));
   write(CROWD, Array.from(crowdMap.values()).filter(r => valid(String(r.normalizedNumber))).sort((a,b)=>a.normalizedNumber.localeCompare(b.normalizedNumber)));
   write(LOG, runLog);
-  console.log(`collector done collected=${finalCollected.length} crowd=${crowdMap.size} target=${target} min=${min} maxAdd=${maxAdd}`);
-  if (finalCollected.length < min) process.exit(1);
+  console.log(`collector done collected=${nextCollected.length} crowd=${crowdMap.size} target=${target} min=${min} maxAdd=${maxAdd}`);
+  if (nextCollected.length < min) process.exit(1);
 })();

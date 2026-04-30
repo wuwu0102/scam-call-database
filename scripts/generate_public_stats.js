@@ -20,4 +20,4 @@ const output = {
 };
 fs.writeFileSync(path.join(root,'data/public_stats.json'), `${JSON.stringify(output,null,2)}\n`);
 console.log(`stats generated total=${output.totalSearchableCount} min=${min}`);
-if (!allowLow && output.totalSearchableCount < min) process.exit(1);
+if (!allowLow && output.totalSearchableCount < min) throw new Error(`totalSearchableCount below minimum: ${output.totalSearchableCount} < ${min}`);
