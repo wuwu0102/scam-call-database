@@ -13,6 +13,9 @@ const SCAM = path.join(__dirname, '..', 'scam_numbers.json');
 
 const args = process.argv.slice(2);
 const target = Number((args.find(a => a.startsWith('--target=')) || '--target=1000').split('=')[1]);
+const min = Number((args.find(a => a.startsWith('--min=')) || '--min=300').split('=')[1]);
+const maxAdd = Number((args.find(a => a.startsWith('--max-add=')) || '--max-add=2000').split('=')[1]);
+const maxPagesPerSource = Number((args.find(a => a.startsWith('--max-pages=')) || '--max-pages=20').split('=')[1]);
 const maxMinutes = Number((args.find(a => a.startsWith('--max-minutes=')) || '--max-minutes=10').split('=')[1]);
 const deadline = Date.now() + Math.max(1, maxMinutes) * 60 * 1000;
 
@@ -49,6 +52,19 @@ function toRecord(n, s, confidence='medium') {
   return { number:n, normalizedNumber:n, country:'MX', tag, label:'Número sospechoso', type:t, confidence, source:s.name, sourceUrl:s.url, sources:[{source:s.name,sourceUrl:s.url,type:t,confidence}], updatedAt:new Date().toISOString().slice(0,10) };
 }
 
+
+function buildPageUrls(sourceUrl) {
+  const urls = [sourceUrl];
+  const u = String(sourceUrl || '');
+  for (let page = 2; page <= maxPagesPerSource; page++) {
+    if (/tellows\.mx/i.test(u)) urls.push(`${u.replace(/\/$/, '')}?page=${page}`);
+    else if (/quienhabla\.mx/i.test(u)) urls.push(`${u.replace(/\/$/, '')}/page/${page}`);
+    else if (/listaspam\.com/i.test(u)) urls.push(`${u.replace(/\/$/, '')}?page=${page}`);
+    else if (/duckduckgo\.com\/html/i.test(u)) urls.push(`${u}${u.includes('?') ? '&' : '?'}s=${(page-1)*30}`);
+    else break;
+  }
+  return urls.slice(0, maxPagesPerSource);
+}
 async function fetchPage(url) {
   try {
     if (axios) {
@@ -84,27 +100,30 @@ async function fetchPage(url) {
     if (byNumber.size >= target) break;
     const entry = { source:s.name, url:s.url, accepted:0, crowdOnly:0, errors:[] };
     try {
-      const html = await fetchPage(s.url);
-      const matches = String(html).match(phoneRegex) || [];
-      for (const raw of matches) {
-        const n = normalizeMXNumber(raw);
-        if (!valid(n)) continue;
-        const t = String(s.type || '').toLowerCase();
-        if (['official','government','police','fiscalia'].includes(t)) {
-          const next = toRecord(n, s, String(s.confidence || 'medium'));
-          const old = byNumber.get(n);
-          if (!old || rank(next.type) > rank(old.type)) byNumber.set(n, next);
-          entry.accepted++;
-        } else if (t === 'media') {
-          const old = byNumber.get(n);
-          if (!old || rank(old.type) < 2) byNumber.set(n, toRecord(n, s, 'medium'));
-          entry.accepted++;
-          const ev = crowdEvidence.get(n) || new Set(); ev.add(s.url); crowdEvidence.set(n, ev);
-        } else {
-          const ev = crowdEvidence.get(n) || new Set(); ev.add(s.url); crowdEvidence.set(n, ev);
-          if (!crowdMap.has(n)) crowdMap.set(n, { ...toRecord(n, s, 'low'), type:'crowd' });
-          if (ev.size >= 2 && !byNumber.has(n)) { byNumber.set(n, { ...toRecord(n, s, 'medium'), type:'crowd_multi_source' }); entry.accepted++; }
-          else entry.crowdOnly++;
+      for (const pageUrl of buildPageUrls(s.url)) {
+        if (Date.now() > deadline || byNumber.size >= target || (byNumber.size - prevCollected.length) >= maxAdd) break;
+        const html = await fetchPage(pageUrl);
+        const matches = String(html).match(phoneRegex) || [];
+        for (const raw of matches) {
+          const n = normalizeMXNumber(raw);
+          if (!valid(n)) continue;
+          const t = String(s.type || '').toLowerCase();
+          if (['official','government','police','fiscalia'].includes(t)) {
+            const next = toRecord(n, s, String(s.confidence || 'medium'));
+            const old = byNumber.get(n);
+            if (!old || rank(next.type) > rank(old.type)) byNumber.set(n, next);
+            entry.accepted++;
+          } else if (t === 'media') {
+            const old = byNumber.get(n);
+            if (!old || rank(old.type) < 2) byNumber.set(n, toRecord(n, s, 'medium'));
+            entry.accepted++;
+            const ev = crowdEvidence.get(n) || new Set(); ev.add(s.url); crowdEvidence.set(n, ev);
+          } else {
+            const ev = crowdEvidence.get(n) || new Set(); ev.add(s.url); crowdEvidence.set(n, ev);
+            if (!crowdMap.has(n)) crowdMap.set(n, { ...toRecord(n, s, 'low'), type:'crowd' });
+            if (ev.size >= 2 && !byNumber.has(n)) { byNumber.set(n, { ...toRecord(n, s, 'medium'), type:'crowd_multi_source' }); entry.accepted++; }
+            else entry.crowdOnly++;
+          }
         }
       }
     } catch (e) { entry.errors.push(e.message); }
@@ -120,5 +139,6 @@ async function fetchPage(url) {
   write(COLLECTED, finalCollected.sort((a,b)=>String(a.normalizedNumber).localeCompare(String(b.normalizedNumber))));
   write(CROWD, Array.from(crowdMap.values()).filter(r => valid(String(r.normalizedNumber))).sort((a,b)=>a.normalizedNumber.localeCompare(b.normalizedNumber)));
   write(LOG, runLog);
-  console.log(`collector done collected=${finalCollected.length} crowd=${crowdMap.size} target=${target}`);
+  console.log(`collector done collected=${finalCollected.length} crowd=${crowdMap.size} target=${target} min=${min} maxAdd=${maxAdd}`);
+  if (finalCollected.length < min) process.exit(1);
 })();
