@@ -1,6 +1,6 @@
-const TEST_NUMBERS = new Set(['2025550101','2025550102','2025550103','2025550104','2025550105']);
+const TEST_NUMBERS = new Set(['0000000000','1111111111','1234567890','2025550101','2025550102','2025550103','2025550104','2025550105']);
 const BLOCKED_LOCAL_SOURCES = new Set(['local://ios_numbers', 'local://scam_numbers']);
-const TRUSTED_TYPES = new Set(['official','government','police','media']);
+const TRUSTED_TYPES = new Set(['official','government','police','fiscalia','media']);
 const TRUSTED_CONFIDENCE = new Set(['high','medium']);
 const TRUSTED_TAGS = new Set(['scam','suspicious']);
 

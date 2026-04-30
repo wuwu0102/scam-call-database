@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-29T15:18:01.019Z",
-  "nextUpdateAt": "2026-05-04T15:18:01.019Z",
+  "generatedAt": "2026-04-29T23:57:14.887Z",
+  "nextUpdateAt": "2026-05-04T23:57:14.887Z",
   "totalSearchableCount": 17,
   "trustedDisplayCount": 17,
   "officialCount": 17,
@@ -9,10 +9,10 @@
   "signalCount": 0,
   "totalTrustedCount": 17,
   "todayAddedCount": 0,
-  "sourceCount": 17,
+  "sourceCount": 35,
   "sourceSuccessCount": 0,
-  "sourceFailedCount": 17,
-  "lastCollectorStatus": "preserved",
+  "sourceFailedCount": 35,
+  "lastCollectorStatus": "ok",
   "fallbackCounts": {
     "collected": 17,
     "ios": 17,
