@@ -1,36 +1,12 @@
 {
-  "generatedAt": "2026-04-29T23:57:14.887Z",
-  "nextUpdateAt": "2026-05-04T23:57:14.887Z",
+  "generatedAt": "2026-04-30T00:46:01.918Z",
+  "nextUpdateAt": "2026-05-05T00:46:01.919Z",
   "totalSearchableCount": 17,
-  "trustedDisplayCount": 17,
-  "officialCount": 17,
-  "mediaCount": 0,
-  "iosExportCount": 17,
-  "signalCount": 0,
-  "totalTrustedCount": 17,
-  "todayAddedCount": 0,
+  "collectedCount": 17,
+  "firestoreImportedCount": 0,
+  "iosExportCount": 0,
   "sourceCount": 35,
   "sourceSuccessCount": 0,
   "sourceFailedCount": 35,
-  "lastCollectorStatus": "ok",
-  "fallbackCounts": {
-    "collected": 17,
-    "ios": 17,
-    "seed": 17,
-    "scam": 22
-  },
-  "topSources": [
-    {
-      "source": "SAT México",
-      "count": 9
-    },
-    {
-      "source": "SSP Michoacán",
-      "count": 6
-    },
-    {
-      "source": "Seguridad BC",
-      "count": 2
-    }
-  ]
+  "lastCollectorStatus": "failed"
 }

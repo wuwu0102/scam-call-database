@@ -3,8 +3,8 @@
     "number": "3324521539",
     "normalizedNumber": "3324521539",
     "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
+    "tag": "Posible fraude",
+    "label": "scam",
     "type": "official",
     "confidence": "medium",
     "source": "SSP Michoacán",
@@ -17,16 +17,18 @@
         "confidence": "medium"
       }
     ],
-    "note": "Número publicado en lista de números señalados por emisión de extorsiones.",
-    "reviewStatus": "auto_imported",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "phone": "3324521539",
+    "sourceType": "official",
+    "sourceName": "SSP Michoacán",
+    "note": "Número publicado en lista de números señalados por emisión de extorsiones."
   },
   {
     "number": "4183470737",
     "normalizedNumber": "4183470737",
     "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
+    "tag": "Posible fraude",
+    "label": "scam",
     "type": "official",
     "confidence": "high",
     "source": "SAT México",
@@ -39,16 +41,18 @@
         "confidence": "high"
       }
     ],
-    "note": "Número telefónico falso reportado por SAT.",
-    "reviewStatus": "auto_imported",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "phone": "4183470737",
+    "sourceType": "official",
+    "sourceName": "SAT México",
+    "note": "Número telefónico falso reportado por SAT."
   },
   {
     "number": "4428347016",
     "normalizedNumber": "4428347016",
     "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
+    "tag": "Posible fraude",
+    "label": "scam",
     "type": "official",
     "confidence": "medium",
     "source": "SSP Michoacán",
@@ -61,16 +65,18 @@
         "confidence": "medium"
       }
     ],
-    "note": "Número publicado en lista de números señalados por emisión de extorsiones.",
-    "reviewStatus": "auto_imported",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "phone": "4428347016",
+    "sourceType": "official",
+    "sourceName": "SSP Michoacán",
+    "note": "Número publicado en lista de números señalados por emisión de extorsiones."
   },
   {
     "number": "4435461550",
     "normalizedNumber": "4435461550",
     "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
+    "tag": "Posible fraude",
+    "label": "scam",
     "type": "official",
     "confidence": "medium",
     "source": "SSP Michoacán",
@@ -83,16 +89,18 @@
         "confidence": "medium"
       }
     ],
-    "note": "Número publicado en lista de números señalados por emisión de extorsiones.",
-    "reviewStatus": "auto_imported",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "phone": "4435461550",
+    "sourceType": "official",
+    "sourceName": "SSP Michoacán",
+    "note": "Número publicado en lista de números señalados por emisión de extorsiones."
   },
   {
     "number": "4439077470",
     "normalizedNumber": "4439077470",
     "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
+    "tag": "Posible fraude",
+    "label": "scam",
     "type": "official",
     "confidence": "medium",
     "source": "SSP Michoacán",
@@ -105,16 +113,18 @@
         "confidence": "medium"
       }
     ],
-    "note": "Número publicado en lista de números señalados por emisión de extorsiones.",
-    "reviewStatus": "auto_imported",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "phone": "4439077470",
+    "sourceType": "official",
+    "sourceName": "SSP Michoacán",
+    "note": "Número publicado en lista de números señalados por emisión de extorsiones."
   },
   {
     "number": "5516588674",
     "normalizedNumber": "5516588674",
     "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
+    "tag": "Posible fraude",
+    "label": "scam",
     "type": "official",
     "confidence": "high",
     "source": "SAT México",
@@ -127,16 +137,18 @@
         "confidence": "high"
       }
     ],
-    "note": "Número telefónico falso reportado por SAT.",
-    "reviewStatus": "auto_imported",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "phone": "5516588674",
+    "sourceType": "official",
+    "sourceName": "SAT México",
+    "note": "Número telefónico falso reportado por SAT."
   },
   {
     "number": "5537729393",
     "normalizedNumber": "5537729393",
     "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
+    "tag": "Posible fraude",
+    "label": "scam",
     "type": "official",
     "confidence": "high",
     "source": "SAT México",
@@ -149,16 +161,18 @@
         "confidence": "high"
       }
     ],
-    "note": "Número telefónico falso reportado por SAT.",
-    "reviewStatus": "auto_imported",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "phone": "5537729393",
+    "sourceType": "official",
+    "sourceName": "SAT México",
+    "note": "Número telefónico falso reportado por SAT."
   },
   {
     "number": "5570074941",
     "normalizedNumber": "5570074941",
     "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
+    "tag": "Posible fraude",
+    "label": "scam",
     "type": "official",
     "confidence": "high",
     "source": "SAT México",
@@ -171,16 +185,18 @@
         "confidence": "high"
       }
     ],
-    "note": "Número telefónico falso reportado por SAT.",
-    "reviewStatus": "auto_imported",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "phone": "5570074941",
+    "sourceType": "official",
+    "sourceName": "SAT México",
+    "note": "Número telefónico falso reportado por SAT."
   },
   {
     "number": "5582410238",
     "normalizedNumber": "5582410238",
     "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
+    "tag": "Posible fraude",
+    "label": "scam",
     "type": "official",
     "confidence": "high",
     "source": "SAT México",
@@ -193,16 +209,18 @@
         "confidence": "high"
       }
     ],
-    "note": "Número telefónico falso reportado por SAT.",
-    "reviewStatus": "auto_imported",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "phone": "5582410238",
+    "sourceType": "official",
+    "sourceName": "SAT México",
+    "note": "Número telefónico falso reportado por SAT."
   },
   {
     "number": "5595912413",
     "normalizedNumber": "5595912413",
     "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
+    "tag": "Posible fraude",
+    "label": "scam",
     "type": "official",
     "confidence": "high",
     "source": "SAT México",
@@ -215,16 +233,18 @@
         "confidence": "high"
       }
     ],
-    "note": "Número telefónico falso reportado por SAT.",
-    "reviewStatus": "auto_imported",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "phone": "5595912413",
+    "sourceType": "official",
+    "sourceName": "SAT México",
+    "note": "Número telefónico falso reportado por SAT."
   },
   {
     "number": "5642397061",
     "normalizedNumber": "5642397061",
     "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
+    "tag": "Posible fraude",
+    "label": "scam",
     "type": "official",
     "confidence": "medium",
     "source": "SSP Michoacán",
@@ -237,16 +257,18 @@
         "confidence": "medium"
       }
     ],
-    "note": "Número publicado en lista de números señalados por emisión de extorsiones.",
-    "reviewStatus": "auto_imported",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "phone": "5642397061",
+    "sourceType": "official",
+    "sourceName": "SSP Michoacán",
+    "note": "Número publicado en lista de números señalados por emisión de extorsiones."
   },
   {
     "number": "5645758122",
     "normalizedNumber": "5645758122",
     "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
+    "tag": "Posible fraude",
+    "label": "scam",
     "type": "official",
     "confidence": "high",
     "source": "SAT México",
@@ -259,16 +281,18 @@
         "confidence": "high"
       }
     ],
-    "note": "Número telefónico falso reportado por SAT.",
-    "reviewStatus": "auto_imported",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "phone": "5645758122",
+    "sourceType": "official",
+    "sourceName": "SAT México",
+    "note": "Número telefónico falso reportado por SAT."
   },
   {
     "number": "5664567266",
     "normalizedNumber": "5664567266",
     "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
+    "tag": "Posible fraude",
+    "label": "scam",
     "type": "official",
     "confidence": "high",
     "source": "SAT México",
@@ -281,16 +305,18 @@
         "confidence": "high"
       }
     ],
-    "note": "Número telefónico falso reportado por SAT.",
-    "reviewStatus": "auto_imported",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "phone": "5664567266",
+    "sourceType": "official",
+    "sourceName": "SAT México",
+    "note": "Número telefónico falso reportado por SAT."
   },
   {
     "number": "6653164566",
     "normalizedNumber": "6653164566",
     "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
+    "tag": "Posible fraude",
+    "label": "scam",
     "type": "official",
     "confidence": "medium",
     "source": "Seguridad BC",
@@ -303,16 +329,18 @@
         "confidence": "medium"
       }
     ],
-    "note": "Número incluido en teléfonos más denunciados por extorsión telefónica, revisar actualización periódica.",
-    "reviewStatus": "auto_imported",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "phone": "6653164566",
+    "sourceType": "official",
+    "sourceName": "Seguridad BC",
+    "note": "Número incluido en teléfonos más denunciados por extorsión telefónica, revisar actualización periódica."
   },
   {
     "number": "6864024858",
     "normalizedNumber": "6864024858",
     "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
+    "tag": "Posible fraude",
+    "label": "scam",
     "type": "official",
     "confidence": "medium",
     "source": "Seguridad BC",
@@ -325,16 +353,18 @@
         "confidence": "medium"
       }
     ],
-    "note": "Número incluido en teléfonos más denunciados por extorsión telefónica, revisar actualización periódica.",
-    "reviewStatus": "auto_imported",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "phone": "6864024858",
+    "sourceType": "official",
+    "sourceName": "Seguridad BC",
+    "note": "Número incluido en teléfonos más denunciados por extorsión telefónica, revisar actualización periódica."
   },
   {
     "number": "7719140555",
     "normalizedNumber": "7719140555",
     "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
+    "tag": "Posible fraude",
+    "label": "scam",
     "type": "official",
     "confidence": "high",
     "source": "SAT México",
@@ -347,16 +377,18 @@
         "confidence": "high"
       }
     ],
-    "note": "Número telefónico falso reportado por SAT.",
-    "reviewStatus": "auto_imported",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "phone": "7719140555",
+    "sourceType": "official",
+    "sourceName": "SAT México",
+    "note": "Número telefónico falso reportado por SAT."
   },
   {
     "number": "8994472009",
     "normalizedNumber": "8994472009",
     "country": "MX",
-    "tag": "scam",
-    "label": "Posible fraude",
+    "tag": "Posible fraude",
+    "label": "scam",
     "type": "official",
     "confidence": "medium",
     "source": "SSP Michoacán",
@@ -369,8 +401,10 @@
         "confidence": "medium"
       }
     ],
-    "note": "Número publicado en lista de números señalados por emisión de extorsiones.",
-    "reviewStatus": "auto_imported",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "phone": "8994472009",
+    "sourceType": "official",
+    "sourceName": "SSP Michoacán",
+    "note": "Número publicado en lista de números señalados por emisión de extorsiones."
   }
 ]

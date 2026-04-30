@@ -1,6 +1,8 @@
 {
-  "generatedAt": "2026-04-29T23:57:07.612Z",
+  "generatedAt": "2026-04-30T00:45:56.798Z",
   "target": 1000,
+  "maxMinutes": 10,
+  "sourceCount": 35,
   "sources": [
     {
       "source": "ADN40",
@@ -319,6 +321,6 @@
     }
   ],
   "warnings": [],
-  "lastCollectorStatus": "ok",
+  "lastCollectorStatus": "failed",
   "finalCount": 17
 }

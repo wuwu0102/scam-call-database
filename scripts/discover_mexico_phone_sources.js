@@ -2,96 +2,105 @@ const fs = require('fs');
 const path = require('path');
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
-const CATALOG = path.join(DATA_DIR, 'source_catalog_mexico.json');
+const CATALOG_PATH = path.join(DATA_DIR, 'source_catalog_mexico.json');
 const MAX_ADD = 100;
-
-const queries = [
-  'números usados para extorsión México',
-  'lista de números extorsión telefónica México',
-  'números telefónicos falsos México',
-  'números de fraude telefónico México',
-  'números sospechosos extorsión México',
-  'teléfonos reportados por extorsión México',
-  'números usados para secuestro virtual México',
-  'números falsos SAT México',
-  'números falsos banco México fraude',
-  'números fraude WhatsApp México',
-  'site:gob.mx números extorsión telefónica',
-  'site:*.gob.mx números extorsión',
-  'site:*.gob.mx números fraude telefónico',
-  'site:fiscalia*.gob.mx extorsión números',
-  'site:seguridad*.gob.mx extorsión números'
+const QUERIES = [
+  "números usados para extorsión México",
+  "lista de números extorsión telefónica México",
+  "números telefónicos falsos México",
+  "números de fraude telefónico México",
+  "números sospechosos extorsión México",
+  "teléfonos reportados por extorsión México",
+  "números usados para secuestro virtual México",
+  "números falsos SAT México",
+  "números falsos banco México fraude",
+  "números fraude WhatsApp México",
+  "site:gob.mx números extorsión telefónica",
+  "site:gob.mx números fraude telefónico",
+  "site:*.gob.mx extorsión números",
+  "site:*.gob.mx fraude telefónico números",
+  "site:fiscalia*.gob.mx extorsión números",
+  "site:seguridad*.gob.mx extorsión números",
+  "site:ssp*.gob.mx extorsión números",
+  "site:tellows.mx extorsión México teléfono",
+  "site:quienhabla.mx número sospechoso México",
+  "site:listaspam.com México teléfono extorsión"
 ];
 
-const readArray = (p) => fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : [];
-const writeArray = (p, data) => fs.writeFileSync(p, JSON.stringify(data, null, 2) + '\n');
-
-const isHttp = (u) => /^https?:\/\//i.test(u || '');
-const badBinary = /\.(zip|rar|7z|tar|gz|dmg|exe|apk|mp3|mp4|avi|mov|pptx?|xlsx?|docx?)(\?|#|$)/i;
+const ua = { 'User-Agent': 'Mozilla/5.0 Chrome Safari', 'Accept-Language': 'es-MX,es;q=0.9,en;q=0.8' };
+const isHttp = (u) => /^https?:\/\//i.test(String(u || ''));
+const readArr = (p) => fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : [];
+const writeArr = (p, data) => fs.writeFileSync(p, `${JSON.stringify(data, null, 2)}\n`);
 
 function classify(url) {
-  const u = String(url).toLowerCase();
-  if (u.includes('gob.mx') || u.includes('fiscalia') || u.includes('seguridad') || u.includes('policia')) return { type: 'government', confidence: 'high', tag: 'scam' };
-  if (u.includes('tellows') || u.includes('quienhabla') || u.includes('listaspam')) return { type: 'crowd', confidence: 'low', tag: 'suspicious' };
+  const u = url.toLowerCase();
+  if (/(gob\.mx|fiscalia|seguridad|ssp|policia|condusef|profeco)/.test(u)) {
+    return { type: 'official', confidence: 'medium', tag: 'scam' };
+  }
+  if (/(tellows|quienhabla|listaspam|quien-llama)/.test(u)) {
+    return { type: 'crowd', confidence: 'low', tag: 'suspicious' };
+  }
   return { type: 'media', confidence: 'medium', tag: 'suspicious' };
 }
 
-function parseUrls(html) {
-  const urls = new Set();
-  const m = String(html || '').match(/https?:\/\/[^\s"'<>]+/g) || [];
-  for (const raw of m) {
-    const cleaned = raw.replace(/[),.;]+$/, '');
-    if (!isHttp(cleaned)) continue;
-    if (badBinary.test(cleaned)) continue;
-    urls.add(cleaned);
+function parseResultUrls(html) {
+  const hits = new Set();
+  const re = /<a[^>]+href="([^"]+)"/g;
+  let m;
+  while ((m = re.exec(html)) !== null) {
+    const href = m[1];
+    if (href.startsWith('http://') || href.startsWith('https://')) hits.add(href.split('#')[0]);
+    if (href.startsWith('/l/?kh=')) {
+      const mm = href.match(/[?&]uddg=([^&]+)/);
+      if (mm) {
+        const decoded = decodeURIComponent(mm[1]);
+        if (isHttp(decoded)) hits.add(decoded.split('#')[0]);
+      }
+    }
   }
-  return Array.from(urls);
+  return Array.from(hits);
 }
 
-async function searchDuckDuckGo(query) {
-  const u = `https://duckduckgo.com/html/?q=${encodeURIComponent(query)}`;
-  const r = await fetch(u, { headers: { 'User-Agent': 'Mozilla/5.0', 'Accept-Language': 'es-MX,es;q=0.9' } });
-  if (!r.ok) throw new Error(`duckduckgo HTTP ${r.status}`);
-  return parseUrls(await r.text());
-}
-
-async function searchBing(query) {
-  const u = `https://www.bing.com/search?q=${encodeURIComponent(query)}`;
-  const r = await fetch(u, { headers: { 'User-Agent': 'Mozilla/5.0', 'Accept-Language': 'es-MX,es;q=0.9' } });
-  if (!r.ok) throw new Error(`bing HTTP ${r.status}`);
-  return parseUrls(await r.text());
+async function searchDDG(query) {
+  const url = `https://duckduckgo.com/html/?q=${encodeURIComponent(query)}`;
+  const res = await fetch(url, { headers: ua });
+  if (!res.ok) throw new Error(`DDG ${res.status}`);
+  return parseResultUrls(await res.text());
 }
 
 (async () => {
-  const catalog = readArray(CATALOG);
-  const existing = new Set(catalog.map((r) => String(r.url || '').trim()));
-  const discovered = [];
-  const warnings = [];
+  const old = readArr(CATALOG_PATH);
+  const seen = new Set(old.map((x) => String(x.url || '').trim()));
+  const today = new Date().toISOString().slice(0, 10);
+  const added = [];
 
-  for (const q of queries) {
-    let urls = [];
-    try { urls = urls.concat(await searchDuckDuckGo(q)); } catch (e) { warnings.push(`DDG blocked for "${q}": ${e.message}`); }
-    try { urls = urls.concat(await searchBing(q)); } catch (e) { warnings.push(`Bing blocked for "${q}": ${e.message}`); }
-
-    for (const url of urls) {
-      if (discovered.length >= MAX_ADD) break;
-      if (!isHttp(url) || badBinary.test(url) || existing.has(url)) continue;
-      existing.add(url);
-      const rule = classify(url);
-      discovered.push({
-        name: `Discovered source (${new URL(url).hostname})`,
-        url,
-        type: rule.type,
-        confidence: rule.confidence,
-        tag: rule.tag,
-        label: rule.tag === 'scam' ? 'Posible fraude' : 'Número sospechoso',
-        autoImport: true
-      });
+  for (const q of QUERIES) {
+    if (added.length >= MAX_ADD) break;
+    try {
+      const urls = await searchDDG(q);
+      if (!urls.length) console.warn(`warning: no results for query: ${q}`);
+      for (const url of urls) {
+        if (added.length >= MAX_ADD) break;
+        if (!isHttp(url) || seen.has(url)) continue;
+        seen.add(url);
+        const rule = classify(url);
+        added.push({
+          name: 'auto discovered source',
+          url,
+          type: rule.type,
+          confidence: rule.confidence,
+          tag: rule.tag,
+          label: 'Número sospechoso',
+          autoImport: true,
+          discoveredAt: today
+        });
+      }
+    } catch (e) {
+      console.warn(`warning: failed query "${q}": ${e.message}`);
     }
   }
 
-  const merged = [...catalog, ...discovered];
-  writeArray(CATALOG, merged);
-  for (const w of warnings) console.warn('WARN', w);
-  console.log(`Catalog merged. Added ${discovered.length} sources. total=${merged.length}`);
+  const merged = [...old, ...added];
+  writeArr(CATALOG_PATH, merged);
+  console.log(`source discovery done. added=${added.length} total=${merged.length}`);
 })();
