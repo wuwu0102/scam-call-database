@@ -507,7 +507,7 @@
         console.warn("public_stats failed");
       }
 
-      // ✅ 2. fallback → ios_numbers
+      // ✅ 2. fallback → collected
       if (count === 0) {
         try {
           const res = await fetch("./data/ios_numbers.json");
@@ -520,7 +520,7 @@
         }
       }
 
-      // ✅ 3. fallback → collected
+      // ✅ 3. fallback → ios_numbers
       if (count === 0) {
         try {
           const res = await fetch("./data/collected_mexico_numbers.json");
