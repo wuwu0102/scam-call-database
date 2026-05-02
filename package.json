@@ -1,0 +1,14 @@
+{
+  "name": "scam-call-database",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "collect": "node scripts/collect_mexico_numbers.js",
+    "merge": "node scripts/merge_seed_database.js",
+    "auto-review": "node scripts/auto_review_user_reports.js",
+    "validate": "node scripts/validate_public_count.js && node scripts/validate_ios_export.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.0.0"
+  }
+}

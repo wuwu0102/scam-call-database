@@ -1,0 +1,34 @@
+name: Protect iOS baseline and expand MX database
+
+on:
+  workflow_dispatch:
+
+jobs:
+  protect-and-expand:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+      - name: validate baseline
+        run: node scripts/validate_public_count.js
+      - name: collect data
+        run: node scripts/collect_mexico_numbers.js
+      - name: merge
+        run: node scripts/merge_seed_database.js
+      - name: auto review
+        run: node scripts/auto_review_user_reports.js --dry-run
+      - name: export iOS
+        run: node scripts/export_ios_numbers_from_firestore.js || true
+      - name: validate >= 755
+        run: MIN_IOS_EXPORT_COUNT=755 node scripts/validate_ios_export.js
+      - name: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/collected_mexico_numbers.json scam_numbers.json data/ios_numbers.json
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: protect iOS baseline and expand MX database"
+          git push

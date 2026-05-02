@@ -136,3 +136,10 @@ node scripts/merge_seed_database.js
 - 使用者回報達門檻（suspicious/fraud >= 3 且 safe = 0）才會自動升級為可疑。
 - iOS caller ID 僅輸出可信來源或達門檻之使用者訊號資料。
 - 本服務僅提供風險提示，不做法律定罪。
+
+## Baseline and safety rules
+
+- App baseline count = **755** (must never go lower).
+- Expansion target = **1000** searchable records.
+- User reports flow: `phone_number_reports` -> automatic review -> `phone_numbers`.
+- No fake/generated random phone numbers are allowed.
