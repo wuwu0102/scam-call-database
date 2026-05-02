@@ -668,38 +668,14 @@
           note,
           createdAt: Date.now(),
           userAgentHash,
-          locale: lang,
-          status: "unverified"
+          locale: "es-MX",
+          status: "pending_auto_review",
+          sourceType: "user_report",
+          reviewStatus: "pending_auto_review"
         });
-
-        const reportsSnapshot = await getDocs(query(collection(firestore, REPORT_COLLECTION_NAME), where("normalizedNumber", "==", normalizedPhone)));
-        let suspiciousOrFraud = 0;
-        let safe = 0;
-        reportsSnapshot.forEach((d) => {
-          const rt = String((d.data() || {}).reportType || "").toLowerCase();
-          if (rt === "scam" || rt === "suspicious") suspiciousOrFraud += 1;
-          if (rt === "safe") safe += 1;
-        });
-
-        if (suspiciousOrFraud >= 3 && safe === 0 && safe < suspiciousOrFraud) {
-          await setDoc(doc(firestore, COLLECTION_NAME, normalizedPhone), {
-            number: normalizedPhone,
-            normalizedNumber: normalizedPhone,
-            tag: "suspicious",
-            label: "Número sospechoso",
-            type: "user_signal",
-            confidence: "low",
-            source: "User reports",
-            reviewStatus: "auto_promoted",
-            reportCount: suspiciousOrFraud,
-            safeReports: safe,
-            note: "Número marcado como sospechoso por múltiples reportes de usuarios. No confirmado oficialmente.",
-            updatedAt: new Date().toISOString().slice(0, 10)
-          }, { merge: true });
-        }
 
         reportPhoneEl.value = ""; reportLabelEl.value = "scam"; reportNoteEl.value = "";
-        setReportMessage("Gracias. Tu reporte fue registrado como señal de riesgo.", "success");
+        setReportMessage("Gracias. Tu reporte fue recibido y será revisado automáticamente.", "success");
       } catch {
         setReportMessage("No se pudo guardar el reporte", "error");
       }
