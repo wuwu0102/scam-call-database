@@ -4,20 +4,34 @@ const path = require('path');
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const PENDING_PATH = path.join(DATA_DIR, 'pending_numbers.json');
 const MANUAL_CSV_PATH = path.join(DATA_DIR, 'manual_import_numbers.csv');
+const SEED_CSV_PATH = path.join(DATA_DIR, 'seed_verified_public_numbers.csv');
 const COLLECTION_REPORT_PATH = path.join(DATA_DIR, 'collection_report.json');
 
 const SOURCE_CONFIDENCE_MAP = {
   official_federal: 0.9,
   official_state: 0.85,
   official_state_lookup: 0.8,
-  official_state_announcement: 0.75,
+  official_state_announcement: 0.8,
   official_state_app_reference: 0.75,
   municipal_public_report: 0.65,
   financial_fraud: 0.85,
   manual_import: 0.5,
-  news_or_social_reference: 0.45,
+  news_or_public_reference: 0.45,
   public_report: 0.4,
 };
+
+const RISK_KEYWORDS = [
+  'extorsión', 'extorsion', 'extorsionador', 'extorsionadores', 'fraude', 'fraudulento', 'falso', 'falsos',
+  'números utilizados', 'numeros utilizados', 'llamadas desde', 'reportados', 'denunciados', 'alerta', 'amenaza', 'engaño', 'engano',
+];
+const HARD_RISK_OVERRIDE = [
+  'extorsionador', 'extorsionadores', 'números utilizados', 'numeros utilizados',
+  'líneas utilizadas', 'lineas utilizadas', 'llamadas desde', 'reportados como extorsión', 'reportados como extorsion',
+];
+const EXCLUSION_KEYWORDS = [
+  'emergencia', 'denuncia', 'atención', 'atencion', 'contacto', 'oficina', 'conmutador', 'línea de ayuda', 'linea de ayuda',
+  'reporta al', 'llama al', 'comunícate', 'comunicate', '911', '089', '088', '800', '01 800',
+];
 
 const SOURCES = [
   { name: 'Baja California Seguridad', url: 'https://seguridadbc.gob.mx/ExtorsionTelefonica/index.php', type: 'official_state', mode: 'list_scrape', confidence: 0.85 },
@@ -34,397 +48,48 @@ const SOURCES = [
   { name: 'Sonora Gobierno Antiextorsión', url: 'https://www.sonora.gob.mx/gobierno/acciones/dependencias/exhorta-gobierno-de-sonora-a-no-responder-llamadas-de-numeros-identificados-como-extorsionadores', type: 'official_state_announcement', mode: 'announcement_scrape', confidence: 0.75 },
   { name: 'Campeche 0 Extorsión 911', url: 'https://www.cespcampeche.gob.mx/web/public/0extorsion911', type: 'official_state_app_reference', mode: 'announcement_scrape', confidence: 0.75 },
   { name: 'Coatzacoalcos Reporte Ciudadano de Números de Extorsión', url: 'https://dex.coatzacoalcos.gob.mx/', type: 'municipal_public_report', mode: 'lookup_source', confidence: 0.65 },
+  { name: 'Zacatecas SSP Alerta', url: 'https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/', type: 'official_state_announcement', mode: 'announcement_scrape', confidence: 0.8 },
+  { name: 'Zacatecas SSP Modalidad', url: 'https://ssp.zacatecas.gob.mx/detecta-ssp-modalidad-de-extorsion-telefonica-7/', type: 'official_state_announcement', mode: 'announcement_scrape', confidence: 0.8 },
+  { name: 'Zapopan Gobierno Fraude', url: 'https://www.zapopan.gob.mx/gobierno/seguridad/fraude-y-extorsion-telefonica/', type: 'official_state', mode: 'announcement_scrape', confidence: 0.8 },
+  { name: 'Colima Gobierno Noticia', url: 'https://www.col.gob.mx/Portal/detalle_noticia/NjAwNTI%3D', type: 'official_state', mode: 'announcement_scrape', confidence: 0.8 },
+  { name: 'SEGOB Extorsión', url: 'https://www.gob.mx/segob/articulos/evita-ser-victima-de-la-extorsion-telefonica?es-MX=', type: 'official_federal', mode: 'announcement_scrape', confidence: 0.9 },
+  { name: 'Policía Federal Qué es extorsión', url: 'https://www.gob.mx/epn/policiafederal/articulos/que-es-la-extorsion?idiom=es', type: 'official_federal', mode: 'announcement_scrape', confidence: 0.9 },
+  { name: 'Policía Federal Tipos extorsión', url: 'https://www.gob.mx/epn/policiafederal/articulos/conoce-los-tipos-de-extorsion?idiom=es', type: 'official_federal', mode: 'announcement_scrape', confidence: 0.9 },
   { name: 'Manual Import CSV', file: 'data/manual_import_numbers.csv', type: 'manual_import', mode: 'csv_import', confidence: 0.5 },
+  { name: 'Seed Verified Public CSV', file: 'data/seed_verified_public_numbers.csv', type: 'official_state_announcement', mode: 'seed_csv_import', confidence: 0.8 },
 ];
 
-async function fetchHtml(url) {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 15000);
-  try {
-    const response = await fetch(url, {
-      method: 'GET',
-      signal: controller.signal,
-      headers: {
-        'User-Agent': 'scam-call-database-mx-collector/1.0',
-        Accept: 'text/html,application/xhtml+xml',
-      },
-    });
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
-    }
-    return await response.text();
-  } finally {
-    clearTimeout(timeout);
-  }
-}
+async function fetchHtml(url) { const c = new AbortController(); const t = setTimeout(() => c.abort(), 15000); try { const r = await fetch(url,{signal:c.signal,headers:{'User-Agent':'scam-call-database-mx-collector/2.0',Accept:'text/html,application/xhtml+xml'}}); if(!r.ok) throw new Error(`HTTP ${r.status}`); return await r.text(); } finally { clearTimeout(t);} }
 
-function extractPhoneNumbersFromText(text) {
-  if (!text) return [];
+function normalizeMXNumber(raw){ if(!raw) return ''; let d=String(raw).replace(/\D/g,''); if (/^(911|089|088|070|072)$/.test(d)) return ''; if (d.startsWith('521')&&d.length>=13) d=d.slice(3); else if (d.startsWith('52')&&d.length>=12) d=d.slice(2); else if (d.startsWith('01800')) return ''; if (d.length!==10 && d.length>10) d=d.slice(-10); if (d.length!==10) return ''; return `+52${d}`; }
+function isEmergencyOrServiceLocal(local){ return /^(911|089|088|070|072)$/.test(local) || local.startsWith('800') || local.startsWith('1800') || local.startsWith('01800'); }
+function isValidMXNumber(number){ if(!/^\+52\d{10}$/.test(number)) return false; const local=number.slice(3); if(['0000000000','1111111111','1234567890'].includes(local)) return false; if(/^([0-9])\1{9}$/.test(local)) return false; if(isEmergencyOrServiceLocal(local)) return false; return true; }
 
-  const regexes = [
-    /\+?52[\s\-\.]?\(?\d{2,3}\)?[\s\-\.]?\d{3,4}[\s\-\.]?\d{4}/g,
-    /\(?\d{2,3}\)?[\s\-\.]?\d{3,4}[\s\-\.]?\d{4}/g,
-    /\b\d{10}\b/g,
-    /\b52\d{10}\b/g,
-    /\b521\d{10}\b/g,
-  ];
+function extractPhoneCandidatesWithContext(text){ if(!text) return []; const out=[]; const re=/(\+?52[\s\-\.]*)?(\(?\d{2,3}\)?[\s\-\.]*)?\d{3,4}[\s\-\.]?\d{4}|\b\d{10}\b/g; let m; while((m=re.exec(text))){ const raw=(m[0]||'').trim(); const normalized=normalizeMXNumber(raw); const s=Math.max(0,m.index-50); const e=Math.min(text.length,m.index+raw.length+50); const ctx=text.slice(s,e).toLowerCase(); const contextBefore=text.slice(s,m.index); const contextAfter=text.slice(m.index+raw.length,e); let risk=0; for(const k of RISK_KEYWORDS){ if(ctx.includes(k)) risk+=1; } let skipReason=''; const hasExcl=EXCLUSION_KEYWORDS.find((k)=>ctx.includes(k)); const hasOverride=HARD_RISK_OVERRIDE.some((k)=>ctx.includes(k)); if(!normalized) skipReason='normalization_failed'; else if(!isValidMXNumber(normalized)) skipReason='invalid_or_service_number'; else if(hasExcl && !hasOverride) skipReason=`excluded_context:${hasExcl}`; else if(risk===0) skipReason='missing_risk_context'; out.push({raw,normalized,contextBefore,contextAfter,riskContextScore:risk,skipReason}); }
+ return out; }
 
-  const matches = [];
-  for (const regex of regexes) {
-    const found = text.match(regex) || [];
-    matches.push(...found);
-  }
+function parseCsvLine(line){ const out=[]; let c=''; let q=false; for(let i=0;i<line.length;i++){ const ch=line[i]; if(ch==='"'){ if(q && line[i+1]==='"'){c+='"';i++;} else q=!q;} else if(ch===','&&!q){out.push(c);c='';} else c+=ch;} out.push(c); return out; }
+function readCsvSafe(file, header){ if(!fs.existsSync(file)) fs.writeFileSync(file, `${header}\n`, 'utf8'); const lines=fs.readFileSync(file,'utf8').split(/\r?\n/).filter((l)=>l.trim()); return lines.length>1 ? lines.slice(1).map(parseCsvLine) : []; }
 
-  return Array.from(new Set(matches));
-}
+function buildRecord({ number, source, confidence, collectedAt, note = '', status = 'pending_review', sourceType, sourceUrl, sourceName }) { return { number, label:'suspicious', country:'MX', sourceType: sourceType || source.type, sourceName: sourceName || source.name, sourceUrl: sourceUrl || source.url, confidence, status, evidenceCount:1, skipReason:'', sources:[{sourceName:sourceName||source.name,sourceType:sourceType||source.type,sourceUrl:sourceUrl||source.url,confidence,mode:source.mode,collectedAt}], firstSeenAt:collectedAt, updatedAt:collectedAt, note }; }
 
-function normalizeMXNumber(raw) {
-  if (!raw) return '';
-  let digits = String(raw).replace(/\D/g, '');
-  if (/^(911|089|088)$/.test(digits)) return '';
+async function collectFromSource(source){ const collectedAt=new Date().toISOString(); const records=[]; const report={name:source.name,mode:source.mode,fetchOk:false,htmlLength:0,rawMatches:0,acceptedCandidates:0,skippedCandidates:0,skippedReasonsSummary:{},error:null};
+ try {
+  if(source.mode==='csv_import'){ const rows=readCsvSafe(MANUAL_CSV_PATH,'number,label,source,note'); report.rawMatches=rows.length; for(const row of rows){ const n=normalizeMXNumber(row[0]); if(!isValidMXNumber(n)){ report.skippedCandidates++; report.skippedReasonsSummary.invalid_csv_number=(report.skippedReasonsSummary.invalid_csv_number||0)+1; continue;} records.push(buildRecord({number:n,source,confidence:0.5,collectedAt,note:row[3]||''})); } report.fetchOk=true; report.acceptedCandidates=records.length; return {records,report}; }
+  if(source.mode==='seed_csv_import'){ const rows=readCsvSafe(SEED_CSV_PATH,'number,label,sourceName,sourceUrl,note,confidence'); report.rawMatches=rows.length; for(const row of rows){ const [num,label='suspicious',sName='',sUrl='',note='',c='0.8']=row; const conf=Number(c||0); const n=normalizeMXNumber(num); if(!isValidMXNumber(n) || conf<0.8){ report.skippedCandidates++; report.skippedReasonsSummary.invalid_or_low_confidence_seed=(report.skippedReasonsSummary.invalid_or_low_confidence_seed||0)+1; continue; } const rec=buildRecord({number:n,source,confidence:conf,collectedAt,note, status:'auto_approved_public_official', sourceType:'official_state_announcement', sourceName:sName||source.name, sourceUrl:sUrl||source.url}); rec.label=label||'suspicious'; records.push(rec);} report.fetchOk=true; report.acceptedCandidates=records.length; return {records,report}; }
 
-  if (digits.startsWith('521') && digits.length >= 13) {
-    digits = digits.slice(3);
-  } else if (digits.startsWith('52') && digits.length >= 12) {
-    digits = digits.slice(2);
-  }
+  const html=await fetchHtml(source.url); report.fetchOk=true; report.htmlLength=html.length; const candidates=extractPhoneCandidatesWithContext(html); report.rawMatches=candidates.length;
+  for(const c of candidates){ if(c.skipReason){ report.skippedCandidates++; report.skippedReasonsSummary[c.skipReason]=(report.skippedReasonsSummary[c.skipReason]||0)+1; continue; } records.push(buildRecord({number:c.normalized,source,confidence:source.confidence,collectedAt,note:`riskContextScore=${c.riskContextScore}`})); }
+  report.acceptedCandidates=records.length;
+ } catch (error) { report.error=error.message; }
+ return {records,report}; }
 
-  if (digits.length > 10) digits = digits.slice(-10);
-  if (digits.length !== 10) return '';
+function calculateConfidence(item){ const sc=(item.sources||[]).map((s)=>Number(s.confidence||SOURCE_CONFIDENCE_MAP[s.sourceType]||0)); const base=sc.length?Math.max(...sc):Number(item.confidence||0); const ev=item.evidenceCount||sc.length||1; const boost=ev>=3?0.1:ev>=2?0.05:0; return Math.min(0.95,Number((base+boost).toFixed(2))); }
+function safeReadJsonArray(file){ try { if(!fs.existsSync(file)) return []; const parsed=JSON.parse(fs.readFileSync(file,'utf8')); return Array.isArray(parsed)?parsed:[]; } catch { return []; } }
+function mergeWithExistingPending(newItems){ const now=new Date().toISOString(); const by=new Map(); for(const item of safeReadJsonArray(PENDING_PATH)){ if(item&&item.number) by.set(item.number,item);} for(const incoming of newItems){ const ex=by.get(incoming.number); if(!ex){ const n={...incoming}; n.evidenceCount=(n.sources||[]).length||1; n.confidence=calculateConfidence(n); if(n.status!=='auto_approved_public_official') n.status=n.confidence>=0.85?'pending_review_high_confidence':'pending_review'; by.set(n.number,n); continue;} const smap=new Map(); [...(ex.sources||[]),...(incoming.sources||[])].forEach((s)=>smap.set(`${s.sourceUrl}::${s.sourceName}::${s.mode}`,s)); const merged={...ex,...incoming,sources:Array.from(smap.values()),firstSeenAt:ex.firstSeenAt||incoming.firstSeenAt||now,updatedAt:now,note:ex.note||incoming.note||'',skipReason:ex.skipReason||incoming.skipReason||''}; merged.evidenceCount=merged.sources.length; merged.confidence=calculateConfidence(merged); if(merged.status!=='auto_approved_public_official') merged.status=merged.confidence>=0.85?'pending_review_high_confidence':'pending_review'; by.set(merged.number,merged);} return Array.from(by.values()).sort((a,b)=>a.number.localeCompare(b.number)); }
 
-  return `+52${digits}`;
-}
+async function run(){ const all=[]; const per=[]; let raw=0, acc=0, skip=0; for(const s of SOURCES){ const {records,report}=await collectFromSource(s); all.push(...records); raw+=report.rawMatches||0; acc+=report.acceptedCandidates||0; skip+=report.skippedCandidates||0; per.push(report); if(report.error) console.warn(`[${s.name}] failed: ${report.error}`); }
+ const merged=mergeWithExistingPending(all); fs.writeFileSync(PENDING_PATH,`${JSON.stringify(merged,null,2)}\n`,'utf8'); const skippedReasonsSummary={}; per.forEach((p)=>Object.entries(p.skippedReasonsSummary||{}).forEach(([k,v])=>{skippedReasonsSummary[k]=(skippedReasonsSummary[k]||0)+v;})); const payload={collectedAt:new Date().toISOString(),totalSources:SOURCES.length,totalRawMatches:raw,totalAcceptedCandidates:acc,totalSkippedCandidates:skip,totalPendingNumbers:merged.length,previousOfficialCount:0,newOfficialCount:0,promotedThisRun:0,skippedReasonsSummary,sources:per}; fs.writeFileSync(COLLECTION_REPORT_PATH,`${JSON.stringify(payload,null,2)}\n`,'utf8'); return {merged,reportPayload:payload}; }
 
-function isValidMXNumber(number) {
-  if (!/^\+52\d{10}$/.test(number)) return false;
-  const local = number.slice(3);
-  if (['0000000000', '1111111111', '1234567890'].includes(local)) return false;
-  if (/^(\d)\1{9}$/.test(local)) return false;
-  if (local.startsWith('000') || local.endsWith('0000')) return false;
-  return true;
-}
-
-function parseCsvLine(line) {
-  const out = [];
-  let current = '';
-  let inQuotes = false;
-  for (let i = 0; i < line.length; i += 1) {
-    const ch = line[i];
-    if (ch === '"') {
-      if (inQuotes && line[i + 1] === '"') {
-        current += '"';
-        i += 1;
-      } else {
-        inQuotes = !inQuotes;
-      }
-    } else if (ch === ',' && !inQuotes) {
-      out.push(current);
-      current = '';
-    } else {
-      current += ch;
-    }
-  }
-  out.push(current);
-  return out;
-}
-
-function loadManualImportCsv() {
-  if (!fs.existsSync(MANUAL_CSV_PATH)) {
-    fs.writeFileSync(MANUAL_CSV_PATH, 'number,label,source,note\n', 'utf8');
-  }
-
-  const content = fs.readFileSync(MANUAL_CSV_PATH, 'utf8');
-  const lines = content.split(/\r?\n/).filter((line) => line.trim());
-  if (lines.length <= 1) return [];
-
-  const items = [];
-  for (let i = 1; i < lines.length; i += 1) {
-    const [number, label = 'suspicious', source = '', note = ''] = parseCsvLine(lines[i]);
-    items.push({ number, label: label || 'suspicious', source, note });
-  }
-
-  return items;
-}
-
-async function collectFromSource(source) {
-  const collectedAt = new Date().toISOString();
-  const records = [];
-  const report = {
-    name: source.name,
-    mode: source.mode,
-    fetchOk: false,
-    htmlLength: 0,
-    rawMatches: 0,
-    validNumbers: 0,
-    error: null,
-    skippedReason: null,
-  };
-
-  if (source.mode === 'csv_import') {
-    const rows = loadManualImportCsv();
-    const matches = rows.map((row) => row.number);
-
-    for (const row of rows) {
-      const normalized = normalizeMXNumber(row.number);
-      if (!isValidMXNumber(normalized)) continue;
-      records.push({
-        number: normalized,
-        label: 'suspicious',
-        country: 'MX',
-        sourceType: 'manual_import',
-        sourceName: 'Manual Import',
-        sourceUrl: 'manual://data/manual_import_numbers.csv',
-        confidence: 0.5,
-        status: 'pending_review',
-        evidenceCount: 1,
-        sources: [{
-          sourceName: 'Manual Import',
-          sourceType: 'manual_import',
-          sourceUrl: 'manual://data/manual_import_numbers.csv',
-          confidence: 0.5,
-          mode: 'csv_import',
-          collectedAt,
-        }],
-        firstSeenAt: collectedAt,
-        updatedAt: collectedAt,
-        note: row.note || '',
-      });
-    }
-
-    report.fetchOk = true;
-    report.rawMatches = matches.length;
-    report.validNumbers = records.length;
-    const skipped = report.validNumbers === 0 ? 'no valid numbers in csv rows' : null;
-    report.skippedReason = skipped;
-    const skippedText = skipped ? `, skipped: ${skipped}` : '';
-    console.log(`[${source.name}] csv import, raw matches: ${report.rawMatches}, valid: ${report.validNumbers}${skippedText}`);
-
-    records.rawCount = report.rawMatches;
-    records.validCount = report.validNumbers;
-    records.report = report;
-    return records;
-  }
-
-  const isLookup = source.mode === 'lookup_source' || source.mode === 'captcha_lookup_source';
-
-  const html = await fetchHtml(source.url);
-  const matches = extractPhoneNumbersFromText(html);
-  report.fetchOk = true;
-  report.htmlLength = html.length;
-  report.rawMatches = matches.length;
-
-  for (const candidate of matches) {
-    const normalized = normalizeMXNumber(candidate);
-    if (!isValidMXNumber(normalized)) continue;
-
-    records.push({
-      number: normalized,
-      label: 'suspicious',
-      country: 'MX',
-      sourceType: source.type,
-      sourceName: source.name,
-      sourceUrl: source.url,
-      confidence: source.confidence,
-      status: source.confidence >= 0.85 ? 'pending_review_high_confidence' : 'pending_review',
-      evidenceCount: 1,
-      sources: [{
-        sourceName: source.name,
-        sourceType: source.type,
-        sourceUrl: source.url,
-        confidence: source.confidence,
-        mode: source.mode,
-        collectedAt,
-      }],
-      firstSeenAt: collectedAt,
-      updatedAt: collectedAt,
-      note: '',
-    });
-  }
-
-  report.validNumbers = records.length;
-  if (report.validNumbers === 0) {
-    report.skippedReason = isLookup ? 'lookup source, metadata only' : 'no valid numbers parsed from page';
-  }
-
-  const skippedText = report.skippedReason ? `, skipped: ${report.skippedReason}` : '';
-  console.log(
-    `[${source.name}] fetch ok, html length: ${report.htmlLength}, raw matches: ${report.rawMatches}, valid: ${report.validNumbers}${skippedText}`,
-  );
-
-  records.rawCount = report.rawMatches;
-  records.validCount = report.validNumbers;
-  records.report = report;
-  return records;
-}
-
-function calculateConfidence(item) {
-  const sourceConfs = (item.sources || []).map((s) => Number(s.confidence || SOURCE_CONFIDENCE_MAP[s.sourceType] || 0));
-  const maxBase = sourceConfs.length ? Math.max(...sourceConfs) : Number(item.confidence || 0);
-  const evidenceCount = item.evidenceCount || sourceConfs.length || 1;
-
-  let boost = 0;
-  if (evidenceCount >= 3) boost = 0.1;
-  else if (evidenceCount >= 2) boost = 0.05;
-
-  const confidence = Math.min(0.95, Number((maxBase + boost).toFixed(2)));
-  return confidence;
-}
-
-function mergeWithExistingPending(newItems) {
-  const nowIso = new Date().toISOString();
-  let existing = [];
-
-  if (fs.existsSync(PENDING_PATH)) {
-    try {
-      const parsed = JSON.parse(fs.readFileSync(PENDING_PATH, 'utf8'));
-      if (Array.isArray(parsed)) existing = parsed;
-    } catch (error) {
-      console.warn(`Failed to parse existing pending file: ${error.message}`);
-    }
-  }
-
-  const byNumber = new Map();
-  for (const item of existing) {
-    if (item && item.number) byNumber.set(item.number, item);
-  }
-
-  for (const incoming of newItems) {
-    const existingItem = byNumber.get(incoming.number);
-    if (!existingItem) {
-      const merged = { ...incoming };
-      merged.evidenceCount = (merged.sources || []).length || 1;
-      merged.confidence = calculateConfidence(merged);
-      merged.status = merged.confidence >= 0.85 ? 'pending_review_high_confidence' : 'pending_review';
-      byNumber.set(incoming.number, merged);
-      continue;
-    }
-
-    const sourceMap = new Map();
-    for (const source of [...(existingItem.sources || []), ...(incoming.sources || [])]) {
-      const key = `${source.sourceUrl}::${source.sourceName}::${source.mode}`;
-      sourceMap.set(key, source);
-    }
-
-    const mergedSources = Array.from(sourceMap.values());
-    const mergedItem = {
-      ...existingItem,
-      label: 'suspicious',
-      country: 'MX',
-      sourceType: existingItem.sourceType || incoming.sourceType,
-      sourceName: existingItem.sourceName || incoming.sourceName,
-      sourceUrl: existingItem.sourceUrl || incoming.sourceUrl,
-      sources: mergedSources,
-      evidenceCount: mergedSources.length,
-      note: existingItem.note || incoming.note || '',
-      firstSeenAt: existingItem.firstSeenAt || incoming.firstSeenAt || nowIso,
-      updatedAt: nowIso,
-    };
-
-    mergedItem.confidence = calculateConfidence(mergedItem);
-    mergedItem.status = mergedItem.confidence >= 0.85 ? 'pending_review_high_confidence' : 'pending_review';
-    byNumber.set(incoming.number, mergedItem);
-  }
-
-  return Array.from(byNumber.values()).sort((a, b) => a.number.localeCompare(b.number));
-}
-
-async function run() {
-  const allNewItems = [];
-  const sourceResults = [];
-  const perSourceCounts = [];
-  let totalRawMatches = 0;
-  let totalValidNumbers = 0;
-
-  for (const source of SOURCES) {
-    try {
-      const collected = await collectFromSource(source);
-      allNewItems.push(...collected);
-
-      const report = collected.report || {
-        name: source.name,
-        mode: source.mode,
-        fetchOk: false,
-        htmlLength: 0,
-        rawMatches: 0,
-        validNumbers: 0,
-        error: null,
-        skippedReason: null,
-      };
-
-      totalRawMatches += Number(report.rawMatches || 0);
-      totalValidNumbers += Number(report.validNumbers || 0);
-
-      perSourceCounts.push({
-        name: report.name,
-        mode: report.mode,
-        fetchOk: report.fetchOk,
-        htmlLength: report.htmlLength,
-        rawMatches: report.rawMatches,
-        validNumbers: report.validNumbers,
-        error: report.error,
-      });
-
-      sourceResults.push({ source: source.name, mode: source.mode, success: true, count: report.validNumbers });
-    } catch (error) {
-      const failedReport = {
-        name: source.name,
-        mode: source.mode,
-        fetchOk: false,
-        htmlLength: 0,
-        rawMatches: 0,
-        validNumbers: 0,
-        error: error.message,
-      };
-
-      perSourceCounts.push(failedReport);
-      sourceResults.push({ source: source.name, mode: source.mode, success: false, count: 0, error: error.message });
-      console.warn(`[${source.name}] fetch failed, html length: 0, raw matches: 0, valid: 0, error: ${error.message}`);
-    }
-  }
-
-  const merged = mergeWithExistingPending(allNewItems);
-  fs.writeFileSync(PENDING_PATH, `${JSON.stringify(merged, null, 2)}\n`, 'utf8');
-
-  const reportPayload = {
-    collectedAt: new Date().toISOString(),
-    totalSources: SOURCES.length,
-    sources: perSourceCounts,
-    totalRawMatches,
-    totalValidNumbers,
-    totalPendingNumbers: merged.length,
-  };
-  fs.writeFileSync(COLLECTION_REPORT_PATH, `${JSON.stringify(reportPayload, null, 2)}\n`, 'utf8');
-
-  console.log(`Collected valid items this run: ${allNewItems.length}`);
-  console.log(`Total raw matches: ${totalRawMatches}`);
-  console.log(`Total valid MX numbers: ${totalValidNumbers}`);
-  console.log(`Pending total: ${merged.length}`);
-
-  const successSources = sourceResults.filter((r) => r.success).map((r) => r.source);
-  const failedSources = sourceResults.filter((r) => !r.success).map((r) => r.source);
-  console.log(`Sources success: ${successSources.length}`);
-  console.log(`Sources failed: ${failedSources.length}`);
-  if (failedSources.length) console.log(`Failed list: ${failedSources.join(' | ')}`);
-
-  return { merged, reportPayload, sourceResults };
-}
-
-if (require.main === module) {
-  run().catch((error) => {
-    console.error('Collector failed unexpectedly:', error.message);
-    process.exit(1);
-  });
-}
-
-module.exports = {
-  SOURCES,
-  fetchHtml,
-  extractPhoneNumbersFromText,
-  normalizeMXNumber,
-  isValidMXNumber,
-  loadManualImportCsv,
-  collectFromSource,
-  mergeWithExistingPending,
-  calculateConfidence,
-  run,
-};
+if(require.main===module){ run().catch((e)=>{ console.error('Collector failed unexpectedly:',e.message); process.exit(1);}); }
+module.exports={SOURCES,fetchHtml,extractPhoneCandidatesWithContext,normalizeMXNumber,isValidMXNumber,collectFromSource,mergeWithExistingPending,calculateConfidence,run};

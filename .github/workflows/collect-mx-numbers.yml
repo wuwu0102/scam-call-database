@@ -20,10 +20,16 @@ jobs:
       - name: Collect Mexico scam numbers
         run: node scripts/collect_mx_numbers.js
 
+      - name: Auto promote safe numbers
+        run: node scripts/auto_promote_safe_numbers.js
+
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/pending_numbers.json data/manual_import_numbers.csv data/collection_report.json
-          git commit -m "Update pending Mexico scam numbers" || echo "No changes to commit"
+          git add scam_numbers.json data/pending_numbers.json data/manual_import_numbers.csv data/collection_report.json data/seed_verified_public_numbers.csv data/backups/scam_numbers.backup.json
+          git commit -m "Update Mexico scam numbers safely" || echo "No changes to commit"
           git push
+
+      - name: Print collection report
+        run: cat data/collection_report.json
