@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "number": "+523312539047",
+    "label": "suspicious",
+    "country": "MX",
+    "lastUpdated": "2026-05-05T03:05:57.376Z",
+    "source": "Zacatecas SSP"
+  },
+  {
+    "number": "+524922086564",
+    "label": "suspicious",
+    "country": "MX",
+    "lastUpdated": "2026-05-05T03:05:57.377Z",
+    "source": "Zacatecas SSP"
+  },
+  {
+    "number": "+524922090430",
+    "label": "suspicious",
+    "country": "MX",
+    "lastUpdated": "2026-05-05T03:05:57.377Z",
+    "source": "Zacatecas SSP"
+  },
+  {
+    "number": "+524922090510",
+    "label": "suspicious",
+    "country": "MX",
+    "lastUpdated": "2026-05-05T03:05:57.377Z",
+    "source": "Zacatecas SSP"
+  },
+  {
+    "number": "+525525772233",
+    "label": "suspicious",
+    "country": "MX",
+    "lastUpdated": "2026-05-05T03:05:57.377Z",
+    "source": "Zacatecas SSP"
+  },
+  {
+    "number": "+525545087588",
+    "label": "suspicious",
+    "country": "MX",
+    "lastUpdated": "2026-05-05T03:05:57.377Z",
+    "source": "Zacatecas SSP"
+  },
+  {
+    "number": "+525556279456",
+    "label": "suspicious",
+    "country": "MX",
+    "lastUpdated": "2026-05-05T03:05:57.377Z",
+    "source": "Zacatecas SSP"
+  },
+  {
+    "number": "+528715669317",
+    "label": "suspicious",
+    "country": "MX",
+    "lastUpdated": "2026-05-05T03:05:57.377Z",
+    "source": "Zacatecas SSP"
+  }
+]

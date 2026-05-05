@@ -40,10 +40,11 @@ jobs:
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
         run: node scripts/export_ios_numbers_from_firestore.js || echo "ios export skipped"
       - run: node scripts/generate_public_stats.js --min=${CURRENT_COUNT}
+      - run: node scripts/import_verified_seed_numbers.js || echo "seed import skipped"
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/source_catalog_mexico.json data/collected_mexico_numbers.json data/crowd_signal_mexico_numbers.json data/collector_run_log.json data/public_stats.json data/ios_numbers.json
+          git add data/source_catalog_mexico.json data/collected_mexico_numbers.json data/crowd_signal_mexico_numbers.json data/collector_run_log.json data/public_stats.json data/ios_numbers.json scam_numbers.json data/seed_verified_public_numbers.csv data/seed_import_report.json data/backups/scam_numbers.backup.json
           if git diff --cached --quiet; then
             echo "No data file changes to commit."
             exit 0
