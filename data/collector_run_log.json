@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-05-05T02:36:53.103Z",
-  "target": 855,
+  "generatedAt": "2026-05-05T12:03:57.532Z",
+  "target": 1006,
   "maxMinutes": 10,
   "sourceCount": 36,
   "sources": [
     {
       "source": "ADN40",
       "url": "https://www.adn40.mx/",
-      "accepted": 101,
+      "accepted": 125,
       "crowdOnly": 0,
       "errors": []
     },
@@ -30,5 +30,5 @@
   ],
   "warnings": [],
   "lastCollectorStatus": "ok",
-  "finalCount": 906
+  "finalCount": 1037
 }
