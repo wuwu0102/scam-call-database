@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-05-01T09:19:25.902Z",
-  "target": 719,
+  "generatedAt": "2026-05-05T02:36:53.103Z",
+  "target": 855,
   "maxMinutes": 10,
   "sourceCount": 36,
   "sources": [
     {
       "source": "ADN40",
       "url": "https://www.adn40.mx/",
-      "accepted": 82,
+      "accepted": 101,
       "crowdOnly": 0,
       "errors": []
     },
@@ -23,12 +23,12 @@
     {
       "source": "El Universal",
       "url": "https://www.eluniversal.com.mx/",
-      "accepted": 470,
+      "accepted": 398,
       "crowdOnly": 0,
       "errors": []
     }
   ],
   "warnings": [],
   "lastCollectorStatus": "ok",
-  "finalCount": 755
+  "finalCount": 906
 }
