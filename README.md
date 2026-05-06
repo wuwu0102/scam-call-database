@@ -143,3 +143,15 @@ node scripts/merge_seed_database.js
 - Expansion target = **1000** searchable records.
 - User reports flow: `phone_number_reports` -> automatic review -> `phone_numbers`.
 - No fake/generated random phone numbers are allowed.
+
+## Recommended short link
+
+Recommended short link:
+bit.ly/alertanumero
+
+Target:
+https://wuwu0102.github.io/scam-call-database/
+
+用途：
+Facebook 貼文先導流到網頁版，不直接導 App Store。
+網頁版再引導 iPhone 使用者下載 ScamCall MX。
