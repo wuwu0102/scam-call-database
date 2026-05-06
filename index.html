@@ -18,15 +18,16 @@
     body {
       margin: 0;
       min-height: 100vh;
-      display: grid;
-      place-items: center;
       background: #f5f6f8;
       color: #111;
-      padding: 16px 0;
+      padding: 16px;
+      box-sizing: border-box;
     }
 
     .app {
-      width: min(92vw, 420px);
+      width: 100%;
+      max-width: 620px;
+      margin: 0 auto;
       text-align: center;
     }
 
@@ -46,8 +47,9 @@
       border: 1px solid #e5e6ea;
       border-radius: 14px;
       padding: 14px;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       text-align: left;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
 
     h2 {
@@ -75,6 +77,7 @@
       border: none;
       cursor: pointer;
       margin-bottom: 0;
+      min-height: 44px;
     }
 
     .result-card {
@@ -237,9 +240,7 @@
 
 
     @media (max-width: 600px) {
-      body {
-        padding-top: max(24px, env(safe-area-inset-top));
-      }
+      body { padding: max(16px, env(safe-area-inset-top)) 16px 16px; }
 
       h1 {
         font-size: 32px;
@@ -268,13 +269,20 @@
     }
   
     .hero-ctas { display:grid; gap:10px; margin:12px 0; }
-    .hero-btn { display:block; text-align:center; text-decoration:none; border-radius:12px; padding:14px; font-weight:700; }
-    .hero-btn.primary { background:#0b2a6f; color:#fff; }
-    .hero-btn.secondary { background:#facc15; color:#111; }
+    .hero-btn { display:block; text-align:center; text-decoration:none; border-radius:12px; padding:14px; font-weight:700; min-height:44px; box-sizing:border-box; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .hero-btn.primary { background:#111; color:#fff; }
+    .hero-btn.secondary { background:#facc15; color:#111; transition: background .2s ease; }
+    .hero-btn.secondary:hover { background:#eab308; }
+    .hero-btn.secondary:active { background:#ca8a04; }
     .highlights { display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:.9rem; margin:8px 0 2px; }
     .legal-note { font-size:.82rem; color:#4b5563; margin-top:8px; }
-    .footer-links { display:flex; gap:14px; justify-content:center; margin:14px 0; font-size:.92rem; }
+    .footer-links { display:flex; gap:16px; justify-content:center; margin:18px 0 10px; font-size:.92rem; flex-wrap:wrap; }
     .footer-links a { color:#0b2a6f; }
+    .muted-app-link { color:#0b2a6f; text-decoration:none; font-weight:600; font-size:.92rem; display:inline-block; margin-top:8px; }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 3px solid #2563eb;
+      outline-offset: 2px;
+    }
   </style>
 </head>
 <body>
@@ -330,8 +338,8 @@
     <p class="disclaimer">Este servicio muestra reportes comunitarios y riesgo potencial. No constituye una confirmación legal ni una acusación oficial.</p>
     <section class="section">
       <h2>También disponible para iPhone</h2>
-      <p>Si usas iPhone, puedes activar ScamCall MX para identificar llamadas sospechosas directamente en tu dispositivo.</p>
-      <a class="hero-btn secondary" href="#" id="ctaAppBottom" target="_blank" rel="noopener noreferrer">Descargar en App Store</a>
+      <p>Activa ScamCall MX en tu iPhone para identificar llamadas sospechosas directamente en tu dispositivo.</p>
+      <a class="muted-app-link" href="#" id="ctaAppBottom" target="_blank" rel="noopener noreferrer">Ver en App Store →</a>
     </section>
     <div class="footer-links">
       <a id="privacyLink" href="./privacy.html">Privacidad</a>
@@ -442,6 +450,11 @@
       return "unknown";
     };
 
+    const sanitizeUserInput = (value, maxLength = 160) => {
+      const trimmed = String(value || "").trim().slice(0, maxLength);
+      return trimmed.replace(/<[^>]*>/g, "").replace(/[<>]/g, "").replace(/javascript:/gi, "");
+    };
+
     const getLocalizedNote = (note) => {
       if (!note) return "";
       if (typeof note === "object") {
@@ -529,6 +542,14 @@
     if (ctaAppTop) ctaAppTop.href = appStoreUrl;
     if (ctaAppBottom) ctaAppBottom.href = appStoreUrl;
     if (privacyLink && siteConfig.privacyUrl) privacyLink.href = siteConfig.privacyUrl;
+    const ctaLookup = document.getElementById("ctaLookup");
+    if (ctaLookup) {
+      ctaLookup.addEventListener("click", (event) => {
+        event.preventDefault();
+        const lookupSection = document.getElementById("lookup-section");
+        if (lookupSection) lookupSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
     if (noticeLink && siteConfig.noticeUrl) noticeLink.href = siteConfig.noticeUrl;
     if (contactLink && siteConfig.contactUrl) contactLink.href = siteConfig.contactUrl;
 
@@ -706,11 +727,11 @@
     const submitReport = async () => {
       const normalizedPhone = normalizeMXNumber(reportPhoneEl.value.trim());
       const reportType = reportLabelEl.value;
-      const note = reportNoteEl.value.trim();
-      const rawPhoneInput = reportPhoneEl.value.trim();
+      const note = sanitizeUserInput(reportNoteEl.value, 160);
+      const rawPhoneInput = sanitizeUserInput(reportPhoneEl.value, 24);
       if (!/^[\d\s+\-()]+$/.test(rawPhoneInput)) return setReportMessage("Ingresa un número válido de México", "error");
       if (!isValidMXNumber(normalizedPhone) || !isKnownLabel(reportType)) return setReportMessage("Ingresa un número válido de México", "error");
-      const piiPattern = /(https?:\/\/|www\.|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}|(?:calle|avenida|colonia|domicilio|casa|departamento|cp|código postal)|\d{8,}|\d{13,19})/i;
+      const piiPattern = /(https?:\/\/|www\.|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}|\b(?:calle|avenida|colonia|domicilio|casa|departamento|cp|código postal|ine|curp|rfc|cuenta|tarjeta)\b|\b\d{13,19}\b)/i;
       if (piiPattern.test(note)) return setReportMessage("No incluyas datos personales. Describe solo el tipo de llamada.", "error");
       const limitKey = "report_timestamps_v1";
       const now = Date.now();
@@ -721,17 +742,11 @@
       if (!firestore) return setReportMessage("Configuración de Firebase pendiente", "error");
 
       try {
-        const userAgentHash = btoa(navigator.userAgent || "").slice(0, 24);
         await addDoc(collection(firestore, REPORT_COLLECTION_NAME), {
           normalizedNumber: normalizedPhone,
-          reportType,
+          category: reportType,
           note,
-          createdAt: Date.now(),
-          userAgentHash,
-          locale: "es-MX",
-          status: "pending_auto_review",
-          sourceType: "user_report",
-          reviewStatus: "pending_auto_review"
+          timestamp: Date.now()
         });
 
         timestamps.push(now);
