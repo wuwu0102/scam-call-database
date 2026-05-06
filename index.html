@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alerta Número MX</title>
+  <title>Alerta Número MX | Consulta llamadas sospechosas en México</title>
+  <meta name="description" content="Consulta números sospechosos reportados por la comunidad en México. Gratis, sin registro y sin recopilar datos personales." />
+  <meta property="og:title" content="¿Te llamó un número desconocido?" />
+  <meta property="og:description" content="Revísalo gratis en Alerta Número MX. Sin registro y sin datos personales." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wuwu0102.github.io/scam-call-database/" />
+  <meta name="twitter:card" content="summary_large_image" />
   <style>
     :root {
       font-family: Arial, sans-serif;
@@ -260,12 +266,27 @@
       }
 
     }
+  
+    .hero-ctas { display:grid; gap:10px; margin:12px 0; }
+    .hero-btn { display:block; text-align:center; text-decoration:none; border-radius:12px; padding:14px; font-weight:700; }
+    .hero-btn.primary { background:#0b2a6f; color:#fff; }
+    .hero-btn.secondary { background:#facc15; color:#111; }
+    .highlights { display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:.9rem; margin:8px 0 2px; }
+    .legal-note { font-size:.82rem; color:#4b5563; margin-top:8px; }
+    .footer-links { display:flex; gap:14px; justify-content:center; margin:14px 0; font-size:.92rem; }
+    .footer-links a { color:#0b2a6f; }
   </style>
 </head>
 <body>
+  <script src="./config.js"></script>
   <main class="app">
     <h1>Alerta Número MX</h1>
-    <p class="subtitle">Consulta y reporta números sospechosos en México.</p>
+    <p class="subtitle">Consulta números sospechosos reportados por la comunidad en México.</p>
+    <div class="highlights"><span>✔ 100% gratis</span><span>✔ Sin registro</span><span>✔ Sin datos personales</span><span>✔ Hecho para México</span></div>
+    <div class="hero-ctas">
+      <a class="hero-btn primary" href="#lookup-section" id="ctaLookup">Revisar un número ahora</a>
+      <a class="hero-btn secondary" href="#" id="ctaAppTop" target="_blank" rel="noopener noreferrer">Descargar ScamCall MX para iPhone</a>
+    </div>
     <div id="stats-card">
       <div id="registered-count">Números sospechosos registrados: cargando...</div>
       <div id="next-update">Próxima actualización: cargando...</div>
@@ -273,7 +294,7 @@
     <div id="sourceNotice">
       Servicio de alerta: muestra riesgo potencial, no confirmación legal.
     </div>
-    <section class="section">
+    <section class="section" id="lookup-section">
       <h2>Buscar número</h2>
       <div id="setupMsg" aria-live="polite"></div>
       <input id="phoneInput" type="tel" placeholder="Número de teléfono (con o sin +52)" autocomplete="off" />
@@ -295,17 +316,28 @@
       <h2>Reportar número</h2>
       <input id="reportPhoneInput" type="tel" placeholder="Número de teléfono (con o sin +52)" autocomplete="off" />
       <p class="input-helper">Puedes escribirlo con o sin +52.</p>
+      <p class="input-helper">Ayuda a la comunidad reportando números sospechosos. No publiques nombres, direcciones, datos bancarios ni información personal.</p>
       <select id="reportLabelInput" aria-label="Tipo de reporte">
-        <option value="scam">Fraude</option>
+        <option value="scam">Sospechoso</option>
         <option value="suspicious">Sospechoso</option>
         <option value="safe">Seguro</option>
         <option value="unknown">Desconocido</option>
       </select>
-      <input id="reportNoteInput" type="text" placeholder="Nota opcional" autocomplete="off" />
+      <input id="reportNoteInput" type="text" placeholder="Nota opcional" maxlength="160" autocomplete="off" />
       <button id="reportBtn" type="button">Guardar reporte</button>
       <div id="reportMsg" aria-live="polite"></div>
     </section>
-    <p class="disclaimer">Los reportes son informativos. Verifica antes de responder o devolver llamadas.</p>
+    <p class="disclaimer">Este servicio muestra reportes comunitarios y riesgo potencial. No constituye una confirmación legal ni una acusación oficial.</p>
+    <section class="section">
+      <h2>También disponible para iPhone</h2>
+      <p>Si usas iPhone, puedes activar ScamCall MX para identificar llamadas sospechosas directamente en tu dispositivo.</p>
+      <a class="hero-btn secondary" href="#" id="ctaAppBottom" target="_blank" rel="noopener noreferrer">Descargar en App Store</a>
+    </section>
+    <div class="footer-links">
+      <a id="privacyLink" href="./privacy.html">Privacidad</a>
+      <a id="noticeLink" href="./aviso.html">Aviso de uso</a>
+      <a id="contactLink" href="mailto:scamcallmx@gmail.com">Contacto</a>
+    </div>
   </main>
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
@@ -332,8 +364,8 @@
     };
 
     const LABELS = {
-      scam: { "zh-TW": "可疑詐騙", en: "Possible scam", "es-MX": "Posible fraude" },
-      suspicious: { "zh-TW": "可疑", en: "Suspicious", "es-MX": "Número sospechoso" },
+      scam: { "zh-TW": "可疑", en: "Possible risk", "es-MX": "Posible riesgo" },
+      suspicious: { "zh-TW": "可疑", en: "Suspicious", "es-MX": "Sospechoso" },
       safe: { "zh-TW": "安全", en: "Safe", "es-MX": "Seguro" },
       unknown: { "zh-TW": "未知", en: "Unknown", "es-MX": "Desconocido" }
     };
@@ -419,7 +451,7 @@
     };
 
     const SOURCE_TYPE_LABELS = {
-      official: "Oficial",
+      official: "Institucional",
       media: "Medio",
       web: "Web",
       user_report: "Usuario",
@@ -458,8 +490,9 @@
 
     const showResult = ({ number = "", tag = "unknown", label = null, note = "", sourceName = "", sourceType = "", confidence = "", reviewStatus = "" } = {}) => {
       const styleKey = getStyleKey(tag);
-      const displayLabel = getDisplayLabel(tag || "unknown", label);
-      const badgeText = LABELS[styleKey][lang];
+      const normalizedTag = String(tag || "unknown").toLowerCase();
+      const displayLabel = normalizedTag === "unknown" ? "Resultado: Desconocido" : "Resultado: Posible riesgo";
+      const badgeText = styleKey === "unknown" ? "Desconocido" : "Sospechoso";
       const trustedMeta = getResolvedMeta({ sourceType, confidence, reviewStatus });
 
       resultCardEl.className = `result-card result-${styleKey}`;
@@ -473,14 +506,31 @@
       if (sourceName) metaBits.push(`Referencia: ${sourceName}`);
       resultMetaEl.textContent = metaBits.join(" · ");
 
-      const resolvedNote = getLocalizedNote(note);
-      resultNoteEl.textContent = resolvedNote ? `Nota: ${resolvedNote}` : "";
+      if (styleKey === "unknown") {
+        resultNoteEl.textContent = "No encontramos reportes comunitarios para este número.";
+      } else {
+        resultNoteEl.textContent = "Este número aparece en reportes comunitarios.";
+      }
     };
 
     const setReportMessage = (message, type) => {
       reportMsgEl.textContent = message;
       reportMsgEl.className = type ? type : "";
     };
+
+
+    const siteConfig = window.SITE_CONFIG || {};
+    const appStoreUrl = siteConfig.appStoreUrl || "#";
+    const ctaAppTop = document.getElementById("ctaAppTop");
+    const ctaAppBottom = document.getElementById("ctaAppBottom");
+    const privacyLink = document.getElementById("privacyLink");
+    const noticeLink = document.getElementById("noticeLink");
+    const contactLink = document.getElementById("contactLink");
+    if (ctaAppTop) ctaAppTop.href = appStoreUrl;
+    if (ctaAppBottom) ctaAppBottom.href = appStoreUrl;
+    if (privacyLink && siteConfig.privacyUrl) privacyLink.href = siteConfig.privacyUrl;
+    if (noticeLink && siteConfig.noticeUrl) noticeLink.href = siteConfig.noticeUrl;
+    if (contactLink && siteConfig.contactUrl) contactLink.href = siteConfig.contactUrl;
 
     document.addEventListener("DOMContentLoaded", loadStats);
 
@@ -657,7 +707,17 @@
       const normalizedPhone = normalizeMXNumber(reportPhoneEl.value.trim());
       const reportType = reportLabelEl.value;
       const note = reportNoteEl.value.trim();
+      const rawPhoneInput = reportPhoneEl.value.trim();
+      if (!/^[\d\s+\-()]+$/.test(rawPhoneInput)) return setReportMessage("Ingresa un número válido de México", "error");
       if (!isValidMXNumber(normalizedPhone) || !isKnownLabel(reportType)) return setReportMessage("Ingresa un número válido de México", "error");
+      const piiPattern = /(https?:\/\/|www\.|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}|(?:calle|avenida|colonia|domicilio|casa|departamento|cp|código postal)|\d{8,}|\d{13,19})/i;
+      if (piiPattern.test(note)) return setReportMessage("No incluyas datos personales. Describe solo el tipo de llamada.", "error");
+      const limitKey = "report_timestamps_v1";
+      const now = Date.now();
+      const windowMs = 10 * 60 * 1000;
+      const maxReports = 3;
+      const timestamps = JSON.parse(localStorage.getItem(limitKey) || "[]").filter((ts) => now - ts < windowMs);
+      if (timestamps.length >= maxReports) return setReportMessage("Has enviado varios reportes recientemente. Intenta de nuevo más tarde.", "error");
       if (!firestore) return setReportMessage("Configuración de Firebase pendiente", "error");
 
       try {
@@ -674,6 +734,8 @@
           reviewStatus: "pending_auto_review"
         });
 
+        timestamps.push(now);
+        localStorage.setItem(limitKey, JSON.stringify(timestamps));
         reportPhoneEl.value = ""; reportLabelEl.value = "scam"; reportNoteEl.value = "";
         setReportMessage("Gracias. Tu reporte fue recibido y será revisado automáticamente.", "success");
       } catch {
