@@ -1,0 +1,97 @@
+{
+  "scrapedAt": "2026-05-05T13:59:04.324Z",
+  "totalSources": 8,
+  "sourcesSucceeded": 0,
+  "sourcesFailed": 8,
+  "rawCandidates": 0,
+  "acceptedCandidates": 0,
+  "pendingBefore": 11,
+  "pendingAfter": 11,
+  "newPendingThisRun": 0,
+  "officialBefore": 13,
+  "officialAfter": 13,
+  "promotedThisRun": 0,
+  "skippedReasonsSummary": {},
+  "sources": [
+    {
+      "name": "TelefonoSpam MX Top Spam",
+      "url": "https://www.telefonospam.com.mx/top-spam",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawCandidates": 0,
+      "acceptedCandidates": 0,
+      "skippedCandidates": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "TelefonoSpam MX Ultimos Buscados",
+      "url": "https://www.telefonospam.com.mx/ultimos-buscados",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawCandidates": 0,
+      "acceptedCandidates": 0,
+      "skippedCandidates": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "Estafatel Reportes Recientes",
+      "url": "https://www.estafatel.com/",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawCandidates": 0,
+      "acceptedCandidates": 0,
+      "skippedCandidates": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "Tellows MX",
+      "url": "https://www.tellows.mx/",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawCandidates": 0,
+      "acceptedCandidates": 0,
+      "skippedCandidates": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "Zacatecas SSP Extorsion 1",
+      "url": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawCandidates": 0,
+      "acceptedCandidates": 0,
+      "skippedCandidates": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "Zacatecas SSP Extorsion 2",
+      "url": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar/",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawCandidates": 0,
+      "acceptedCandidates": 0,
+      "skippedCandidates": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "Zacatecas SSP Extorsion 3",
+      "url": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar-2/",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawCandidates": 0,
+      "acceptedCandidates": 0,
+      "skippedCandidates": 0,
+      "error": "fetch failed"
+    },
+    {
+      "name": "Zacatecas SESESP Extorsion",
+      "url": "https://ssp.zacatecas.gob.mx/alerta-sesesp-sobre-linea-telefonica-utilizada-para-extorsionar/",
+      "fetchOk": false,
+      "htmlLength": 0,
+      "rawCandidates": 0,
+      "acceptedCandidates": 0,
+      "skippedCandidates": 0,
+      "error": "fetch failed"
+    }
+  ]
+}
