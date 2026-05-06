@@ -41,10 +41,16 @@ jobs:
         run: node scripts/export_ios_numbers_from_firestore.js || echo "ios export skipped"
       - run: node scripts/generate_public_stats.js --min=${CURRENT_COUNT}
       - run: node scripts/import_verified_seed_numbers.js || echo "seed import skipped"
+      - run: node scripts/scrape_mexico_phone_sources.js || echo "scrape skipped"
+      - run: node scripts/promote_safe_scraped_numbers.js
+      - run: node scripts/check_database_safety.js
+      - run: node scripts/check_scrape_anomalies.js
+      - run: cat data/seed_import_report.json || true
+      - run: cat data/scrape_report.json || true
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/source_catalog_mexico.json data/collected_mexico_numbers.json data/crowd_signal_mexico_numbers.json data/collector_run_log.json data/public_stats.json data/ios_numbers.json scam_numbers.json data/seed_verified_public_numbers.csv data/seed_import_report.json data/backups/scam_numbers.backup.json
+          git add data/source_catalog_mexico.json data/collected_mexico_numbers.json data/crowd_signal_mexico_numbers.json data/collector_run_log.json data/public_stats.json data/ios_numbers.json scam_numbers.json data/seed_verified_public_numbers.csv data/seed_import_report.json data/backups/scam_numbers.backup.json data/pending_numbers.json data/source_catalog_mexico.json data/scrape_report.json
           if git diff --cached --quiet; then
             echo "No data file changes to commit."
             exit 0
