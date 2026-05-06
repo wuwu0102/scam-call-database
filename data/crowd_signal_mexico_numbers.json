@@ -1,1 +1,2662 @@
-[]
+[
+  {
+    "number": "1166247191",
+    "normalizedNumber": "1166247191",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Estafatel Reportes Recientes",
+    "sourceUrl": "https://www.estafatel.com/",
+    "sources": [
+      {
+        "source": "Estafatel Reportes Recientes",
+        "sourceUrl": "https://www.estafatel.com/",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "2227853090",
+    "normalizedNumber": "2227853090",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "2281949248",
+    "normalizedNumber": "2281949248",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "2292819184",
+    "normalizedNumber": "2292819184",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "2311161649",
+    "normalizedNumber": "2311161649",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "2747903643",
+    "normalizedNumber": "2747903643",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "3310310082",
+    "normalizedNumber": "3310310082",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "3310310086",
+    "normalizedNumber": "3310310086",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "3310310091",
+    "normalizedNumber": "3310310091",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "3313570300",
+    "normalizedNumber": "3313570300",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "3314588183",
+    "normalizedNumber": "3314588183",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "3316769120",
+    "normalizedNumber": "3316769120",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "3321000076",
+    "normalizedNumber": "3321000076",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "3321000117",
+    "normalizedNumber": "3321000117",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "3321000120",
+    "normalizedNumber": "3321000120",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "3321398432",
+    "normalizedNumber": "3321398432",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "3321419709",
+    "normalizedNumber": "3321419709",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "3327168025",
+    "normalizedNumber": "3327168025",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "3329608430",
+    "normalizedNumber": "3329608430",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "3385262073",
+    "normalizedNumber": "3385262073",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "3929419834",
+    "normalizedNumber": "3929419834",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "4422965836",
+    "normalizedNumber": "4422965836",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "4424020319",
+    "normalizedNumber": "4424020319",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "4424720117",
+    "normalizedNumber": "4424720117",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "4432480038",
+    "normalizedNumber": "4432480038",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "4444117246",
+    "normalizedNumber": "4444117246",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "4771138947",
+    "normalizedNumber": "4771138947",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "4771138967",
+    "normalizedNumber": "4771138967",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "4771805499",
+    "normalizedNumber": "4771805499",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "4773070014",
+    "normalizedNumber": "4773070014",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "4773070015",
+    "normalizedNumber": "4773070015",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "4773070044",
+    "normalizedNumber": "4773070044",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "4833600291",
+    "normalizedNumber": "4833600291",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "4833600305",
+    "normalizedNumber": "4833600305",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5164536886",
+    "normalizedNumber": "5164536886",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5164537317",
+    "normalizedNumber": "5164537317",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5512041190",
+    "normalizedNumber": "5512041190",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5512041198",
+    "normalizedNumber": "5512041198",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5512345678",
+    "normalizedNumber": "5512345678",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Estafatel Reportes Recientes",
+    "sourceUrl": "https://www.estafatel.com/",
+    "sources": [
+      {
+        "source": "Estafatel Reportes Recientes",
+        "sourceUrl": "https://www.estafatel.com/",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5512516089",
+    "normalizedNumber": "5512516089",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5512550001",
+    "normalizedNumber": "5512550001",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5512550009",
+    "normalizedNumber": "5512550009",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5512550023",
+    "normalizedNumber": "5512550023",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5515759635",
+    "normalizedNumber": "5515759635",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Estafatel Reportes Recientes",
+    "sourceUrl": "https://www.estafatel.com/",
+    "sources": [
+      {
+        "source": "Estafatel Reportes Recientes",
+        "sourceUrl": "https://www.estafatel.com/",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5517213150",
+    "normalizedNumber": "5517213150",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5517213205",
+    "normalizedNumber": "5517213205",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5532285564",
+    "normalizedNumber": "5532285564",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5535396245",
+    "normalizedNumber": "5535396245",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5535470098",
+    "normalizedNumber": "5535470098",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5535473639",
+    "normalizedNumber": "5535473639",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5539382044",
+    "normalizedNumber": "5539382044",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5539382062",
+    "normalizedNumber": "5539382062",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5540341435",
+    "normalizedNumber": "5540341435",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5540341440",
+    "normalizedNumber": "5540341440",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5541237197",
+    "normalizedNumber": "5541237197",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5541237600",
+    "normalizedNumber": "5541237600",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5541847210",
+    "normalizedNumber": "5541847210",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5544439900",
+    "normalizedNumber": "5544439900",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5544439902",
+    "normalizedNumber": "5544439902",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5544439997",
+    "normalizedNumber": "5544439997",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5547431430",
+    "normalizedNumber": "5547431430",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5547440145",
+    "normalizedNumber": "5547440145",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5547440361",
+    "normalizedNumber": "5547440361",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5547746201",
+    "normalizedNumber": "5547746201",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5548508827",
+    "normalizedNumber": "5548508827",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5549999981",
+    "normalizedNumber": "5549999981",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5551018192",
+    "normalizedNumber": "5551018192",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Estafatel Reportes Recientes",
+    "sourceUrl": "https://www.estafatel.com/",
+    "sources": [
+      {
+        "source": "Estafatel Reportes Recientes",
+        "sourceUrl": "https://www.estafatel.com/",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5554474000",
+    "normalizedNumber": "5554474000",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5555100033",
+    "normalizedNumber": "5555100033",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5559784594",
+    "normalizedNumber": "5559784594",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Estafatel Reportes Recientes",
+    "sourceUrl": "https://www.estafatel.com/",
+    "sources": [
+      {
+        "source": "Estafatel Reportes Recientes",
+        "sourceUrl": "https://www.estafatel.com/",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5561650100",
+    "normalizedNumber": "5561650100",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5566177334",
+    "normalizedNumber": "5566177334",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Estafatel Reportes Recientes",
+    "sourceUrl": "https://www.estafatel.com/",
+    "sources": [
+      {
+        "source": "Estafatel Reportes Recientes",
+        "sourceUrl": "https://www.estafatel.com/",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5566358916",
+    "normalizedNumber": "5566358916",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5566360700",
+    "normalizedNumber": "5566360700",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5566361500",
+    "normalizedNumber": "5566361500",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5568441324",
+    "normalizedNumber": "5568441324",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5570990501",
+    "normalizedNumber": "5570990501",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5575059547",
+    "normalizedNumber": "5575059547",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5576135051",
+    "normalizedNumber": "5576135051",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Estafatel Reportes Recientes",
+    "sourceUrl": "https://www.estafatel.com/",
+    "sources": [
+      {
+        "source": "Estafatel Reportes Recientes",
+        "sourceUrl": "https://www.estafatel.com/",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5576816320",
+    "normalizedNumber": "5576816320",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Estafatel Reportes Recientes",
+    "sourceUrl": "https://www.estafatel.com/",
+    "sources": [
+      {
+        "source": "Estafatel Reportes Recientes",
+        "sourceUrl": "https://www.estafatel.com/",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5578144567",
+    "normalizedNumber": "5578144567",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Estafatel Reportes Recientes",
+    "sourceUrl": "https://www.estafatel.com/",
+    "sources": [
+      {
+        "source": "Estafatel Reportes Recientes",
+        "sourceUrl": "https://www.estafatel.com/",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5588083012",
+    "normalizedNumber": "5588083012",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Estafatel Reportes Recientes",
+    "sourceUrl": "https://www.estafatel.com/",
+    "sources": [
+      {
+        "source": "Estafatel Reportes Recientes",
+        "sourceUrl": "https://www.estafatel.com/",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5588759950",
+    "normalizedNumber": "5588759950",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5591569340",
+    "normalizedNumber": "5591569340",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5592662759",
+    "normalizedNumber": "5592662759",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5594484757",
+    "normalizedNumber": "5594484757",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5596616167",
+    "normalizedNumber": "5596616167",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5596924991",
+    "normalizedNumber": "5596924991",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5597200025",
+    "normalizedNumber": "5597200025",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5597200043",
+    "normalizedNumber": "5597200043",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5597202599",
+    "normalizedNumber": "5597202599",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5597989779",
+    "normalizedNumber": "5597989779",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5598160512",
+    "normalizedNumber": "5598160512",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5619948830",
+    "normalizedNumber": "5619948830",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5626828370",
+    "normalizedNumber": "5626828370",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Estafatel Reportes Recientes",
+    "sourceUrl": "https://www.estafatel.com/",
+    "sources": [
+      {
+        "source": "Estafatel Reportes Recientes",
+        "sourceUrl": "https://www.estafatel.com/",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "6561650100",
+    "normalizedNumber": "6561650100",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "6611580414",
+    "normalizedNumber": "6611580414",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "6647080900",
+    "normalizedNumber": "6647080900",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "6672600290",
+    "normalizedNumber": "6672600290",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "6672607100",
+    "normalizedNumber": "6672607100",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "6672809200",
+    "normalizedNumber": "6672809200",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "6672809300",
+    "normalizedNumber": "6672809300",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "6923550809",
+    "normalizedNumber": "6923550809",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "7222398789",
+    "normalizedNumber": "7222398789",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "7222769880",
+    "normalizedNumber": "7222769880",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "7421123209",
+    "normalizedNumber": "7421123209",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "7715231245",
+    "normalizedNumber": "7715231245",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Estafatel Reportes Recientes",
+    "sourceUrl": "https://www.estafatel.com/",
+    "sources": [
+      {
+        "source": "Estafatel Reportes Recientes",
+        "sourceUrl": "https://www.estafatel.com/",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "7721246637",
+    "normalizedNumber": "7721246637",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "7773550013",
+    "normalizedNumber": "7773550013",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "7773550031",
+    "normalizedNumber": "7773550031",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "7774581850",
+    "normalizedNumber": "7774581850",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8001232222",
+    "normalizedNumber": "8001232222",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8110019990",
+    "normalizedNumber": "8110019990",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8111072765",
+    "normalizedNumber": "8111072765",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8111072769",
+    "normalizedNumber": "8111072769",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8111072770",
+    "normalizedNumber": "8111072770",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8115220318",
+    "normalizedNumber": "8115220318",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8117622735",
+    "normalizedNumber": "8117622735",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8117742078",
+    "normalizedNumber": "8117742078",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8118777200",
+    "normalizedNumber": "8118777200",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8122620492",
+    "normalizedNumber": "8122620492",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8133890018",
+    "normalizedNumber": "8133890018",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8146245308",
+    "normalizedNumber": "8146245308",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8185262049",
+    "normalizedNumber": "8185262049",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8345241364",
+    "normalizedNumber": "8345241364",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8669546986",
+    "normalizedNumber": "8669546986",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8671953952",
+    "normalizedNumber": "8671953952",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8672179308",
+    "normalizedNumber": "8672179308",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8714425305",
+    "normalizedNumber": "8714425305",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "9276609476",
+    "normalizedNumber": "9276609476",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "9661163044",
+    "normalizedNumber": "9661163044",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "9811136329",
+    "normalizedNumber": "9811136329",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "9993500598",
+    "normalizedNumber": "9993500598",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top Spam",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-06"
+  }
+]

@@ -291,5 +291,29 @@
     "firstSeenAt": "2026-05-05T03:05:55.115Z",
     "updatedAt": "2026-05-05T03:05:55.115Z",
     "note": "Public official alert mentions this number as used for extortion calls"
+  },
+  {
+    "number": "+526672600290",
+    "country": "MX",
+    "label": "suspicious",
+    "sources": [
+      {
+        "name": "TelefonoSpam MX Top Spam",
+        "url": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": 0.45,
+        "contextSnippet": "><br />\n\n<div class=\"cat\">Top Spam</div>\n<div id=\"secciones\"><a id=\"tel\" href=\"/6672600290\" title=\"Telefono 6672600290\">6672600290</a> (462)<br /><a id=\"tel\" href=\"/66728"
+      },
+      {
+        "name": "TelefonoSpam MX Ultimos Buscados",
+        "url": "https://www.telefonospam.com.mx/ultimos-buscados",
+        "type": "community_report",
+        "confidence": 0.35,
+        "contextSnippet": "><br />\n\n<div class=\"cat\">Top Spam</div>\n<div id=\"secciones\"><a id=\"tel\" href=\"/6672600290\" title=\"Telefono 6672600290\">6672600290</a> (462)<br /><a id=\"tel\" href=\"/66728"
+      }
+    ],
+    "evidenceCount": 2,
+    "confidence": 0.55,
+    "updatedAt": "2026-05-06T00:44:12.632Z"
   }
 ]

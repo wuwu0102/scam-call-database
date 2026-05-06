@@ -1,19 +1,35 @@
 {
-  "generatedAt": "2026-05-05T12:03:57.532Z",
-  "target": 1006,
+  "generatedAt": "2026-05-06T00:43:04.089Z",
+  "target": 1137,
   "maxMinutes": 10,
-  "sourceCount": 36,
+  "sourceCount": 9,
   "sources": [
     {
-      "source": "ADN40",
-      "url": "https://www.adn40.mx/",
-      "accepted": 125,
-      "crowdOnly": 0,
+      "source": "TelefonoSpam MX Top Spam",
+      "url": "https://www.telefonospam.com.mx/top-spam",
+      "accepted": 0,
+      "crowdOnly": 287,
       "errors": []
     },
     {
-      "source": "Debate",
-      "url": "https://www.debate.com.mx/",
+      "source": "TelefonoSpam MX Ultimos Buscados",
+      "url": "https://www.telefonospam.com.mx/ultimos-buscados",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch HTTP 404"
+      ]
+    },
+    {
+      "source": "Estafatel Reportes Recientes",
+      "url": "https://www.estafatel.com/",
+      "accepted": 0,
+      "crowdOnly": 44,
+      "errors": []
+    },
+    {
+      "source": "Tellows MX",
+      "url": "https://www.tellows.mx/",
       "accepted": 0,
       "crowdOnly": 0,
       "errors": [
@@ -21,14 +37,50 @@
       ]
     },
     {
-      "source": "El Universal",
-      "url": "https://www.eluniversal.com.mx/",
-      "accepted": 398,
+      "source": "Zacatecas SSP Extorsion 1",
+      "url": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Zacatecas SSP Extorsion 2",
+      "url": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar/",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Zacatecas SSP Extorsion 3",
+      "url": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar-2/",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "Zacatecas SESESP Extorsion",
+      "url": "https://ssp.zacatecas.gob.mx/alerta-sesesp-sobre-linea-telefonica-utilizada-para-extorsionar/",
+      "accepted": 0,
+      "crowdOnly": 0,
+      "errors": [
+        "fetch failed"
+      ]
+    },
+    {
+      "source": "auto discovered source",
+      "url": "https://duckduckgo.com/",
+      "accepted": 4,
       "crowdOnly": 0,
       "errors": []
     }
   ],
   "warnings": [],
-  "lastCollectorStatus": "ok",
-  "finalCount": 1037
+  "lastCollectorStatus": "partial",
+  "finalCount": 1041
 }

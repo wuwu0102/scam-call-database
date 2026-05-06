@@ -62,5 +62,15 @@
     "confidence": 0.8,
     "mode": "html_scrape",
     "autoPromote": true
+  },
+  {
+    "name": "auto discovered source",
+    "url": "https://duckduckgo.com/",
+    "type": "media",
+    "confidence": "medium",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "autoImport": true,
+    "discoveredAt": "2026-05-06"
   }
 ]

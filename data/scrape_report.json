@@ -1,57 +1,61 @@
 {
-  "scrapedAt": "2026-05-05T13:59:04.324Z",
-  "totalSources": 8,
-  "sourcesSucceeded": 0,
-  "sourcesFailed": 8,
-  "rawCandidates": 0,
-  "acceptedCandidates": 0,
+  "scrapedAt": "2026-05-06T00:44:11.487Z",
+  "totalSources": 9,
+  "sourcesSucceeded": 5,
+  "sourcesFailed": 4,
+  "rawCandidates": 847,
+  "acceptedCandidates": 4,
   "pendingBefore": 11,
-  "pendingAfter": 11,
-  "newPendingThisRun": 0,
+  "pendingAfter": 12,
+  "newPendingThisRun": 1,
   "officialBefore": 13,
   "officialAfter": 13,
   "promotedThisRun": 0,
-  "skippedReasonsSummary": {},
+  "skippedReasonsSummary": {
+    "invalid_or_banned": 471,
+    "low_risk_context": 365,
+    "service_or_government_context": 7
+  },
   "sources": [
     {
       "name": "TelefonoSpam MX Top Spam",
       "url": "https://www.telefonospam.com.mx/top-spam",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawCandidates": 0,
-      "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "error": "fetch failed"
+      "fetchOk": true,
+      "htmlLength": 13938,
+      "rawCandidates": 295,
+      "acceptedCandidates": 2,
+      "skippedCandidates": 293,
+      "error": null
     },
     {
       "name": "TelefonoSpam MX Ultimos Buscados",
       "url": "https://www.telefonospam.com.mx/ultimos-buscados",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawCandidates": 0,
-      "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "error": "fetch failed"
+      "fetchOk": true,
+      "htmlLength": 5584,
+      "rawCandidates": 43,
+      "acceptedCandidates": 2,
+      "skippedCandidates": 41,
+      "error": null
     },
     {
       "name": "Estafatel Reportes Recientes",
       "url": "https://www.estafatel.com/",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawCandidates": 0,
+      "fetchOk": true,
+      "htmlLength": 71959,
+      "rawCandidates": 94,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "error": "fetch failed"
+      "skippedCandidates": 94,
+      "error": null
     },
     {
       "name": "Tellows MX",
       "url": "https://www.tellows.mx/",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawCandidates": 0,
+      "fetchOk": true,
+      "htmlLength": 5584,
+      "rawCandidates": 8,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "error": "fetch failed"
+      "skippedCandidates": 8,
+      "error": null
     },
     {
       "name": "Zacatecas SSP Extorsion 1",
@@ -92,6 +96,16 @@
       "acceptedCandidates": 0,
       "skippedCandidates": 0,
       "error": "fetch failed"
+    },
+    {
+      "name": "auto discovered source",
+      "url": "https://duckduckgo.com/",
+      "fetchOk": true,
+      "htmlLength": 358381,
+      "rawCandidates": 407,
+      "acceptedCandidates": 0,
+      "skippedCandidates": 407,
+      "error": null
     }
   ]
 }
