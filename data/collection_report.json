@@ -1,14 +1,22 @@
 {
-  "collectedAt": "2026-05-05T03:05:55.131Z",
+  "collectedAt": "2026-05-06T10:35:26.384Z",
   "totalSources": 23,
-  "totalRawMatches": 11,
-  "totalAcceptedCandidates": 11,
-  "totalSkippedCandidates": 0,
-  "totalPendingNumbers": 11,
-  "previousOfficialCount": 0,
-  "newOfficialCount": 8,
-  "promotedThisRun": 8,
-  "skippedReasonsSummary": {},
+  "totalRawMatches": 581,
+  "totalAcceptedCandidates": 24,
+  "totalSkippedCandidates": 557,
+  "totalPendingNumbers": 21,
+  "previousOfficialCount": 13,
+  "newOfficialCount": 14,
+  "promotedThisRun": 1,
+  "skippedReasonsSummary": {
+    "normalization_failed": 267,
+    "excluded_context:800": 5,
+    "missing_risk_context": 271,
+    "excluded_context:911": 10,
+    "invalid_or_service_number": 2,
+    "excluded_context:atención": 1,
+    "excluded_context:contacto": 1
+  },
   "sources": [
     {
       "name": "Baja California Seguridad",
@@ -24,134 +32,168 @@
     {
       "name": "Baja California Engaño",
       "mode": "list_scrape",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawMatches": 0,
+      "fetchOk": true,
+      "htmlLength": 47584,
+      "rawMatches": 14,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "skippedReasonsSummary": {},
-      "error": "fetch failed"
+      "skippedCandidates": 14,
+      "skippedReasonsSummary": {
+        "normalization_failed": 13,
+        "excluded_context:800": 1
+      },
+      "error": null
     },
     {
       "name": "Baja California Legacy Engaño",
       "mode": "announcement_scrape",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawMatches": 0,
+      "fetchOk": true,
+      "htmlLength": 33698,
+      "rawMatches": 2,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "skippedReasonsSummary": {},
-      "error": "fetch failed"
+      "skippedCandidates": 2,
+      "skippedReasonsSummary": {
+        "missing_risk_context": 2
+      },
+      "error": null
     },
     {
       "name": "SAT Números telefónicos falsos",
       "mode": "list_scrape",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawMatches": 0,
-      "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "skippedReasonsSummary": {},
-      "error": "fetch failed"
+      "fetchOk": true,
+      "htmlLength": 56459,
+      "rawMatches": 176,
+      "acceptedCandidates": 1,
+      "skippedCandidates": 175,
+      "skippedReasonsSummary": {
+        "normalization_failed": 9,
+        "missing_risk_context": 152,
+        "excluded_context:911": 10,
+        "excluded_context:800": 3,
+        "invalid_or_service_number": 1
+      },
+      "error": null
     },
     {
       "name": "SAT Correos falsos identificados",
       "mode": "announcement_scrape",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawMatches": 0,
+      "fetchOk": true,
+      "htmlLength": 55275,
+      "rawMatches": 10,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "skippedReasonsSummary": {},
-      "error": "fetch failed"
+      "skippedCandidates": 10,
+      "skippedReasonsSummary": {
+        "normalization_failed": 8,
+        "missing_risk_context": 2
+      },
+      "error": null
     },
     {
       "name": "Chihuahua Consulta Extorsión",
       "mode": "lookup_source",
-      "fetchOk": false,
-      "htmlLength": 0,
+      "fetchOk": true,
+      "htmlLength": 6627,
       "rawMatches": 0,
       "acceptedCandidates": 0,
       "skippedCandidates": 0,
       "skippedReasonsSummary": {},
-      "error": "fetch failed"
+      "error": null
     },
     {
       "name": "Tamaulipas Consulta de Números de Extorsión",
       "mode": "lookup_source",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawMatches": 0,
+      "fetchOk": true,
+      "htmlLength": 84869,
+      "rawMatches": 170,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "skippedReasonsSummary": {},
-      "error": "fetch failed"
+      "skippedCandidates": 170,
+      "skippedReasonsSummary": {
+        "missing_risk_context": 9,
+        "normalization_failed": 161
+      },
+      "error": null
     },
     {
       "name": "Guanajuato Consulta de Reportes de Extorsión",
       "mode": "lookup_source",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawMatches": 0,
+      "fetchOk": true,
+      "htmlLength": 72965,
+      "rawMatches": 43,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "skippedReasonsSummary": {},
-      "error": "fetch failed"
+      "skippedCandidates": 43,
+      "skippedReasonsSummary": {
+        "normalization_failed": 27,
+        "invalid_or_service_number": 1,
+        "missing_risk_context": 15
+      },
+      "error": null
     },
     {
       "name": "Aguascalientes C5i Búsqueda de Números de Extorsión",
       "mode": "lookup_source",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawMatches": 0,
-      "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "skippedReasonsSummary": {},
-      "error": "fetch failed"
+      "fetchOk": true,
+      "htmlLength": 4114,
+      "rawMatches": 7,
+      "acceptedCandidates": 6,
+      "skippedCandidates": 1,
+      "skippedReasonsSummary": {
+        "missing_risk_context": 1
+      },
+      "error": null
     },
     {
       "name": "Tlaxcala Números de Extorsión",
       "mode": "captcha_lookup_source",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawMatches": 0,
+      "fetchOk": true,
+      "htmlLength": 26979,
+      "rawMatches": 4,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "skippedReasonsSummary": {},
-      "error": "fetch failed"
+      "skippedCandidates": 4,
+      "skippedReasonsSummary": {
+        "missing_risk_context": 4
+      },
+      "error": null
     },
     {
       "name": "Veracruz C4 Extorsión / Engaño Telefónico",
       "mode": "lookup_source",
-      "fetchOk": false,
-      "htmlLength": 0,
+      "fetchOk": true,
+      "htmlLength": 3415,
       "rawMatches": 0,
       "acceptedCandidates": 0,
       "skippedCandidates": 0,
       "skippedReasonsSummary": {},
-      "error": "fetch failed"
+      "error": null
     },
     {
       "name": "Sonora Gobierno Antiextorsión",
       "mode": "announcement_scrape",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawMatches": 0,
-      "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "skippedReasonsSummary": {},
-      "error": "fetch failed"
+      "fetchOk": true,
+      "htmlLength": 73318,
+      "rawMatches": 69,
+      "acceptedCandidates": 1,
+      "skippedCandidates": 68,
+      "skippedReasonsSummary": {
+        "normalization_failed": 14,
+        "missing_risk_context": 51,
+        "excluded_context:atención": 1,
+        "excluded_context:800": 1,
+        "excluded_context:contacto": 1
+      },
+      "error": null
     },
     {
       "name": "Campeche 0 Extorsión 911",
       "mode": "announcement_scrape",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawMatches": 0,
+      "fetchOk": true,
+      "htmlLength": 15557,
+      "rawMatches": 7,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "skippedReasonsSummary": {},
-      "error": "fetch failed"
+      "skippedCandidates": 7,
+      "skippedReasonsSummary": {
+        "normalization_failed": 6,
+        "missing_risk_context": 1
+      },
+      "error": null
     },
     {
       "name": "Coatzacoalcos Reporte Ciudadano de Números de Extorsión",
@@ -189,57 +231,72 @@
     {
       "name": "Zapopan Gobierno Fraude",
       "mode": "announcement_scrape",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawMatches": 0,
+      "fetchOk": true,
+      "htmlLength": 143715,
+      "rawMatches": 25,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "skippedReasonsSummary": {},
-      "error": "fetch failed"
+      "skippedCandidates": 25,
+      "skippedReasonsSummary": {
+        "normalization_failed": 1,
+        "missing_risk_context": 24
+      },
+      "error": null
     },
     {
       "name": "Colima Gobierno Noticia",
       "mode": "announcement_scrape",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawMatches": 0,
+      "fetchOk": true,
+      "htmlLength": 32482,
+      "rawMatches": 11,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "skippedReasonsSummary": {},
-      "error": "fetch failed"
+      "skippedCandidates": 11,
+      "skippedReasonsSummary": {
+        "missing_risk_context": 7,
+        "normalization_failed": 4
+      },
+      "error": null
     },
     {
       "name": "SEGOB Extorsión",
       "mode": "announcement_scrape",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawMatches": 0,
+      "fetchOk": true,
+      "htmlLength": 54879,
+      "rawMatches": 9,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "skippedReasonsSummary": {},
-      "error": "fetch failed"
+      "skippedCandidates": 9,
+      "skippedReasonsSummary": {
+        "normalization_failed": 8,
+        "missing_risk_context": 1
+      },
+      "error": null
     },
     {
       "name": "Policía Federal Qué es extorsión",
       "mode": "announcement_scrape",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawMatches": 0,
+      "fetchOk": true,
+      "htmlLength": 57855,
+      "rawMatches": 9,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "skippedReasonsSummary": {},
-      "error": "fetch failed"
+      "skippedCandidates": 9,
+      "skippedReasonsSummary": {
+        "normalization_failed": 8,
+        "missing_risk_context": 1
+      },
+      "error": null
     },
     {
       "name": "Policía Federal Tipos extorsión",
       "mode": "announcement_scrape",
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawMatches": 0,
+      "fetchOk": true,
+      "htmlLength": 58543,
+      "rawMatches": 9,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "skippedReasonsSummary": {},
-      "error": "fetch failed"
+      "skippedCandidates": 9,
+      "skippedReasonsSummary": {
+        "normalization_failed": 8,
+        "missing_risk_context": 1
+      },
+      "error": null
     },
     {
       "name": "Manual Import CSV",
@@ -257,8 +314,8 @@
       "mode": "seed_csv_import",
       "fetchOk": true,
       "htmlLength": 0,
-      "rawMatches": 8,
-      "acceptedCandidates": 8,
+      "rawMatches": 13,
+      "acceptedCandidates": 13,
       "skippedCandidates": 0,
       "skippedReasonsSummary": {},
       "error": null
