@@ -1,19 +1,19 @@
 {
-  "scrapedAt": "2026-05-06T00:44:11.487Z",
+  "scrapedAt": "2026-05-07T14:57:28.876Z",
   "totalSources": 9,
   "sourcesSucceeded": 5,
   "sourcesFailed": 4,
-  "rawCandidates": 847,
+  "rawCandidates": 845,
   "acceptedCandidates": 4,
-  "pendingBefore": 11,
-  "pendingAfter": 12,
-  "newPendingThisRun": 1,
-  "officialBefore": 13,
-  "officialAfter": 13,
+  "pendingBefore": 21,
+  "pendingAfter": 21,
+  "newPendingThisRun": 0,
+  "officialBefore": 14,
+  "officialAfter": 14,
   "promotedThisRun": 0,
   "skippedReasonsSummary": {
-    "invalid_or_banned": 471,
-    "low_risk_context": 365,
+    "invalid_or_banned": 470,
+    "low_risk_context": 364,
     "service_or_government_context": 7
   },
   "sources": [
@@ -102,9 +102,9 @@
       "url": "https://duckduckgo.com/",
       "fetchOk": true,
       "htmlLength": 358381,
-      "rawCandidates": 407,
+      "rawCandidates": 405,
       "acceptedCandidates": 0,
-      "skippedCandidates": 407,
+      "skippedCandidates": 405,
       "error": null
     }
   ]

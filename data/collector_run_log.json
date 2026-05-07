@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-06T00:43:04.089Z",
-  "target": 1137,
+  "generatedAt": "2026-05-07T14:56:05.115Z",
+  "target": 1274,
   "maxMinutes": 10,
   "sourceCount": 9,
   "sources": [
@@ -75,12 +75,12 @@
     {
       "source": "auto discovered source",
       "url": "https://duckduckgo.com/",
-      "accepted": 4,
+      "accepted": 3,
       "crowdOnly": 0,
       "errors": []
     }
   ],
   "warnings": [],
   "lastCollectorStatus": "partial",
-  "finalCount": 1041
+  "finalCount": 1174
 }
