@@ -5,6 +5,10 @@ on:
     - cron: "0 3 */5 * *"
   workflow_dispatch:
 
+concurrency:
+  group: collect-mx-numbers-main
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -13,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -47,13 +53,71 @@ jobs:
       - run: node scripts/check_scrape_anomalies.js
       - run: cat data/seed_import_report.json || true
       - run: cat data/scrape_report.json || true
-      - run: |
+      - name: Commit and push safely
+        run: |
+          set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/source_catalog_mexico.json data/collected_mexico_numbers.json data/crowd_signal_mexico_numbers.json data/collector_run_log.json data/public_stats.json data/ios_numbers.json scam_numbers.json data/seed_verified_public_numbers.csv data/seed_import_report.json data/backups/scam_numbers.backup.json data/pending_numbers.json data/source_catalog_mexico.json data/scrape_report.json
+
+          COMMIT_CREATED=false
+          PUSH_SUCCESS=false
+
+          git add \
+            data/source_catalog_mexico.json \
+            data/collected_mexico_numbers.json \
+            data/crowd_signal_mexico_numbers.json \
+            data/collector_run_log.json \
+            data/public_stats.json \
+            data/ios_numbers.json \
+            scam_numbers.json \
+            data/seed_verified_public_numbers.csv \
+            data/seed_import_report.json \
+            data/backups/scam_numbers.backup.json \
+            data/pending_numbers.json \
+            data/scrape_report.json
+
           if git diff --cached --quiet; then
-            echo "No data file changes to commit."
-            exit 0
+            echo "No changes to commit"
+          else
+            git fetch origin main
+            if ! git rebase origin/main; then
+              git rebase --abort
+              exit 1
+            fi
+            git commit -m "chore: update collected mexico numbers"
+            COMMIT_CREATED=true
+
+            for attempt in 1 2 3; do
+              if git push; then
+                PUSH_SUCCESS=true
+                break
+              fi
+              if [ "$attempt" -lt 3 ]; then
+                git fetch origin main
+                if ! git rebase origin/main; then
+                  git rebase --abort
+                  exit 1
+                fi
+              fi
+            done
+
+            if [ "$PUSH_SUCCESS" != "true" ]; then
+              exit 1
+            fi
           fi
-          git commit -m "chore: update collected mexico numbers"
-          git push
+
+          SCAM_COUNT=$(node -e "const fs=require('fs');const p='scam_numbers.json';let c=0;if(fs.existsSync(p)){const d=JSON.parse(fs.readFileSync(p,'utf8'));c=Array.isArray(d)?d.length:0;}console.log(c)")
+          PENDING_COUNT=$(node -e "const fs=require('fs');const p='data/pending_numbers.json';let c=0;if(fs.existsSync(p)){const d=JSON.parse(fs.readFileSync(p,'utf8'));c=Array.isArray(d)?d.length:0;}console.log(c)")
+          SCRAPE_SUMMARY=$(node -e "const fs=require('fs');const p='data/scrape_report.json';if(!fs.existsSync(p)){console.log('not found');process.exit(0);}const d=JSON.parse(fs.readFileSync(p,'utf8'));if(Array.isArray(d)){console.log('array length: '+d.length);}else if(d&&typeof d==='object'){console.log(JSON.stringify(d).slice(0,500));}else{console.log(String(d));}")
+          PUBLIC_STATS_SUMMARY=$(node -e "const fs=require('fs');const p='data/public_stats.json';if(!fs.existsSync(p)){console.log('not found');process.exit(0);}const d=JSON.parse(fs.readFileSync(p,'utf8'));if(Array.isArray(d)){console.log('array length: '+d.length);}else if(d&&typeof d==='object'){console.log(JSON.stringify(d).slice(0,500));}else{console.log(String(d));}")
+
+          {
+            echo "## Collect and import summary"
+            echo ""
+            echo "- scam_numbers.json count: ${SCAM_COUNT}"
+            echo "- data/pending_numbers.json count: ${PENDING_COUNT}"
+            echo "- data/scrape_report.json summary: ${SCRAPE_SUMMARY}"
+            echo "- data/public_stats.json summary: ${PUBLIC_STATS_SUMMARY}"
+            echo "- commit created: ${COMMIT_CREATED}"
+            echo "- push successful: ${PUSH_SUCCESS}"
+          } >> "$GITHUB_STEP_SUMMARY"
