@@ -58,65 +58,98 @@ jobs:
       - run: node scripts/check_scrape_anomalies.js
       - run: cat data/seed_import_report.json || true
       - run: cat data/scrape_report.json || true
+      - name: Production smoke test before commit
+        run: |
+          set -e
+          test -f index.html
+          test -f config.js
+          test -f scam_numbers.json
+
+          node -e "JSON.parse(require('fs').readFileSync('scam_numbers.json','utf8')); console.log('scam_numbers.json OK')"
+
+          if [ -f data/public_stats.json ]; then
+            node -e "JSON.parse(require('fs').readFileSync('data/public_stats.json','utf8')); console.log('data/public_stats.json OK')"
+          else
+            echo "data/public_stats.json missing (optional)"
+          fi
+
+          if [ -f data/scrape_report.json ]; then
+            node -e "JSON.parse(require('fs').readFileSync('data/scrape_report.json','utf8')); console.log('data/scrape_report.json OK')"
+          else
+            echo "data/scrape_report.json missing (optional)"
+          fi
+
+          if node -e "const fs=require('fs');const p='package.json';if(!fs.existsSync(p)){process.exit(2)}const j=JSON.parse(fs.readFileSync(p,'utf8'));process.exit(j.scripts&&j.scripts.test?0:1)"; then
+            npm test
+          else
+            CODE=$?
+            if [ "$CODE" -eq 2 ]; then
+              echo "package.json missing, skipping npm test"
+            else
+              echo "No npm test script, skipping"
+            fi
+          fi
       - name: Commit and push safely
         run: |
           set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          COMMIT_CREATED=false
-          PUSH_SUCCESS=false
+          safe_add() {
+            for path in "$@"; do
+              if [ -e "$path" ]; then
+                git add "$path"
+                echo "added: $path"
+              else
+                echo "skip missing: $path"
+              fi
+            done
+          }
 
-          if [ -z "$(git status --porcelain)" ]; then
-            echo "No changes to commit"
-          else
-            git add \
-              data/source_catalog_mexico.json \
-              data/collected_mexico_numbers.json \
-              data/crowd_signal_mexico_numbers.json \
-              data/collector_run_log.json \
-              data/public_stats.json \
-              data/ios_numbers.json \
-              scam_numbers.json \
-              searchable_database.json \
-              public \
-              data/seed_verified_public_numbers.csv \
-              data/seed_import_report.json \
-              data/backups/scam_numbers.backup.json \
-              data/pending_numbers.json \
-              data/scrape_report.json
+          safe_add \
+            data \
+            public \
+            scam_numbers.json \
+            ios_numbers.json
 
-            if git diff --cached --quiet; then
-              echo "No changes to commit"
+          if git diff --cached --quiet; then
+            echo "No generated data changes to commit."
+            echo "HAS_COMMIT=false" >> "$GITHUB_ENV"
+            echo "PUSH_OK=false" >> "$GITHUB_ENV"
+            exit 0
+          fi
+
+          git commit -m "Update Mexico scam numbers safely"
+          echo "HAS_COMMIT=true" >> "$GITHUB_ENV"
+
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "PUSH_OK=true" >> "$GITHUB_ENV"
               exit 0
             fi
 
-            git commit -m "Update Mexico scam numbers safely"
-            COMMIT_CREATED=true
+            echo "Push failed on attempt $attempt. Syncing with origin/main and retrying..."
+            git fetch origin main
 
-            for attempt in 1 2 3; do
-              if git push origin HEAD:main; then
-                PUSH_SUCCESS=true
-                break
-              fi
-              if [ "$attempt" -lt 3 ]; then
-                git fetch origin main
-                if ! git pull --rebase origin main; then
-                  git rebase --abort || true
-                  exit 1
-                fi
-              fi
-            done
-
-            if [ "$PUSH_SUCCESS" != "true" ]; then
+            if ! git pull --rebase origin main; then
+              git rebase --abort || true
+              echo "Rebase conflict after push failure. Stop without force push."
               exit 1
             fi
-          fi
+          done
 
+          echo "PUSH_OK=false" >> "$GITHUB_ENV"
+          exit 1
+      - name: Actions summary
+        if: always()
+        run: |
+          set +e
           SCAM_COUNT=$(node -e "const fs=require('fs');const p='scam_numbers.json';let c=0;if(fs.existsSync(p)){const d=JSON.parse(fs.readFileSync(p,'utf8'));c=Array.isArray(d)?d.length:0;}console.log(c)")
           PENDING_COUNT=$(node -e "const fs=require('fs');const p='data/pending_numbers.json';let c=0;if(fs.existsSync(p)){const d=JSON.parse(fs.readFileSync(p,'utf8'));c=Array.isArray(d)?d.length:0;}console.log(c)")
-          SCRAPE_SUMMARY=$(node -e "const fs=require('fs');const p='data/scrape_report.json';if(!fs.existsSync(p)){console.log('not found');process.exit(0);}const d=JSON.parse(fs.readFileSync(p,'utf8'));if(Array.isArray(d)){console.log('array length: '+d.length);}else if(d&&typeof d==='object'){console.log(JSON.stringify(d).slice(0,500));}else{console.log(String(d));}")
-          PUBLIC_STATS_SUMMARY=$(node -e "const fs=require('fs');const p='data/public_stats.json';if(!fs.existsSync(p)){console.log('not found');process.exit(0);}const d=JSON.parse(fs.readFileSync(p,'utf8'));if(Array.isArray(d)){console.log('array length: '+d.length);}else if(d&&typeof d==='object'){console.log(JSON.stringify(d).slice(0,500));}else{console.log(String(d));}")
+          SCRAPE_SUMMARY=$(node -e "const fs=require('fs');const p='data/scrape_report.json';if(!fs.existsSync(p)){console.log('missing');process.exit(0);}try{const d=JSON.parse(fs.readFileSync(p,'utf8'));if(Array.isArray(d)){console.log('array length: '+d.length);}else if(d&&typeof d==='object'){console.log(JSON.stringify(d).slice(0,500));}else{console.log(String(d));}}catch(e){console.log('invalid json')}")
+          PUBLIC_STATS_SUMMARY=$(node -e "const fs=require('fs');const p='data/public_stats.json';if(!fs.existsSync(p)){console.log('missing');process.exit(0);}try{const d=JSON.parse(fs.readFileSync(p,'utf8'));if(Array.isArray(d)){console.log('array length: '+d.length);}else if(d&&typeof d==='object'){console.log(JSON.stringify(d).slice(0,500));}else{console.log(String(d));}}catch(e){console.log('invalid json')}")
+          HAS_COMMIT_VAL="${HAS_COMMIT:-false}"
+          PUSH_OK_VAL="${PUSH_OK:-false}"
 
           {
             echo "## Collect and import summary"
@@ -125,6 +158,16 @@ jobs:
             echo "- data/pending_numbers.json count: ${PENDING_COUNT}"
             echo "- data/scrape_report.json summary: ${SCRAPE_SUMMARY}"
             echo "- data/public_stats.json summary: ${PUBLIC_STATS_SUMMARY}"
-            echo "- commit created: ${COMMIT_CREATED}"
-            echo "- push successful: ${PUSH_SUCCESS}"
+            if [ -f data/seed_import_report.json ]; then
+              echo "- data/seed_import_report.json: present"
+            else
+              echo "- data/seed_import_report.json: missing"
+            fi
+            if [ -f data/scrape_report.json ]; then
+              echo "- data/scrape_report.json: present"
+            else
+              echo "- data/scrape_report.json: missing"
+            fi
+            echo "- commit created: ${HAS_COMMIT_VAL}"
+            echo "- push successful: ${PUSH_OK_VAL}"
           } >> "$GITHUB_STEP_SUMMARY"
