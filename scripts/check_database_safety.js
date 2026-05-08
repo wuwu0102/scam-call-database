@@ -33,6 +33,7 @@ for (const row of scam) {
   if (isBanned(n)) throw new Error(`banned number: ${n}`);
   seen.add(n);
 }
+if (seen.size < 1000) throw new Error(`scam_numbers.json too small: ${seen.size} < 1000`);
 
 readJson(PENDING_PATH, false);
 readJson(REPORT_PATH, false);

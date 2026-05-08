@@ -7,6 +7,7 @@ const SCAM = path.join(ROOT,'scam_numbers.json');
 const TMP = path.join(ROOT,'scam_numbers.tmp.json');
 const BACKUP = path.join(ROOT,'data','backups','scam_numbers.backup.json');
 const REPORT = path.join(ROOT,'data','scrape_report.json');
+const ALLOW_SHRINK = process.argv.includes('--allow-shrink');
 const banned=['911','089','088','070','072'];
 function validate(a){if(!Array.isArray(a))throw new Error('not array');const s=new Set();for(const r of a){if(!/^\+52\d{10}$/.test(r.number||''))throw new Error('bad format'); if(s.has(r.number)) throw new Error('dup'); s.add(r.number); if(banned.includes(r.number.slice(3))||r.number.startsWith('+52800')||r.number.startsWith('+5201800')) throw new Error('banned');}}
 const pending=fs.existsSync(PENDING)?JSON.parse(fs.readFileSync(PENDING,'utf8')):[];
@@ -20,6 +21,9 @@ const business=['telemarketing','cobranza','publicidad','robocall'].includes(cat
 const okCommunity=types.has('community_report')&&((highRisk&&ev>=3&&conf>=0.75)||(business&&ev>=4&&conf>=0.8));
 if(okOfficial||okCommunity){ if(!by.has(p.number)){by.set(p.number,{number:p.number,country:'MX',label:p.label||'suspicious',confidence:conf,sourceName:'scraped_pending_promoted',sourceUrl:'',updatedAt:new Date().toISOString()}); promoted++; }} else keep.push(p); }
 const merged=Array.from(by.values());
+if (!ALLOW_SHRINK && merged.length < before) {
+  throw new Error(`Refusing to shrink official database without --allow-shrink (${merged.length} < ${before})`);
+}
 fs.mkdirSync(path.dirname(BACKUP),{recursive:true}); fs.copyFileSync(SCAM,BACKUP);
 fs.writeFileSync(TMP,JSON.stringify(merged,null,2)+'\n');
 try{const parsed=JSON.parse(fs.readFileSync(TMP,'utf8')); validate(parsed); fs.copyFileSync(TMP,SCAM); fs.unlinkSync(TMP);}catch(e){if(fs.existsSync(TMP))fs.unlinkSync(TMP); console.error(e.message); process.exit(1);} 
