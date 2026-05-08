@@ -5,9 +5,9 @@
   "totalAcceptedCandidates": 24,
   "totalSkippedCandidates": 557,
   "totalPendingNumbers": 21,
-  "previousOfficialCount": 13,
-  "newOfficialCount": 14,
-  "promotedThisRun": 1,
+  "previousOfficialCount": 1228,
+  "newOfficialCount": 1231,
+  "promotedThisRun": 3,
   "skippedReasonsSummary": {
     "normalization_failed": 267,
     "excluded_context:800": 5,
@@ -320,5 +320,12 @@
       "skippedReasonsSummary": {},
       "error": null
     }
-  ]
+  ],
+  "maxPromoteLimit": 800,
+  "previousIosCount": 793,
+  "newIosCount": 796,
+  "promotedSourceTypes": {
+    "official_state_lookup": 2,
+    "official_state_announcement": 1
+  }
 }

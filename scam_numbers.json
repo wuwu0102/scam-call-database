@@ -1566,6 +1566,18 @@
     "updatedAt": "2026-05-08T10:08:06.816953Z"
   },
   {
+    "number": "+524493496369",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceName": "Aguascalientes C5i Búsqueda de Números de Extorsión",
+    "sourceUrl": "https://c5i.aguascalientes.gob.mx/sistemas/extorsiones",
+    "sourceType": "official_state_lookup",
+    "confidence": 0.8,
+    "note": "riskContextScore=1",
+    "updatedAt": "2026-05-08T14:34:11.039Z",
+    "lastUpdated": "2026-05-08T15:30:43.014Z"
+  },
+  {
     "number": "+524645374693",
     "label": "suspicious",
     "country": "MX",
@@ -6262,6 +6274,30 @@
     "sourceUrl": "https://www.adn40.mx/",
     "confidence": 0.7,
     "updatedAt": "2026-05-08T10:08:06.816953Z"
+  },
+  {
+    "number": "+526052026043",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceName": "Aguascalientes C5i Búsqueda de Números de Extorsión",
+    "sourceUrl": "https://c5i.aguascalientes.gob.mx/sistemas/extorsiones",
+    "sourceType": "official_state_lookup",
+    "confidence": 0.8,
+    "note": "riskContextScore=1",
+    "updatedAt": "2026-05-08T14:34:11.039Z",
+    "lastUpdated": "2026-05-08T15:30:43.019Z"
+  },
+  {
+    "number": "+526221649731",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceName": "Sonora Gobierno Antiextorsión",
+    "sourceUrl": "https://www.sonora.gob.mx/gobierno/acciones/dependencias/exhorta-gobierno-de-sonora-a-no-responder-llamadas-de-numeros-identificados-como-extorsionadores",
+    "sourceType": "official_state_announcement",
+    "confidence": 0.75,
+    "note": "riskContextScore=1",
+    "updatedAt": "2026-05-08T14:34:11.039Z",
+    "lastUpdated": "2026-05-08T15:30:43.019Z"
   },
   {
     "number": "+526228457210",

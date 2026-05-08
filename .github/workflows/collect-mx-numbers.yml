@@ -17,14 +17,12 @@ jobs:
         with:
           node-version: 18
 
-      - name: Collect Mexico scam numbers
-        run: node scripts/collect_mx_numbers.js
-
-      - name: Auto promote safe numbers
-        run: node scripts/auto_promote_safe_numbers.js
-
-      - name: Database safety gate
-        run: node scripts/check_database_safety.js
+      - name: Stable collect and validate pipeline
+        run: |
+          npm run collect
+          node scripts/auto_promote_safe_numbers.js
+          node scripts/check_database_safety.js
+          npm run validate
 
       - name: Commit changes
         run: |
