@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-08T09:05:31.710Z",
+  "generatedAt": "2026-05-08T09:59:03.561Z",
   "target": 3000,
   "officialCount": 14,
   "pendingCount": 431,
@@ -12,7 +12,7 @@
   "skippedOfficialExisting": 0,
   "skippedInvalid": 0,
   "categoryBreakdown": {
-    "spam": 850,
+    "spam": 1275,
     "telemarketing": 0,
     "cobranza": 0,
     "publicidad": 0,
@@ -20,7 +20,7 @@
     "scam": 0,
     "fraud": 0,
     "extortion": 0,
-    "unknown": 431
+    "unknown": 6
   },
   "sourcesUsed": [
     "TelefonoSpam MX Top Spam",

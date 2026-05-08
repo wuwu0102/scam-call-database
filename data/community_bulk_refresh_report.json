@@ -1,25 +1,25 @@
 {
-  "refreshedAt": "2026-05-08T09:05:14.602Z",
-  "usedFallbackSnapshot": true,
-  "fallbackSnapshotRows": 425,
+  "refreshedAt": "2026-05-08T09:59:02.788Z",
+  "usedFallbackSnapshot": false,
+  "fallbackSnapshotRows": 0,
   "fallbackSnapshotAddedToCsv": 0,
-  "dnsFailures": 2,
-  "retryAttempts": 4,
+  "dnsFailures": 0,
+  "retryAttempts": 2,
   "categoryBreakdown": {},
   "sources": [
     {
       "name": "TelefonoSpam MX",
       "url": "https://www.telefonospam.com.mx/top-spam",
-      "fetchOk": false,
+      "fetchOk": true,
       "added": 0,
-      "error": "getaddrinfo EAI_AGAIN www.telefonospam.com.mx"
+      "error": null
     },
     {
       "name": "Tellows MX",
       "url": "https://www.tellows.mx/num/%2B52",
       "fetchOk": false,
       "added": 0,
-      "error": "getaddrinfo EAI_AGAIN www.tellows.mx"
+      "error": "HTTP 403"
     }
   ]
 }
