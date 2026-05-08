@@ -1,25 +1,97 @@
 {
-  "refreshedAt": "2026-05-08T10:54:19.584Z",
-  "usedFallbackSnapshot": false,
-  "fallbackSnapshotRows": 0,
+  "refreshedAt": "2026-05-08T11:03:08.674Z",
+  "usedFallbackSnapshot": true,
+  "fallbackSnapshotRows": 430,
   "fallbackSnapshotAddedToCsv": 0,
-  "dnsFailures": 0,
-  "retryAttempts": 2,
+  "dnsFailures": 8,
+  "retryAttempts": 16,
   "categoryBreakdown": {},
   "sources": [
     {
       "name": "TelefonoSpam MX",
-      "url": "https://www.telefonospam.com.mx/top-spam",
-      "fetchOk": true,
+      "urls": [
+        "https://www.telefonospam.com.mx/top-spam",
+        "https://www.telefonospam.com.mx/top-spam/2",
+        "https://www.telefonospam.com.mx/top-spam/3",
+        "https://www.telefonospam.com.mx/top-spam/4",
+        "https://www.telefonospam.com.mx/top-spam/5",
+        "https://www.telefonospam.com.mx/pending",
+        "https://www.telefonospam.com.mx/busqueda"
+      ],
+      "fetchOk": false,
       "added": 0,
-      "error": null
+      "error": null,
+      "blocked403": false,
+      "pageResults": [
+        {
+          "url": "https://www.telefonospam.com.mx/top-spam",
+          "fetchOk": false,
+          "added": 0,
+          "error": "getaddrinfo EAI_AGAIN www.telefonospam.com.mx",
+          "attempts": 3
+        },
+        {
+          "url": "https://www.telefonospam.com.mx/top-spam/2",
+          "fetchOk": false,
+          "added": 0,
+          "error": "getaddrinfo EAI_AGAIN www.telefonospam.com.mx",
+          "attempts": 3
+        },
+        {
+          "url": "https://www.telefonospam.com.mx/top-spam/3",
+          "fetchOk": false,
+          "added": 0,
+          "error": "getaddrinfo EAI_AGAIN www.telefonospam.com.mx",
+          "attempts": 3
+        },
+        {
+          "url": "https://www.telefonospam.com.mx/top-spam/4",
+          "fetchOk": false,
+          "added": 0,
+          "error": "getaddrinfo EAI_AGAIN www.telefonospam.com.mx",
+          "attempts": 3
+        },
+        {
+          "url": "https://www.telefonospam.com.mx/top-spam/5",
+          "fetchOk": false,
+          "added": 0,
+          "error": "getaddrinfo EAI_AGAIN www.telefonospam.com.mx",
+          "attempts": 3
+        },
+        {
+          "url": "https://www.telefonospam.com.mx/pending",
+          "fetchOk": false,
+          "added": 0,
+          "error": "getaddrinfo EAI_AGAIN www.telefonospam.com.mx",
+          "attempts": 3
+        },
+        {
+          "url": "https://www.telefonospam.com.mx/busqueda",
+          "fetchOk": false,
+          "added": 0,
+          "error": "getaddrinfo EAI_AGAIN www.telefonospam.com.mx",
+          "attempts": 3
+        }
+      ]
     },
     {
       "name": "Tellows MX",
-      "url": "https://www.tellows.mx/num/%2B52",
+      "urls": [
+        "https://www.tellows.mx/num/%2B52"
+      ],
       "fetchOk": false,
       "added": 0,
-      "error": "HTTP 403"
+      "error": null,
+      "blocked403": false,
+      "pageResults": [
+        {
+          "url": "https://www.tellows.mx/num/%2B52",
+          "fetchOk": false,
+          "added": 0,
+          "error": "getaddrinfo EAI_AGAIN www.tellows.mx",
+          "attempts": 3
+        }
+      ]
     }
   ]
 }
