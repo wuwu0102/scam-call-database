@@ -338,11 +338,12 @@
       <a class="hero-btn secondary" href="#" id="ctaAppTop" target="_blank" rel="noopener noreferrer">Descargar ScamCall MX para iPhone</a>
     </div>
     <div id="stats-card">
-      <div id="registered-count">Números sospechosos registrados: cargando...</div>
+      <div id="registered-count">Señales monitoreadas: cargando...</div>
       <div id="next-update">Próxima actualización: cargando...</div>
     </div>
     <div id="sourceNotice">
-      Servicio de alerta: muestra riesgo potencial, no confirmación legal.
+      Incluye reportes comunitarios, spam, telemarketing y señales públicas en revisión.
+La presencia de una señal indica riesgo potencial, no confirmación legal.
     </div>
     <section class="section" id="lookup-section">
       <h2>Buscar número</h2>
@@ -652,13 +653,17 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       const nextEl = document.getElementById("next-update");
 
       let count = 0;
+      let officialCount = 0;
+      let displayCount = "0";
 
       // ✅ 1. 嘗試抓 public_stats
       try {
         const res = await fetch("./data/public_stats.json");
         if (res.ok) {
           const data = await res.json();
-          count = data.totalSearchableCount || data.iosExportCount || 0;
+          count = Number(data.monitoredSignalsCount || data.totalSearchableCount || data.iosExportCount || 0);
+          officialCount = Number(data.officialSuspiciousCount || 0);
+          displayCount = data.displayMonitoredSignals || String(count);
 
           if (data.nextUpdateAt) {
             nextEl.innerText =
@@ -710,7 +715,10 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       }
 
       // ✅ 最終一定顯示
-      countEl.innerText = "Números sospechosos registrados: " + count;
+      countEl.innerText = `Señales monitoreadas: ${displayCount}`;
+      if (officialCount > 0) {
+        nextEl.innerText = `Números sospechosos de alta confianza: ${officialCount}`;
+      }
 
       if (!nextEl.innerText.includes("Próxima")) {
         const next = new Date();

@@ -1,11 +1,10 @@
 {
-  "importedAt": "2026-05-08T08:12:35.995Z",
-  "csvRows": 425,
-  "validRows": 425,
-  "pendingBefore": 127,
-  "pendingAfter": 431,
-  "addedToPending": 304,
-  "updatedExistingPending": 121,
-  "skippedRows": 0,
-  "skippedReasonsSummary": {}
+  "importedAt": "2026-05-08T09:05:31.814Z",
+  "categoryBreakdown": {
+    "spam": 425
+  },
+  "addedToPending": 0,
+  "updatedExistingPending": 425,
+  "skippedReasonsSummary": {},
+  "pendingAfter": 431
 }
