@@ -1,21 +1,20 @@
 {
   "priorityStrategy": "GDL/Jalisco first, then CDMX, then major cities by population/usefulness",
-  "scrapedAt": "2026-05-08T14:31:16.830Z",
+  "scrapedAt": "2026-05-08T20:07:18.746Z",
   "totalSources": 26,
   "sourcesSucceeded": 17,
   "sourcesFailed": 9,
-  "rawCandidates": 1289,
+  "rawCandidates": 1059,
   "acceptedCandidates": 6,
-  "pendingBefore": 2827,
-  "pendingAfter": 2827,
+  "pendingBefore": 2870,
+  "pendingAfter": 2870,
   "newPendingThisRun": 0,
-  "officialBefore": 1228,
-  "officialAfter": 1228,
+  "officialBefore": 1231,
+  "officialAfter": 1231,
   "promotedThisRun": 0,
   "skippedReasonsSummary": {
-    "invalid_or_banned": 877,
-    "low_risk_context": 405,
-    "service_or_government_context": 1
+    "invalid_or_banned": 648,
+    "low_risk_context": 405
   },
   "sources": [
     {
@@ -51,10 +50,10 @@
       "region": "Jalisco",
       "priority": 1,
       "fetchOk": true,
-      "htmlLength": 49201,
-      "rawCandidates": 226,
+      "htmlLength": 118,
+      "rawCandidates": 0,
       "acceptedCandidates": 0,
-      "skippedCandidates": 226,
+      "skippedCandidates": 0,
       "error": null
     },
     {
@@ -130,9 +129,9 @@
       "priority": 4,
       "fetchOk": true,
       "htmlLength": 45545,
-      "rawCandidates": 134,
+      "rawCandidates": 133,
       "acceptedCandidates": 0,
-      "skippedCandidates": 134,
+      "skippedCandidates": 133,
       "error": null
     },
     {
@@ -142,10 +141,10 @@
       "region": "Puebla",
       "priority": 5,
       "fetchOk": true,
-      "htmlLength": 72716,
-      "rawCandidates": 14,
+      "htmlLength": 72704,
+      "rawCandidates": 15,
       "acceptedCandidates": 0,
-      "skippedCandidates": 14,
+      "skippedCandidates": 15,
       "error": null
     },
     {
@@ -155,7 +154,7 @@
       "region": "Baja California",
       "priority": 6,
       "fetchOk": true,
-      "htmlLength": 65373,
+      "htmlLength": 65371,
       "rawCandidates": 7,
       "acceptedCandidates": 0,
       "skippedCandidates": 7,
@@ -181,7 +180,7 @@
       "region": "Querétaro",
       "priority": 8,
       "fetchOk": true,
-      "htmlLength": 65973,
+      "htmlLength": 64618,
       "rawCandidates": 55,
       "acceptedCandidates": 0,
       "skippedCandidates": 55,
@@ -220,7 +219,7 @@
       "region": "México",
       "priority": 20,
       "fetchOk": true,
-      "htmlLength": 1873,
+      "htmlLength": 1869,
       "rawCandidates": 0,
       "acceptedCandidates": 0,
       "skippedCandidates": 0,
@@ -272,7 +271,7 @@
       "region": "México",
       "priority": 30,
       "fetchOk": true,
-      "htmlLength": 5349,
+      "htmlLength": 5327,
       "rawCandidates": 8,
       "acceptedCandidates": 0,
       "skippedCandidates": 8,
@@ -286,9 +285,9 @@
       "priority": 99,
       "fetchOk": true,
       "htmlLength": 165192,
-      "rawCandidates": 88,
+      "rawCandidates": 84,
       "acceptedCandidates": 0,
-      "skippedCandidates": 88,
+      "skippedCandidates": 84,
       "error": null
     },
     {

@@ -2868,3 +2868,6 @@ number,label,sourceName,sourceUrl,region,note,confidence,category
 +521220114807,suspicious,LADA México Spam Telefónico,https://www.lada-mexico.com/telefono/,México,Public spam phone list from LADA México,0.35,scam
 +522201148079,suspicious,LADA México Spam Telefónico,https://www.lada-mexico.com/telefono/,México,Public spam phone list from LADA México,0.35,scam
 +522011480794,suspicious,LADA México Spam Telefónico,https://www.lada-mexico.com/telefono/,México,Public spam phone list from LADA México,0.35,scam
++520856836804,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/denuncias/6243373477/,México,Denuncia comunitaria de detalle,0.45,scam
++521793734652,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/denuncias/3318039103/,México,Denuncia comunitaria de detalle,0.45,scam
++523347017826,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/denuncias/2213599215/,Jalisco,Denuncia comunitaria de detalle,0.45,scam

@@ -2288,6 +2288,19 @@
     "updatedAt": "2026-05-08"
   },
   {
+    "number": "4493496369",
+    "normalizedNumber": "4493496369",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "media",
+    "confidence": "0.8",
+    "source": "existing",
+    "sourceUrl": "https://c5i.aguascalientes.gob.mx/sistemas/extorsiones",
+    "note": "riskContextScore=1",
+    "updatedAt": "2026-05-08"
+  },
+  {
     "number": "4645374693",
     "normalizedNumber": "4645374693",
     "country": "MX",
@@ -9071,6 +9084,32 @@
     "source": "existing",
     "sourceUrl": "https://www.adn40.mx/",
     "note": "",
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6052026043",
+    "normalizedNumber": "6052026043",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "media",
+    "confidence": "0.8",
+    "source": "existing",
+    "sourceUrl": "https://c5i.aguascalientes.gob.mx/sistemas/extorsiones",
+    "note": "riskContextScore=1",
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6221649731",
+    "normalizedNumber": "6221649731",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "media",
+    "confidence": "0.75",
+    "source": "existing",
+    "sourceUrl": "https://www.sonora.gob.mx/gobierno/acciones/dependencias/exhorta-gobierno-de-sonora-a-no-responder-llamadas-de-numeros-identificados-como-extorsionadores",
+    "note": "riskContextScore=1",
     "updatedAt": "2026-05-08"
   },
   {

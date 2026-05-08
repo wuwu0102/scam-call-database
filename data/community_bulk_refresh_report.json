@@ -1,26 +1,25 @@
 {
-  "refreshedAt": "2026-05-08T14:32:44.837Z",
+  "refreshedAt": "2026-05-08T20:08:42.147Z",
   "sourcesTried": 6,
   "sourcesSucceeded": 5,
   "sourcesFailed": 1,
-  "rawCandidates": 3191,
-  "validCandidates": 43,
-  "addedToCsv": 43,
-  "existingInCsv": 659,
-  "existingInPending": 2303,
-  "existingInOfficial": 103,
-  "skippedInvalid": 83,
+  "rawCandidates": 2690,
+  "validCandidates": 3,
+  "addedToCsv": 3,
+  "existingInCsv": 0,
+  "existingInPending": 2524,
+  "existingInOfficial": 98,
+  "skippedInvalid": 65,
   "blocked403": true,
   "categoryBreakdown": {
-    "scam": 32,
-    "spam": 11
+    "scam": 3
   },
   "pageResults": [
     {
       "sourceName": "Números Teléfono México",
       "url": "https://www.numerostelefono.com/mx/",
       "fetchOk": true,
-      "added": 7,
+      "added": 0,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -100,15 +99,6 @@
     {
       "sourceName": "Números Teléfono México",
       "url": "https://www.numerostelefono.com/mx/page/8/",
-      "fetchOk": true,
-      "added": 0,
-      "error": null,
-      "attempts": 1,
-      "blocked403": false
-    },
-    {
-      "sourceName": "Números Teléfono México",
-      "url": "https://www.numerostelefono.com/mx/page/9/",
       "fetchOk": true,
       "added": 0,
       "error": null,
@@ -326,7 +316,7 @@
       "sourceName": "Números Teléfono México",
       "url": "https://www.numerostelefono.com/mx/denuncias/8114540913/",
       "fetchOk": true,
-      "added": 1,
+      "added": 0,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -551,7 +541,7 @@
       "sourceName": "Números Teléfono México",
       "url": "https://www.numerostelefono.com/mx/denuncias/6243373477/",
       "fetchOk": true,
-      "added": 0,
+      "added": 1,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -560,7 +550,7 @@
       "sourceName": "Números Teléfono México",
       "url": "https://www.numerostelefono.com/mx/denuncias/5617924603/",
       "fetchOk": true,
-      "added": 1,
+      "added": 0,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -668,7 +658,7 @@
       "sourceName": "Números Teléfono México",
       "url": "https://www.numerostelefono.com/mx/denuncias/8281148094/",
       "fetchOk": true,
-      "added": 1,
+      "added": 0,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -740,7 +730,7 @@
       "sourceName": "Números Teléfono México",
       "url": "https://www.numerostelefono.com/mx/denuncias/8781232618/",
       "fetchOk": true,
-      "added": 1,
+      "added": 0,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -803,7 +793,7 @@
       "sourceName": "Números Teléfono México",
       "url": "https://www.numerostelefono.com/mx/denuncias/6672117393/",
       "fetchOk": true,
-      "added": 5,
+      "added": 0,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -848,7 +838,7 @@
       "sourceName": "Números Teléfono México",
       "url": "https://www.numerostelefono.com/mx/denuncias/3318039103/",
       "fetchOk": true,
-      "added": 0,
+      "added": 1,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -857,7 +847,7 @@
       "sourceName": "Números Teléfono México",
       "url": "https://www.numerostelefono.com/mx/denuncias/2213599215/",
       "fetchOk": true,
-      "added": 0,
+      "added": 1,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -1010,7 +1000,7 @@
       "sourceName": "TelefonoSpam MX Top Spam",
       "url": "https://www.telefonospam.com.mx/top-spam",
       "fetchOk": true,
-      "added": 6,
+      "added": 0,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -1046,7 +1036,7 @@
       "sourceName": "TelefonoSpam MX Top Spam",
       "url": "https://www.telefonospam.com.mx/top-spam/5",
       "fetchOk": true,
-      "added": 5,
+      "added": 0,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -1079,55 +1069,10 @@
       "blocked403": false
     },
     {
-      "sourceName": "TelefonoSpam MX Top Spam",
-      "url": "https://www.telefonospam.com.mx/top-spam/9",
-      "fetchOk": true,
-      "added": 0,
-      "error": null,
-      "attempts": 1,
-      "blocked403": false
-    },
-    {
-      "sourceName": "TelefonoSpam MX Top Spam",
-      "url": "https://www.telefonospam.com.mx/top-spam/10",
-      "fetchOk": true,
-      "added": 0,
-      "error": null,
-      "attempts": 1,
-      "blocked403": false
-    },
-    {
-      "sourceName": "TelefonoSpam MX Top Spam",
-      "url": "https://www.telefonospam.com.mx/top-spam/11",
-      "fetchOk": true,
-      "added": 0,
-      "error": null,
-      "attempts": 1,
-      "blocked403": false
-    },
-    {
-      "sourceName": "TelefonoSpam MX Top Spam",
-      "url": "https://www.telefonospam.com.mx/top-spam/12",
-      "fetchOk": true,
-      "added": 0,
-      "error": null,
-      "attempts": 1,
-      "blocked403": false
-    },
-    {
-      "sourceName": "TelefonoSpam MX Top Spam",
-      "url": "https://www.telefonospam.com.mx/top-spam/13",
-      "fetchOk": true,
-      "added": 0,
-      "error": null,
-      "attempts": 1,
-      "blocked403": false
-    },
-    {
       "sourceName": "LADA México Spam Telefónico",
       "url": "https://telefonos.lada-mexico.com/",
       "fetchOk": true,
-      "added": 7,
+      "added": 0,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -1136,7 +1081,7 @@
       "sourceName": "LADA México Spam Telefónico",
       "url": "https://www.lada-mexico.com/telefono/",
       "fetchOk": true,
-      "added": 9,
+      "added": 0,
       "error": null,
       "attempts": 1,
       "blocked403": false
