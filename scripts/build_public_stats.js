@@ -7,6 +7,6 @@ const norm=x=>{const d=String(x||'').replace(/\D/g,'');if(d.length===10)return '
 const official=new Set((JSON.parse(fs.readFileSync(SCAM,'utf8'))||[]).map(x=>x.number));const pending=fs.existsSync(PENDING)?JSON.parse(fs.readFileSync(PENDING,'utf8')):[];const pool=new Set();const b=Object.fromEntries(cats.map(c=>[c,0]));
 for(const p of pending){const n=norm(p.number);if(!n||official.has(n))continue;pool.add(n);const c=cats.includes(String(p.category||'unknown').toLowerCase())?String(p.category||'unknown').toLowerCase():'unknown';b[c]++;}
 if(fs.existsSync(BULK)){const lines=fs.readFileSync(BULK,'utf8').split(/\r?\n/).filter(Boolean);for(let i=1;i<lines.length;i++){const c=parse(lines[i]);const n=norm(c[0]);if(!n||official.has(n))continue;pool.add(n);const k=cats.includes(String(c[7]||'spam').toLowerCase())?String(c[7]||'spam').toLowerCase():'unknown';b[k]++;}}
-const community=pool.size,officialCount=official.size,mon=Math.max(officialCount, officialCount+community);const display=mon>=10000?'10000+':(mon>=3000?'3000+':String(mon));
+const community=pool.size,officialCount=official.size,mon=officialCount+community;const display=mon>=10000?'10000+':(mon>=5000?'5000+':(mon>=3000?'3000+':String(mon)));
 const out={generatedAt:new Date().toISOString(),officialSuspiciousCount:officialCount,communitySignalCount:community,monitoredSignalsCount:mon,displayMonitoredSignals:display,categoryBreakdown:b,lastUpdated:new Date().toISOString()};
 fs.writeFileSync(OUT,JSON.stringify(out,null,2)+'\n');

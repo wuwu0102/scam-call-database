@@ -2,7 +2,7 @@
 const fs=require('fs');const path=require('path');
 const ROOT=process.cwd();
 const BULK=path.join(ROOT,'data','community_bulk_import_numbers.csv');const PENDING=path.join(ROOT,'data','pending_numbers.json');const SCAM=path.join(ROOT,'scam_numbers.json');const SNAP_DIR=path.join(ROOT,'data','community_source_snapshots');const REPORT=path.join(ROOT,'data','community_signal_pool_report.json');
-const HEADER='number,label,sourceName,sourceUrl,region,note,confidence,category';const target=3000;const cats=['spam','telemarketing','cobranza','publicidad','robocall','scam','fraud','extortion','unknown'];
+const HEADER='number,label,sourceName,sourceUrl,region,note,confidence,category';const target=5000;const cats=['spam','telemarketing','cobranza','publicidad','robocall','scam','fraud','extortion','unknown'];
 const parse=(l)=>{const o=[];let c='',q=false;for(let i=0;i<l.length;i++){const ch=l[i];if(ch==='"'){if(q&&l[i+1]==='"'){c+='"';i++;}else q=!q;}else if(ch===','&&!q){o.push(c);c='';}else c+=ch;}o.push(c);return o;};
 const toLine=(r)=>r.map(v=>{const t=String(v??'');return /[",\n]/.test(t)?`"${t.replace(/"/g,'""')}"`:t;}).join(',');
 const norm=(raw)=>{const d=String(raw||'').replace(/\D/g,'');if(d.length===10)return '+52'+d;if(d.length===12&&d.startsWith('52'))return '+'+d;if(d.length===13&&d.startsWith('521'))return '+52'+d.slice(3);return null;};

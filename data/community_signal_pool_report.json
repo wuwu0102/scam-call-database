@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-08T11:15:36.237Z",
-  "target": 3000,
+  "generatedAt": "2026-05-08T13:30:55.155Z",
+  "target": 5000,
   "communitySignalPoolCount": 662,
-  "remainingGap": 2338,
+  "remainingGap": 4338,
   "addedToBulkFromSnapshots": 0,
   "categoryBreakdown": {
     "spam": 903,
@@ -13,13 +13,13 @@
     "scam": 0,
     "fraud": 0,
     "extortion": 0,
-    "unknown": 371
+    "unknown": 1083
   },
   "officialCount": 1228,
-  "pendingCount": 431,
+  "pendingCount": 787,
   "communityBulkCount": 786,
-  "snapshotCount": 430,
-  "skippedDuplicates": 306,
+  "snapshotCount": 786,
+  "skippedDuplicates": 662,
   "skippedOfficialExisting": 124,
   "skippedInvalid": 0,
   "sourcesUsed": [
@@ -28,6 +28,7 @@
     "Tellows MX",
     "Aguascalientes C5i Búsqueda de Números de Extorsión",
     "Manual Import CSV",
-    "Sonora Gobierno Antiextorsión"
+    "Sonora Gobierno Antiextorsión",
+    "TelefonoSpam MX"
   ]
 }

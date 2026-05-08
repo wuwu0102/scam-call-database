@@ -287,12 +287,20 @@
     .sources-details { margin-top: 8px; }
     .sources-details summary { cursor: pointer; font-weight: 700; margin-bottom: 8px; }
     #sourcesList { font-size: 0.95rem; color: #1f2937; display: grid; gap: 10px; margin-top: 8px; }
-    .sources-card { border: 1px solid #cbd5e1; border-radius: 10px; padding: 12px; background: #ffffff; color: #111827; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-    .source-title { color: #111827; font-size: 1.05rem; font-weight: 700; }
-    .source-meta { color: #1f2937; font-weight: 500; }
-    .source-url { color: #0b3a8f; text-decoration: underline; font-weight: 600; word-break: break-all; }
+    .source-card, .sources-card { background: #ffffff; color: #111827; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .source-card strong,
+    .source-card .source-title,
+    .sources-card strong,
+    .sources-card .source-title { color: #111827; font-size: 1.05rem; font-weight: 700; }
+    .source-card .source-meta,
+    .source-card p,
+    .sources-card .source-meta,
+    .sources-card p { color: #374151; font-weight: 500; }
+    .source-card a,
+    .sources-card a,
+    .source-url { color: #0f3b82; text-decoration: underline; font-weight: 600; word-break: break-all; }
     .source-url:hover { opacity: 0.85; }
-    @media (prefers-color-scheme: dark) { .sources-card { background:#1f2937; border-color:#374151; color:#f9fafb; } .source-title { color:#f9fafb; } .source-meta { color:#d1d5db; } .source-url { color:#93c5fd; } #sourcesList { color:#e5e7eb; } }
+    @media (prefers-color-scheme: dark) { .source-card, .sources-card { background:#1f2937; color:#f9fafb; border:1px solid #374151; } .source-card strong, .source-card .source-title, .sources-card strong, .sources-card .source-title { color:#f9fafb; } .source-card .source-meta, .source-card p, .sources-card .source-meta, .sources-card p { color:#d1d5db; } .source-card a, .sources-card a, .source-url { color:#93c5fd; } #sourcesList { color:#e5e7eb; } }
 
     .source-transparency-note {
       display: grid;
@@ -546,7 +554,7 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
         if (!Array.isArray(sources)) return;
         const top = sources.slice().sort((a,b)=>(a.priority ?? 99)-(b.priority ?? 99) || String(a.name||"").localeCompare(String(b.name||""))).slice(0, 12);
         listEl.innerHTML = top.map((source) => `
-          <div class="sources-card">
+          <div class="source-card sources-card">
             <div class="source-title">${source.name || "Fuente pública"}</div>
             <div class="source-meta">Región: ${source.region || "México"}</div>
             <div class="source-meta">Tipo: ${SOURCE_TYPE_FRIENDLY[source.type] || "Referencia pública"}</div>

@@ -9,6 +9,8 @@ const REPORT_PATH = path.join(ROOT, 'data', 'scrape_report.json');
 const CATALOG_PATH = path.join(ROOT, 'data', 'source_catalog_mexico.json');
 
 const PUBLIC_STATS_PATH = path.join(ROOT, 'data', 'public_stats.json');
+
+const BACKUP_PATH = path.join(ROOT, 'data', 'backups', 'scam_numbers.backup.json');
 const BANNED_SHORT = new Set(['911', '089', '088', '070', '072']);
 
 function readJson(file, required = true) {
@@ -34,6 +36,13 @@ for (const row of scam) {
   seen.add(n);
 }
 if (seen.size < 1000) throw new Error(`scam_numbers.json too small: ${seen.size} < 1000`);
+if (fs.existsSync(BACKUP_PATH)) {
+  const backup = readJson(BACKUP_PATH, false);
+  if (Array.isArray(backup)) {
+    const backupSize = backup.length;
+    if (seen.size + 50 < backupSize) throw new Error(`scam_numbers.json shrank too much: ${seen.size} vs backup ${backupSize}`);
+  }
+}
 
 readJson(PENDING_PATH, false);
 readJson(REPORT_PATH, false);
