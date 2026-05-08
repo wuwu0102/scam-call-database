@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-05-08T13:54:30.395Z",
-  "target": 5000,
+  "generatedAt": "2026-05-08T14:25:08.690Z",
+  "target": 10000,
   "communitySignalPoolCount": 2702,
-  "remainingGap": 2298,
+  "remainingGap": 7298,
   "addedToBulkFromSnapshots": 0,
   "categoryBreakdown": {
-    "spam": 4983,
+    "spam": 7023,
     "telemarketing": 0,
     "cobranza": 0,
     "publicidad": 0,
@@ -16,7 +16,7 @@
     "unknown": 1083
   },
   "officialCount": 1228,
-  "pendingCount": 787,
+  "pendingCount": 2827,
   "communityBulkCount": 2826,
   "snapshotCount": 2826,
   "skippedDuplicates": 2702,

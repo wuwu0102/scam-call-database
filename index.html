@@ -351,10 +351,11 @@
     <div id="stats-card">
       <div id="registered-count">Señales monitoreadas: cargando...</div>
       <div id="next-update">Próxima actualización: cargando...</div>
-      <div id="high-confidence-count"></div>
+      
     </div>
     <div id="sourceNotice">
-      Incluye reportes comunitarios, spam, telemarketing y señales públicas en revisión.
+      Radar telefónico preventivo para México.
+Incluye reportes comunitarios, spam, telemarketing, cobranza, SMS, WhatsApp y señales públicas.
 La presencia de una señal indica riesgo potencial, no confirmación legal.
     </div>
     <section class="section" id="lookup-section">
@@ -663,10 +664,7 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
     async function loadStats() {
       const countEl = document.getElementById("registered-count");
       const nextEl = document.getElementById("next-update");
-      const highConfidenceEl = document.getElementById("high-confidence-count");
-
       let count = 0;
-      let officialCount = 0;
       let displayCount = "0";
 
       // ✅ 1. 嘗試抓 public_stats
@@ -675,7 +673,6 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
         if (res.ok) {
           const data = await res.json();
           count = Number(data.monitoredSignalsCount || data.totalSearchableCount || data.iosExportCount || 0);
-          officialCount = Number(data.officialSuspiciousCount || 0);
           displayCount = data.displayMonitoredSignals || String(count);
 
           if (data.nextUpdateAt) {
@@ -729,11 +726,6 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
 
       // ✅ 最終一定顯示
       countEl.innerText = `Señales monitoreadas: ${displayCount}`;
-      if (highConfidenceEl) {
-        highConfidenceEl.innerText =
-          officialCount > 0 ? `Números sospechosos de alta confianza: ${officialCount}` : "";
-      }
-
       if (!nextEl.innerText.includes("Próxima")) {
         const next = new Date();
         next.setDate(next.getDate() + 5);
