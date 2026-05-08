@@ -283,6 +283,14 @@
       outline: 3px solid #2563eb;
       outline-offset: 2px;
     }
+
+    .sources-details { margin-top: 8px; }
+    .sources-details summary { cursor: pointer; font-weight: 700; margin-bottom: 8px; }
+    #sourcesList { font-size: 0.9rem; color: #374151; display: grid; gap: 8px; margin-top: 8px; }
+    .source-item { border: 1px solid #e5e7eb; border-radius: 10px; padding: 10px; background: #f9fafb; }
+    .source-item a { color: #0b2a6f; word-break: break-all; }
+    @media (prefers-color-scheme: dark) { .source-item { background:#1f2937; border-color:#374151; } #sourcesList { color:#e5e7eb; } }
+
   </style>
 </head>
 <body>
@@ -341,6 +349,16 @@
       <p>Activa ScamCall MX en tu iPhone para identificar llamadas sospechosas directamente en tu dispositivo.</p>
       <a class="muted-app-link" href="#" id="ctaAppBottom" target="_blank" rel="noopener noreferrer">Ver en App Store →</a>
     </section>
+
+    <section class="section" id="fuentes-section">
+      <h2>Fuentes públicas consultadas</h2>
+      <p class="disclaimer">Usamos fuentes públicas, reportes abiertos y señales comunitarias para mantener esta base en crecimiento. La presencia de un número indica riesgo potencial, no confirmación legal.</p>
+      <details class="sources-details">
+        <summary>Ver fuentes</summary>
+        <div id="sourcesList">Las fuentes públicas se actualizan periódicamente.</div>
+      </details>
+    </section>
+
     <div class="footer-links">
       <a id="privacyLink" href="./privacy.html">Privacidad</a>
       <a id="noticeLink" href="./aviso.html">Aviso de uso</a>
@@ -463,6 +481,37 @@
       return String(note);
     };
 
+
+    const SOURCE_TYPE_FRIENDLY = {
+      official_state_announcement: "Alerta pública estatal",
+      official_federal: "Referencia pública federal",
+      community_report: "Reporte comunitario",
+      municipal_public_report: "Reporte público municipal",
+      news_or_public_reference: "Referencia pública"
+    };
+
+    async function renderPublicSources() {
+      const listEl = document.getElementById("sourcesList");
+      if (!listEl) return;
+      try {
+        const res = await fetch("./data/source_catalog_mexico.json", { cache: "no-store" });
+        if (!res.ok) return;
+        const sources = await res.json();
+        if (!Array.isArray(sources)) return;
+        const top = sources.slice().sort((a,b)=>(a.priority ?? 99)-(b.priority ?? 99) || String(a.name||"").localeCompare(String(b.name||""))).slice(0, 12);
+        listEl.innerHTML = top.map((source) => `
+          <div class="source-item">
+            <div><strong>${source.name || "Fuente pública"}</strong></div>
+            <div>Región: ${source.region || "México"}</div>
+            <div>Tipo: ${SOURCE_TYPE_FRIENDLY[source.type] || "Referencia pública"}</div>
+            <div><a href="${source.url}" target="_blank" rel="noopener noreferrer">${source.url}</a></div>
+          </div>
+        `).join("");
+      } catch (_) {
+        // silent fallback
+      }
+    }
+
     const SOURCE_TYPE_LABELS = {
       official: "Institucional",
       media: "Medio",
@@ -540,6 +589,7 @@
     const noticeLink = document.getElementById("noticeLink");
     const contactLink = document.getElementById("contactLink");
     if (ctaAppTop) ctaAppTop.href = appStoreUrl;
+    renderPublicSources();
     if (ctaAppBottom) ctaAppBottom.href = appStoreUrl;
     if (privacyLink && siteConfig.privacyUrl) privacyLink.href = siteConfig.privacyUrl;
     const ctaLookup = document.getElementById("ctaLookup");

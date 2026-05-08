@@ -1,13 +1,32 @@
 #!/usr/bin/env node
-const fs=require('fs');
-let report, scam;
-try{report=JSON.parse(fs.readFileSync('data/scrape_report.json','utf8'));}catch(e){console.error('scrape_report.json parse failed');process.exit(1);}
-try{scam=JSON.parse(fs.readFileSync('scam_numbers.json','utf8'));}catch(e){console.error('scam_numbers.json parse failed');process.exit(1);}
-if(!Array.isArray(scam)){console.error('scam_numbers.json is not array');process.exit(1);} 
-const seen=new Set();
-for(const r of scam){const n=r.number||''; if(seen.has(n)){console.error('scam_numbers.json has duplicate number');process.exit(1);} seen.add(n); if(['+52911','+52089','+52088','+52070','+52072'].includes(n)||n.startsWith('+52800')||n.startsWith('+5201800')){console.error('scam_numbers.json has banned number');process.exit(1);} }
-if((report.promotedThisRun||0)>300){console.error('promotedThisRun > 300');process.exit(1);} 
-if((report.acceptedCandidates||0)>1500){console.error('acceptedCandidates > 1500');process.exit(1);} 
-if((report.officialAfter||0)<(report.officialBefore||0)){console.error('officialAfter < officialBefore');process.exit(1);} 
-if((report.officialAfter||0)>(report.officialBefore||0)+300){console.error('officialAfter too large');process.exit(1);} 
+const fs = require('fs');
+const path = require('path');
+
+const ROOT = process.cwd();
+const reportPath = path.join(ROOT, 'data', 'scrape_report.json');
+const scamPath = path.join(ROOT, 'scam_numbers.json');
+
+const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
+const scam = JSON.parse(fs.readFileSync(scamPath, 'utf8'));
+if (!Array.isArray(scam)) throw new Error('scam_numbers.json is not array');
+const seen = new Set();
+for (const row of scam) {
+  const n = String(row.number || '');
+  if (seen.has(n)) throw new Error(`duplicate number: ${n}`);
+  if (['+52911', '+52089', '+52088', '+52070', '+52072'].some((prefix) => n.startsWith(prefix)) || n.startsWith('+52800') || n.startsWith('+5201800')) {
+    throw new Error(`banned number: ${n}`);
+  }
+  seen.add(n);
+}
+
+const promoted = Number(report.promotedThisRun || 0);
+const accepted = Number(report.acceptedCandidates || 0);
+const before = Number(report.officialBefore || 0);
+const after = Number(report.officialAfter || 0);
+
+if (promoted > 300) process.exit(1);
+if (accepted > 1500) process.exit(1);
+if (after < before) process.exit(1);
+if (after > before + 300) process.exit(1);
+
 console.log('Scrape anomaly check OK');

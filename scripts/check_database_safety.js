@@ -1,9 +1,47 @@
 #!/usr/bin/env node
-const fs=require('fs');
-const scam=JSON.parse(fs.readFileSync('scam_numbers.json','utf8'));
-if(!Array.isArray(scam)) throw new Error('scam_numbers.json must be array');
-const seen=new Set();
-for(const r of scam){const n=r.number||''; if(!/^\+52\d{10}$/.test(n)) throw new Error(`bad number ${n}`); if(seen.has(n)) throw new Error(`duplicate ${n}`); seen.add(n); if(['911','089','088','070','072'].includes(n.slice(3))||n.startsWith('+52800')||n.startsWith('+5201800')) throw new Error(`banned ${n}`);} 
-if(fs.existsSync('data/pending_numbers.json')) JSON.parse(fs.readFileSync('data/pending_numbers.json','utf8'));
-if(fs.existsSync('data/scrape_report.json')) JSON.parse(fs.readFileSync('data/scrape_report.json','utf8'));
+const fs = require('fs');
+const path = require('path');
+
+const ROOT = process.cwd();
+const SCAM_PATH = path.join(ROOT, 'scam_numbers.json');
+const PENDING_PATH = path.join(ROOT, 'data', 'pending_numbers.json');
+const REPORT_PATH = path.join(ROOT, 'data', 'scrape_report.json');
+const CATALOG_PATH = path.join(ROOT, 'data', 'source_catalog_mexico.json');
+const BANNED_SHORT = new Set(['911', '089', '088', '070', '072']);
+
+function readJson(file, required = true) {
+  if (!fs.existsSync(file)) {
+    if (required) throw new Error(`${file} missing`);
+    return null;
+  }
+  return JSON.parse(fs.readFileSync(file, 'utf8'));
+}
+
+function isBanned(number) {
+  return BANNED_SHORT.has(number.slice(3, 6)) || number.startsWith('+52800') || number.startsWith('+5201800');
+}
+
+const scam = readJson(SCAM_PATH, true);
+if (!Array.isArray(scam)) throw new Error('scam_numbers.json must be array');
+const seen = new Set();
+for (const row of scam) {
+  const n = row && row.number;
+  if (!/^\+52\d{10}$/.test(String(n || ''))) throw new Error(`invalid number format: ${n}`);
+  if (seen.has(n)) throw new Error(`duplicate number: ${n}`);
+  if (isBanned(n)) throw new Error(`banned number: ${n}`);
+  seen.add(n);
+}
+
+readJson(PENDING_PATH, false);
+readJson(REPORT_PATH, false);
+const catalog = readJson(CATALOG_PATH, false);
+if (catalog) {
+  if (!Array.isArray(catalog)) throw new Error('source_catalog_mexico.json must be array');
+  for (const s of catalog) {
+    for (const key of ['name', 'url', 'type', 'confidence', 'mode', 'autoPromote', 'priority', 'region']) {
+      if (!(key in s)) throw new Error(`source missing field ${key}`);
+    }
+  }
+}
+
 console.log('Database safety check OK');
