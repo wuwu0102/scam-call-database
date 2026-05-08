@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-08T11:01:04.690Z",
+  "generatedAt": "2026-05-08T11:15:36.413Z",
   "officialSuspiciousCount": 1228,
-  "communitySignalCount": 306,
-  "monitoredSignalsCount": 1534,
-  "displayMonitoredSignals": "1534",
+  "communitySignalCount": 662,
+  "monitoredSignalsCount": 1890,
+  "displayMonitoredSignals": "1890",
   "categoryBreakdown": {
     "scam": 0,
     "fraud": 0,
@@ -13,7 +13,7 @@
     "cobranza": 0,
     "publicidad": 0,
     "robocall": 0,
-    "unknown": 10
+    "unknown": 722
   },
-  "lastUpdated": "2026-05-08T11:01:04.693Z"
+  "lastUpdated": "2026-05-08T11:15:36.413Z"
 }

@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-08T11:01:04.739Z",
+  "generatedAt": "2026-05-08T11:15:36.237Z",
   "target": 3000,
-  "communitySignalPoolCount": 306,
-  "remainingGap": 2694,
+  "communitySignalPoolCount": 662,
+  "remainingGap": 2338,
   "addedToBulkFromSnapshots": 0,
   "categoryBreakdown": {
     "spam": 903,
@@ -13,11 +13,11 @@
     "scam": 0,
     "fraud": 0,
     "extortion": 0,
-    "unknown": 15
+    "unknown": 371
   },
   "officialCount": 1228,
   "pendingCount": 431,
-  "communityBulkCount": 430,
+  "communityBulkCount": 786,
   "snapshotCount": 430,
   "skippedDuplicates": 306,
   "skippedOfficialExisting": 124,
