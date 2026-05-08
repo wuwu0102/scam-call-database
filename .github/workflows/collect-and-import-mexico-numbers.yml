@@ -53,8 +53,8 @@ jobs:
       - run: node scripts/generate_public_stats.js --min=${CURRENT_COUNT}
       - run: node scripts/import_verified_seed_numbers.js || echo "seed import skipped"
       - run: node scripts/scrape_mexico_phone_sources.js || echo "scrape skipped"
-      - run: node scripts/update_community_snapshot_from_bulk.js || echo "snapshot update skipped"
       - run: node scripts/refresh_community_bulk_from_sources.js || echo "community bulk refresh skipped"
+      - run: node scripts/update_community_snapshot_from_bulk.js || echo "snapshot update skipped"
       - run: node scripts/ensure_community_signal_pool_target.js || echo "community signal pool target skipped"
       - run: node scripts/import_community_bulk_numbers.js || echo "community bulk import skipped"
       - run: node scripts/promote_safe_scraped_numbers.js
@@ -63,9 +63,9 @@ jobs:
       - run: node scripts/check_scrape_anomalies.js
       - run: cat data/seed_import_report.json || true
       - run: cat data/scrape_report.json || true
+      - run: cat data/community_bulk_refresh_report.json || true
       - run: cat data/community_signal_pool_report.json || true
       - run: cat data/public_stats.json || true
-      - run: cat data/community_bulk_refresh_report.json || true
       - run: cat data/community_bulk_import_report.json || true
       - name: Production smoke test before commit
         run: |

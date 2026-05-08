@@ -1,11 +1,11 @@
 {
-  "importedAt": "2026-05-08T11:15:36.272Z",
+  "importedAt": "2026-05-08T13:30:55.265Z",
   "categoryBreakdown": {
     "spam": 301,
     "unknown": 361
   },
-  "addedToPending": 356,
-  "updatedExistingPending": 306,
+  "addedToPending": 0,
+  "updatedExistingPending": 662,
   "skippedReasonsSummary": {
     "already_in_official_db": 124
   },
