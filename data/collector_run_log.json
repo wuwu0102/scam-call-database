@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-08T01:47:22.511Z",
-  "target": 1321,
+  "generatedAt": "2026-05-08T03:07:28.518Z",
+  "target": 1325,
   "maxMinutes": 10,
   "sourceCount": 26,
   "sources": [
@@ -22,8 +22,10 @@
       "source": "Jalisco Gobierno Seguridad",
       "url": "https://www.jalisco.gob.mx/es/gobierno/comunicados",
       "accepted": 0,
-      "crowdOnly": 1,
-      "errors": []
+      "crowdOnly": 0,
+      "errors": [
+        "fetch HTTP 403"
+      ]
     },
     {
       "source": "CDMX Seguridad Ciudadana",
@@ -213,5 +215,5 @@
   ],
   "warnings": [],
   "lastCollectorStatus": "partial",
-  "finalCount": 1221
+  "finalCount": 1225
 }

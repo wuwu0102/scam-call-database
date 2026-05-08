@@ -780,6 +780,19 @@
     "updatedAt": "2026-05-08"
   },
   {
+    "number": "1629366065",
+    "normalizedNumber": "1629366065",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Baja California Seguridad",
+    "sourceUrl": "https://www.seguridadbc.gob.mx/",
+    "note": "Número reportado en fuente pública comunitaria. No confirmado oficialmente.",
+    "updatedAt": "2026-05-08"
+  },
+  {
     "number": "1682293155",
     "normalizedNumber": "1682293155",
     "country": "MX",
@@ -912,6 +925,19 @@
   {
     "number": "1778205011",
     "normalizedNumber": "1778205011",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "note": "Número reportado en fuente pública comunitaria. No confirmado oficialmente.",
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "1778209819",
+    "normalizedNumber": "1778209819",
     "country": "MX",
     "tag": "suspicious",
     "label": "Número sospechoso",
@@ -14341,6 +14367,19 @@
   {
     "number": "7782050107",
     "normalizedNumber": "7782050107",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Puebla Seguridad",
+    "sourceUrl": "https://ss.puebla.gob.mx/",
+    "note": "Número reportado en fuente pública comunitaria. No confirmado oficialmente.",
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "7782098139",
+    "normalizedNumber": "7782098139",
     "country": "MX",
     "tag": "suspicious",
     "label": "Número sospechoso",
