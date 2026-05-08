@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-08T10:39:47.724Z",
+  "generatedAt": "2026-05-08T10:54:20.498Z",
   "target": 3000,
   "communitySignalPoolCount": 306,
   "remainingGap": 2694,
-  "addedToBulkFromSnapshots": 5,
+  "addedToBulkFromSnapshots": 0,
   "categoryBreakdown": {
     "spam": 903,
     "telemarketing": 0,
@@ -18,9 +18,9 @@
   "officialCount": 1228,
   "pendingCount": 431,
   "communityBulkCount": 430,
-  "snapshotCount": 431,
-  "skippedDuplicates": 301,
-  "skippedOfficialExisting": 125,
+  "snapshotCount": 430,
+  "skippedDuplicates": 306,
+  "skippedOfficialExisting": 124,
   "skippedInvalid": 0,
   "sourcesUsed": [
     "TelefonoSpam MX Top Spam",

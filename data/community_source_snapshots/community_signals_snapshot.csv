@@ -425,7 +425,6 @@ number,label,sourceName,sourceUrl,region,note,confidence,category
 +529984075968,suspicious,TelefonoSpam MX Pendientes,https://www.telefonospam.com.mx/pendientes.php,México,"Community searched number, pending identification",0.35,spam
 +529988480191,suspicious,TelefonoSpam MX Pendientes,https://www.telefonospam.com.mx/pendientes.php,México,"Community searched number, pending identification",0.35,spam
 +524493496369,suspicious,Aguascalientes C5i Búsqueda de Números de Extorsión,https://c5i.aguascalientes.gob.mx/sistemas/extorsiones,México,riskContextScore=1,0.8,unknown
-+525512345678,suspicious,Manual Import CSV,,México,Reported by trusted friend,0.55,unknown
 +525512345679,suspicious,Manual Import CSV,,México,Public warning post,0.55,unknown
 +525512345680,suspicious,Manual Import CSV,,México,Forwarded warning message,0.55,unknown
 +526052026043,suspicious,Aguascalientes C5i Búsqueda de Números de Extorsión,https://c5i.aguascalientes.gob.mx/sistemas/extorsiones,México,riskContextScore=1,0.8,unknown

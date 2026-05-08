@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-08T10:39:47.617Z",
+  "generatedAt": "2026-05-08T10:54:20.665Z",
   "officialSuspiciousCount": 1228,
   "communitySignalCount": 306,
   "monitoredSignalsCount": 1534,
@@ -13,7 +13,7 @@
     "cobranza": 0,
     "publicidad": 0,
     "robocall": 0,
-    "unknown": 5
+    "unknown": 10
   },
-  "lastUpdated": "2026-05-08T10:39:47.618Z"
+  "lastUpdated": "2026-05-08T10:54:20.665Z"
 }
