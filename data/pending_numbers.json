@@ -6708,6 +6708,30 @@
     "note": "Top spam reportado por comunidad"
   },
   {
+    "number": "+523312539047",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "official_state_announcement",
+    "sourceName": "Zacatecas SSP",
+    "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
+    "confidence": 0.8,
+    "status": "auto_approved_public_official",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "Zacatecas SSP",
+        "sourceType": "official_state_announcement",
+        "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
+        "confidence": 0.8,
+        "mode": "seed_csv_import",
+        "collectedAt": "2026-05-08T14:45:19.569Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T14:45:19.569Z",
+    "updatedAt": "2026-05-08T14:45:19.569Z",
+    "note": "Official public alert says this number was used for extortion or fraud calls"
+  },
+  {
     "number": "+523312577380",
     "label": "suspicious",
     "country": "MX",
@@ -17628,6 +17652,30 @@
     "note": "Top spam reportado por comunidad"
   },
   {
+    "number": "+524428310794",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "official_state_announcement",
+    "sourceName": "Zacatecas SSP",
+    "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar/",
+    "confidence": 0.8,
+    "status": "auto_approved_public_official",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "Zacatecas SSP",
+        "sourceType": "official_state_announcement",
+        "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar/",
+        "confidence": 0.8,
+        "mode": "seed_csv_import",
+        "collectedAt": "2026-05-08T14:45:19.569Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T14:45:19.569Z",
+    "updatedAt": "2026-05-08T14:45:19.569Z",
+    "note": "Official public alert says this number was used for extortion calls"
+  },
+  {
     "number": "+524428330229",
     "label": "suspicious",
     "country": "MX",
@@ -18198,6 +18246,30 @@
     "firstSeenAt": "2026-05-08T13:54:30.443Z",
     "updatedAt": "2026-05-08T14:34:11.039Z",
     "note": "Top spam reportado por comunidad"
+  },
+  {
+    "number": "+524435864182",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "official_state_announcement",
+    "sourceName": "Zacatecas SSP",
+    "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar-2/",
+    "confidence": 0.8,
+    "status": "auto_approved_public_official",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "Zacatecas SSP",
+        "sourceType": "official_state_announcement",
+        "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar-2/",
+        "confidence": 0.8,
+        "mode": "seed_csv_import",
+        "collectedAt": "2026-05-08T14:45:19.569Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T14:45:19.569Z",
+    "updatedAt": "2026-05-08T14:45:19.569Z",
+    "note": "Official public alert says this number was used for extortion calls"
   },
   {
     "number": "+524436417122",
@@ -21112,6 +21184,78 @@
     "category": "spam"
   },
   {
+    "number": "+524922086564",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "official_state_announcement",
+    "sourceName": "Zacatecas SSP",
+    "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
+    "confidence": 0.8,
+    "status": "auto_approved_public_official",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "Zacatecas SSP",
+        "sourceType": "official_state_announcement",
+        "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
+        "confidence": 0.8,
+        "mode": "seed_csv_import",
+        "collectedAt": "2026-05-08T14:45:19.569Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T14:45:19.569Z",
+    "updatedAt": "2026-05-08T14:45:19.569Z",
+    "note": "Official public alert says this number was used for extortion or fraud calls"
+  },
+  {
+    "number": "+524922090430",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "official_state_announcement",
+    "sourceName": "Zacatecas SSP",
+    "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
+    "confidence": 0.8,
+    "status": "auto_approved_public_official",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "Zacatecas SSP",
+        "sourceType": "official_state_announcement",
+        "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
+        "confidence": 0.8,
+        "mode": "seed_csv_import",
+        "collectedAt": "2026-05-08T14:45:19.569Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T14:45:19.569Z",
+    "updatedAt": "2026-05-08T14:45:19.569Z",
+    "note": "Official public alert says this number was used for extortion or fraud calls"
+  },
+  {
+    "number": "+524922090510",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "official_state_announcement",
+    "sourceName": "Zacatecas SSP",
+    "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
+    "confidence": 0.8,
+    "status": "auto_approved_public_official",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "Zacatecas SSP",
+        "sourceType": "official_state_announcement",
+        "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
+        "confidence": 0.8,
+        "mode": "seed_csv_import",
+        "collectedAt": "2026-05-08T14:45:19.569Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T14:45:19.569Z",
+    "updatedAt": "2026-05-08T14:45:19.569Z",
+    "note": "Official public alert says this number was used for extortion or fraud calls"
+  },
+  {
     "number": "+524922429149",
     "label": "suspicious",
     "country": "MX",
@@ -21136,6 +21280,78 @@
     "firstSeenAt": "2026-05-08T13:54:30.443Z",
     "updatedAt": "2026-05-08T14:34:11.039Z",
     "note": "Top spam reportado por comunidad"
+  },
+  {
+    "number": "+524923144250",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "official_state_announcement",
+    "sourceName": "Zacatecas SSP",
+    "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar-2/",
+    "confidence": 0.8,
+    "status": "auto_approved_public_official",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "Zacatecas SSP",
+        "sourceType": "official_state_announcement",
+        "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar-2/",
+        "confidence": 0.8,
+        "mode": "seed_csv_import",
+        "collectedAt": "2026-05-08T14:45:19.569Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T14:45:19.569Z",
+    "updatedAt": "2026-05-08T14:45:19.569Z",
+    "note": "Official public alert says this number was used for extortion calls"
+  },
+  {
+    "number": "+524931064836",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "official_state_announcement",
+    "sourceName": "Zacatecas SESESP",
+    "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-sesesp-sobre-linea-telefonica-utilizada-para-extorsionar/",
+    "confidence": 0.8,
+    "status": "auto_approved_public_official",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "Zacatecas SESESP",
+        "sourceType": "official_state_announcement",
+        "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-sesesp-sobre-linea-telefonica-utilizada-para-extorsionar/",
+        "confidence": 0.8,
+        "mode": "seed_csv_import",
+        "collectedAt": "2026-05-08T14:45:19.569Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T14:45:19.569Z",
+    "updatedAt": "2026-05-08T14:45:19.569Z",
+    "note": "Official public alert says this number was used to extort"
+  },
+  {
+    "number": "+524931145779",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "official_state_announcement",
+    "sourceName": "Zacatecas SSP",
+    "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar/",
+    "confidence": 0.8,
+    "status": "auto_approved_public_official",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "Zacatecas SSP",
+        "sourceType": "official_state_announcement",
+        "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar/",
+        "confidence": 0.8,
+        "mode": "seed_csv_import",
+        "collectedAt": "2026-05-08T14:45:19.569Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T14:45:19.569Z",
+    "updatedAt": "2026-05-08T14:45:19.569Z",
+    "note": "Official public alert says this number was used for extortion calls"
   },
   {
     "number": "+524932560970",
@@ -24627,6 +24843,30 @@
     "firstSeenAt": "2026-05-08T13:54:30.443Z",
     "updatedAt": "2026-05-08T14:34:11.039Z",
     "note": "Top spam reportado por comunidad"
+  },
+  {
+    "number": "+525525772233",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "official_state_announcement",
+    "sourceName": "Zacatecas SSP",
+    "sourceUrl": "https://ssp.zacatecas.gob.mx/detecta-ssp-modalidad-de-extorsion-telefonica-7/",
+    "confidence": 0.8,
+    "status": "auto_approved_public_official",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "Zacatecas SSP",
+        "sourceType": "official_state_announcement",
+        "sourceUrl": "https://ssp.zacatecas.gob.mx/detecta-ssp-modalidad-de-extorsion-telefonica-7/",
+        "confidence": 0.8,
+        "mode": "seed_csv_import",
+        "collectedAt": "2026-05-08T14:45:19.569Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T14:45:19.569Z",
+    "updatedAt": "2026-05-08T14:45:19.569Z",
+    "note": "Official public alert says this number was used for extortion calls"
   },
   {
     "number": "+525525799910",
@@ -29595,6 +29835,30 @@
     "note": "Top spam reportado por comunidad"
   },
   {
+    "number": "+525545087588",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "official_state_announcement",
+    "sourceName": "Zacatecas SSP",
+    "sourceUrl": "https://ssp.zacatecas.gob.mx/detecta-ssp-modalidad-de-extorsion-telefonica-7/",
+    "confidence": 0.8,
+    "status": "auto_approved_public_official",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "Zacatecas SSP",
+        "sourceType": "official_state_announcement",
+        "sourceUrl": "https://ssp.zacatecas.gob.mx/detecta-ssp-modalidad-de-extorsion-telefonica-7/",
+        "confidence": 0.8,
+        "mode": "seed_csv_import",
+        "collectedAt": "2026-05-08T14:45:19.569Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T14:45:19.569Z",
+    "updatedAt": "2026-05-08T14:45:19.569Z",
+    "note": "Official public alert says this number was used for extortion calls"
+  },
+  {
     "number": "+525546253300",
     "label": "suspicious",
     "country": "MX",
@@ -33935,6 +34199,30 @@
     "firstSeenAt": "2026-05-08T13:54:30.443Z",
     "updatedAt": "2026-05-08T14:34:11.039Z",
     "note": "Top spam reportado por comunidad"
+  },
+  {
+    "number": "+525556279456",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "official_state_announcement",
+    "sourceName": "Zacatecas SSP",
+    "sourceUrl": "https://ssp.zacatecas.gob.mx/detecta-ssp-modalidad-de-extorsion-telefonica-7/",
+    "confidence": 0.8,
+    "status": "auto_approved_public_official",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "Zacatecas SSP",
+        "sourceType": "official_state_announcement",
+        "sourceUrl": "https://ssp.zacatecas.gob.mx/detecta-ssp-modalidad-de-extorsion-telefonica-7/",
+        "confidence": 0.8,
+        "mode": "seed_csv_import",
+        "collectedAt": "2026-05-08T14:45:19.569Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T14:45:19.569Z",
+    "updatedAt": "2026-05-08T14:45:19.569Z",
+    "note": "Official public alert says this number was used for extortion calls"
   },
   {
     "number": "+525556306033",
@@ -67730,6 +68018,30 @@
     "updatedAt": "2026-05-08T09:59:03.599Z",
     "note": "Community searched/reported number",
     "category": "spam"
+  },
+  {
+    "number": "+528715669317",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "official_state_announcement",
+    "sourceName": "Zacatecas SSP",
+    "sourceUrl": "https://ssp.zacatecas.gob.mx/detecta-ssp-modalidad-de-extorsion-telefonica-7/",
+    "confidence": 0.8,
+    "status": "auto_approved_public_official",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "Zacatecas SSP",
+        "sourceType": "official_state_announcement",
+        "sourceUrl": "https://ssp.zacatecas.gob.mx/detecta-ssp-modalidad-de-extorsion-telefonica-7/",
+        "confidence": 0.8,
+        "mode": "seed_csv_import",
+        "collectedAt": "2026-05-08T14:45:19.569Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T14:45:19.569Z",
+    "updatedAt": "2026-05-08T14:45:19.569Z",
+    "note": "Official public alert says this number was used for extortion calls"
   },
   {
     "number": "+528716790501",

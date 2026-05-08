@@ -18,7 +18,7 @@ jobs:
           node-version: 18
 
       - name: Collect Mexico scam numbers
-        run: node scripts/collect_mx_numbers.js
+        run: npm run collect && node scripts/collect_mx_numbers.js
 
       - name: Auto promote safe numbers
         run: node scripts/auto_promote_safe_numbers.js
