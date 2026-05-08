@@ -287,9 +287,43 @@
     .sources-details { margin-top: 8px; }
     .sources-details summary { cursor: pointer; font-weight: 700; margin-bottom: 8px; }
     #sourcesList { font-size: 0.9rem; color: #374151; display: grid; gap: 8px; margin-top: 8px; }
-    .source-item { border: 1px solid #e5e7eb; border-radius: 10px; padding: 10px; background: #f9fafb; }
-    .source-item a { color: #0b2a6f; word-break: break-all; }
-    @media (prefers-color-scheme: dark) { .source-item { background:#1f2937; border-color:#374151; } #sourcesList { color:#e5e7eb; } }
+    .sources-card { border: 1px solid #e5e7eb; border-radius: 10px; padding: 10px; background: #f9fafb; }
+    .sources-card { border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); color: rgba(255,255,255,0.92); }
+    .sources-card strong { color: #ffffff; font-size: 1.05rem; }
+    .sources-card a { color: #93c5fd; text-decoration: underline; font-weight: 500; word-break: break-all; transition: opacity 0.2s ease; }
+    .sources-card a:hover { opacity: 0.85; }
+    @media (prefers-color-scheme: dark) { .sources-card { background:#1e293b; border-color:#374151; } #sourcesList { color:#e5e7eb; } }
+
+    .source-transparency-note {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 10px;
+      margin: 16px 0 20px;
+    }
+
+    .source-transparency-note div {
+      background: rgba(0,0,0,0.04);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    @media (max-width: 640px) {
+
+      .sources-card {
+        padding: 16px;
+      }
+
+      .sources-card a {
+        font-size: 0.88rem;
+      }
+
+      .source-transparency-note {
+        grid-template-columns: 1fr;
+      }
+
+    }
 
   </style>
 </head>
@@ -351,8 +385,16 @@
     </section>
 
     <section class="section" id="fuentes-section">
-      <h2>Fuentes públicas consultadas</h2>
-      <p class="disclaimer">Usamos fuentes públicas, reportes abiertos y señales comunitarias para mantener esta base en crecimiento. La presencia de un número indica riesgo potencial, no confirmación legal.</p>
+      <h2>Fuentes abiertas y reportes comunitarios consultados</h2>
+      <p class="disclaimer">Esta plataforma utiliza fuentes abiertas, alertas públicas y reportes comunitarios como referencia para identificar posibles riesgos telefónicos en México.
+
+La presencia de un número NO representa una acusación legal ni una confirmación oficial. La información se muestra únicamente con fines preventivos y comunitarios.</p>
+      <div class="source-transparency-note">
+        <div>✓ Datos abiertos</div>
+        <div>✓ Reportes comunitarios</div>
+        <div>✓ Sin recopilación de datos personales</div>
+        <div>✓ Referencia preventiva</div>
+      </div>
       <details class="sources-details">
         <summary>Ver fuentes</summary>
         <div id="sourcesList">Las fuentes públicas se actualizan periódicamente.</div>
@@ -500,7 +542,7 @@
         if (!Array.isArray(sources)) return;
         const top = sources.slice().sort((a,b)=>(a.priority ?? 99)-(b.priority ?? 99) || String(a.name||"").localeCompare(String(b.name||""))).slice(0, 12);
         listEl.innerHTML = top.map((source) => `
-          <div class="source-item">
+          <div class="sources-card">
             <div><strong>${source.name || "Fuente pública"}</strong></div>
             <div>Región: ${source.region || "México"}</div>
             <div>Tipo: ${SOURCE_TYPE_FRIENDLY[source.type] || "Referencia pública"}</div>
