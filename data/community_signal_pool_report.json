@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-05-08T13:30:55.155Z",
+  "generatedAt": "2026-05-08T13:54:30.395Z",
   "target": 5000,
-  "communitySignalPoolCount": 662,
-  "remainingGap": 4338,
+  "communitySignalPoolCount": 2702,
+  "remainingGap": 2298,
   "addedToBulkFromSnapshots": 0,
   "categoryBreakdown": {
-    "spam": 903,
+    "spam": 4983,
     "telemarketing": 0,
     "cobranza": 0,
     "publicidad": 0,
@@ -17,9 +17,9 @@
   },
   "officialCount": 1228,
   "pendingCount": 787,
-  "communityBulkCount": 786,
-  "snapshotCount": 786,
-  "skippedDuplicates": 662,
+  "communityBulkCount": 2826,
+  "snapshotCount": 2826,
+  "skippedDuplicates": 2702,
   "skippedOfficialExisting": 124,
   "skippedInvalid": 0,
   "sourcesUsed": [
@@ -29,6 +29,8 @@
     "Aguascalientes C5i Búsqueda de Números de Extorsión",
     "Manual Import CSV",
     "Sonora Gobierno Antiextorsión",
-    "TelefonoSpam MX"
+    "TelefonoSpam MX",
+    "LADA México Spam Telefónico",
+    "Números Teléfono México"
   ]
 }
