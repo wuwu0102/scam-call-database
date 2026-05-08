@@ -155,3 +155,6 @@ https://wuwu0102.github.io/scam-call-database/
 用途：
 Facebook 貼文先導流到網頁版，不直接導 App Store。
 網頁版再引導 iPhone 使用者下載 ScamCall MX。
+
+Data source priority:
+This project prioritizes Guadalajara/Jalisco first, then CDMX, Estado de México, Monterrey/Nuevo León, and other major urban areas by practical caller-identification value. Community-reported numbers stay pending unless multiple independent signals support promotion.

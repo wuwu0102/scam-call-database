@@ -1,27 +1,193 @@
 [
   {
-    "name": "TelefonoSpam MX Top Spam",
-    "url": "https://www.telefonospam.com.mx/top-spam",
-    "type": "community_report",
+    "name": "Fiscalía Jalisco",
+    "url": "https://fiscalia.jalisco.gob.mx/",
+    "type": "official_state_announcement",
+    "confidence": 0.75,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 1,
+    "region": "Jalisco"
+  },
+  {
+    "name": "Guadalajara Gobierno",
+    "url": "https://guadalajara.gob.mx/",
+    "type": "municipal_public_report",
+    "confidence": 0.6,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 1,
+    "region": "Guadalajara"
+  },
+  {
+    "name": "Jalisco Gobierno Seguridad",
+    "url": "https://www.jalisco.gob.mx/es/gobierno/comunicados",
+    "type": "news_or_public_reference",
     "confidence": 0.45,
     "mode": "html_scrape",
-    "autoPromote": false
+    "autoPromote": false,
+    "priority": 1,
+    "region": "Jalisco"
   },
   {
-    "name": "TelefonoSpam MX Ultimos Buscados",
-    "url": "https://www.telefonospam.com.mx/ultimos-buscados",
-    "type": "community_report",
-    "confidence": 0.35,
+    "name": "CDMX Seguridad Ciudadana",
+    "url": "https://www.ssc.cdmx.gob.mx/",
+    "type": "official_state_announcement",
+    "confidence": 0.75,
     "mode": "html_scrape",
-    "autoPromote": false
+    "autoPromote": false,
+    "priority": 2,
+    "region": "CDMX"
   },
   {
-    "name": "Estafatel Reportes Recientes",
+    "name": "Fiscalía CDMX",
+    "url": "https://www.fgjcdmx.gob.mx/",
+    "type": "official_state_announcement",
+    "confidence": 0.75,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 2,
+    "region": "CDMX"
+  },
+  {
+    "name": "Estado de México Seguridad",
+    "url": "https://sseguridad.edomex.gob.mx/",
+    "type": "official_state_announcement",
+    "confidence": 0.75,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 3,
+    "region": "Estado de México"
+  },
+  {
+    "name": "Fiscalía Estado de México",
+    "url": "https://fgjem.edomex.gob.mx/",
+    "type": "official_state_announcement",
+    "confidence": 0.75,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 3,
+    "region": "Estado de México"
+  },
+  {
+    "name": "Fiscalía Nuevo León",
+    "url": "https://fiscalianl.gob.mx/",
+    "type": "official_state_announcement",
+    "confidence": 0.75,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 4,
+    "region": "Nuevo León"
+  },
+  {
+    "name": "Nuevo León Seguridad",
+    "url": "https://www.nl.gob.mx/seguridad",
+    "type": "official_state_announcement",
+    "confidence": 0.75,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 4,
+    "region": "Nuevo León"
+  },
+  {
+    "name": "Puebla Seguridad",
+    "url": "https://ss.puebla.gob.mx/",
+    "type": "official_state_announcement",
+    "confidence": 0.75,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 5,
+    "region": "Puebla"
+  },
+  {
+    "name": "Baja California Seguridad",
+    "url": "https://www.seguridadbc.gob.mx/",
+    "type": "official_state_announcement",
+    "confidence": 0.8,
+    "mode": "html_scrape",
+    "autoPromote": true,
+    "priority": 6,
+    "region": "Baja California"
+  },
+  {
+    "name": "Guanajuato Seguridad",
+    "url": "https://seguridad.guanajuato.gob.mx/",
+    "type": "official_state_announcement",
+    "confidence": 0.75,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 7,
+    "region": "Guanajuato"
+  },
+  {
+    "name": "Querétaro Seguridad",
+    "url": "https://www.queretaro.gob.mx/seguridad/",
+    "type": "official_state_announcement",
+    "confidence": 0.75,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 8,
+    "region": "Querétaro"
+  },
+  {
+    "name": "Yucatán Seguridad",
+    "url": "https://ssp.yucatan.gob.mx/",
+    "type": "official_state_announcement",
+    "confidence": 0.75,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 9,
+    "region": "Yucatán"
+  },
+  {
+    "name": "Veracruz C4",
+    "url": "https://www.c4ver.gob.mx/extorsion.html",
+    "type": "official_state_announcement",
+    "confidence": 0.8,
+    "mode": "html_scrape",
+    "autoPromote": true,
+    "priority": 10,
+    "region": "Veracruz"
+  },
+  {
+    "name": "SEGOB Extorsion Telefonica",
+    "url": "https://www.gob.mx/segob/articulos/evita-ser-victima-de-la-extorsion-telefonica?es-MX=",
+    "type": "official_federal",
+    "confidence": 0.75,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 20,
+    "region": "México"
+  },
+  {
+    "name": "Estafatel",
     "url": "https://www.estafatel.com/",
     "type": "community_report",
     "confidence": 0.45,
     "mode": "html_scrape",
-    "autoPromote": false
+    "autoPromote": false,
+    "priority": 30,
+    "region": "México"
+  },
+  {
+    "name": "TelefonoSpam MX",
+    "url": "https://www.telefonospam.com.mx/",
+    "type": "community_report",
+    "confidence": 0.4,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 30,
+    "region": "México"
+  },
+  {
+    "name": "TelefonoSpam MX Top",
+    "url": "https://www.telefonospam.com.mx/top-spam",
+    "type": "community_report",
+    "confidence": 0.45,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 30,
+    "region": "México"
   },
   {
     "name": "Tellows MX",
@@ -29,31 +195,19 @@
     "type": "community_report",
     "confidence": 0.35,
     "mode": "html_scrape",
-    "autoPromote": false
+    "autoPromote": false,
+    "priority": 30,
+    "region": "México"
   },
   {
-    "name": "Zacatecas SSP Extorsion 1",
-    "url": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
-    "type": "official_state_announcement",
-    "confidence": 0.8,
+    "name": "TelefonoSpam MX Ultimos Buscados",
+    "url": "https://www.telefonospam.com.mx/ultimos-buscados",
+    "type": "community_report",
+    "confidence": 0.35,
     "mode": "html_scrape",
-    "autoPromote": true
-  },
-  {
-    "name": "Zacatecas SSP Extorsion 2",
-    "url": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar/",
-    "type": "official_state_announcement",
-    "confidence": 0.8,
-    "mode": "html_scrape",
-    "autoPromote": true
-  },
-  {
-    "name": "Zacatecas SSP Extorsion 3",
-    "url": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar-2/",
-    "type": "official_state_announcement",
-    "confidence": 0.8,
-    "mode": "html_scrape",
-    "autoPromote": true
+    "autoPromote": false,
+    "priority": 99,
+    "region": "México"
   },
   {
     "name": "Zacatecas SESESP Extorsion",
@@ -61,16 +215,52 @@
     "type": "official_state_announcement",
     "confidence": 0.8,
     "mode": "html_scrape",
-    "autoPromote": true
+    "autoPromote": true,
+    "priority": 99,
+    "region": "México"
+  },
+  {
+    "name": "Zacatecas SSP Extorsion 1",
+    "url": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
+    "type": "official_state_announcement",
+    "confidence": 0.8,
+    "mode": "html_scrape",
+    "autoPromote": true,
+    "priority": 99,
+    "region": "Zacatecas"
+  },
+  {
+    "name": "Zacatecas SSP Extorsion 2",
+    "url": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar/",
+    "type": "official_state_announcement",
+    "confidence": 0.8,
+    "mode": "html_scrape",
+    "autoPromote": true,
+    "priority": 99,
+    "region": "Zacatecas"
+  },
+  {
+    "name": "Zacatecas SSP Extorsion 3",
+    "url": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar-2/",
+    "type": "official_state_announcement",
+    "confidence": 0.8,
+    "mode": "html_scrape",
+    "autoPromote": true,
+    "priority": 99,
+    "region": "Zacatecas"
   },
   {
     "name": "auto discovered source",
     "url": "https://duckduckgo.com/",
     "type": "media",
-    "confidence": "medium",
+    "confidence": 0.35,
     "tag": "suspicious",
     "label": "Número sospechoso",
     "autoImport": true,
-    "discoveredAt": "2026-05-06"
+    "discoveredAt": "2026-05-06",
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 99,
+    "region": "México"
   }
 ]
