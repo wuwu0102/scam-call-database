@@ -140,6 +140,46 @@
     "updatedAt": "2026-05-08"
   },
   {
+    "number": "1778205011",
+    "normalizedNumber": "1778205011",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "1850282417",
+    "normalizedNumber": "1850282417",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Baja California Seguridad",
+    "sourceUrl": "https://www.seguridadbc.gob.mx/",
+    "sources": [
+      {
+        "source": "Baja California Seguridad",
+        "sourceUrl": "https://www.seguridadbc.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
     "number": "1853339592",
     "normalizedNumber": "1853339592",
     "country": "MX",
@@ -618,6 +658,26 @@
       }
     ],
     "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "4207773407",
+    "normalizedNumber": "4207773407",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Nuevo León Seguridad",
+    "sourceUrl": "https://www.nl.gob.mx/seguridad",
+    "sources": [
+      {
+        "source": "Nuevo León Seguridad",
+        "sourceUrl": "https://www.nl.gob.mx/seguridad",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
   },
   {
     "number": "4219423259",
@@ -3042,6 +3102,26 @@
   {
     "number": "7782001155",
     "normalizedNumber": "7782001155",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Puebla Seguridad",
+    "sourceUrl": "https://ss.puebla.gob.mx/",
+    "sources": [
+      {
+        "source": "Puebla Seguridad",
+        "sourceUrl": "https://ss.puebla.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "7782050107",
+    "normalizedNumber": "7782050107",
     "country": "MX",
     "tag": "suspicious",
     "label": "Número sospechoso",
