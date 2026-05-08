@@ -1,0 +1,54 @@
+{
+  "refreshedAt": "2026-05-08T07:07:24.139Z",
+  "sourcesTried": 4,
+  "sourcesSucceeded": 0,
+  "sourcesFailed": 4,
+  "rawCandidates": 0,
+  "validCandidates": 0,
+  "existingInOfficial": 0,
+  "existingInPending": 0,
+  "existingInCsv": 0,
+  "addedToCsv": 0,
+  "removedInvalidRows": 0,
+  "csvBefore": 121,
+  "csvAfter": 121,
+  "skippedReasonsSummary": {},
+  "sources": [
+    {
+      "name": "TelefonoSpam MX Top Spam",
+      "url": "https://www.telefonospam.com.mx/top-spam",
+      "fetchOk": false,
+      "rawCandidates": 0,
+      "validCandidates": 0,
+      "addedToCsv": 0,
+      "error": "getaddrinfo EAI_AGAIN www.telefonospam.com.mx"
+    },
+    {
+      "name": "TelefonoSpam MX Top Spam",
+      "url": "https://www.telefonospam.com.mx/top-spam/4",
+      "fetchOk": false,
+      "rawCandidates": 0,
+      "validCandidates": 0,
+      "addedToCsv": 0,
+      "error": "getaddrinfo EAI_AGAIN www.telefonospam.com.mx"
+    },
+    {
+      "name": "TelefonoSpam MX Pendientes",
+      "url": "https://www.telefonospam.com.mx/pendientes.php",
+      "fetchOk": false,
+      "rawCandidates": 0,
+      "validCandidates": 0,
+      "addedToCsv": 0,
+      "error": "getaddrinfo EAI_AGAIN www.telefonospam.com.mx"
+    },
+    {
+      "name": "TelefonoSpam MX Home",
+      "url": "https://www.telefonospam.com.mx/",
+      "fetchOk": false,
+      "rawCandidates": 0,
+      "validCandidates": 0,
+      "addedToCsv": 0,
+      "error": "getaddrinfo EAI_AGAIN www.telefonospam.com.mx"
+    }
+  ]
+}
