@@ -5,12 +5,13 @@ const path = require('path');
 const ROOT = process.cwd();
 const SCAM_PATH = path.join(ROOT, 'scam_numbers.json');
 const PENDING_PATH = path.join(ROOT, 'data', 'pending_numbers.json');
-const REPORT_PATH = path.join(ROOT, 'data', 'scrape_report.json');
+const REPORT_PATH = path.join(ROOT, 'data', 'collection_report.json');
 const CATALOG_PATH = path.join(ROOT, 'data', 'source_catalog_mexico.json');
 
 const PUBLIC_STATS_PATH = path.join(ROOT, 'data', 'public_stats.json');
 
 const BACKUP_PATH = path.join(ROOT, 'data', 'backups', 'scam_numbers.backup.json');
+const IOS_PATH = path.join(ROOT, 'data', 'ios_numbers.json');
 const BANNED_SHORT = new Set(['911', '089', '088', '070', '072']);
 
 function readJson(file, required = true) {
@@ -66,4 +67,11 @@ if (stats) {
   if (Number(stats.monitoredSignalsCount) < Number(stats.officialSuspiciousCount)) throw new Error('monitoredSignalsCount cannot be lower than officialSuspiciousCount');
   if (Number(stats.communitySignalCount) < 0) throw new Error('communitySignalCount cannot be negative');
   if (!stats.categoryBreakdown || typeof stats.categoryBreakdown !== 'object' || Array.isArray(stats.categoryBreakdown)) throw new Error('categoryBreakdown must be object');
+}
+
+
+const ios = readJson(IOS_PATH, false);
+if (Array.isArray(ios) && fs.existsSync(path.join(ROOT, 'data', 'ios_numbers.backup.json'))) {
+  const iosBackup = readJson(path.join(ROOT, 'data', 'ios_numbers.backup.json'), false);
+  if (Array.isArray(iosBackup) && ios.length < iosBackup.length) throw new Error(`ios export shrank: ${ios.length} < ${iosBackup.length}`);
 }
