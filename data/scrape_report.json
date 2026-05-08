@@ -1,20 +1,21 @@
 {
   "priorityStrategy": "GDL/Jalisco first, then CDMX, then major cities by population/usefulness",
-  "scrapedAt": "2026-05-08T13:52:59.755Z",
+  "scrapedAt": "2026-05-08T14:31:16.830Z",
   "totalSources": 26,
   "sourcesSucceeded": 17,
   "sourcesFailed": 9,
-  "rawCandidates": 1062,
+  "rawCandidates": 1289,
   "acceptedCandidates": 6,
-  "pendingBefore": 787,
-  "pendingAfter": 787,
+  "pendingBefore": 2827,
+  "pendingAfter": 2827,
   "newPendingThisRun": 0,
   "officialBefore": 1228,
   "officialAfter": 1228,
   "promotedThisRun": 0,
   "skippedReasonsSummary": {
-    "invalid_or_banned": 651,
-    "low_risk_context": 405
+    "invalid_or_banned": 877,
+    "low_risk_context": 405,
+    "service_or_government_context": 1
   },
   "sources": [
     {
@@ -50,10 +51,10 @@
       "region": "Jalisco",
       "priority": 1,
       "fetchOk": true,
-      "htmlLength": 118,
-      "rawCandidates": 0,
+      "htmlLength": 49201,
+      "rawCandidates": 226,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
+      "skippedCandidates": 226,
       "error": null
     },
     {
@@ -129,9 +130,9 @@
       "priority": 4,
       "fetchOk": true,
       "htmlLength": 45545,
-      "rawCandidates": 131,
+      "rawCandidates": 134,
       "acceptedCandidates": 0,
-      "skippedCandidates": 131,
+      "skippedCandidates": 134,
       "error": null
     },
     {
@@ -142,9 +143,9 @@
       "priority": 5,
       "fetchOk": true,
       "htmlLength": 72716,
-      "rawCandidates": 16,
+      "rawCandidates": 14,
       "acceptedCandidates": 0,
-      "skippedCandidates": 16,
+      "skippedCandidates": 14,
       "error": null
     },
     {
@@ -180,7 +181,7 @@
       "region": "Querétaro",
       "priority": 8,
       "fetchOk": true,
-      "htmlLength": 64618,
+      "htmlLength": 65973,
       "rawCandidates": 55,
       "acceptedCandidates": 0,
       "skippedCandidates": 55,
@@ -193,7 +194,7 @@
       "region": "Yucatán",
       "priority": 9,
       "fetchOk": true,
-      "htmlLength": 20952,
+      "htmlLength": 20945,
       "rawCandidates": 11,
       "acceptedCandidates": 0,
       "skippedCandidates": 11,
@@ -219,7 +220,7 @@
       "region": "México",
       "priority": 20,
       "fetchOk": true,
-      "htmlLength": 1869,
+      "htmlLength": 1873,
       "rawCandidates": 0,
       "acceptedCandidates": 0,
       "skippedCandidates": 0,

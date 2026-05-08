@@ -2825,3 +2825,46 @@ number,label,sourceName,sourceUrl,region,note,confidence,category
 +523132092529,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/,México,Community phone reports in Mexico,0.35,spam
 +528781581598,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/,México,Community phone reports in Mexico,0.35,spam
 +524691139094,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/,México,Community phone reports in Mexico,0.35,spam
++529423975010,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/,México,Reporte comunitario en México,0.35,scam
++524239750105,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/,México,Reporte comunitario en México,0.35,scam
++522397501051,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/,México,Reporte comunitario en México,0.35,scam
++523975010514,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/,México,Reporte comunitario en México,0.35,scam
++529750105143,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/,México,Reporte comunitario en México,0.35,scam
++527501051430,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/,México,Reporte comunitario en México,0.35,scam
++525010514308,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/,México,Reporte comunitario en México,0.35,scam
++528114540000,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/denuncias/8114540913/,Nuevo León,Denuncia comunitaria de detalle,0.45,scam
++528135967712,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/denuncias/5617924603/,Nuevo León,Denuncia comunitaria de detalle,0.45,scam
++525073712990,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/denuncias/8281148094/,México,Denuncia comunitaria de detalle,0.45,scam
++522089571231,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/denuncias/8781232618/,México,Denuncia comunitaria de detalle,0.45,scam
++526186044493,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/denuncias/6672117393/,Durango,Denuncia comunitaria de detalle,0.45,scam
++521860444933,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/denuncias/6672117393/,México,Denuncia comunitaria de detalle,0.45,scam
++528604449336,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/denuncias/6672117393/,México,Denuncia comunitaria de detalle,0.45,scam
++526044493363,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/denuncias/6672117393/,México,Denuncia comunitaria de detalle,0.45,scam
++520444933639,suspicious,Números Teléfono México,https://www.numerostelefono.com/mx/denuncias/6672117393/,México,Denuncia comunitaria de detalle,0.45,scam
++521692355080,suspicious,TelefonoSpam MX Top Spam,https://www.telefonospam.com.mx/top-spam,México,Community top spam report,0.45,spam
++529235508099,suspicious,TelefonoSpam MX Top Spam,https://www.telefonospam.com.mx/top-spam,México,Community top spam report,0.45,spam
++522355080996,suspicious,TelefonoSpam MX Top Spam,https://www.telefonospam.com.mx/top-spam,México,Community top spam report,0.45,spam
++523550809967,suspicious,TelefonoSpam MX Top Spam,https://www.telefonospam.com.mx/top-spam,México,Community top spam report,0.45,spam
++525508099679,suspicious,TelefonoSpam MX Top Spam,https://www.telefonospam.com.mx/top-spam,CDMX / Estado de México,Community top spam report,0.45,spam
++525080996792,suspicious,TelefonoSpam MX Top Spam,https://www.telefonospam.com.mx/top-spam,México,Community top spam report,0.45,spam
++520030211198,suspicious,TelefonoSpam MX Top Spam,https://www.telefonospam.com.mx/top-spam/5,México,Community top spam report,0.45,spam
++520302111980,suspicious,TelefonoSpam MX Top Spam,https://www.telefonospam.com.mx/top-spam/5,México,Community top spam report,0.45,spam
++523021119809,suspicious,TelefonoSpam MX Top Spam,https://www.telefonospam.com.mx/top-spam/5,México,Community top spam report,0.45,spam
++520211198099,suspicious,TelefonoSpam MX Top Spam,https://www.telefonospam.com.mx/top-spam/5,México,Community top spam report,0.45,spam
++522111980994,suspicious,TelefonoSpam MX Top Spam,https://www.telefonospam.com.mx/top-spam/5,México,Community top spam report,0.45,spam
++526329606122,suspicious,LADA México Spam Telefónico,https://telefonos.lada-mexico.com/,México,Public spam phone list from LADA México,0.35,scam
++523296061224,suspicious,LADA México Spam Telefónico,https://telefonos.lada-mexico.com/,México,Public spam phone list from LADA México,0.35,scam
++522960612244,suspicious,LADA México Spam Telefónico,https://telefonos.lada-mexico.com/,México,Public spam phone list from LADA México,0.35,scam
++529606122440,suspicious,LADA México Spam Telefónico,https://telefonos.lada-mexico.com/,México,Public spam phone list from LADA México,0.35,scam
++526061224400,suspicious,LADA México Spam Telefónico,https://telefonos.lada-mexico.com/,México,Public spam phone list from LADA México,0.35,scam
++520612244003,suspicious,LADA México Spam Telefónico,https://telefonos.lada-mexico.com/,México,Public spam phone list from LADA México,0.35,scam
++526122440038,suspicious,LADA México Spam Telefónico,https://telefonos.lada-mexico.com/,México,Public spam phone list from LADA México,0.35,scam
++521777322652,suspicious,LADA México Spam Telefónico,https://www.lada-mexico.com/telefono/,México,Public spam phone list from LADA México,0.35,scam
++521648643898,suspicious,LADA México Spam Telefónico,https://www.lada-mexico.com/telefono/,México,Public spam phone list from LADA México,0.35,scam
++525584122011,suspicious,LADA México Spam Telefónico,https://www.lada-mexico.com/telefono/,CDMX / Estado de México,Public spam phone list from LADA México,0.35,scam
++525841220114,suspicious,LADA México Spam Telefónico,https://www.lada-mexico.com/telefono/,México,Public spam phone list from LADA México,0.35,scam
++528412201148,suspicious,LADA México Spam Telefónico,https://www.lada-mexico.com/telefono/,México,Public spam phone list from LADA México,0.35,scam
++524122011480,suspicious,LADA México Spam Telefónico,https://www.lada-mexico.com/telefono/,México,Public spam phone list from LADA México,0.35,scam
++521220114807,suspicious,LADA México Spam Telefónico,https://www.lada-mexico.com/telefono/,México,Public spam phone list from LADA México,0.35,scam
++522201148079,suspicious,LADA México Spam Telefónico,https://www.lada-mexico.com/telefono/,México,Public spam phone list from LADA México,0.35,scam
++522011480794,suspicious,LADA México Spam Telefónico,https://www.lada-mexico.com/telefono/,México,Public spam phone list from LADA México,0.35,scam

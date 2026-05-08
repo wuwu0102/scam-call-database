@@ -1,25 +1,1016 @@
 {
-  "refreshedAt": "2026-05-08T13:54:23.612Z",
-  "sourcesTried": 4,
-  "sourcesSucceeded": 3,
+  "refreshedAt": "2026-05-08T14:32:44.837Z",
+  "sourcesTried": 6,
+  "sourcesSucceeded": 5,
   "sourcesFailed": 1,
-  "rawCandidates": 6552,
-  "validCandidates": 2040,
-  "addedToCsv": 2040,
-  "existingInCsv": 2196,
-  "existingInPending": 1038,
-  "existingInOfficial": 1090,
-  "skippedInvalid": 188,
+  "rawCandidates": 3191,
+  "validCandidates": 43,
+  "addedToCsv": 43,
+  "existingInCsv": 659,
+  "existingInPending": 2303,
+  "existingInOfficial": 103,
+  "skippedInvalid": 83,
   "blocked403": true,
   "categoryBreakdown": {
-    "spam": 2040
+    "scam": 32,
+    "spam": 11
   },
   "pageResults": [
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/",
+      "fetchOk": true,
+      "added": 7,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/mexico/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/page/1/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/page/2/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/page/3/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/page/4/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/page/5/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/page/6/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/page/7/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/page/8/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/page/9/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/2/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/3/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/4/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/5/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/6/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/7/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/8/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/9/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/10/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/11/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/12/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/13/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/14/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/15/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/16/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/17/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/18/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/19/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/20/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México SMS",
+      "url": "https://www.numerostelefono.com/mx/denuncia-numero-sms/page/21/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5526299802/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5590886792/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/8114540913/",
+      "fetchOk": true,
+      "added": 1,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5526372754/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/7209088114/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/7111215199/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5667632207/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/2461820307/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/3461071457/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/7441580937/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5598616605/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/7128241772/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/4582558223/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/4425434478/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/7444242342/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/7774491514/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5530522488/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5573891359/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5548475140/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5535732753/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5523331349/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5647853835/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5531901088/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/3111532441/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/8130725982/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5541720220/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5596937563/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/6243373477/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5617924603/",
+      "fetchOk": true,
+      "added": 1,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5513518839/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/9851224701/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5588984290/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/4112610542/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/9851224909/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5509010910/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/7531225035/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/2465163278/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/9851224500/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/7123690220/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/3330581085/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/8281148094/",
+      "fetchOk": true,
+      "added": 1,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5615758869/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/6149805448/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5536645684/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/8119199029/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/3331052813/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5651546474/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5528852106/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/8781232618/",
+      "fetchOk": true,
+      "added": 1,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5552293154/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/6241470526/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/2228667010/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5642904492/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5569116820/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/3328097700/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/6672117393/",
+      "fetchOk": true,
+      "added": 5,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/2211909701/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5562049407/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/7551289066/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/4622694168/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/3318039103/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/2213599215/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/3251033491/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5538864834/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/3515155070/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5586437129/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/4622096462/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/3326084482/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/8002262663/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/3053807239/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/5570164638/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/3321054184/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/9932127058/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/3329463932/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/4776054065/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/3132092529/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/8781581598/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
+    {
+      "sourceName": "Números Teléfono México",
+      "url": "https://www.numerostelefono.com/mx/denuncias/4691139094/",
+      "fetchOk": true,
+      "added": 0,
+      "error": null,
+      "attempts": 1,
+      "blocked403": false
+    },
     {
       "sourceName": "TelefonoSpam MX Top Spam",
       "url": "https://www.telefonospam.com.mx/top-spam",
       "fetchOk": true,
-      "added": 0,
+      "added": 6,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -55,7 +1046,7 @@
       "sourceName": "TelefonoSpam MX Top Spam",
       "url": "https://www.telefonospam.com.mx/top-spam/5",
       "fetchOk": true,
-      "added": 2,
+      "added": 5,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -64,7 +1055,7 @@
       "sourceName": "TelefonoSpam MX Top Spam",
       "url": "https://www.telefonospam.com.mx/top-spam/6",
       "fetchOk": true,
-      "added": 130,
+      "added": 0,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -73,7 +1064,7 @@
       "sourceName": "TelefonoSpam MX Top Spam",
       "url": "https://www.telefonospam.com.mx/top-spam/7",
       "fetchOk": true,
-      "added": 125,
+      "added": 0,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -82,7 +1073,7 @@
       "sourceName": "TelefonoSpam MX Top Spam",
       "url": "https://www.telefonospam.com.mx/top-spam/8",
       "fetchOk": true,
-      "added": 121,
+      "added": 0,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -91,7 +1082,7 @@
       "sourceName": "TelefonoSpam MX Top Spam",
       "url": "https://www.telefonospam.com.mx/top-spam/9",
       "fetchOk": true,
-      "added": 133,
+      "added": 0,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -100,7 +1091,7 @@
       "sourceName": "TelefonoSpam MX Top Spam",
       "url": "https://www.telefonospam.com.mx/top-spam/10",
       "fetchOk": true,
-      "added": 124,
+      "added": 0,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -109,7 +1100,7 @@
       "sourceName": "TelefonoSpam MX Top Spam",
       "url": "https://www.telefonospam.com.mx/top-spam/11",
       "fetchOk": true,
-      "added": 132,
+      "added": 0,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -118,7 +1109,7 @@
       "sourceName": "TelefonoSpam MX Top Spam",
       "url": "https://www.telefonospam.com.mx/top-spam/12",
       "fetchOk": true,
-      "added": 118,
+      "added": 0,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -127,70 +1118,7 @@
       "sourceName": "TelefonoSpam MX Top Spam",
       "url": "https://www.telefonospam.com.mx/top-spam/13",
       "fetchOk": true,
-      "added": 129,
-      "error": null,
-      "attempts": 1,
-      "blocked403": false
-    },
-    {
-      "sourceName": "TelefonoSpam MX Top Spam",
-      "url": "https://www.telefonospam.com.mx/top-spam/14",
-      "fetchOk": true,
-      "added": 132,
-      "error": null,
-      "attempts": 1,
-      "blocked403": false
-    },
-    {
-      "sourceName": "TelefonoSpam MX Top Spam",
-      "url": "https://www.telefonospam.com.mx/top-spam/15",
-      "fetchOk": true,
-      "added": 132,
-      "error": null,
-      "attempts": 1,
-      "blocked403": false
-    },
-    {
-      "sourceName": "TelefonoSpam MX Top Spam",
-      "url": "https://www.telefonospam.com.mx/top-spam/16",
-      "fetchOk": true,
-      "added": 126,
-      "error": null,
-      "attempts": 1,
-      "blocked403": false
-    },
-    {
-      "sourceName": "TelefonoSpam MX Top Spam",
-      "url": "https://www.telefonospam.com.mx/top-spam/17",
-      "fetchOk": true,
-      "added": 125,
-      "error": null,
-      "attempts": 1,
-      "blocked403": false
-    },
-    {
-      "sourceName": "TelefonoSpam MX Top Spam",
-      "url": "https://www.telefonospam.com.mx/top-spam/18",
-      "fetchOk": true,
-      "added": 127,
-      "error": null,
-      "attempts": 1,
-      "blocked403": false
-    },
-    {
-      "sourceName": "TelefonoSpam MX Top Spam",
-      "url": "https://www.telefonospam.com.mx/top-spam/19",
-      "fetchOk": true,
-      "added": 124,
-      "error": null,
-      "attempts": 1,
-      "blocked403": false
-    },
-    {
-      "sourceName": "TelefonoSpam MX Top Spam",
-      "url": "https://www.telefonospam.com.mx/top-spam/20",
-      "fetchOk": true,
-      "added": 125,
+      "added": 0,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -199,16 +1127,16 @@
       "sourceName": "LADA México Spam Telefónico",
       "url": "https://telefonos.lada-mexico.com/",
       "fetchOk": true,
-      "added": 53,
+      "added": 7,
       "error": null,
       "attempts": 1,
       "blocked403": false
     },
     {
-      "sourceName": "Números Teléfono México",
-      "url": "https://www.numerostelefono.com/mx/",
+      "sourceName": "LADA México Spam Telefónico",
+      "url": "https://www.lada-mexico.com/telefono/",
       "fetchOk": true,
-      "added": 82,
+      "added": 9,
       "error": null,
       "attempts": 1,
       "blocked403": false
@@ -219,8 +1147,10 @@
       "fetchOk": false,
       "added": 0,
       "error": "HTTP 403",
-      "attempts": 3,
+      "attempts": 2,
       "blocked403": true
     }
-  ]
+  ],
+  "stoppedEarlyReason": "Números Teléfono México zero-add streak",
+  "detailPagesFetched": 78
 }
