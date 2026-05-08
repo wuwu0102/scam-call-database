@@ -19,6 +19,9 @@ jobs:
       - name: Merge seed database
         run: node scripts/merge_seed_database.js
 
+      - name: Database safety gate
+        run: node scripts/check_database_safety.js
+
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"

@@ -23,6 +23,9 @@ jobs:
       - name: Auto promote safe numbers
         run: node scripts/auto_promote_safe_numbers.js
 
+      - name: Database safety gate
+        run: node scripts/check_database_safety.js
+
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
