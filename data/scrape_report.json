@@ -1,18 +1,22 @@
 {
   "priorityStrategy": "GDL/Jalisco first, then CDMX, then major cities by population/usefulness",
-  "scrapedAt": "2026-05-08T00:05:17.528Z",
+  "scrapedAt": "2026-05-08T00:29:13.634Z",
   "totalSources": 26,
-  "sourcesSucceeded": 0,
-  "sourcesFailed": 26,
-  "rawCandidates": 0,
-  "acceptedCandidates": 0,
+  "sourcesSucceeded": 18,
+  "sourcesFailed": 8,
+  "rawCandidates": 1154,
+  "acceptedCandidates": 6,
   "pendingBefore": 21,
   "pendingAfter": 21,
   "newPendingThisRun": 0,
   "officialBefore": 14,
   "officialAfter": 14,
   "promotedThisRun": 0,
-  "skippedReasonsSummary": {},
+  "skippedReasonsSummary": {
+    "invalid_or_banned": 700,
+    "low_risk_context": 446,
+    "service_or_government_context": 2
+  },
   "sources": [
     {
       "name": "Fiscalía Jalisco",
@@ -20,12 +24,12 @@
       "type": "official_state_announcement",
       "region": "Jalisco",
       "priority": 1,
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawCandidates": 0,
+      "fetchOk": true,
+      "htmlLength": 49201,
+      "rawCandidates": 227,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "error": "fetch failed"
+      "skippedCandidates": 227,
+      "error": null
     },
     {
       "name": "Guadalajara Gobierno",
@@ -33,12 +37,12 @@
       "type": "municipal_public_report",
       "region": "Guadalajara",
       "priority": 1,
-      "fetchOk": false,
-      "htmlLength": 0,
+      "fetchOk": true,
+      "htmlLength": 2264,
       "rawCandidates": 0,
       "acceptedCandidates": 0,
       "skippedCandidates": 0,
-      "error": "fetch failed"
+      "error": null
     },
     {
       "name": "Jalisco Gobierno Seguridad",
@@ -46,12 +50,12 @@
       "type": "news_or_public_reference",
       "region": "Jalisco",
       "priority": 1,
-      "fetchOk": false,
-      "htmlLength": 0,
+      "fetchOk": true,
+      "htmlLength": 118,
       "rawCandidates": 0,
       "acceptedCandidates": 0,
       "skippedCandidates": 0,
-      "error": "fetch failed"
+      "error": null
     },
     {
       "name": "CDMX Seguridad Ciudadana",
@@ -111,12 +115,12 @@
       "type": "official_state_announcement",
       "region": "Nuevo León",
       "priority": 4,
-      "fetchOk": false,
-      "htmlLength": 0,
+      "fetchOk": true,
+      "htmlLength": 334,
       "rawCandidates": 0,
       "acceptedCandidates": 0,
       "skippedCandidates": 0,
-      "error": "fetch failed"
+      "error": null
     },
     {
       "name": "Nuevo León Seguridad",
@@ -124,12 +128,12 @@
       "type": "official_state_announcement",
       "region": "Nuevo León",
       "priority": 4,
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawCandidates": 0,
+      "fetchOk": true,
+      "htmlLength": 45545,
+      "rawCandidates": 132,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "error": "fetch failed"
+      "skippedCandidates": 132,
+      "error": null
     },
     {
       "name": "Puebla Seguridad",
@@ -137,12 +141,12 @@
       "type": "official_state_announcement",
       "region": "Puebla",
       "priority": 5,
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawCandidates": 0,
+      "fetchOk": true,
+      "htmlLength": 72716,
+      "rawCandidates": 14,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "error": "fetch failed"
+      "skippedCandidates": 14,
+      "error": null
     },
     {
       "name": "Baja California Seguridad",
@@ -150,12 +154,12 @@
       "type": "official_state_announcement",
       "region": "Baja California",
       "priority": 6,
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawCandidates": 0,
+      "fetchOk": true,
+      "htmlLength": 65373,
+      "rawCandidates": 7,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "error": "fetch failed"
+      "skippedCandidates": 7,
+      "error": null
     },
     {
       "name": "Guanajuato Seguridad",
@@ -163,12 +167,12 @@
       "type": "official_state_announcement",
       "region": "Guanajuato",
       "priority": 7,
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawCandidates": 0,
+      "fetchOk": true,
+      "htmlLength": 115025,
+      "rawCandidates": 131,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "error": "fetch failed"
+      "skippedCandidates": 131,
+      "error": null
     },
     {
       "name": "Querétaro Seguridad",
@@ -176,12 +180,12 @@
       "type": "official_state_announcement",
       "region": "Querétaro",
       "priority": 8,
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawCandidates": 0,
+      "fetchOk": true,
+      "htmlLength": 64618,
+      "rawCandidates": 55,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "error": "fetch failed"
+      "skippedCandidates": 55,
+      "error": null
     },
     {
       "name": "Yucatán Seguridad",
@@ -189,12 +193,12 @@
       "type": "official_state_announcement",
       "region": "Yucatán",
       "priority": 9,
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawCandidates": 0,
+      "fetchOk": true,
+      "htmlLength": 20944,
+      "rawCandidates": 11,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "error": "fetch failed"
+      "skippedCandidates": 11,
+      "error": null
     },
     {
       "name": "Veracruz C4",
@@ -202,12 +206,12 @@
       "type": "official_state_announcement",
       "region": "Veracruz",
       "priority": 10,
-      "fetchOk": false,
-      "htmlLength": 0,
+      "fetchOk": true,
+      "htmlLength": 3415,
       "rawCandidates": 0,
       "acceptedCandidates": 0,
       "skippedCandidates": 0,
-      "error": "fetch failed"
+      "error": null
     },
     {
       "name": "SEGOB Extorsion Telefonica",
@@ -215,12 +219,12 @@
       "type": "official_federal",
       "region": "México",
       "priority": 20,
-      "fetchOk": false,
-      "htmlLength": 0,
+      "fetchOk": true,
+      "htmlLength": 1869,
       "rawCandidates": 0,
       "acceptedCandidates": 0,
       "skippedCandidates": 0,
-      "error": "fetch failed"
+      "error": null
     },
     {
       "name": "Estafatel",
@@ -228,12 +232,12 @@
       "type": "community_report",
       "region": "México",
       "priority": 30,
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawCandidates": 0,
+      "fetchOk": true,
+      "htmlLength": 71959,
+      "rawCandidates": 94,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "error": "fetch failed"
+      "skippedCandidates": 94,
+      "error": null
     },
     {
       "name": "TelefonoSpam MX",
@@ -241,12 +245,12 @@
       "type": "community_report",
       "region": "México",
       "priority": 30,
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawCandidates": 0,
-      "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "error": "fetch failed"
+      "fetchOk": true,
+      "htmlLength": 11294,
+      "rawCandidates": 49,
+      "acceptedCandidates": 2,
+      "skippedCandidates": 47,
+      "error": null
     },
     {
       "name": "TelefonoSpam MX Top",
@@ -254,12 +258,12 @@
       "type": "community_report",
       "region": "México",
       "priority": 30,
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawCandidates": 0,
-      "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "error": "fetch failed"
+      "fetchOk": true,
+      "htmlLength": 14225,
+      "rawCandidates": 295,
+      "acceptedCandidates": 2,
+      "skippedCandidates": 293,
+      "error": null
     },
     {
       "name": "Tellows MX",
@@ -267,12 +271,12 @@
       "type": "community_report",
       "region": "México",
       "priority": 30,
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawCandidates": 0,
+      "fetchOk": true,
+      "htmlLength": 5349,
+      "rawCandidates": 8,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "error": "fetch failed"
+      "skippedCandidates": 8,
+      "error": null
     },
     {
       "name": "auto discovered source",
@@ -280,12 +284,12 @@
       "type": "media",
       "region": "México",
       "priority": 99,
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawCandidates": 0,
+      "fetchOk": true,
+      "htmlLength": 165192,
+      "rawCandidates": 88,
       "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "error": "fetch failed"
+      "skippedCandidates": 88,
+      "error": null
     },
     {
       "name": "TelefonoSpam MX Ultimos Buscados",
@@ -293,12 +297,12 @@
       "type": "community_report",
       "region": "México",
       "priority": 99,
-      "fetchOk": false,
-      "htmlLength": 0,
-      "rawCandidates": 0,
-      "acceptedCandidates": 0,
-      "skippedCandidates": 0,
-      "error": "fetch failed"
+      "fetchOk": true,
+      "htmlLength": 5871,
+      "rawCandidates": 43,
+      "acceptedCandidates": 2,
+      "skippedCandidates": 41,
+      "error": null
     },
     {
       "name": "Zacatecas SESESP Extorsion",

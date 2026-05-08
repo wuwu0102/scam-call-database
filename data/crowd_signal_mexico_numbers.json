@@ -1,5 +1,45 @@
 [
   {
+    "number": "0129656578",
+    "normalizedNumber": "0129656578",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Baja California Seguridad",
+    "sourceUrl": "https://www.seguridadbc.gob.mx/",
+    "sources": [
+      {
+        "source": "Baja California Seguridad",
+        "sourceUrl": "https://www.seguridadbc.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "0538155989",
+    "normalizedNumber": "0538155989",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Fiscalía Jalisco",
+    "sourceUrl": "https://fiscalia.jalisco.gob.mx/",
+    "sources": [
+      {
+        "source": "Fiscalía Jalisco",
+        "sourceUrl": "https://fiscalia.jalisco.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
     "number": "1166247191",
     "normalizedNumber": "1166247191",
     "country": "MX",
@@ -18,6 +58,146 @@
       }
     ],
     "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "1392873967",
+    "normalizedNumber": "1392873967",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "1549923392",
+    "normalizedNumber": "1549923392",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "1702260000",
+    "normalizedNumber": "1702260000",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Nuevo León Seguridad",
+    "sourceUrl": "https://www.nl.gob.mx/seguridad",
+    "sources": [
+      {
+        "source": "Nuevo León Seguridad",
+        "sourceUrl": "https://www.nl.gob.mx/seguridad",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "1778200116",
+    "normalizedNumber": "1778200116",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "1853339592",
+    "normalizedNumber": "1853339592",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "2222296900",
+    "normalizedNumber": "2222296900",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Puebla Seguridad",
+    "sourceUrl": "https://ss.puebla.gob.mx/",
+    "sources": [
+      {
+        "source": "Puebla Seguridad",
+        "sourceUrl": "https://ss.puebla.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "2225510600",
+    "normalizedNumber": "2225510600",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Puebla Seguridad",
+    "sourceUrl": "https://ss.puebla.gob.mx/",
+    "sources": [
+      {
+        "source": "Puebla Seguridad",
+        "sourceUrl": "https://ss.puebla.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
   },
   {
     "number": "2227853090",
@@ -58,6 +238,26 @@
       }
     ],
     "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "2287217182",
+    "normalizedNumber": "2287217182",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
   },
   {
     "number": "2292819184",
@@ -420,6 +620,26 @@
     "updatedAt": "2026-05-06"
   },
   {
+    "number": "4219423259",
+    "normalizedNumber": "4219423259",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Yucatán Seguridad",
+    "sourceUrl": "https://ssp.yucatan.gob.mx/",
+    "sources": [
+      {
+        "source": "Yucatán Seguridad",
+        "sourceUrl": "https://ssp.yucatan.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
     "number": "4422965836",
     "normalizedNumber": "4422965836",
     "country": "MX",
@@ -518,6 +738,26 @@
       }
     ],
     "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "4737351600",
+    "normalizedNumber": "4737351600",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
   },
   {
     "number": "4771138947",
@@ -718,6 +958,26 @@
       }
     ],
     "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5506606150",
+    "normalizedNumber": "5506606150",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Yucatán Seguridad",
+    "sourceUrl": "https://ssp.yucatan.gob.mx/",
+    "sources": [
+      {
+        "source": "Yucatán Seguridad",
+        "sourceUrl": "https://ssp.yucatan.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
   },
   {
     "number": "5512041190",
@@ -1720,6 +1980,26 @@
     "updatedAt": "2026-05-07"
   },
   {
+    "number": "5594356657",
+    "normalizedNumber": "5594356657",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
     "number": "5594484757",
     "normalizedNumber": "5594484757",
     "country": "MX",
@@ -1738,6 +2018,46 @@
       }
     ],
     "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "5596023256",
+    "normalizedNumber": "5596023256",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "5596023428",
+    "normalizedNumber": "5596023428",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
   },
   {
     "number": "5596616167",
@@ -1940,6 +2260,286 @@
     "updatedAt": "2026-05-06"
   },
   {
+    "number": "5831641286",
+    "normalizedNumber": "5831641286",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Nuevo León Seguridad",
+    "sourceUrl": "https://www.nl.gob.mx/seguridad",
+    "sources": [
+      {
+        "source": "Nuevo León Seguridad",
+        "sourceUrl": "https://www.nl.gob.mx/seguridad",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6228457210",
+    "normalizedNumber": "6228457210",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6228459713",
+    "normalizedNumber": "6228459713",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6228464479",
+    "normalizedNumber": "6228464479",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6293897091",
+    "normalizedNumber": "6293897091",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6321749318",
+    "normalizedNumber": "6321749318",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6373424496",
+    "normalizedNumber": "6373424496",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6486787175",
+    "normalizedNumber": "6486787175",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6486787859",
+    "normalizedNumber": "6486787859",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6486791895",
+    "normalizedNumber": "6486791895",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6486792180",
+    "normalizedNumber": "6486792180",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6486793292",
+    "normalizedNumber": "6486793292",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6506643657",
+    "normalizedNumber": "6506643657",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6551562351",
+    "normalizedNumber": "6551562351",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
     "number": "6561650100",
     "normalizedNumber": "6561650100",
     "country": "MX",
@@ -1998,6 +2598,26 @@
       }
     ],
     "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "6657821338",
+    "normalizedNumber": "6657821338",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
   },
   {
     "number": "6672600290",
@@ -2080,6 +2700,106 @@
     "updatedAt": "2026-05-06"
   },
   {
+    "number": "6765116223",
+    "normalizedNumber": "6765116223",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6769084222",
+    "normalizedNumber": "6769084222",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6769084529",
+    "normalizedNumber": "6769084529",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6769084826",
+    "normalizedNumber": "6769084826",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "6769116333",
+    "normalizedNumber": "6769116333",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
     "number": "6923550809",
     "normalizedNumber": "6923550809",
     "country": "MX",
@@ -2098,6 +2818,26 @@
       }
     ],
     "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "7188971042",
+    "normalizedNumber": "7188971042",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
   },
   {
     "number": "7222398789",
@@ -2140,6 +2880,26 @@
     "updatedAt": "2026-05-06"
   },
   {
+    "number": "7242676712",
+    "normalizedNumber": "7242676712",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Nuevo León Seguridad",
+    "sourceUrl": "https://www.nl.gob.mx/seguridad",
+    "sources": [
+      {
+        "source": "Nuevo León Seguridad",
+        "sourceUrl": "https://www.nl.gob.mx/seguridad",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
     "number": "7421123209",
     "normalizedNumber": "7421123209",
     "country": "MX",
@@ -2158,6 +2918,26 @@
       }
     ],
     "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "7639410238",
+    "normalizedNumber": "7639410238",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
   },
   {
     "number": "7715231245",
@@ -2258,6 +3038,26 @@
       }
     ],
     "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "7782001155",
+    "normalizedNumber": "7782001155",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Puebla Seguridad",
+    "sourceUrl": "https://ss.puebla.gob.mx/",
+    "sources": [
+      {
+        "source": "Puebla Seguridad",
+        "sourceUrl": "https://ss.puebla.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
   },
   {
     "number": "8001232222",
@@ -2440,6 +3240,26 @@
     "updatedAt": "2026-05-06"
   },
   {
+    "number": "8120203600",
+    "normalizedNumber": "8120203600",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Nuevo León Seguridad",
+    "sourceUrl": "https://www.nl.gob.mx/seguridad",
+    "sources": [
+      {
+        "source": "Nuevo León Seguridad",
+        "sourceUrl": "https://www.nl.gob.mx/seguridad",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
     "number": "8122620492",
     "normalizedNumber": "8122620492",
     "country": "MX",
@@ -2500,6 +3320,26 @@
     "updatedAt": "2026-05-06"
   },
   {
+    "number": "8163860246",
+    "normalizedNumber": "8163860246",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "sources": [
+      {
+        "source": "Guanajuato Seguridad",
+        "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
     "number": "8185262049",
     "normalizedNumber": "8185262049",
     "country": "MX",
@@ -2518,6 +3358,26 @@
       }
     ],
     "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "8185262938",
+    "normalizedNumber": "8185262938",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "TelefonoSpam MX Top",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "sources": [
+      {
+        "source": "TelefonoSpam MX Top",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "type": "community_report",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
   },
   {
     "number": "8345241364",
@@ -2620,6 +3480,26 @@
     "updatedAt": "2026-05-06"
   },
   {
+    "number": "9141933978",
+    "normalizedNumber": "9141933978",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Nuevo León Seguridad",
+    "sourceUrl": "https://www.nl.gob.mx/seguridad",
+    "sources": [
+      {
+        "source": "Nuevo León Seguridad",
+        "sourceUrl": "https://www.nl.gob.mx/seguridad",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
+  },
+  {
     "number": "9276609476",
     "normalizedNumber": "9276609476",
     "country": "MX",
@@ -2678,6 +3558,26 @@
       }
     ],
     "updatedAt": "2026-05-06"
+  },
+  {
+    "number": "9836467393",
+    "normalizedNumber": "9836467393",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Nuevo León Seguridad",
+    "sourceUrl": "https://www.nl.gob.mx/seguridad",
+    "sources": [
+      {
+        "source": "Nuevo León Seguridad",
+        "sourceUrl": "https://www.nl.gob.mx/seguridad",
+        "type": "official_state_announcement",
+        "confidence": "low"
+      }
+    ],
+    "updatedAt": "2026-05-08"
   },
   {
     "number": "9993500598",

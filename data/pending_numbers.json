@@ -510,11 +510,18 @@
         "type": "community_report",
         "confidence": 0.35,
         "contextSnippet": "><br />\n\n<div class=\"cat\">Top Spam</div>\n<div id=\"secciones\"><a id=\"tel\" href=\"/6672600290\" title=\"Telefono 6672600290\">6672600290</a> (462)<br /><a id=\"tel\" href=\"/66728"
+      },
+      {
+        "name": "TelefonoSpam MX",
+        "url": "https://www.telefonospam.com.mx/",
+        "type": "community_report",
+        "confidence": 0.4,
+        "contextSnippet": "><br />\n\n<div class=\"cat\">Top Spam</div>\n<div id=\"secciones\"><a id=\"tel\" href=\"/6672600290\" title=\"Telefono 6672600290\">6672600290</a> (462)<br /><a id=\"tel\" href=\"/66728"
       }
     ],
-    "evidenceCount": 2,
-    "confidence": 0.55,
-    "updatedAt": "2026-05-07T14:57:29.633Z"
+    "evidenceCount": 3,
+    "confidence": 0.65,
+    "updatedAt": "2026-05-08T00:30:02.355Z"
   },
   {
     "number": "+528715669317",
