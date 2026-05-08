@@ -1,10 +1,10 @@
 {
-  "importedAt": "2026-05-08T07:07:36.965Z",
-  "csvRows": 121,
-  "validRows": 121,
+  "importedAt": "2026-05-08T08:12:35.995Z",
+  "csvRows": 425,
+  "validRows": 425,
   "pendingBefore": 127,
-  "pendingAfter": 127,
-  "addedToPending": 0,
+  "pendingAfter": 431,
+  "addedToPending": 304,
   "updatedExistingPending": 121,
   "skippedRows": 0,
   "skippedReasonsSummary": {}

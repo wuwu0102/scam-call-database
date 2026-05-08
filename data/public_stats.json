@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-08T03:11:26.043Z",
-  "nextUpdateAt": "2026-05-13T03:11:26.043Z",
-  "totalSearchableCount": 1228,
-  "collectedCount": 1228,
+  "generatedAt": "2026-05-08T08:11:26.874Z",
+  "nextUpdateAt": "2026-05-13T08:11:26.874Z",
+  "totalSearchableCount": 1232,
+  "collectedCount": 1232,
   "sourceCount": 26,
   "sourceSuccessCount": 1,
-  "sourceFailedCount": 13,
+  "sourceFailedCount": 12,
   "lastCollectorStatus": "partial"
 }

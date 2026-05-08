@@ -806,6 +806,19 @@
     "updatedAt": "2026-05-08"
   },
   {
+    "number": "1685371817",
+    "normalizedNumber": "1685371817",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Nuevo León Seguridad",
+    "sourceUrl": "https://www.nl.gob.mx/seguridad",
+    "note": "Número reportado en fuente pública comunitaria. No confirmado oficialmente.",
+    "updatedAt": "2026-05-08"
+  },
+  {
     "number": "1687393518",
     "normalizedNumber": "1687393518",
     "country": "MX",
@@ -938,6 +951,19 @@
   {
     "number": "1778209819",
     "normalizedNumber": "1778209819",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Guanajuato Seguridad",
+    "sourceUrl": "https://seguridad.guanajuato.gob.mx/",
+    "note": "Número reportado en fuente pública comunitaria. No confirmado oficialmente.",
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "1778227818",
+    "normalizedNumber": "1778227818",
     "country": "MX",
     "tag": "suspicious",
     "label": "Número sospechoso",
@@ -14391,6 +14417,19 @@
     "updatedAt": "2026-05-08"
   },
   {
+    "number": "7782278169",
+    "normalizedNumber": "7782278169",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Puebla Seguridad",
+    "sourceUrl": "https://ss.puebla.gob.mx/",
+    "note": "Número reportado en fuente pública comunitaria. No confirmado oficialmente.",
+    "updatedAt": "2026-05-08"
+  },
+  {
     "number": "7905272793",
     "normalizedNumber": "7905272793",
     "country": "MX",
@@ -15701,6 +15740,19 @@
     "source": "El Universal",
     "sourceUrl": "https://www.eluniversal.com.mx/",
     "note": "",
+    "updatedAt": "2026-05-08"
+  },
+  {
+    "number": "9369444103",
+    "normalizedNumber": "9369444103",
+    "country": "MX",
+    "tag": "suspicious",
+    "label": "Número sospechoso",
+    "type": "crowd",
+    "confidence": "low",
+    "source": "Nuevo León Seguridad",
+    "sourceUrl": "https://www.nl.gob.mx/seguridad",
+    "note": "Número reportado en fuente pública comunitaria. No confirmado oficialmente.",
     "updatedAt": "2026-05-08"
   },
   {
