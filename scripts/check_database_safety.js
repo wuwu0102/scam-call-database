@@ -7,6 +7,8 @@ const SCAM_PATH = path.join(ROOT, 'scam_numbers.json');
 const PENDING_PATH = path.join(ROOT, 'data', 'pending_numbers.json');
 const REPORT_PATH = path.join(ROOT, 'data', 'scrape_report.json');
 const CATALOG_PATH = path.join(ROOT, 'data', 'source_catalog_mexico.json');
+
+const PUBLIC_STATS_PATH = path.join(ROOT, 'data', 'public_stats.json');
 const BANNED_SHORT = new Set(['911', '089', '088', '070', '072']);
 
 function readJson(file, required = true) {
@@ -45,3 +47,13 @@ if (catalog) {
 }
 
 console.log('Database safety check OK');
+
+const stats = readJson(PUBLIC_STATS_PATH, false);
+if (stats) {
+  if (typeof stats !== 'object' || Array.isArray(stats)) throw new Error('public_stats.json must be object');
+  const officialUnique = seen.size;
+  if (Number(stats.officialSuspiciousCount) !== officialUnique) throw new Error('officialSuspiciousCount mismatch');
+  if (Number(stats.monitoredSignalsCount) < Number(stats.officialSuspiciousCount)) throw new Error('monitoredSignalsCount cannot be lower than officialSuspiciousCount');
+  if (Number(stats.communitySignalCount) < 0) throw new Error('communitySignalCount cannot be negative');
+  if (!stats.categoryBreakdown || typeof stats.categoryBreakdown !== 'object' || Array.isArray(stats.categoryBreakdown)) throw new Error('categoryBreakdown must be object');
+}

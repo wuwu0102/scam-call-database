@@ -1,10 +1,19 @@
 {
-  "generatedAt": "2026-05-08T08:11:26.874Z",
-  "nextUpdateAt": "2026-05-13T08:11:26.874Z",
-  "totalSearchableCount": 1232,
-  "collectedCount": 1232,
-  "sourceCount": 26,
-  "sourceSuccessCount": 1,
-  "sourceFailedCount": 12,
-  "lastCollectorStatus": "partial"
+  "generatedAt": "2026-05-08T09:05:32.153Z",
+  "officialSuspiciousCount": 14,
+  "communitySignalCount": 431,
+  "monitoredSignalsCount": 445,
+  "displayMonitoredSignals": "445",
+  "categoryBreakdown": {
+    "scam": 0,
+    "fraud": 0,
+    "extortion": 0,
+    "spam": 850,
+    "telemarketing": 0,
+    "cobranza": 0,
+    "publicidad": 0,
+    "robocall": 0,
+    "unknown": 6
+  },
+  "lastUpdated": "2026-05-08T09:05:32.154Z"
 }
