@@ -351,6 +351,7 @@
     <div id="stats-card">
       <div id="registered-count">Señales monitoreadas: cargando...</div>
       <div id="next-update">Próxima actualización: cargando...</div>
+      <div id="high-confidence-count"></div>
     </div>
     <div id="sourceNotice">
       Incluye reportes comunitarios, spam, telemarketing y señales públicas en revisión.
@@ -662,6 +663,7 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
     async function loadStats() {
       const countEl = document.getElementById("registered-count");
       const nextEl = document.getElementById("next-update");
+      const highConfidenceEl = document.getElementById("high-confidence-count");
 
       let count = 0;
       let officialCount = 0;
@@ -669,7 +671,7 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
 
       // ✅ 1. 嘗試抓 public_stats
       try {
-        const res = await fetch("./data/public_stats.json");
+        const res = await fetch(`./data/public_stats.json?v=${Date.now()}`, { cache: "no-store" });
         if (res.ok) {
           const data = await res.json();
           count = Number(data.monitoredSignalsCount || data.totalSearchableCount || data.iosExportCount || 0);
@@ -689,7 +691,7 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       // ✅ 2. fallback → collected
       if (count === 0) {
         try {
-          const res = await fetch("./data/ios_numbers.json");
+          const res = await fetch("./data/ios_numbers.json", { cache: "no-store" });
           if (res.ok) {
             const data = await res.json();
             count = data.length || 0;
@@ -702,7 +704,7 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       // ✅ 3. fallback → ios_numbers
       if (count === 0) {
         try {
-          const res = await fetch("./data/collected_mexico_numbers.json");
+          const res = await fetch("./data/collected_mexico_numbers.json", { cache: "no-store" });
           if (res.ok) {
             const data = await res.json();
             count = data.length || 0;
@@ -715,7 +717,7 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       // ✅ 4. fallback → seed
       if (count === 0) {
         try {
-          const res = await fetch("./data/mexico_seed_phone_numbers.json");
+          const res = await fetch("./data/mexico_seed_phone_numbers.json", { cache: "no-store" });
           if (res.ok) {
             const data = await res.json();
             count = data.length || 0;
@@ -727,8 +729,9 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
 
       // ✅ 最終一定顯示
       countEl.innerText = `Señales monitoreadas: ${displayCount}`;
-      if (officialCount > 0) {
-        nextEl.innerText = `Números sospechosos de alta confianza: ${officialCount}`;
+      if (highConfidenceEl) {
+        highConfidenceEl.innerText =
+          officialCount > 0 ? `Números sospechosos de alta confianza: ${officialCount}` : "";
       }
 
       if (!nextEl.innerText.includes("Próxima")) {
