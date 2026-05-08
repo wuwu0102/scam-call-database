@@ -1,78 +1,78 @@
 [
   {
-    "number": "+523312539047",
+    "number": "+522289803991",
     "label": "suspicious",
     "country": "MX",
-    "sourceType": "official_state_announcement",
-    "sourceName": "Zacatecas SSP",
-    "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
-    "confidence": 0.8,
-    "status": "auto_approved_public_official",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "Veracruz",
+    "confidence": 0.4,
+    "status": "pending_review",
     "evidenceCount": 1,
-    "skipReason": "",
     "sources": [
       {
-        "sourceName": "Zacatecas SSP",
-        "sourceType": "official_state_announcement",
-        "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
-        "confidence": 0.8,
-        "mode": "seed_csv_import",
-        "collectedAt": "2026-05-06T10:35:26.375Z"
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
       }
     ],
-    "firstSeenAt": "2026-05-05T03:05:55.115Z",
-    "updatedAt": "2026-05-06T10:35:26.376Z",
-    "note": "Public official alert mentions this number as used for extortion or fraud calls"
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
   },
   {
-    "number": "+524428310794",
+    "number": "+523316709194",
     "label": "suspicious",
     "country": "MX",
-    "sourceType": "official_state_announcement",
-    "sourceName": "Zacatecas SSP",
-    "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar/",
-    "confidence": 0.8,
-    "status": "auto_approved_public_official",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "Jalisco",
+    "confidence": 0.4,
+    "status": "pending_review",
     "evidenceCount": 1,
-    "skipReason": "",
     "sources": [
       {
-        "sourceName": "Zacatecas SSP",
-        "sourceType": "official_state_announcement",
-        "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar/",
-        "confidence": 0.8,
-        "mode": "seed_csv_import",
-        "collectedAt": "2026-05-06T10:35:26.375Z"
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
       }
     ],
-    "firstSeenAt": "2026-05-06T10:35:26.375Z",
-    "updatedAt": "2026-05-06T10:35:26.375Z",
-    "note": "Official public alert says this number was used for extortion calls"
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
   },
   {
-    "number": "+524435864182",
+    "number": "+523316769120",
     "label": "suspicious",
     "country": "MX",
-    "sourceType": "official_state_announcement",
-    "sourceName": "Zacatecas SSP",
-    "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar-2/",
-    "confidence": 0.8,
-    "status": "auto_approved_public_official",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "Jalisco",
+    "confidence": 0.45,
+    "status": "pending_review",
     "evidenceCount": 1,
-    "skipReason": "",
     "sources": [
       {
-        "sourceName": "Zacatecas SSP",
-        "sourceType": "official_state_announcement",
-        "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar-2/",
-        "confidence": 0.8,
-        "mode": "seed_csv_import",
-        "collectedAt": "2026-05-06T10:35:26.375Z"
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.45,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
       }
     ],
-    "firstSeenAt": "2026-05-06T10:35:26.375Z",
-    "updatedAt": "2026-05-06T10:35:26.375Z",
-    "note": "Official public alert says this number was used for extortion calls"
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community top spam report"
   },
   {
     "number": "+524493496369",
@@ -100,154 +100,104 @@
     "note": "riskContextScore=1"
   },
   {
-    "number": "+524922086564",
+    "number": "+524771138947",
     "label": "suspicious",
     "country": "MX",
-    "sourceType": "official_state_announcement",
-    "sourceName": "Zacatecas SSP",
-    "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
-    "confidence": 0.8,
-    "status": "auto_approved_public_official",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "Guanajuato",
+    "confidence": 0.4,
+    "status": "pending_review",
     "evidenceCount": 1,
-    "skipReason": "",
     "sources": [
       {
-        "sourceName": "Zacatecas SSP",
-        "sourceType": "official_state_announcement",
-        "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
-        "confidence": 0.8,
-        "mode": "seed_csv_import",
-        "collectedAt": "2026-05-06T10:35:26.375Z"
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
       }
     ],
-    "firstSeenAt": "2026-05-05T03:05:55.115Z",
-    "updatedAt": "2026-05-06T10:35:26.376Z",
-    "note": "Public official alert mentions this number as used for extortion or fraud calls"
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
   },
   {
-    "number": "+524922090430",
+    "number": "+524771138967",
     "label": "suspicious",
     "country": "MX",
-    "sourceType": "official_state_announcement",
-    "sourceName": "Zacatecas SSP",
-    "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
-    "confidence": 0.8,
-    "status": "auto_approved_public_official",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "Guanajuato",
+    "confidence": 0.4,
+    "status": "pending_review",
     "evidenceCount": 1,
-    "skipReason": "",
     "sources": [
       {
-        "sourceName": "Zacatecas SSP",
-        "sourceType": "official_state_announcement",
-        "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
-        "confidence": 0.8,
-        "mode": "seed_csv_import",
-        "collectedAt": "2026-05-06T10:35:26.375Z"
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
       }
     ],
-    "firstSeenAt": "2026-05-05T03:05:55.115Z",
-    "updatedAt": "2026-05-06T10:35:26.376Z",
-    "note": "Public official alert mentions this number as used for extortion or fraud calls"
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
   },
   {
-    "number": "+524922090510",
+    "number": "+524771805499",
     "label": "suspicious",
     "country": "MX",
-    "sourceType": "official_state_announcement",
-    "sourceName": "Zacatecas SSP",
-    "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
-    "confidence": 0.8,
-    "status": "auto_approved_public_official",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "Guanajuato",
+    "confidence": 0.4,
+    "status": "pending_review",
     "evidenceCount": 1,
-    "skipReason": "",
     "sources": [
       {
-        "sourceName": "Zacatecas SSP",
-        "sourceType": "official_state_announcement",
-        "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-numeros-telefonicos-utilizados-para-extorsionar/",
-        "confidence": 0.8,
-        "mode": "seed_csv_import",
-        "collectedAt": "2026-05-06T10:35:26.375Z"
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
       }
     ],
-    "firstSeenAt": "2026-05-05T03:05:55.115Z",
-    "updatedAt": "2026-05-06T10:35:26.376Z",
-    "note": "Public official alert mentions this number as used for extortion or fraud calls"
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
   },
   {
-    "number": "+524923144250",
+    "number": "+524881590983",
     "label": "suspicious",
     "country": "MX",
-    "sourceType": "official_state_announcement",
-    "sourceName": "Zacatecas SSP",
-    "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar-2/",
-    "confidence": 0.8,
-    "status": "auto_approved_public_official",
+    "sourceType": "community_report",
+    "sourceName": "Tellows MX",
+    "sourceUrl": "https://www.tellows.mx/",
+    "region": "San Luis Potosí",
+    "confidence": 0.35,
+    "status": "pending_review",
     "evidenceCount": 1,
-    "skipReason": "",
     "sources": [
       {
-        "sourceName": "Zacatecas SSP",
-        "sourceType": "official_state_announcement",
-        "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar-2/",
-        "confidence": 0.8,
-        "mode": "seed_csv_import",
-        "collectedAt": "2026-05-06T10:35:26.375Z"
+        "sourceName": "Tellows MX",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.tellows.mx/",
+        "confidence": 0.35,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
       }
     ],
-    "firstSeenAt": "2026-05-06T10:35:26.375Z",
-    "updatedAt": "2026-05-06T10:35:26.375Z",
-    "note": "Official public alert says this number was used for extortion calls"
-  },
-  {
-    "number": "+524931064836",
-    "label": "suspicious",
-    "country": "MX",
-    "sourceType": "official_state_announcement",
-    "sourceName": "Zacatecas SESESP",
-    "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-sesesp-sobre-linea-telefonica-utilizada-para-extorsionar/",
-    "confidence": 0.8,
-    "status": "auto_approved_public_official",
-    "evidenceCount": 1,
-    "skipReason": "",
-    "sources": [
-      {
-        "sourceName": "Zacatecas SESESP",
-        "sourceType": "official_state_announcement",
-        "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-sesesp-sobre-linea-telefonica-utilizada-para-extorsionar/",
-        "confidence": 0.8,
-        "mode": "seed_csv_import",
-        "collectedAt": "2026-05-06T10:35:26.375Z"
-      }
-    ],
-    "firstSeenAt": "2026-05-06T10:35:26.375Z",
-    "updatedAt": "2026-05-06T10:35:26.375Z",
-    "note": "Official public alert says this number was used to extort"
-  },
-  {
-    "number": "+524931145779",
-    "label": "suspicious",
-    "country": "MX",
-    "sourceType": "official_state_announcement",
-    "sourceName": "Zacatecas SSP",
-    "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar/",
-    "confidence": 0.8,
-    "status": "auto_approved_public_official",
-    "evidenceCount": 1,
-    "skipReason": "",
-    "sources": [
-      {
-        "sourceName": "Zacatecas SSP",
-        "sourceType": "official_state_announcement",
-        "sourceUrl": "https://ssp.zacatecas.gob.mx/alerta-ssp-sobre-lineas-telefonicas-utilizadas-para-extorsionar/",
-        "confidence": 0.8,
-        "mode": "seed_csv_import",
-        "collectedAt": "2026-05-06T10:35:26.375Z"
-      }
-    ],
-    "firstSeenAt": "2026-05-06T10:35:26.375Z",
-    "updatedAt": "2026-05-06T10:35:26.375Z",
-    "note": "Official public alert says this number was used for extortion calls"
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community report classified as SMS spam/unwanted"
   },
   {
     "number": "+525512345678",
@@ -343,104 +293,604 @@
     "skipReason": ""
   },
   {
-    "number": "+525525772233",
+    "number": "+525512516089",
     "label": "suspicious",
     "country": "MX",
-    "sourceType": "official_state_announcement",
-    "sourceName": "Zacatecas SSP",
-    "sourceUrl": "https://ssp.zacatecas.gob.mx/detecta-ssp-modalidad-de-extorsion-telefonica-7/",
-    "confidence": 0.8,
-    "status": "auto_approved_public_official",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
     "evidenceCount": 1,
-    "skipReason": "",
     "sources": [
       {
-        "sourceName": "Zacatecas SSP",
-        "sourceType": "official_state_announcement",
-        "sourceUrl": "https://ssp.zacatecas.gob.mx/detecta-ssp-modalidad-de-extorsion-telefonica-7/",
-        "confidence": 0.8,
-        "mode": "seed_csv_import",
-        "collectedAt": "2026-05-06T10:35:26.375Z"
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
       }
     ],
-    "firstSeenAt": "2026-05-05T03:05:55.115Z",
-    "updatedAt": "2026-05-06T10:35:26.376Z",
-    "note": "Public official alert mentions this number as used for extortion calls"
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
   },
   {
-    "number": "+525545087588",
+    "number": "+525512550001",
     "label": "suspicious",
     "country": "MX",
-    "sourceType": "official_state_announcement",
-    "sourceName": "Zacatecas SSP",
-    "sourceUrl": "https://ssp.zacatecas.gob.mx/detecta-ssp-modalidad-de-extorsion-telefonica-7/",
-    "confidence": 0.8,
-    "status": "auto_approved_public_official",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.45,
+    "status": "pending_review",
     "evidenceCount": 1,
-    "skipReason": "",
     "sources": [
       {
-        "sourceName": "Zacatecas SSP",
-        "sourceType": "official_state_announcement",
-        "sourceUrl": "https://ssp.zacatecas.gob.mx/detecta-ssp-modalidad-de-extorsion-telefonica-7/",
-        "confidence": 0.8,
-        "mode": "seed_csv_import",
-        "collectedAt": "2026-05-06T10:35:26.375Z"
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.45,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
       }
     ],
-    "firstSeenAt": "2026-05-05T03:05:55.115Z",
-    "updatedAt": "2026-05-06T10:35:26.376Z",
-    "note": "Public official alert mentions this number as used for extortion calls"
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community top spam report"
   },
   {
-    "number": "+525556279456",
+    "number": "+525512550023",
     "label": "suspicious",
     "country": "MX",
-    "sourceType": "official_state_announcement",
-    "sourceName": "Zacatecas SSP",
-    "sourceUrl": "https://ssp.zacatecas.gob.mx/detecta-ssp-modalidad-de-extorsion-telefonica-7/",
-    "confidence": 0.8,
-    "status": "auto_approved_public_official",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
     "evidenceCount": 1,
-    "skipReason": "",
     "sources": [
       {
-        "sourceName": "Zacatecas SSP",
-        "sourceType": "official_state_announcement",
-        "sourceUrl": "https://ssp.zacatecas.gob.mx/detecta-ssp-modalidad-de-extorsion-telefonica-7/",
-        "confidence": 0.8,
-        "mode": "seed_csv_import",
-        "collectedAt": "2026-05-06T10:35:26.375Z"
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
       }
     ],
-    "firstSeenAt": "2026-05-05T03:05:55.115Z",
-    "updatedAt": "2026-05-06T10:35:26.376Z",
-    "note": "Public official alert mentions this number as used for extortion calls"
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
   },
   {
-    "number": "+525595912413",
+    "number": "+525525928670",
     "label": "suspicious",
     "country": "MX",
-    "sourceType": "official_federal",
-    "sourceName": "SAT Números telefónicos falsos",
-    "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-    "confidence": 0.9,
-    "status": "pending_review_high_confidence",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
     "evidenceCount": 1,
-    "skipReason": "",
     "sources": [
       {
-        "sourceName": "SAT Números telefónicos falsos",
-        "sourceType": "official_federal",
-        "sourceUrl": "https://www.gob.mx/sat/acciones-y-programas/numeros-telefonicos-falsos",
-        "confidence": 0.9,
-        "mode": "list_scrape",
-        "collectedAt": "2026-05-06T10:35:09.730Z"
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
       }
     ],
-    "firstSeenAt": "2026-05-06T10:35:09.730Z",
-    "updatedAt": "2026-05-06T10:35:09.730Z",
-    "note": "riskContextScore=3"
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+525526364514",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+525541237197",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+525541237206",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+525544380400",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+525544439997",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.45,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.45,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community top spam report"
+  },
+  {
+    "number": "+525547440669",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+525548247497",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+525548508827",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+525566358916",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+525566361500",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.45,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.45,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community top spam report"
+  },
+  {
+    "number": "+525575059547",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+525588759950",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+525590884745",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+525592662759",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+525594484643",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+525594484757",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+525596924991",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+525597200043",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "CDMX",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+525599864898",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "Tellows MX",
+    "sourceUrl": "https://www.tellows.mx/",
+    "region": "CDMX",
+    "confidence": 0.35,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "Tellows MX",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.tellows.mx/",
+        "confidence": 0.35,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community report classified as aggressive advertising/unwanted"
+  },
+  {
+    "number": "+525619948830",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "Estado de México",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
   },
   {
     "number": "+526052026043",
@@ -493,59 +943,235 @@
     "note": "riskContextScore=1"
   },
   {
+    "number": "+526561650100",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "Chihuahua",
+    "confidence": 0.45,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.45,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community top spam report"
+  },
+  {
     "number": "+526672600290",
     "country": "MX",
     "label": "suspicious",
     "sources": [
-      {
-        "name": "TelefonoSpam MX Top Spam",
-        "url": "https://www.telefonospam.com.mx/top-spam",
-        "type": "community_report",
-        "confidence": 0.45,
-        "contextSnippet": "><br />\n\n<div class=\"cat\">Top Spam</div>\n<div id=\"secciones\"><a id=\"tel\" href=\"/6672600290\" title=\"Telefono 6672600290\">6672600290</a> (462)<br /><a id=\"tel\" href=\"/66728"
-      },
-      {
-        "name": "TelefonoSpam MX Ultimos Buscados",
-        "url": "https://www.telefonospam.com.mx/ultimos-buscados",
-        "type": "community_report",
-        "confidence": 0.35,
-        "contextSnippet": "><br />\n\n<div class=\"cat\">Top Spam</div>\n<div id=\"secciones\"><a id=\"tel\" href=\"/6672600290\" title=\"Telefono 6672600290\">6672600290</a> (462)<br /><a id=\"tel\" href=\"/66728"
-      },
       {
         "name": "TelefonoSpam MX",
         "url": "https://www.telefonospam.com.mx/",
         "type": "community_report",
         "confidence": 0.4,
         "contextSnippet": "><br />\n\n<div class=\"cat\">Top Spam</div>\n<div id=\"secciones\"><a id=\"tel\" href=\"/6672600290\" title=\"Telefono 6672600290\">6672600290</a> (462)<br /><a id=\"tel\" href=\"/66728"
+      },
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.45,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
       }
     ],
-    "evidenceCount": 3,
-    "confidence": 0.65,
-    "updatedAt": "2026-05-08T00:30:02.355Z"
+    "evidenceCount": 2,
+    "confidence": 0.75,
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "Sinaloa",
+    "status": "pending_review",
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community top spam report"
   },
   {
-    "number": "+528715669317",
+    "number": "+526672809300",
     "label": "suspicious",
     "country": "MX",
-    "sourceType": "official_state_announcement",
-    "sourceName": "Zacatecas SSP",
-    "sourceUrl": "https://ssp.zacatecas.gob.mx/detecta-ssp-modalidad-de-extorsion-telefonica-7/",
-    "confidence": 0.8,
-    "status": "auto_approved_public_official",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "Sinaloa",
+    "confidence": 0.45,
+    "status": "pending_review",
     "evidenceCount": 1,
-    "skipReason": "",
     "sources": [
       {
-        "sourceName": "Zacatecas SSP",
-        "sourceType": "official_state_announcement",
-        "sourceUrl": "https://ssp.zacatecas.gob.mx/detecta-ssp-modalidad-de-extorsion-telefonica-7/",
-        "confidence": 0.8,
-        "mode": "seed_csv_import",
-        "collectedAt": "2026-05-06T10:35:26.375Z"
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.45,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
       }
     ],
-    "firstSeenAt": "2026-05-05T03:05:55.115Z",
-    "updatedAt": "2026-05-06T10:35:26.376Z",
-    "note": "Public official alert mentions this number as used for extortion calls"
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community top spam report"
+  },
+  {
+    "number": "+527714957628",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "Hidalgo",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+528110019990",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "Nuevo León",
+    "confidence": 0.45,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.45,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community top spam report"
+  },
+  {
+    "number": "+528133890018",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "Nuevo León",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+528441785884",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "Tellows MX",
+    "sourceUrl": "https://www.tellows.mx/",
+    "region": "Coahuila",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "Tellows MX",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.tellows.mx/",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community report classified as scam/unwanted"
+  },
+  {
+    "number": "+528442502408",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "Coahuila",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
+  },
+  {
+    "number": "+528714425305",
+    "label": "suspicious",
+    "country": "MX",
+    "sourceType": "community_report",
+    "sourceName": "TelefonoSpam MX Top Spam",
+    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+    "region": "Coahuila",
+    "confidence": 0.4,
+    "status": "pending_review",
+    "evidenceCount": 1,
+    "sources": [
+      {
+        "sourceName": "TelefonoSpam MX Top Spam",
+        "sourceType": "community_report",
+        "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
+        "confidence": 0.4,
+        "mode": "community_bulk_csv_import",
+        "collectedAt": "2026-05-08T01:35:36.320Z"
+      }
+    ],
+    "firstSeenAt": "2026-05-08T01:35:36.320Z",
+    "updatedAt": "2026-05-08T01:35:36.320Z",
+    "note": "Community searched/reported number"
   }
 ]

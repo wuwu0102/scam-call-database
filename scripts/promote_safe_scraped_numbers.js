@@ -12,7 +12,7 @@ function validate(a){if(!Array.isArray(a))throw new Error('not array');const s=n
 const pending=fs.existsSync(PENDING)?JSON.parse(fs.readFileSync(PENDING,'utf8')):[];
 const official=JSON.parse(fs.readFileSync(SCAM,'utf8')); validate(official); const before=official.length;
 const by=new Map(official.map(x=>[x.number,x])); const keep=[]; let promoted=0;
-for(const p of pending){ if (promoted>=300){ keep.push(p); continue; }const types=new Set((p.sources||[]).map(s=>s.type)); const conf=Number(p.confidence)||0; const ev=Number(p.evidenceCount)||0;
+for(const p of pending){ if (promoted>=300){ keep.push(p); continue; }const types=new Set([p.sourceType,...(p.sources||[]).map(s=>s.type||s.sourceType)].filter(Boolean)); const conf=Number(p.confidence)||0; const ev=Number(p.evidenceCount)||0;
 const okOfficial=(types.has('official_state_announcement')||types.has('official_federal'))&&conf>=0.8;
 const okCommunity=types.has('community_report')&&ev>=3&&conf>=0.75;
 if(okOfficial||okCommunity){ if(!by.has(p.number)){by.set(p.number,{number:p.number,country:'MX',label:p.label||'suspicious',confidence:conf,sourceName:'scraped_pending_promoted',sourceUrl:'',updatedAt:new Date().toISOString()}); promoted++; }} else keep.push(p); }
