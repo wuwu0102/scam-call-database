@@ -58,6 +58,9 @@ function parseCsv(content) {
   }
   return lines.slice(1).map((line, idx) => {
     const cols = parseCsvLine(line);
+    if (cols.length !== 7) {
+      throw new Error(`Invalid CSV row format at line ${idx + 2}: expected 7 columns, got ${cols.length}`);
+    }
     const [number, label, sourceName, sourceUrl, region, note, confidence] = cols;
     return {
       row: idx + 2,
