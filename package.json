@@ -6,7 +6,8 @@
     "collect": "node scripts/collect_mexico_numbers.js",
     "merge": "node scripts/merge_seed_database.js",
     "auto-review": "node scripts/auto_review_user_reports.js",
-    "validate": "node scripts/validate_public_count.js && node scripts/validate_ios_export.js"
+    "validate": "node scripts/validate_public_count.js && node scripts/validate_ios_export.js",
+    "import-community-seed": "node scripts/import_community_seed_numbers.js"
   },
   "dependencies": {
     "firebase-admin": "^12.0.0"

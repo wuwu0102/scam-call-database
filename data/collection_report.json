@@ -5,9 +5,9 @@
   "totalAcceptedCandidates": 24,
   "totalSkippedCandidates": 557,
   "totalPendingNumbers": 21,
-  "previousOfficialCount": 1228,
-  "newOfficialCount": 1231,
-  "promotedThisRun": 3,
+  "previousOfficialCount": 3974,
+  "newOfficialCount": 3974,
+  "promotedThisRun": 0,
   "skippedReasonsSummary": {
     "normalization_failed": 267,
     "excluded_context:800": 5,
@@ -321,11 +321,32 @@
       "error": null
     }
   ],
-  "maxPromoteLimit": 800,
-  "previousIosCount": 793,
-  "newIosCount": 796,
+  "maxPromoteLimit": 5000,
+  "previousIosCount": 4129,
+  "newIosCount": 4129,
   "promotedSourceTypes": {
     "official_state_lookup": 2,
     "official_state_announcement": 1
-  }
+  },
+  "promotedTotal": 0,
+  "promotedOfficial": 0,
+  "promotedTrustedCommunity": 0,
+  "promotedMultiSource": 0,
+  "rejectedServiceNumbers": 1,
+  "rejectedMissingSource": 2,
+  "rejectedInvalidMX": 0,
+  "finalScamCount": 3974,
+  "finalIosCount": 4129,
+  "reached5000": false,
+  "promotedSourceNames": {},
+  "minimalDiffOk": true,
+  "dataRewriteRisk": "low",
+  "newCollectorSources": [
+    "Tellows MX",
+    "numerostelefono.com.mx",
+    "numerostelefono.com",
+    "ListaSpam MX",
+    "quien-llama MX"
+  ],
+  "newPendingFromSources": 0
 }
