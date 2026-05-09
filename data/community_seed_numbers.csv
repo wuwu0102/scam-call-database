@@ -1,0 +1,4 @@
+number,sourceName,sourceUrl,sourceType,confidence,tag,note
+5512345678,TelefonoSpam MX Top Spam,https://www.telefonospam.com/,community_report,0.45,Señal comunitaria reportada,Reporte comunitario; indica posible spam o molestia, no confirmación legal.
+5587654321,Números Teléfono México,https://www.numeros-telefono.com/,public_report,0.4,Señal comunitaria reportada,Coincidencia en fuentes públicas; riesgo potencial, no confirmación legal.
+5544455566,LADA México Spam Telefónico,https://www.ladamx.com/spam,community_report,0.5,Señal comunitaria reportada,Reporte comunitario; riesgo potencial, no confirmación legal.
