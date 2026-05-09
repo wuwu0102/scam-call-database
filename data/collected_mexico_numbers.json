@@ -351,19 +351,6 @@
     "updatedAt": "2026-05-08"
   },
   {
-    "number": "0720319737",
-    "normalizedNumber": "0720319737",
-    "country": "MX",
-    "tag": "suspicious",
-    "label": "Número sospechoso",
-    "type": "media",
-    "confidence": "medium",
-    "source": "El Universal",
-    "sourceUrl": "https://www.eluniversal.com.mx/",
-    "note": "",
-    "updatedAt": "2026-05-08"
-  },
-  {
     "number": "0733565093",
     "normalizedNumber": "0733565093",
     "country": "MX",
@@ -437,19 +424,6 @@
     "type": "media",
     "confidence": "0.7",
     "source": "existing",
-    "sourceUrl": "https://www.adn40.mx/",
-    "note": "",
-    "updatedAt": "2026-05-08"
-  },
-  {
-    "number": "0880609705",
-    "normalizedNumber": "0880609705",
-    "country": "MX",
-    "tag": "suspicious",
-    "label": "Número sospechoso",
-    "type": "media",
-    "confidence": "medium",
-    "source": "ADN40",
     "sourceUrl": "https://www.adn40.mx/",
     "note": "",
     "updatedAt": "2026-05-08"
@@ -14508,19 +14482,6 @@
     "updatedAt": "2026-05-08"
   },
   {
-    "number": "8001232222",
-    "normalizedNumber": "8001232222",
-    "country": "MX",
-    "tag": "suspicious",
-    "label": "Número sospechoso",
-    "type": "crowd",
-    "confidence": "low",
-    "source": "TelefonoSpam MX Top Spam",
-    "sourceUrl": "https://www.telefonospam.com.mx/top-spam",
-    "note": "Número reportado en fuente pública comunitaria. No confirmado oficialmente.",
-    "updatedAt": "2026-05-08"
-  },
-  {
     "number": "8056017702",
     "normalizedNumber": "8056017702",
     "country": "MX",
@@ -15635,19 +15596,6 @@
     "confidence": "0.7",
     "source": "existing",
     "sourceUrl": "https://www.eluniversal.com.mx/",
-    "note": "",
-    "updatedAt": "2026-05-08"
-  },
-  {
-    "number": "9111170185",
-    "normalizedNumber": "9111170185",
-    "country": "MX",
-    "tag": "suspicious",
-    "label": "Número sospechoso",
-    "type": "media",
-    "confidence": "medium",
-    "source": "ADN40",
-    "sourceUrl": "https://www.adn40.mx/",
     "note": "",
     "updatedAt": "2026-05-08"
   },
