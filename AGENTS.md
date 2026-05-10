@@ -21,6 +21,21 @@ The iOS app ScamCall MX is an optional advanced experience for iPhone users.
 9. If unsure, add comments and avoid destructive edits.
 10. All public user-facing copy should be Mexican Spanish unless explicitly requested otherwise.
 
+## Database Protection Rules
+
+1. For general UI, website, iOS, Android, and README changes, do not modify `data/`, `scripts/`, or `.github/workflows/`.
+2. You may modify `data/`, `scripts/`, or `.github/workflows/` only when the task explicitly states one of the following intents: "更新資料庫", "擴充資料庫", "修復資料庫 workflow", "修改資料來源", or "重新產生 iOS/Android 資料輸出".
+3. Database-modification PRs must not also change UI, website, iOS, or Android functionality.
+4. App/UI PRs must not also change database-related files.
+5. Before and after every change, run `git diff` and verify the change scope matches the task.
+6. If you are not sure whether database files can be changed, stop and report instead of editing.
+7. All changes must preserve existing production behavior.
+8. Website, iOS, and Android must remain compatible.
+9. Never break existing GitHub Pages deployment.
+10. Never break existing iOS caller ID export.
+11. Never break existing Android data read format.
+12. JSON output formats must remain backward compatible.
+
 ## Safety and Legal Wording
 
 Avoid definitive criminal or legal claims.
