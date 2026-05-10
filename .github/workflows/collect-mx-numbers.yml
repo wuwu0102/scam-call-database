@@ -24,7 +24,7 @@ jobs:
         run: |
           node scripts/collect_mexico_phone_sources.js --target=10000 --max-add=2000 --max-minutes=10
           npm run collect
-          node scripts/auto_promote_safe_numbers.js
+          # Skip auto_promote_safe_numbers.js in this workflow to avoid rewriting data/ios_numbers.json
           node scripts/check_database_safety.js
           node scripts/generate_public_stats.js --allow-low-count
           npm run validate
