@@ -1,0 +1,9 @@
+const { normalizeMexicoPhone } = require('./phone_normalizer');
+const { normalizeCategory } = require('./category_normalizer');
+const PHONE_REGEX=/(\+?52\s?\d{2,3}[\s-]?\d{3,4}[\s-]?\d{4}|\b\d{2}[\s-]\d{4}[\s-]\d{4}\b|\b\d{3}[\s-]\d{3}[\s-]\d{4}\b)/g;
+async function getHtml(url){const c=new AbortController();const t=setTimeout(()=>c.abort(),15000);try{const r=await fetch(url,{signal:c.signal,headers:{'user-agent':'Mozilla/5.0'}});return {ok:r.ok,status:r.status,html:await r.text()};}catch(e){return {ok:false,status:0,error:e.message,html:''};}finally{clearTimeout(t);}}
+function extract(html,source,url){const out=[];let m;while((m=PHONE_REGEX.exec(html))!==null){const raw=m[1];const number=normalizeMexicoPhone(raw);if(!number)continue;const i=m.index;const snippet=html.slice(Math.max(0,i-120),Math.min(html.length,i+raw.length+120)).replace(/\s+/g,' ');out.push({number,snippet,category:normalizeCategory(source.defaultCategory||'',snippet),sourceName:source.name,sourceUrl:url||source.url});}return out;}
+async function fetchGenericHtmlPhones(source){const r=await getHtml(source.url);if(!r.ok){console.warn(`[warn] ${source.name} ${r.status||r.error}`);return [];}return extract(r.html,source,source.url);}
+async function fetchQuienHablaLadaPages(source){const all=[];for(const url of (source.urls||[])){const r=await getHtml(url);if(!r.ok){console.warn(`[warn] quienhabla ${url} ${r.status||r.error}`);continue;}const start=r.html.indexOf('Números reportados');const html=start>=0?r.html.slice(start):r.html;all.push(...extract(html,source,url));}return all;}
+async function fetchListaSpamPages(source){const all=[];for(const url of (source.urls||[source.url])){const r=await getHtml(url);if(!r.ok){console.warn(`[warn] listaspam ${url} ${r.status||r.error}`);continue;}all.push(...extract(r.html,source,url));}return all;}
+module.exports={fetchGenericHtmlPhones,fetchQuienHablaLadaPages,fetchListaSpamPages,getHtml,extract};
