@@ -1,0 +1,57 @@
+name: Protect Database Files
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  enforce-split-prs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check mixed database and app/ui changes
+        run: |
+          set -euo pipefail
+
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+
+          CHANGED_FILES=$(git diff --name-only "$BASE_SHA" "$HEAD_SHA")
+
+          echo "Changed files:"
+          echo "$CHANGED_FILES"
+
+          if echo "$CHANGED_FILES" | grep -Eq '^\.github/workflows/protect-database-files\.yml$'; then
+            OTHERS=$(echo "$CHANGED_FILES" | grep -Ev '^\.github/workflows/protect-database-files\.yml$' || true)
+            if [ -z "$OTHERS" ]; then
+              echo "Only protect-database-files.yml was changed. Allowed."
+              exit 0
+            fi
+          fi
+
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No changed files detected."
+            exit 0
+          fi
+
+          DB_CHANGED=0
+          UI_CHANGED=0
+
+          if echo "$CHANGED_FILES" | grep -Eq '^(data/|scripts/|\.github/workflows/)'; then
+            DB_CHANGED=1
+          fi
+
+          if echo "$CHANGED_FILES" | grep -Eq '^(index\.html|config\.js|app/|android/|ios/|README(\.md)?$|ui/|src/|assets/|styles?/|public/)'; then
+            UI_CHANGED=1
+          fi
+
+          if [ "$DB_CHANGED" -eq 1 ] && [ "$UI_CHANGED" -eq 1 ]; then
+            echo "This PR mixes database changes with app/UI changes. Split them into separate PRs to protect the production database."
+            exit 1
+          fi
+
+          echo "PR file scope is valid."
