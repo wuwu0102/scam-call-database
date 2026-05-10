@@ -26,14 +26,14 @@ jobs:
           npm run collect
           node scripts/auto_promote_safe_numbers.js
           node scripts/check_database_safety.js
-          node scripts/build_public_stats.js
+          node scripts/generate_public_stats.js --allow-low-count
           npm run validate
 
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add scam_numbers.json data/pending_numbers.json data/manual_import_numbers.csv data/collection_report.json data/seed_verified_public_numbers.csv data/backups/scam_numbers.backup.json data/collected_mexico_numbers.json data/crowd_signal_mexico_numbers.json data/collector_run_log.json data/public_stats.json data/ios_numbers.json data/android_numbers.json data/source_catalog_mexico.json
+          git add scam_numbers.json data/pending_numbers.json data/manual_import_numbers.csv data/collection_report.json data/seed_verified_public_numbers.csv data/backups/scam_numbers.backup.json data/collected_mexico_numbers.json data/crowd_signal_mexico_numbers.json data/collector_run_log.json data/public_stats.json data/source_catalog_mexico.json
           git commit -m "Strengthen Mexico number collector sources and normalization" || echo "No changes to commit"
           git push
 
