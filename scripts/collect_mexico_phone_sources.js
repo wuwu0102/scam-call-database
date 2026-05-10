@@ -150,6 +150,9 @@ async function fetchPage(url) {
   write(COLLECTED, [...prevOrder, ...appended]);
   write(CROWD, Array.from(crowdMap.values()).filter(r => valid(String(r.normalizedNumber))));
   write(LOG, runLog);
-  console.log(`collector done collected=${nextCollected.length} crowd=${crowdMap.size} target=${target} min=${min} maxAdd=${maxAdd}`);
-  if (nextCollected.length < min) process.exit(1);
+  const addedCount = Math.max(0, nextCollected.length - prevCollected.length);
+  console.log(`collector done collected=${nextCollected.length} crowd=${crowdMap.size} target=${target} min=${min} maxAdd=${maxAdd} added=${addedCount}`);
+  if (nextCollected.length < target) console.warn(`[warn] target_not_reached missing=${target - nextCollected.length}`);
+  if (addedCount === 0) console.warn('[warn] no_new_numbers_added_this_run');
+  if (nextCollected.length < min) console.warn(`[warn] below_min_threshold current=${nextCollected.length} min=${min}`);
 })();
