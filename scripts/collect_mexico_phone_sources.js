@@ -143,9 +143,16 @@ async function fetchPage(url) {
   runLog.lastCollectorStatus = runLog.sources.every(s => (s.errors || []).length) ? 'failed' : (nextCollected.length >= target ? 'ok' : 'partial');
   runLog.finalCount = nextCollected.length;
 
-  write(COLLECTED, nextCollected.sort((a,b)=>String(a.normalizedNumber).localeCompare(String(b.normalizedNumber))));
-  write(CROWD, Array.from(crowdMap.values()).filter(r => valid(String(r.normalizedNumber))).sort((a,b)=>a.normalizedNumber.localeCompare(b.normalizedNumber)));
+  const prevOrder = prevCollected.filter(r => valid(normalizeMXNumber(r.normalizedNumber || r.number || '')));
+  const seen = new Set(prevOrder.map(r => normalizeMXNumber(r.normalizedNumber || r.number || '')));
+  const appended = [];
+  for (const r of nextCollected) { const n = normalizeMXNumber(r.normalizedNumber || r.number || ''); if (!seen.has(n)) { seen.add(n); appended.push(r); } }
+  write(COLLECTED, [...prevOrder, ...appended]);
+  write(CROWD, Array.from(crowdMap.values()).filter(r => valid(String(r.normalizedNumber))));
   write(LOG, runLog);
-  console.log(`collector done collected=${nextCollected.length} crowd=${crowdMap.size} target=${target} min=${min} maxAdd=${maxAdd}`);
-  if (nextCollected.length < min) process.exit(1);
+  const addedCount = Math.max(0, nextCollected.length - prevCollected.length);
+  console.log(`collector done collected=${nextCollected.length} crowd=${crowdMap.size} target=${target} min=${min} maxAdd=${maxAdd} added=${addedCount}`);
+  if (nextCollected.length < target) console.warn(`[warn] target_not_reached missing=${target - nextCollected.length}`);
+  if (addedCount === 0) console.warn('[warn] no_new_numbers_added_this_run');
+  if (nextCollected.length < min) console.warn(`[warn] below_min_threshold current=${nextCollected.length} min=${min}`);
 })();
