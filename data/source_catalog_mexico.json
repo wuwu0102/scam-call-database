@@ -341,5 +341,255 @@
       "https://www.listaspam.com/busca.php?telefono=6861234567",
       "https://www.listaspam.com/busca.php?telefono=9981234567"
     ]
+  },
+  {
+    "name": "ListaSpam México",
+    "url": "https://www.listaspam.com/busca/mexico",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 35,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 55",
+    "url": "https://www.quienhabla.mx/lada/55/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 33",
+    "url": "https://www.quienhabla.mx/lada/33/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 81",
+    "url": "https://www.quienhabla.mx/lada/81/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 222",
+    "url": "https://www.quienhabla.mx/lada/222/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 477",
+    "url": "https://www.quienhabla.mx/lada/477/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 565",
+    "url": "https://www.quienhabla.mx/lada/565/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 614",
+    "url": "https://www.quienhabla.mx/lada/614/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 656",
+    "url": "https://www.quienhabla.mx/lada/656/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 664",
+    "url": "https://www.quienhabla.mx/lada/664/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 667",
+    "url": "https://www.quienhabla.mx/lada/667/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 686",
+    "url": "https://www.quienhabla.mx/lada/686/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 720",
+    "url": "https://www.quienhabla.mx/lada/720/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 728",
+    "url": "https://www.quienhabla.mx/lada/728/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 729",
+    "url": "https://www.quienhabla.mx/lada/729/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 771",
+    "url": "https://www.quienhabla.mx/lada/771/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 777",
+    "url": "https://www.quienhabla.mx/lada/777/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 833",
+    "url": "https://www.quienhabla.mx/lada/833/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 844",
+    "url": "https://www.quienhabla.mx/lada/844/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 867",
+    "url": "https://www.quienhabla.mx/lada/867/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 871",
+    "url": "https://www.quienhabla.mx/lada/871/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 899",
+    "url": "https://www.quienhabla.mx/lada/899/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 961",
+    "url": "https://www.quienhabla.mx/lada/961/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 998",
+    "url": "https://www.quienhabla.mx/lada/998/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
+  },
+  {
+    "name": "QuienHabla LADA 999",
+    "url": "https://www.quienhabla.mx/lada/999/",
+    "type": "community_report",
+    "confidence": 0.35,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 36,
+    "region": "México"
   }
 ]

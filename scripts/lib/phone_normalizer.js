@@ -8,6 +8,6 @@ function normalizeMexicoPhone(raw) {
   else if (digits.length === 13 && digits.startsWith('521')) local = digits.slice(3);
   else return null;
   if (!local || INVALID_LOCALS.has(local) || /^(\d)\1{9}$/.test(local)) return null;
-  return `52${local}`;
+  return `+52${local}`;
 }
 module.exports = { normalizeMexicoPhone };
