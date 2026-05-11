@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-05-11T18:44:51.309185+00:00",
-  "before_count": 10976,
-  "candidate_count": 45214,
-  "added_count": 7000,
-  "after_count": 17976,
+  "generated_at": "2026-05-11T23:34:49.604564+00:00",
+  "before_count": 17976,
+  "candidate_count": 22411,
+  "added_count": 6695,
+  "after_count": 24671,
   "skipped_invalid": 0,
-  "skipped_duplicate": 9753,
+  "skipped_duplicate": 15716,
   "skipped_unknown": 0,
   "sources": {
-    "datostelefonicos": 16754
+    "datostelefonicos": 22411
   }
 }
