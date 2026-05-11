@@ -41,17 +41,10 @@ jobs:
 
       - name: Run DatosTelefonicos collection pipeline
         id: datostelefonicos
-        continue-on-error: true
         run: |
           python scripts/collect_datostelefonicos_mx.py --max-pages 2500
           python scripts/merge_mx_collected_numbers.py
           python scripts/validate_mx_database_integrity.py
-
-      - name: Fallback to legacy collector only if new pipeline failed
-        if: steps.datostelefonicos.outcome == 'failure'
-        run: |
-          node scripts/collect_mexico_phone_sources.js --target=5000 --max-add=3000 --max-minutes=15 || true
-          npm run collect
 
       - run: node scripts/generate_public_stats.js --allow-low-count || node scripts/build_public_stats.js
       - run: npm run validate

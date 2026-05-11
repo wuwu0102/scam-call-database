@@ -1,13 +1,15 @@
-const LABELS={suspicious:'Llamada sospechosa',telemarketing:'Publicidad / Telemarketing',collection:'Cobranza'};
-const COLLECTION=['cobranza','deuda','debt','collection','despacho','cobrador','recuperacion','recuperación'];
+const LABELS={fraud:'Posible fraude',spam:'Número sospechoso',telemarketing:'Publicidad / ventas',debt_collection:'Cobranza'};
+const FRAUD=['fraud','estafa','phishing','extors','suplant','scam'];
+const DEBT=['cobranza','deuda','debt','collection','despacho','cobrador','recuperacion','recuperación','credito','crédito','financiera','banco'];
 const TELE=['publicidad','telemarketing','marketing','ventas','promo','promocion','promoción','oferta','advertising'];
-const SUSP=['scam','fraud','spam','phishing','unknown','suspicious'];
+const SPAM=['spam','molestia','no deseada','suspicious','sospech','whatsapp','sms'];
 function normalizeCategory(input='',snippet=''){
   const t=`${input} ${snippet}`.toLowerCase();
-  if(COLLECTION.some(k=>t.includes(k)))return'collection';
+  if(FRAUD.some(k=>t.includes(k)))return'fraud';
+  if(DEBT.some(k=>t.includes(k)))return'debt_collection';
   if(TELE.some(k=>t.includes(k)))return'telemarketing';
-  if(SUSP.some(k=>t.includes(k)))return'suspicious';
-  return'suspicious';
+  if(SPAM.some(k=>t.includes(k)))return'spam';
+  return'unknown';
 }
-function labelForCategory(c){return LABELS[c]||LABELS.suspicious;}
+function labelForCategory(c){return LABELS[c]||'Información de referencia';}
 module.exports={normalizeCategory,labelForCategory,LABELS};
