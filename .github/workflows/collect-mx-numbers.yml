@@ -12,32 +12,59 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      - name: Smoke test sources (non-blocking)
-        run: node scripts/smoke_test_mx_sources.js || echo "smoke warnings only"
+      - name: Install collector dependencies
+        run: pip install requests beautifulsoup4
 
-      - name: Collect/import/firestore-safe pipeline
+      - name: Collector dry-run
+        run: python scripts/collect_datostelefonicos_mx.py --dry-run --max-pages 1500
+
+      - name: Merge dry-run
+        run: python scripts/merge_mx_collected_numbers.py --dry-run
+
+      - name: Collector real run
+        run: python scripts/collect_datostelefonicos_mx.py --max-pages 8000
+
+      - name: Merge real run
+        run: python scripts/merge_mx_collected_numbers.py
+
+      - name: Validate integrity
+        run: python scripts/validate_mx_database_integrity.py
+
+      - name: Export iOS caller ID JSON
+        run: node scripts/export_ios_numbers_from_firestore.js
+
+      - name: Sync public stats
+        run: node scripts/generate_public_stats.js --allow-low-count
+
+      - name: Guard non-decreasing count
         run: |
-          node scripts/collect_mexico_phone_sources.js --target=10000 --max-add=2000 --max-minutes=10
-          npm run collect
-          # Skip auto_promote_safe_numbers.js in this workflow to avoid rewriting data/ios_numbers.json
-          node scripts/check_database_safety.js
-          node scripts/generate_public_stats.js --allow-low-count
-          npm run validate
+          python - <<'PY'
+          import json
+          s=json.load(open('reports/mx_collection_summary.json'))
+          assert s['after_count'] >= s['before_count'], 'after_count < before_count'
+          PY
 
-      - name: Commit changes
+      - name: Commit allowed changes only
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add scam_numbers.json data/pending_numbers.json data/manual_import_numbers.csv data/collection_report.json data/seed_verified_public_numbers.csv data/backups/scam_numbers.backup.json data/collected_mexico_numbers.json data/crowd_signal_mexico_numbers.json data/collector_run_log.json data/public_stats.json data/source_catalog_mexico.json
-          git commit -m "Strengthen Mexico number collector sources and normalization" || echo "No changes to commit"
+          CHANGED=$(git diff --name-only)
+          if [ -z "$CHANGED" ]; then
+            echo "No changes"
+            exit 0
+          fi
+          echo "$CHANGED"
+          echo "$CHANGED" | awk '!/^(data\/|reports\/|scam_numbers.json$)/{bad=1} END{exit bad}'
+          git add scam_numbers.json data/mx_datostelefonicos_candidates.json data/ios_numbers.json data/public_stats.json reports/mx_collection_summary.json
+          git commit -m "Sync MX collection pipeline and public stats" || echo "No commit"
           git push
-
-      - name: Print collection report
-        run: |
-          cat data/collection_report.json || true
-          cat data/collector_run_log.json || true
