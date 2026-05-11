@@ -1,3 +1,4 @@
+name: Collect MX numbers
 on:
   schedule:
     - cron: '0 3 */5 * *'
@@ -22,22 +23,19 @@ jobs:
 
       - name: Collect/import/firestore-safe pipeline
         run: |
-          node scripts/collect_mexico_phone_sources.js --target=10000 --max-add=2000 --max-minutes=10
-          npm run collect
-          # Skip auto_promote_safe_numbers.js in this workflow to avoid rewriting data/ios_numbers.json
-          node scripts/check_database_safety.js
-          node scripts/generate_public_stats.js --allow-low-count
+          npm run validate
+          node scripts/collect_mexico_phone_sources.js --target=5000 --max-add=3000 --max-minutes=15
+          # This workflow only validates sources and updates temporary collected file + summary report
           npm run validate
 
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add scam_numbers.json data/pending_numbers.json data/manual_import_numbers.csv data/collection_report.json data/seed_verified_public_numbers.csv data/backups/scam_numbers.backup.json data/collected_mexico_numbers.json data/crowd_signal_mexico_numbers.json data/collector_run_log.json data/public_stats.json data/source_catalog_mexico.json
+          git add data/collected_mexico_numbers.json reports/collection-summary.json data/source_catalog_mexico.json
           git commit -m "Strengthen Mexico number collector sources and normalization" || echo "No changes to commit"
           git push
 
       - name: Print collection report
         run: |
-          cat data/collection_report.json || true
-          cat data/collector_run_log.json || true
+          cat reports/collection-summary.json || true

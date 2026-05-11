@@ -6,153 +6,118 @@ const { normalizeMXNumber, isInvalidNumber, isHttpUrl } = require('./data_rules'
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const CATALOG = path.join(DATA_DIR, 'source_catalog_mexico.json');
 const COLLECTED = path.join(DATA_DIR, 'collected_mexico_numbers.json');
-const CROWD = path.join(DATA_DIR, 'crowd_signal_mexico_numbers.json');
-const LOG = path.join(DATA_DIR, 'collector_run_log.json');
-const SEED = path.join(DATA_DIR, 'mexico_seed_phone_numbers.json');
+const SUMMARY = path.join(__dirname, '..', 'reports', 'collection-summary.json');
 const SCAM = path.join(__dirname, '..', 'scam_numbers.json');
 
 const args = process.argv.slice(2);
-const target = Number((args.find(a => a.startsWith('--target=')) || '--target=1000').split('=')[1]);
-const min = Number((args.find(a => a.startsWith('--min=')) || '--min=300').split('=')[1]);
-const maxAdd = Number((args.find(a => a.startsWith('--max-add=')) || '--max-add=2000').split('=')[1]);
-const maxPagesPerSource = Number((args.find(a => a.startsWith('--max-pages=')) || '--max-pages=20').split('=')[1]);
+const target = Number((args.find(a => a.startsWith('--target=')) || '--target=5000').split('=')[1]);
+const maxPagesPerSource = Number((args.find(a => a.startsWith('--max-pages=')) || '--max-pages=10').split('=')[1]);
 const maxMinutes = Number((args.find(a => a.startsWith('--max-minutes=')) || '--max-minutes=10').split('=')[1]);
 const deadline = Date.now() + Math.max(1, maxMinutes) * 60 * 1000;
 
-const read = (p) => { if (!fs.existsSync(p)) return []; const v = JSON.parse(fs.readFileSync(p, 'utf8')); if (Array.isArray(v)) return v; if (v && Array.isArray(v.records)) return v.records; return []; };
-const write = (p, d) => fs.writeFileSync(p, `${JSON.stringify(d, null, 2)}\n`);
-const TEST_NUMBERS = new Set(['0000000000','1111111111','1234567890','5555555555','9999999999','2025550101','2025550102','2025550103','2025550104','2025550105']);
-const headers = {
-  'User-Agent': 'Mozilla/5.0 Chrome Safari',
-  'Accept': 'text/html,application/xhtml+xml',
-  'Accept-Language': 'es-MX,es;q=0.9,en;q=0.8',
-  'Cache-Control': 'no-cache'
+const read = (p, fallback = []) => {
+  if (!fs.existsSync(p)) return fallback;
+  const v = JSON.parse(fs.readFileSync(p, 'utf8'));
+  return Array.isArray(v) ? v : fallback;
 };
+const write = (p, d) => fs.writeFileSync(p, `${JSON.stringify(d, null, 2)}\n`);
+const headers = { 'User-Agent': 'Mozilla/5.0', 'Accept-Language': 'es-MX,es;q=0.9' };
+const phoneRegex = /(?:\+?52[\s\-\(\)]*)?(?:\(?\d{2,3}\)?[\s\-]*)?\d{3,4}[\s\-]?\d{4}|\b\d{10,13}\b/g;
 
-const phoneRegex = /(?:\+?52\s*1?[\s\-\(\)]*)?(?:\(?\d{2,3}\)?[\s\-]*)?\d{3,4}[\s\-]?\d{4}|\b\d{10,13}\b/g;
-const isDateLike = (n) => /^20\d{8}$/.test(n) || /^19\d{8}$/.test(n);
 function valid(n) {
   if (!/^\d{10}$/.test(n)) return false;
-  if (TEST_NUMBERS.has(n)) return false;
-  if (isDateLike(n)) return false;
   if (isInvalidNumber(n)) return false;
+  if (/^(19|20)\d{8}$/.test(n)) return false;
   return true;
 }
 
-function rank(t) {
-  const k = String(t || '').toLowerCase();
-  if (['official','government','police','fiscalia'].includes(k)) return 3;
-  if (k === 'media') return 2;
-  return 1;
+function toRecord(n, s) {
+  const today = new Date().toISOString().slice(0, 10);
+  return {
+    number: n,
+    normalizedNumber: n,
+    country: 'MX',
+    label: 'Número reportado',
+    tag: 'suspicious',
+    sourceName: s.name,
+    sourceUrl: s.url,
+    source_url: s.url,
+    sourceType: String(s.type || 'community_report'),
+    category: 'spam_or_unwanted',
+    risk_label: 'reported',
+    first_seen: today,
+    last_seen: today,
+    updatedAt: today
+  };
 }
 
-function toRecord(n, s, confidence='medium') {
-  const t = String(s.type || '').toLowerCase();
-  const tag = ['official','government','police','fiscalia'].includes(t) ? 'scam' : 'suspicious';
-  return { number:n, normalizedNumber:n, country:'MX', tag, label:'Número sospechoso', type:t, confidence, source:s.name, sourceUrl:s.url, sources:[{source:s.name,sourceUrl:s.url,type:t,confidence}], updatedAt:new Date().toISOString().slice(0,10) };
+function buildPageUrls(url) {
+  const out = [url];
+  for (let page = 2; page <= maxPagesPerSource; page++) out.push(`${url.replace(/\/$/, '')}${url.includes('?') ? '&' : '?'}page=${page}`);
+  return out;
 }
 
-
-function buildPageUrls(sourceUrl) {
-  const urls = [sourceUrl];
-  const u = String(sourceUrl || '');
-  for (let page = 2; page <= maxPagesPerSource; page++) {
-    if (/tellows\.mx/i.test(u)) urls.push(`${u.replace(/\/$/, '')}?page=${page}`);
-    else if (/quienhabla\.mx/i.test(u)) urls.push(`${u.replace(/\/$/, '')}/page/${page}`);
-    else if (/listaspam\.com/i.test(u)) urls.push(`${u.replace(/\/$/, '')}?page=${page}`);
-    else if (/duckduckgo\.com\/html/i.test(u)) urls.push(`${u}${u.includes('?') ? '&' : '?'}s=${(page-1)*30}`);
-    else break;
-  }
-  return urls.slice(0, maxPagesPerSource);
-}
 async function fetchPage(url) {
-  try {
-    if (axios) {
-      const res = await axios.get(url, { headers, timeout: 30000, responseType: 'text', validateStatus: () => true });
-      if (res.status >= 200 && res.status < 400) return String(res.data || '');
-      throw new Error(`axios HTTP ${res.status}`);
-    }
-    throw new Error('axios unavailable');
-  } catch (_) {
-    const r = await fetch(url, { headers, signal: AbortSignal.timeout(30000) });
-    if (!r.ok) throw new Error(`fetch HTTP ${r.status}`);
-    return await r.text();
+  if (axios) {
+    const res = await axios.get(url, { headers, timeout: 30000, responseType: 'text', validateStatus: () => true });
+    if (res.status >= 200 && res.status < 400) return String(res.data || '');
+    throw new Error(`HTTP ${res.status}`);
   }
+  const r = await fetch(url, { headers, signal: AbortSignal.timeout(30000) });
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  return await r.text();
 }
 
 (async () => {
   const catalog = read(CATALOG).filter(x => isHttpUrl(x.url));
-  const prevCollected = read(COLLECTED);
-  const prevCrowd = read(CROWD);
-  const mergedInputs = [...read(SEED), ...prevCollected, ...read(SCAM)];
+  const before = read(COLLECTED);
+  const scam = read(SCAM);
 
-  const byNumber = new Map();
-  for (const r of mergedInputs) {
-    const n = normalizeMXNumber(r.normalizedNumber || r.number || '');
-    if (valid(n)) byNumber.set(n, { ...toRecord(n, {name:r.source||'existing', url:r.sourceUrl||'https://example.com', type:r.type||'media'}, r.confidence||'medium'), ...r, normalizedNumber:n, number:n });
-  }
-  const crowdMap = new Map(prevCrowd.map(r => [r.normalizedNumber, r]));
-  const crowdEvidence = new Map();
-  const runLog = { generatedAt:new Date().toISOString(), target, maxMinutes, sourceCount:catalog.length, sources:[], warnings:[] };
+  const existing = new Set(before.map(r => normalizeMXNumber(r.normalizedNumber || r.number || '')));
+  const mergedExisting = new Set([...existing, ...scam.map(r => normalizeMXNumber(r.normalizedNumber || r.number || ''))]);
+
+  const added = [];
+  const addedBySource = {};
+  let collectedCount = 0;
+  let duplicateCount = 0;
+  let rejectedCount = 0;
 
   for (const s of catalog) {
-    if (Date.now() > deadline) { runLog.warnings.push('max_minutes_reached'); break; }
-    if (byNumber.size >= target) break;
-    const entry = { source:s.name, url:s.url, accepted:0, crowdOnly:0, errors:[] };
-    try {
-      for (const pageUrl of buildPageUrls(s.url)) {
-        if (Date.now() > deadline || byNumber.size >= target || (byNumber.size - prevCollected.length) >= maxAdd) break;
+    if (Date.now() > deadline) break;
+    for (const pageUrl of buildPageUrls(s.url)) {
+      if (Date.now() > deadline) break;
+      try {
         const html = await fetchPage(pageUrl);
         const matches = String(html).match(phoneRegex) || [];
         for (const raw of matches) {
+          collectedCount++;
           const n = normalizeMXNumber(raw);
-          if (!valid(n)) continue;
-          const t = String(s.type || '').toLowerCase();
-          if (['official','government','police','fiscalia'].includes(t)) {
-            const next = toRecord(n, s, String(s.confidence || 'medium'));
-            const old = byNumber.get(n);
-            if (!old || rank(next.type) > rank(old.type)) byNumber.set(n, next);
-            entry.accepted++;
-          } else if (t === 'media') {
-            const old = byNumber.get(n);
-            if (!old || rank(old.type) < 2) byNumber.set(n, toRecord(n, s, 'medium'));
-            entry.accepted++;
-            const ev = crowdEvidence.get(n) || new Set(); ev.add(s.url); crowdEvidence.set(n, ev);
-          } else {
-            const ev = crowdEvidence.get(n) || new Set(); ev.add(s.url); crowdEvidence.set(n, ev);
-            if (!crowdMap.has(n)) crowdMap.set(n, { ...toRecord(n, s, 'low'), type:'crowd' });
-            if (ev.size >= 2 && !byNumber.has(n)) { byNumber.set(n, { ...toRecord(n, s, 'medium'), type:'crowd_multi_source' }); entry.accepted++; }
-            else entry.crowdOnly++;
+          if (!valid(n)) { rejectedCount++; continue; }
+          if (mergedExisting.has(n)) { duplicateCount++; continue; }
+          mergedExisting.add(n);
+          if (!existing.has(n)) {
+            existing.add(n);
+            added.push(toRecord(n, s));
+            addedBySource[s.url] = (addedBySource[s.url] || 0) + 1;
           }
         }
-      }
-    } catch (e) { entry.errors.push(e.message); }
-    runLog.sources.push(entry);
+      } catch (_) {}
+    }
   }
 
-  const nextCollected = Array.from(byNumber.values()).filter(r => valid(String(r.normalizedNumber || '')) && isHttpUrl(r.sourceUrl));
-  if (nextCollected.length < prevCollected.length) {
-    console.log('⚠️ Skip overwrite: new data smaller than existing');
-    runLog.warnings.push(`preserved_old_collected prev=${prevCollected.length} new=${nextCollected.length}`);
-    runLog.lastCollectorStatus = runLog.sources.every(s => (s.errors || []).length) ? 'failed' : 'preserved';
-    runLog.finalCount = prevCollected.length;
-    write(LOG, runLog);
-    return;
-  }
+  const next = [...before, ...added];
+  write(COLLECTED, next);
+  fs.mkdirSync(path.dirname(SUMMARY), { recursive: true });
+  write(SUMMARY, {
+    before_count: before.length,
+    collected_count: collectedCount,
+    valid_new_count: added.length,
+    duplicate_count: duplicateCount,
+    rejected_count: rejectedCount,
+    after_count_if_merged: mergedExisting.size,
+    added_by_source: addedBySource
+  });
 
-  runLog.lastCollectorStatus = runLog.sources.every(s => (s.errors || []).length) ? 'failed' : (nextCollected.length >= target ? 'ok' : 'partial');
-  runLog.finalCount = nextCollected.length;
-
-  const prevOrder = prevCollected.filter(r => valid(normalizeMXNumber(r.normalizedNumber || r.number || '')));
-  const seen = new Set(prevOrder.map(r => normalizeMXNumber(r.normalizedNumber || r.number || '')));
-  const appended = [];
-  for (const r of nextCollected) { const n = normalizeMXNumber(r.normalizedNumber || r.number || ''); if (!seen.has(n)) { seen.add(n); appended.push(r); } }
-  write(COLLECTED, [...prevOrder, ...appended]);
-  write(CROWD, Array.from(crowdMap.values()).filter(r => valid(String(r.normalizedNumber))));
-  write(LOG, runLog);
-  const addedCount = Math.max(0, nextCollected.length - prevCollected.length);
-  console.log(`collector done collected=${nextCollected.length} crowd=${crowdMap.size} target=${target} min=${min} maxAdd=${maxAdd} added=${addedCount}`);
-  if (nextCollected.length < target) console.warn(`[warn] target_not_reached missing=${target - nextCollected.length}`);
-  if (addedCount === 0) console.warn('[warn] no_new_numbers_added_this_run');
-  if (nextCollected.length < min) console.warn(`[warn] below_min_threshold current=${nextCollected.length} min=${min}`);
+  console.log(`before=${before.length} collected=${collectedCount} valid_new=${added.length} after_if_merged=${mergedExisting.size} target=${target}`);
+  if (mergedExisting.size < target) console.log('target_not_reached: skip merge to official database');
 })();
