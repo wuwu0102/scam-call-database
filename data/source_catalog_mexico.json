@@ -591,5 +591,38 @@
     "autoPromote": false,
     "priority": 36,
     "region": "México"
+  },
+  {
+    "name": "NumerosTelefono MX",
+    "url": "https://www.numerostelefono.com/mx/",
+    "type": "community_report",
+    "confidence": 0.4,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 40,
+    "region": "México",
+    "category": "spam_or_unwanted"
+  },
+  {
+    "name": "Lada Mexico Telefonos",
+    "url": "https://telefonos.lada-mexico.com/",
+    "type": "community_report",
+    "confidence": 0.4,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 40,
+    "region": "México",
+    "category": "spam_or_unwanted"
+  },
+  {
+    "name": "CallInsider MX",
+    "url": "https://www.callinsider.mx/",
+    "type": "community_report",
+    "confidence": 0.4,
+    "mode": "html_scrape",
+    "autoPromote": false,
+    "priority": 40,
+    "region": "México",
+    "category": "spam_or_unwanted"
   }
 ]
