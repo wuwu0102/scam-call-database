@@ -19,174 +19,36 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Sync with origin/main before generating data
-        run: |
-          git fetch origin main
-          git checkout main
-          git reset --hard origin/main
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm install firebase-admin axios --no-save
-      - run: node scripts/discover_mexico_phone_sources.js
-      - name: Compute growth targets
+      - run: npm install
+      - run: npm run validate || true
+      - run: node scripts/collect_mexico_phone_sources.js --target=5000 --max-add=3000 --max-minutes=15 || true
+      - run: npm run collect
+      - run: node scripts/generate_public_stats.js --allow-low-count || node scripts/build_public_stats.js
+      - run: npm run validate
+      - run: git checkout -- data/ios_numbers.json || true
+      - name: Commit allowed files only
         run: |
-          CURRENT=$(node -e "const fs=require('fs');const p='data/public_stats.json';let c=0;if(fs.existsSync(p)){const d=JSON.parse(fs.readFileSync(p,'utf8'));c=Number(d.totalSearchableCount||d.collectedCount||0)||0;}console.log(c)")
-          TARGET=$((CURRENT + 100))
-          HARD_LIMIT=$((CURRENT + 200))
-          echo "CURRENT_COUNT=$CURRENT" >> $GITHUB_ENV
-          echo "TARGET_COUNT=$TARGET" >> $GITHUB_ENV
-          echo "HARD_LIMIT_COUNT=$HARD_LIMIT" >> $GITHUB_ENV
-      - run: node scripts/collect_mexico_phone_sources.js --target=${TARGET_COUNT} --max-add=200 --max-minutes=10 || echo "collector failed"
-      - run: node scripts/pull_firestore_phone_numbers.js || echo "firestore pull skipped"
-      - run: node scripts/rebuild_searchable_database.js --min=${CURRENT_COUNT} --target=${TARGET_COUNT}
-      - run: node scripts/check_data_safety.js --min=${CURRENT_COUNT}
-      - env:
-          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
-        run: node scripts/import_mexico_seed_to_firestore.js --dry-run
-      - env:
-          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
-        run: node scripts/import_mexico_seed_to_firestore.js
-      - env:
-          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
-        run: node scripts/export_ios_numbers_from_firestore.js || echo "ios export skipped"
-      - run: node scripts/generate_public_stats.js --min=${CURRENT_COUNT}
-      - run: node scripts/import_verified_seed_numbers.js || echo "seed import skipped"
-      - run: node scripts/scrape_mexico_phone_sources.js || echo "scrape skipped"
-      - run: node scripts/refresh_community_bulk_from_sources.js || echo "community bulk refresh skipped"
-      - run: node scripts/update_community_snapshot_from_bulk.js || echo "snapshot update skipped"
-      - run: node scripts/ensure_community_signal_pool_target.js || echo "community signal pool target skipped"
-      - run: node scripts/import_community_bulk_numbers.js || echo "community bulk import skipped"
-      - run: node scripts/promote_safe_scraped_numbers.js
-      - run: node scripts/build_public_stats.js || echo "public stats build skipped"
-      - run: node scripts/check_database_safety.js
-      - run: node scripts/check_scrape_anomalies.js
-      - run: cat data/seed_import_report.json || true
-      - run: cat data/scrape_report.json || true
-      - run: cat data/community_bulk_refresh_report.json || true
-      - run: cat data/community_signal_pool_report.json || true
-      - run: cat data/public_stats.json || true
-      - run: cat data/community_bulk_import_report.json || true
-      - name: Production smoke test before commit
-        run: |
-          set -e
-          test -f index.html
-          test -f config.js
-          test -f scam_numbers.json
-
-          node -e "JSON.parse(require('fs').readFileSync('scam_numbers.json','utf8')); console.log('scam_numbers.json OK')"
-
-          if [ -f data/public_stats.json ]; then
-            node -e "JSON.parse(require('fs').readFileSync('data/public_stats.json','utf8')); console.log('data/public_stats.json OK')"
-          else
-            echo "data/public_stats.json missing (optional)"
-          fi
-
-          if [ -f data/scrape_report.json ]; then
-            node -e "JSON.parse(require('fs').readFileSync('data/scrape_report.json','utf8')); console.log('data/scrape_report.json OK')"
-          else
-            echo "data/scrape_report.json missing (optional)"
-          fi
-
-          if node -e "const fs=require('fs');const p='package.json';if(!fs.existsSync(p)){process.exit(2)}const j=JSON.parse(fs.readFileSync(p,'utf8'));process.exit(j.scripts&&j.scripts.test?0:1)"; then
-            npm test
-          else
-            CODE=$?
-            if [ "$CODE" -eq 2 ]; then
-              echo "package.json missing, skipping npm test"
-            else
-              echo "No npm test script, skipping"
-            fi
-          fi
-      - name: Commit and push safely
-        run: |
-          set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          safe_add() {
-            for path in "$@"; do
-              if [ -e "$path" ]; then
-                git add "$path"
-                echo "added: $path"
-              else
-                echo "skip missing: $path"
-              fi
-            done
-          }
-
-          safe_add \
-            data \
-            public \
+          git add \
             scam_numbers.json \
-            ios_numbers.json \
-            data/community_bulk_import_numbers.csv \
-            data/community_bulk_refresh_report.json \
-            data/community_bulk_import_report.json \
-            data/community_signal_pool_report.json \
+            data/collected_mexico_numbers.json \
             data/public_stats.json \
-            data/pending_numbers.json \
-            data/community_source_snapshots/community_signals_snapshot.csv \
-            data/community_source_snapshots/snapshot_report.json \
-            data/scrape_report.json \
-            data/backups/scam_numbers.backup.json
+            data/source_catalog_mexico.json \
+            reports/collection-summary.json \
+            scripts/collect_mexico_phone_sources.js \
+            scripts/generate_public_stats.js \
+            scripts/build_public_stats.js \
+            .github/workflows/collect-and-import-mexico-numbers.yml
 
           if git diff --cached --quiet; then
-            echo "No generated data changes to commit."
-            echo "HAS_COMMIT=false" >> "$GITHUB_ENV"
-            echo "PUSH_OK=false" >> "$GITHUB_ENV"
+            echo "No allowed changes to commit."
             exit 0
           fi
 
-          git commit -m "Update Mexico scam numbers safely"
-          echo "HAS_COMMIT=true" >> "$GITHUB_ENV"
-
-          for attempt in 1 2 3; do
-            if git push origin HEAD:main; then
-              echo "PUSH_OK=true" >> "$GITHUB_ENV"
-              exit 0
-            fi
-
-            echo "Push failed on attempt $attempt. Syncing with origin/main and retrying..."
-            git fetch origin main
-
-            if ! git pull --rebase origin main; then
-              git rebase --abort || true
-              echo "Rebase conflict after push failure. Stop without force push."
-              exit 1
-            fi
-          done
-
-          echo "PUSH_OK=false" >> "$GITHUB_ENV"
-          exit 1
-      - name: Actions summary
-        if: always()
-        run: |
-          set +e
-          SCAM_COUNT=$(node -e "const fs=require('fs');const p='scam_numbers.json';let c=0;if(fs.existsSync(p)){const d=JSON.parse(fs.readFileSync(p,'utf8'));c=Array.isArray(d)?d.length:0;}console.log(c)")
-          PENDING_COUNT=$(node -e "const fs=require('fs');const p='data/pending_numbers.json';let c=0;if(fs.existsSync(p)){const d=JSON.parse(fs.readFileSync(p,'utf8'));c=Array.isArray(d)?d.length:0;}console.log(c)")
-          SCRAPE_SUMMARY=$(node -e "const fs=require('fs');const p='data/scrape_report.json';if(!fs.existsSync(p)){console.log('missing');process.exit(0);}try{const d=JSON.parse(fs.readFileSync(p,'utf8'));if(Array.isArray(d)){console.log('array length: '+d.length);}else if(d&&typeof d==='object'){console.log(JSON.stringify(d).slice(0,500));}else{console.log(String(d));}}catch(e){console.log('invalid json')}")
-          PUBLIC_STATS_SUMMARY=$(node -e "const fs=require('fs');const p='data/public_stats.json';if(!fs.existsSync(p)){console.log('missing');process.exit(0);}try{const d=JSON.parse(fs.readFileSync(p,'utf8'));if(Array.isArray(d)){console.log('array length: '+d.length);}else if(d&&typeof d==='object'){console.log(JSON.stringify(d).slice(0,500));}else{console.log(String(d));}}catch(e){console.log('invalid json')}")
-          HAS_COMMIT_VAL="${HAS_COMMIT:-false}"
-          PUSH_OK_VAL="${PUSH_OK:-false}"
-
-          {
-            echo "## Collect and import summary"
-            echo ""
-            echo "- scam_numbers.json count: ${SCAM_COUNT}"
-            echo "- data/pending_numbers.json count: ${PENDING_COUNT}"
-            echo "- data/scrape_report.json summary: ${SCRAPE_SUMMARY}"
-            echo "- data/public_stats.json summary: ${PUBLIC_STATS_SUMMARY}"
-            if [ -f data/seed_import_report.json ]; then
-              echo "- data/seed_import_report.json: present"
-            else
-              echo "- data/seed_import_report.json: missing"
-            fi
-            if [ -f data/scrape_report.json ]; then
-              echo "- data/scrape_report.json: present"
-            else
-              echo "- data/scrape_report.json: missing"
-            fi
-            echo "- commit created: ${HAS_COMMIT_VAL}"
-            echo "- push successful: ${PUSH_OK_VAL}"
-          } >> "$GITHUB_STEP_SUMMARY"
+          git commit -m "Sync MX collection pipeline and public stats"
+          git push

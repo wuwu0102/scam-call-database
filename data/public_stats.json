@@ -1,10 +1,12 @@
 {
-  "generatedAt": "2026-05-10T13:13:11.388Z",
-  "nextUpdateAt": "2026-05-15T13:13:11.388Z",
-  "totalSearchableCount": 2577,
-  "collectedCount": 2577,
+  "generatedAt": "2026-05-11T07:26:57.323Z",
+  "nextUpdateAt": "2026-05-16T07:26:57.324Z",
+  "totalSearchableCount": 3976,
+  "monitoredSignalsCount": 3976,
+  "collectedCount": 3976,
+  "scamNumbersCount": 3976,
   "sourceCount": 55,
   "sourceSuccessCount": 0,
-  "sourceFailedCount": 0,
-  "lastCollectorStatus": "partial"
+  "sourceFailedCount": 54,
+  "lastCollectorStatus": "failed"
 }
