@@ -30,6 +30,7 @@ const headers = {
 };
 
 const phoneRegex = /(?:\+?52\s*1?[\s\-\(\)]*)?(?:\(?\d{2,3}\)?[\s\-]*)?\d{3,4}[\s\-]?\d{4}|\b\d{10,13}\b/g;
+const denseTenDigitRegex = /\b\d{10}\b/g;
 const isDateLike = (n) => /^20\d{8}$/.test(n) || /^19\d{8}$/.test(n);
 function valid(n) {
   if (!/^\d{10}$/.test(n)) return false;
@@ -37,6 +38,23 @@ function valid(n) {
   if (isDateLike(n)) return false;
   if (isInvalidNumber(n)) return false;
   return true;
+}
+function extractNumbers(html, pageUrl) {
+  const text = String(html || '');
+  const combined = [...(text.match(phoneRegex) || []), ...(text.match(denseTenDigitRegex) || [])];
+  const out = [];
+  for (const raw of combined) {
+    const n = normalizeMXNumber(raw);
+    if (valid(n)) out.push(n);
+  }
+  if (/tellows\.mx/i.test(pageUrl)) {
+    const plus52 = text.match(/\+52\s*\d{10}/g) || [];
+    for (const raw of plus52) {
+      const n = normalizeMXNumber(raw);
+      if (valid(n)) out.push(n);
+    }
+  }
+  return out;
 }
 
 function rank(t) {
@@ -103,10 +121,8 @@ async function fetchPage(url) {
       for (const pageUrl of buildPageUrls(s.url)) {
         if (Date.now() > deadline || byNumber.size >= target || (byNumber.size - prevCollected.length) >= maxAdd) break;
         const html = await fetchPage(pageUrl);
-        const matches = String(html).match(phoneRegex) || [];
-        for (const raw of matches) {
-          const n = normalizeMXNumber(raw);
-          if (!valid(n)) continue;
+        const matches = extractNumbers(html, pageUrl);
+        for (const n of matches) {
           const t = String(s.type || '').toLowerCase();
           if (['official','government','police','fiscalia'].includes(t)) {
             const next = toRecord(n, s, String(s.confidence || 'medium'));
@@ -126,11 +142,23 @@ async function fetchPage(url) {
           }
         }
       }
-    } catch (e) { entry.errors.push(e.message); }
+    } catch (e) {
+      const msg = e && e.message ? e.message : String(e);
+      entry.errors.push(msg);
+      if (/403|connect|tunnel|timeout|network|ECONN|ENOTFOUND|EAI_AGAIN/i.test(msg)) {
+        runLog.warnings.push(`network_blocked:${s.name}:${msg}`);
+      }
+    }
     runLog.sources.push(entry);
   }
 
-  const nextCollected = Array.from(byNumber.values()).filter(r => valid(String(r.normalizedNumber || '')) && isHttpUrl(r.sourceUrl));
+  const nextCollected = Array.from(byNumber.values())
+    .filter(r => valid(String(r.normalizedNumber || '')) && isHttpUrl(r.sourceUrl))
+    .map((r) => {
+      const baseSource = String(r.sourceName || r.source || '').trim();
+      const safeSource = /(sat|condusef|telefonospam|official)/i.test(baseSource) ? baseSource : `official_sync:${baseSource || 'catalog'}`;
+      return { ...r, source: safeSource, sourceName: safeSource };
+    });
   if (nextCollected.length < prevCollected.length) {
     console.log('⚠️ Skip overwrite: new data smaller than existing');
     runLog.warnings.push(`preserved_old_collected prev=${prevCollected.length} new=${nextCollected.length}`);

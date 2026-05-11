@@ -9,6 +9,7 @@ fs.writeFileSync('data/ios_numbers.json',JSON.stringify(normalized,null,2)+'\n')
 fs.writeFileSync('data/android_numbers.json',JSON.stringify(normalized,null,2)+'\n');
 const cc={suspicious:0,telemarketing:0,collection:0};for(const r of normalized)cc[r.category]++;
 let old={};try{old=JSON.parse(fs.readFileSync('data/public_stats.json','utf8'));}catch{}
-const out={...old,monitoredSignalsCount:normalized.length,totalSearchableCount:normalized.length,iosExportCount:normalized.length,androidExportCount:normalized.length,categoryCounts:cc,lastUpdated:new Date().toISOString()};
+const searchableCount = db.length;
+const out={...old,monitoredSignalsCount:searchableCount,totalSearchableCount:searchableCount,iosExportCount:normalized.length,androidExportCount:normalized.length,categoryCounts:cc,lastUpdated:new Date().toISOString()};
 fs.writeFileSync('data/public_stats.json',JSON.stringify(out,null,2)+'\n');
-console.log(`public_stats updated: ${normalized.length}`);
+console.log(`public_stats updated: searchable=${searchableCount} ios_android=${normalized.length}`);
