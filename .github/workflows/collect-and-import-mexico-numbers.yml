@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: collect-mx-numbers-main
+  group: collect-and-import-mexico-numbers
   cancel-in-progress: false
 
 permissions:
@@ -19,37 +19,60 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
       - run: npm install
       - run: npm run validate || true
-      - run: node scripts/collect_mexico_phone_sources.js --target=5000 --max-add=3000 --max-minutes=15 || true
-      - run: npm run collect
+
+      - name: Install Python dependencies for DatosTelefonicos pipeline
+        run: pip install requests beautifulsoup4
+
+      - name: Run DatosTelefonicos collection pipeline
+        id: datostelefonicos
+        continue-on-error: true
+        run: |
+          python scripts/collect_datostelefonicos_mx.py --max-pages 8000
+          python scripts/merge_mx_collected_numbers.py
+          python scripts/validate_mx_database_integrity.py
+
+      - name: Fallback to legacy collector only if new pipeline failed
+        if: steps.datostelefonicos.outcome == 'failure'
+        run: |
+          node scripts/collect_mexico_phone_sources.js --target=5000 --max-add=3000 --max-minutes=15 || true
+          npm run collect
+
       - run: node scripts/generate_public_stats.js --allow-low-count || node scripts/build_public_stats.js
       - run: npm run validate
       - run: git checkout -- data/ios_numbers.json || true
+
       - name: Ensure collection summary exists
         run: |
           mkdir -p reports
           if [ ! -f reports/collection-summary.json ]; then
             echo '{"status":"no_collection_summary","note":"collector did not generate summary in this run"}' > reports/collection-summary.json
           fi
+
       - name: Commit allowed files only
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin main
+          git rebase origin/main
 
           git add \
             scam_numbers.json \
             data/collected_mexico_numbers.json \
             data/public_stats.json \
             data/source_catalog_mexico.json \
-            reports/collection-summary.json \
-            scripts/collect_mexico_phone_sources.js \
-            scripts/generate_public_stats.js \
-            scripts/build_public_stats.js \
-            .github/workflows/collect-and-import-mexico-numbers.yml
+            reports/collection-summary.json
 
           if git diff --cached --quiet; then
             echo "No allowed changes to commit."
@@ -57,4 +80,4 @@ jobs:
           fi
 
           git commit -m "Sync MX collection pipeline and public stats"
-          git push
+          git push origin HEAD:main
