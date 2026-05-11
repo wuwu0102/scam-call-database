@@ -1,8 +1,9 @@
 {
   "before_count": 2577,
-  "after_count": 3971,
-  "added_count": 1394,
+  "collected_count": 0,
+  "valid_new_count": 0,
   "duplicate_count": 0,
-  "invalid_count": 0,
+  "rejected_count": 0,
+  "after_count_if_merged": 3976,
   "added_by_source": {}
 }
