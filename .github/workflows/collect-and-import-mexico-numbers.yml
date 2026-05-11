@@ -28,6 +28,11 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Sync latest main before collection
+        run: |
+          git fetch origin main
+          git rebase origin/main
+
       - run: npm install
       - run: npm run validate || true
 
@@ -38,7 +43,7 @@ jobs:
         id: datostelefonicos
         continue-on-error: true
         run: |
-          python scripts/collect_datostelefonicos_mx.py --max-pages 8000
+          python scripts/collect_datostelefonicos_mx.py --max-pages 2500
           python scripts/merge_mx_collected_numbers.py
           python scripts/validate_mx_database_integrity.py
 
@@ -50,7 +55,6 @@ jobs:
 
       - run: node scripts/generate_public_stats.js --allow-low-count || node scripts/build_public_stats.js
       - run: npm run validate
-      - run: git checkout -- data/ios_numbers.json || true
 
       - name: Ensure collection summary exists
         run: |
@@ -64,14 +68,15 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git fetch origin main
-          git rebase origin/main
+          git status --short
 
           git add \
             scam_numbers.json \
             data/collected_mexico_numbers.json \
+            data/mx_datostelefonicos_candidates.json \
             data/public_stats.json \
             data/source_catalog_mexico.json \
+            reports/mx_collection_summary.json \
             reports/collection-summary.json
 
           if git diff --cached --quiet; then
@@ -80,4 +85,15 @@ jobs:
           fi
 
           git commit -m "Sync MX collection pipeline and public stats"
+
+          git fetch origin main
+          LOCAL=$(git rev-parse HEAD)
+          REMOTE=$(git rev-parse origin/main)
+          BASE=$(git merge-base HEAD origin/main)
+
+          if [ "$REMOTE" != "$BASE" ]; then
+            echo "Remote main moved during collection. Do not rebase with generated data. Please rerun workflow."
+            exit 78
+          fi
+
           git push origin HEAD:main
