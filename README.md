@@ -158,3 +158,8 @@ Facebook 貼文先導流到網頁版，不直接導 App Store。
 
 Data source priority:
 This project prioritizes Guadalajara/Jalisco first, then CDMX, Estado de México, Monterrey/Nuevo León, and other major urban areas by practical caller-identification value. Community-reported numbers stay pending unless multiple independent signals support promotion.
+
+## Nota de fuentes y privacidad
+- Las fuentes son señales públicas de riesgo telefónico reportadas por usuarios/comunidad.
+- No almacenamos nombres personales ni direcciones.
+- Los números indican riesgo potencial y referencia comunitaria; no constituyen confirmación legal.
