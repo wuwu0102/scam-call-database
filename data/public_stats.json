@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-05-12T02:47:56.528Z",
-  "nextUpdateAt": "2026-05-17T02:47:56.528Z",
-  "totalSearchableCount": 34122,
-  "monitoredSignalsCount": 34122,
+  "generatedAt": "2026-05-12T14:10:44.245Z",
+  "nextUpdateAt": "2026-05-17T14:10:44.245Z",
+  "totalSearchableCount": 37122,
+  "monitoredSignalsCount": 37122,
   "collectedCount": 3985,
-  "scamNumbersCount": 34122,
+  "scamNumbersCount": 37122,
   "sourceCount": 55,
   "sourceSuccessCount": 0,
   "sourceFailedCount": 0,
   "lastCollectorStatus": "partial",
-  "fraudCount": 5172,
-  "spamCount": 2,
+  "fraudCount": 8172,
+  "spamCount": 3976,
   "debtCollectionCount": 24974,
-  "unknownCount": 3974
+  "unknownCount": 0
 }
