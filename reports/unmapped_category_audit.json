@@ -1,0 +1,390 @@
+{
+  "total_unmapped": 3976,
+  "category_counts": {
+    "": 3976
+  },
+  "label_counts": {
+    "suspicious": 3974,
+    "Número sospechoso": 2
+  },
+  "sourceName_counts": {
+    "TelefonoSpam MX Top Spam": 2243,
+    "El Universal": 439,
+    "public_dataset": 400,
+    "TelefonoSpam MX": 356,
+    "ADN40": 165,
+    "Números Teléfono México": 102,
+    "TelefonoSpam MX Pendientes": 93,
+    "LADA México Spam Telefónico": 70,
+    "Guanajuato Seguridad": 31,
+    "Estafatel Reportes Recientes": 12,
+    "Nuevo León Seguridad": 9,
+    "SAT México": 9,
+    "Zacatecas SSP": 8,
+    "Puebla Seguridad": 6,
+    "SSP Michoacán": 6,
+    "existing": 5,
+    "TelefonoSpam MX Top": 4,
+    "auto discovered source": 4,
+    "Baja California Seguridad": 3,
+    "Tellows MX": 3,
+    "Aguascalientes C5i Búsqueda de Números de Extorsión": 2,
+    "Seguridad BC": 2,
+    "Yucatán Seguridad": 2,
+    "Fiscalía Jalisco": 1,
+    "Sonora Gobierno Antiextorsión": 1
+  },
+  "riskReason_keyword_counts": {},
+  "sample_records": [
+    {
+      "number": "+520012498358",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "ADN40",
+      "riskReason": null
+    },
+    {
+      "number": "+520013551721",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "TelefonoSpam MX Top Spam",
+      "riskReason": null
+    },
+    {
+      "number": "+520015164536",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "TelefonoSpam MX Top Spam",
+      "riskReason": null
+    },
+    {
+      "number": "+520030211198",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "TelefonoSpam MX Top Spam",
+      "riskReason": null
+    },
+    {
+      "number": "+520033271680",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "TelefonoSpam MX Top Spam",
+      "riskReason": null
+    },
+    {
+      "number": "+520040465189",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520051102513",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520055499999",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "TelefonoSpam MX Top Spam",
+      "riskReason": null
+    },
+    {
+      "number": "+520055544740",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "TelefonoSpam MX Top Spam",
+      "riskReason": null
+    },
+    {
+      "number": "+520066470809",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "TelefonoSpam MX Top Spam",
+      "riskReason": null
+    },
+    {
+      "number": "+520069686059",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520081176227",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "TelefonoSpam MX Top Spam",
+      "riskReason": null
+    },
+    {
+      "number": "+520085359892",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "ADN40",
+      "riskReason": null
+    },
+    {
+      "number": "+520123456789",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "LADA México Spam Telefónico",
+      "riskReason": null
+    },
+    {
+      "number": "+520125549259",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520129656578",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "Baja California Seguridad",
+      "riskReason": null
+    },
+    {
+      "number": "+520134358141",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520145463279",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520151792386",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520207480724",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520211198099",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "TelefonoSpam MX Top Spam",
+      "riskReason": null
+    },
+    {
+      "number": "+520299169228",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520301309811",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "ADN40",
+      "riskReason": null
+    },
+    {
+      "number": "+520302111980",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "TelefonoSpam MX Top Spam",
+      "riskReason": null
+    },
+    {
+      "number": "+520310082331",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "TelefonoSpam MX Top Spam",
+      "riskReason": null
+    },
+    {
+      "number": "+520310086331",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "TelefonoSpam MX Top Spam",
+      "riskReason": null
+    },
+    {
+      "number": "+520310091414",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "TelefonoSpam MX Top Spam",
+      "riskReason": null
+    },
+    {
+      "number": "+520319667280",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "TelefonoSpam MX Top Spam",
+      "riskReason": null
+    },
+    {
+      "number": "+520430347479",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520444933639",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "Números Teléfono México",
+      "riskReason": null
+    },
+    {
+      "number": "+520455604086",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "ADN40",
+      "riskReason": null
+    },
+    {
+      "number": "+520538155989",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "Fiscalía Jalisco",
+      "riskReason": null
+    },
+    {
+      "number": "+520557459620",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "ADN40",
+      "riskReason": null
+    },
+    {
+      "number": "+520568514084",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "ADN40",
+      "riskReason": null
+    },
+    {
+      "number": "+520569838207",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520572538653",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520575983683",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "auto discovered source",
+      "riskReason": null
+    },
+    {
+      "number": "+520577394177",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520606210220",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520612244003",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "LADA México Spam Telefónico",
+      "riskReason": null
+    },
+    {
+      "number": "+520673215472",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520693255441",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "ADN40",
+      "riskReason": null
+    },
+    {
+      "number": "+520697123110",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520711481913",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520733565093",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520750643560",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "ADN40",
+      "riskReason": null
+    },
+    {
+      "number": "+520750940183",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "ADN40",
+      "riskReason": null
+    },
+    {
+      "number": "+520779260629",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "ADN40",
+      "riskReason": null
+    },
+    {
+      "number": "+520842314221",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "El Universal",
+      "riskReason": null
+    },
+    {
+      "number": "+520856836804",
+      "category": null,
+      "label": "suspicious",
+      "sourceName": "Números Teléfono México",
+      "riskReason": null
+    }
+  ]
+}
