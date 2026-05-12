@@ -8,14 +8,15 @@ IOS = ROOT/'data/ios_numbers.json'
 STATS = ROOT/'data/public_stats.json'
 BACKUP = ROOT/'data/backups/scam_numbers.backup.json'
 
-ALLOWED = {'fraud', 'spam', 'telemarketing', 'debt_collection'}
+ALLOWED = {'fraud', 'spam', 'debt_collection'}
+LEGACY = {'telemarketing', 'cobranza', 'suspicious', 'scam', 'collection'}
 
 scam = json.loads(SCAM.read_text())
 ios = json.loads(IOS.read_text())
 stats = json.loads(STATS.read_text())
 backup = json.loads(BACKUP.read_text()) if BACKUP.exists() else []
 
-seen=set(); dups=[]; empty=[]; bad=[]; explicit_unknown=[]
+seen=set(); dups=[]; empty=[]; bad=[]; explicit_unknown=[]; disallowed=[]; legacy=[]
 for r in scam:
     n=(r.get('number') or '').strip()
     if not n: empty.append(r); continue
@@ -23,6 +24,10 @@ for r in scam:
     cat = (r.get('category') or '').strip().lower()
     if cat == 'unknown':
         explicit_unknown.append(n)
+    elif cat in LEGACY:
+        legacy.append(n)
+    elif cat not in ALLOWED:
+        disallowed.append((n, cat))
     if n in seen: dups.append(n)
     seen.add(n)
 
@@ -30,6 +35,8 @@ if empty: raise SystemExit(f'empty numbers: {len(empty)}')
 if bad: raise SystemExit(f'invalid normalized numbers: {len(bad)}')
 if dups: raise SystemExit(f'duplicate e164: {len(dups)}')
 if explicit_unknown: raise SystemExit(f'unknown category not allowed in scam_numbers.json: {len(explicit_unknown)}')
+if legacy: raise SystemExit(f'legacy categories found in scam_numbers.json: {len(legacy)}')
+if disallowed: raise SystemExit(f'invalid categories in scam_numbers.json: {len(disallowed)}')
 if len(backup) and len(scam) < len(backup):
     raise SystemExit(f'scam_numbers.json decreased: now={len(scam)} backup={len(backup)}')
 

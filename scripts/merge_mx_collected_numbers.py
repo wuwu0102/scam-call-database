@@ -15,11 +15,9 @@ TMP_REPORT = REPORT.with_suffix('.json.tmp')
 LABELS = {
     'fraud': 'Posible fraude',
     'spam': 'Número sospechoso',
-    'telemarketing': 'Publicidad / ventas',
     'debt_collection': 'Cobranza',
 }
 ALLOWED_CATEGORIES = set(LABELS.keys())
-
 
 def now(): return datetime.now(timezone.utc).isoformat()
 
@@ -40,12 +38,10 @@ def normalize_category(cat):
         return t
     if t in ('scam', 'fraud', 'estafa', 'phishing', 'suplantacion', 'suplantación', 'extorsion', 'extorsión'):
         return 'fraud'
-    if t in ('suspicious', 'spam', 'molestia', 'no_deseada', 'whatsapp', 'sms'):
+    if t in ('suspicious', 'spam', 'molestia', 'no_deseada', 'whatsapp', 'sms', 'telemarketing', 'marketing', 'publicidad', 'venta', 'promocion', 'promoción', 'cobranza'):
         return 'spam'
-    if t in ('cobranza', 'collection', 'debt', 'deuda', 'banco', 'financiera', 'credito', 'crédito'):
+    if t in ('collection', 'debt', 'deuda', 'adeudo', 'mora', 'atraso', 'cobrador'):
         return 'debt_collection'
-    if t in ('marketing', 'publicidad', 'venta', 'promocion', 'promoción'):
-        return 'telemarketing'
     return 'unknown'
 
 def merge(dry_run=False):

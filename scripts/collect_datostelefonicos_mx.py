@@ -15,9 +15,9 @@ BASE = 'https://datostelefonicos.com'
 UA = 'ScamCallMX-research-bot/1.0 (+https://github.com/wuwu0102/scam-call-database)'
 MAX_PAGES = 2500
 
-KW_SCAM = ['spam', 'molestia', 'no deseada', 'sospechoso', 'fraud', 'estafa', 'extorsión', 'extorsion', 'phishing', 'suplantación', 'suplantacion']
-KW_TELE = ['telemarketing', 'venta', 'publicidad', 'promoción', 'promocion']
-KW_COBR = ['cobranza', 'deuda', 'banco', 'financiera', 'crédito', 'credito']
+KW_FRAUD = ['fraude', 'fraud', 'estafa', 'phishing', 'suplantación', 'suplantacion', 'extorsión', 'extorsion', 'scam']
+KW_DEBT = ['cobranza', 'deuda vencida', 'adeudo', 'pago pendiente', 'atraso', 'mora', 'despacho de cobranza', 'recuperación de cartera', 'recuperacion de cartera', 'cobrador']
+KW_SPAM = ['spam', 'molestia', 'no deseada', 'sospechoso', 'llamadas repetidas', 'silencio', 'cuelga', 'whatsapp', 'sms', 'telemarketing', 'marketing', 'publicidad', 'promoción', 'promocion', 'oferta', 'venta', 'plan', 'paquete', 'seguro', 'tarjeta', 'préstamo', 'prestamo', 'crédito', 'credito', 'banco', 'financiera']
 
 PHONE_PAT = re.compile(r'(?:\+?52\D*)?(\d\D*){10,12}')
 INFO_LINK_PAT = re.compile(r'^/info/\d+')
@@ -46,12 +46,12 @@ def normalize_mx(raw: str):
 
 def categorize(text: str):
     t = (text or '').lower()
-    if any(k in t for k in KW_COBR):
-        return 'debt_collection', 0.75, 'keywords:cobranza/deuda/banco'
-    if any(k in t for k in KW_TELE):
-        return 'telemarketing', 0.65, 'keywords:telemarketing/venta/publicidad'
-    if any(k in t for k in KW_SCAM):
-        return 'fraud', 0.82, 'keywords:spam/sospechoso/fraude/estafa/extorsión'
+    if any(k in t for k in KW_FRAUD):
+        return 'fraud', 0.82, 'keywords:fraud/estafa/phishing/extorsión/suplantación'
+    if any(k in t for k in KW_DEBT):
+        return 'debt_collection', 0.75, 'keywords:cobranza/deuda vencida/adeudo/mora'
+    if any(k in t for k in KW_SPAM):
+        return 'spam', 0.65, 'keywords:spam/sospechoso/publicidad/telemarketing'
     return 'unknown', 0.55, 'sin keywords de riesgo claras'
 
 
