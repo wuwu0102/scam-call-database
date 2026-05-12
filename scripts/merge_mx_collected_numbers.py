@@ -38,9 +38,9 @@ def normalize_category(cat):
         return t
     if t in ('scam', 'fraud', 'estafa', 'phishing', 'suplantacion', 'suplantación', 'extorsion', 'extorsión'):
         return 'fraud'
-    if t in ('suspicious', 'spam', 'molestia', 'no_deseada', 'whatsapp', 'sms', 'telemarketing', 'marketing', 'publicidad', 'venta', 'promocion', 'promoción', 'cobranza'):
+    if t in ('suspicious', 'spam', 'molestia', 'no_deseada', 'whatsapp', 'sms', 'telemarketing', 'marketing', 'publicidad', 'venta', 'promocion', 'promoción'):
         return 'spam'
-    if t in ('collection', 'debt', 'deuda', 'adeudo', 'mora', 'atraso', 'cobrador'):
+    if t in ('collection', 'debt', 'deuda', 'adeudo', 'mora', 'atraso', 'cobrador', 'cobranza'):
         return 'debt_collection'
     return 'unknown'
 

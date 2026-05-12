@@ -5,6 +5,7 @@ const root = path.join(__dirname, '..');
 const args = process.argv.slice(2);
 const min = Number((args.find(a => a.startsWith('--min=')) || '--min=300').split('=')[1]);
 const allowLow = args.includes('--allow-low-count');
+const dryRun = args.includes('--dry-run');
 const read=(p,d)=>{const f=path.join(root,p); return fs.existsSync(f)?JSON.parse(fs.readFileSync(f,'utf8')):d;};
 const collected = read('data/collected_mexico_numbers.json',[]);
 const scam = read('scam_numbers.json',[]);
@@ -32,6 +33,8 @@ const output = {
   lastCollectorStatus: runLog.lastCollectorStatus || 'partial',
   ...counts,
 };
-fs.writeFileSync(path.join(root,'data/public_stats.json'), `${JSON.stringify(output,null,2)}\n`);
-console.log(`stats generated total=${output.totalSearchableCount} scam=${scam.length} collected=${collected.length} min=${min}`);
+if (!dryRun) {
+  fs.writeFileSync(path.join(root,'data/public_stats.json'), `${JSON.stringify(output,null,2)}\n`);
+}
+console.log(`stats generated total=${output.totalSearchableCount} scam=${scam.length} collected=${collected.length} min=${min} dryRun=${dryRun}`);
 if (!allowLow && output.totalSearchableCount < min) throw new Error(`totalSearchableCount below minimum: ${output.totalSearchableCount} < ${min}`);
