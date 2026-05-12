@@ -1,0 +1,17 @@
+{
+  "before_counts": {
+    "(empty)": 3976,
+    "cobranza": 13650,
+    "debt_collection": 11324,
+    "fraud": 4822,
+    "scam": 350
+  },
+  "after_counts": {
+    "(empty)": 3976,
+    "debt_collection": 24974,
+    "fraud": 5172
+  },
+  "changed_count": 28000,
+  "unknown_count": 3976,
+  "legacy_count": 14000
+}
