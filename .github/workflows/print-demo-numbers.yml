@@ -1,0 +1,19 @@
+name: Print demo numbers
+
+on:
+  workflow_dispatch:
+
+jobs:
+  print-demo-numbers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Print demo numbers
+        run: python scripts/print_demo_numbers.py
