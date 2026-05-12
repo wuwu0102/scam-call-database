@@ -4,12 +4,11 @@ import json
 import random
 import re
 import time
-from collections import Counter
+from collections import Counter, defaultdict, deque
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib import error, request
 from urllib.parse import urljoin, urlparse
-
-from urllib import request, error
 
 ROOT = Path(__file__).resolve().parents[1]
 PREVIEW_PATH = ROOT / "data" / "mx_source_candidates_preview.json"
@@ -17,39 +16,7 @@ AUDIT_PATH = ROOT / "reports" / "mx_source_candidate_audit.json"
 SCAM_DB_PATH = ROOT / "scam_numbers.json"
 UA = "ScamCallMX-source-candidate-audit/1.0 (+https://github.com/wuwu0102/scam-call-database)"
 MAX_PREVIEW_RECORDS = 500
-
-SOURCE_CONFIGS = [
-    {
-        "name": "tellows_mx",
-        "start_urls": [
-            "https://www.tellows.mx/",
-            "https://www.tellows.mx/c/newest_comments/",
-            "https://www.tellows.mx/c/number-search/",
-        ],
-        "allowed_domains": {"www.tellows.mx", "tellows.mx"},
-    },
-    {
-        "name": "telefonospam_mx",
-        "start_urls": [
-            "https://www.telefonospam.com.mx/",
-            "https://www.telefonospam.com.mx/top-spam",
-        ],
-        "allowed_domains": {"www.telefonospam.com.mx", "telefonospam.com.mx"},
-    },
-    {
-        "name": "miraquienhabla_mx",
-        "start_urls": [
-            "https://www.miraquienhabla.com.mx/",
-        ],
-        "allowed_domains": {"www.miraquienhabla.com.mx", "miraquienhabla.com.mx"},
-    },
-]
-
-FRAUD_TERMS = ["fraude", "estafa", "phishing", "extorsión", "extorsion"]
-SPAM_TERMS = ["spam", "telemarketing", "publicidad", "molestia", "acoso telefónico", "acoso telefonico", "sms", "sondeo"]
-DEBT_TERMS = ["cobranza", "deuda", "empresa de cobranza"]
-
-PHONE_PATTERN = re.compile(r"(?:\+?52\D*)?(?:\d\D*){10,13}")
+PHONE_PATTERN = re.compile(r"(?:\+52|0052)?\D*(\d(?:\D*\d){9,11})")
 
 
 def now_iso() -> str:
@@ -58,9 +25,9 @@ def now_iso() -> str:
 
 def normalize_mx_number(raw: str):
     digits = re.sub(r"\D", "", raw or "")
-    if digits.startswith("521") and len(digits) >= 13:
-        digits = digits[3:]
-    elif digits.startswith("52") and len(digits) >= 12:
+    if digits.startswith("0052"):
+        digits = digits[4:]
+    elif digits.startswith("52"):
         digits = digits[2:]
     if len(digits) > 10:
         digits = digits[-10:]
@@ -72,49 +39,30 @@ def normalize_mx_number(raw: str):
 
 
 def clamp_reason(reason: str) -> str:
-    text = re.sub(r"\s+", " ", reason.strip())
-    return text[:120]
-
-
-def categorize(text: str):
-    low = (text or "").lower()
-    if any(term in low for term in FRAUD_TERMS):
-        return "fraud", 0.83, "Señales públicas de fraude/estafa/phishing/extorsión en la página"
-    if any(term in low for term in DEBT_TERMS):
-        return "debt_collection", 0.76, "Señales públicas de cobranza/deuda en la página"
-    if any(term in low for term in SPAM_TERMS):
-        return "spam", 0.68, "Señales públicas de spam/telemarketing/publicidad/molestia"
-    return "unknown", 0.0, "Sin señal de categoría de riesgo"
+    return re.sub(r"\s+", " ", (reason or "").strip())[:120]
 
 
 def load_current_db_numbers() -> set:
-    if not SCAM_DB_PATH.exists():
-        return set()
-    data = json.loads(SCAM_DB_PATH.read_text(encoding="utf-8"))
-    numbers = set()
-    if isinstance(data, dict):
-        records = data.get("records") or data.get("numbers") or []
-    else:
-        records = data
-    for row in records:
+    data = json.loads(SCAM_DB_PATH.read_text(encoding="utf-8")) if SCAM_DB_PATH.exists() else []
+    records = data.get("records") if isinstance(data, dict) else data
+    out = set()
+    for row in records or []:
         if not isinstance(row, dict):
             continue
         for key in ("normalizedNumber", "number"):
-            v = row.get(key)
-            if isinstance(v, str):
-                normalized = normalize_mx_number(v)
-                if normalized:
-                    numbers.add(normalized[0])
-    return numbers
+            value = row.get(key)
+            if isinstance(value, str):
+                n = normalize_mx_number(value)
+                if n:
+                    out.add(n[0])
+    return out
 
 
 def fetch_url(url: str, timeout: int = 15):
     req = request.Request(url, headers={"User-Agent": UA, "Accept-Language": "es-MX,es;q=0.9"})
     try:
         with request.urlopen(req, timeout=timeout) as resp:
-            status = getattr(resp, "status", 200)
-            body = resp.read().decode("utf-8", errors="ignore")
-            return status, body, None
+            return getattr(resp, "status", 200), resp.read().decode("utf-8", errors="ignore"), None
     except error.HTTPError as exc:
         return exc.code, "", str(exc)
     except Exception as exc:
@@ -122,10 +70,7 @@ def fetch_url(url: str, timeout: int = 15):
 
 
 def extract_links(html: str, base_url: str):
-    links = []
-    for href in re.findall(r"href=[\"']([^\"']+)[\"']", html, flags=re.IGNORECASE):
-        links.append(urljoin(base_url, href.strip()))
-    return links
+    return [urljoin(base_url, href.strip()) for href in re.findall(r"href=[\"']([^\"']+)[\"']", html, flags=re.IGNORECASE)]
 
 
 def extract_text(html: str):
@@ -135,171 +80,184 @@ def extract_text(html: str):
     return re.sub(r"\s+", " ", text).strip()
 
 
-def scan_source(config: dict, max_pages: int):
-    queue = list(config["start_urls"])
-    seen_urls = set()
-    pages_scanned = 0
-    blocked = None
-    candidates = []
-    skipped_invalid = 0
-    skipped_unknown = 0
+def map_category(label: str):
+    low = (label or "").lower()
+    if any(x in low for x in ["extorsión", "extorsion", "fraude", "estafa"]):
+        return "fraud"
+    if "cobranza" in low:
+        return "debt_collection"
+    if any(x in low for x in ["spam", "tele ventas", "telemarketing", "ventas", "publicidad agresiva", "publicidad", "desconocido", "molestia"]):
+        return "spam"
+    return "unknown"
 
-    while queue and pages_scanned < max_pages:
-        url = queue.pop(0)
-        if url in seen_urls:
+
+def parse_tellows(url: str, html: str):
+    text = extract_text(html)
+    m = re.search(r"Tipos? de llamada\s*:\s*([^\|\n\r<]+)", text, flags=re.IGNORECASE)
+    tipo = (m.group(1).strip() if m else "")
+    category = map_category(tipo)
+    if category == "unknown":
+        return []
+    confidence = 0.8 if re.search(r"no fiable|estafa", text, flags=re.IGNORECASE) else 0.65
+    reason = clamp_reason("Tellows reporta este número como Estafa" if "estafa" in tipo.lower() else f"Tellows reporta tipo de llamada: {tipo}")
+    items = []
+    for hit in PHONE_PATTERN.findall(text):
+        norm = normalize_mx_number(hit)
+        if norm:
+            items.append({
+                "number": norm[1],
+                "normalizedNumber": norm[0],
+                "category": category,
+                "sourceName": "Tellows MX",
+                "sourceUrl": url,
+                "confidence": confidence,
+                "reason": reason,
+                "collectedAt": now_iso(),
+            })
+    return items
+
+
+def parse_mira(url: str, html: str):
+    text = extract_text(html)
+    items = []
+    for match in re.finditer(r"(\+?52?[\d\s\-\(\)]{10,16}).{0,120}?(Tipo de llamada\s*:?\s*[^\|\n\r]+)", text, flags=re.IGNORECASE):
+        norm = normalize_mx_number(match.group(1))
+        if not norm:
             continue
-        seen_urls.add(url)
-
-        try:
-            status, html, err = fetch_url(url, timeout=15)
-        except Exception as exc:
-            blocked = {"source": config["name"], "url": url, "status": "request_error", "detail": str(exc)[:160]}
-            break
-
-        if status in (403, 429):
-            blocked = {"source": config["name"], "url": url, "status": status, "detail": "blocked_or_rate_limited"}
-            break
-        if status is None:
-            blocked = {"source": config["name"], "url": url, "status": "request_error", "detail": (err or "request_failed")[:160]}
-            break
-        if status >= 400:
-            blocked = {"source": config["name"], "url": url, "status": status, "detail": "http_error"}
-            break
-
-        pages_scanned += 1
-        text = extract_text(html)
-        category, confidence, reason = categorize(text)
-
-        for hit in PHONE_PATTERN.finditer(text):
-            normalized = normalize_mx_number(hit.group(0))
-            if not normalized:
-                skipped_invalid += 1
-                continue
-            e164, national = normalized
-            if category == "unknown":
-                skipped_unknown += 1
-                continue
-            candidates.append(
-                {
-                    "number": national,
-                    "normalizedNumber": e164,
-                    "category": category,
-                    "sourceName": config["name"],
-                    "sourceUrl": url,
-                    "confidence": round(confidence, 2),
-                    "reason": clamp_reason(reason),
-                    "collectedAt": now_iso(),
-                }
-            )
-
-        for full in extract_links(html, url):
-            parsed = urlparse(full)
-            if parsed.scheme not in {"http", "https"}:
-                continue
-            if parsed.netloc not in config["allowed_domains"]:
-                continue
-            if full not in seen_urls and full not in queue:
-                queue.append(full)
-
-        time.sleep(random.uniform(0.8, 1.5))
-
-    return {
-        "source": config["name"],
-        "pages_scanned": pages_scanned,
-        "blocked": blocked,
-        "candidates": candidates,
-        "skipped_invalid": skipped_invalid,
-        "skipped_unknown": skipped_unknown,
-    }
+        tipo = match.group(2)
+        category = map_category(tipo)
+        if category == "unknown":
+            continue
+        items.append({
+            "number": norm[1], "normalizedNumber": norm[0], "category": category,
+            "sourceName": "MiraQuienHabla MX", "sourceUrl": url, "confidence": 0.65,
+            "reason": clamp_reason(f"MiraQuienHabla indica {tipo}"), "collectedAt": now_iso(),
+        })
+    return items
 
 
-def build_recommendation(candidates_by_source: dict, estimated_new: int):
-    if not candidates_by_source:
-        return {
-            "which_source_should_be_promoted_next": "none",
-            "risk_level": "medium",
-            "expected_db_growth": "0-10",
-        }
-    best_source = max(candidates_by_source.items(), key=lambda x: x[1])[0]
-    if estimated_new >= 250:
-        growth = "250+"
-    elif estimated_new >= 100:
-        growth = "100-249"
-    elif estimated_new >= 30:
-        growth = "30-99"
-    else:
-        growth = "0-29"
-    risk_level = "low" if estimated_new <= 200 else "medium"
-    return {
-        "which_source_should_be_promoted_next": best_source,
-        "risk_level": risk_level,
-        "expected_db_growth": growth,
-    }
+def parse_telefonospam(url: str, html: str):
+    text = extract_text(html)
+    low = text.lower()
+    if "top spam" not in low and "últimos buscados" not in low and "ultimos buscados" not in low:
+        return []
+    category = map_category(text)
+    if category == "unknown":
+        return []
+    items = []
+    for hit in PHONE_PATTERN.findall(text):
+        norm = normalize_mx_number(hit)
+        if norm:
+            items.append({
+                "number": norm[1], "normalizedNumber": norm[0], "category": category,
+                "sourceName": "TelefonoSpam MX", "sourceUrl": url, "confidence": 0.65,
+                "reason": clamp_reason("TelefonoSpam muestra este número en listados públicos"), "collectedAt": now_iso(),
+            })
+    return items
+
+
+def is_detail_like(url: str):
+    p = urlparse(url).path.lower()
+    return "/num/" in p or "/numero/" in p or "/phone/" in p or "/telefono/" in p or p == "/"
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--preview", action="store_true", help="Write candidate preview + audit only")
+    parser.add_argument("--preview", action="store_true")
+    parser.add_argument("--seed-urls", required=True)
     parser.add_argument("--max-pages-per-source", type=int, default=30)
     args = parser.parse_args()
 
-    max_pages = max(1, min(args.max_pages_per_source, 100))
+    seed_urls = json.loads((ROOT / args.seed_urls).read_text(encoding="utf-8"))
+    max_pages = max(1, min(args.max_pages_per_source, 30))
 
+    existing = load_current_db_numbers()
+    queue = deque(seed_urls)
+    seen = set()
+    pages_scanned = defaultdict(int)
+    blocked = []
     all_candidates = []
-    blocked_or_failed = []
-    pages_scanned_by_source = {}
     skipped_invalid = 0
     skipped_unknown = 0
 
-    for source in SOURCE_CONFIGS:
-        result = scan_source(source, max_pages)
-        pages_scanned_by_source[source["name"]] = result["pages_scanned"]
-        all_candidates.extend(result["candidates"])
-        skipped_invalid += result["skipped_invalid"]
-        skipped_unknown += result["skipped_unknown"]
-        if result["blocked"]:
-            blocked_or_failed.append(result["blocked"])
+    while queue and sum(pages_scanned.values()) < max_pages:
+        url = queue.popleft()
+        if url in seen:
+            continue
+        seen.add(url)
+        host = urlparse(url).netloc.lower()
+        source_key = "tellows.mx" if "tellows.mx" in host else "miraquienhabla.com.mx" if "miraquienhabla" in host else "telefonospam.com.mx" if "telefonospam" in host else host
+        if pages_scanned[source_key] >= max_pages:
+            continue
+
+        status, html, err = fetch_url(url, timeout=15)
+        if status in (403, 429):
+            blocked.append({"source": source_key, "url": url, "status": status, "detail": "blocked"})
+            continue
+        if status is None or status >= 400:
+            blocked.append({"source": source_key, "url": url, "status": status or "request_error", "detail": (err or "http_error")[:160]})
+            continue
+
+        pages_scanned[source_key] += 1
+
+        parsed_rows = []
+        if "tellows.mx" in host:
+            parsed_rows = parse_tellows(url, html)
+        elif "miraquienhabla" in host:
+            parsed_rows = parse_mira(url, html)
+        elif "telefonospam" in host:
+            parsed_rows = parse_telefonospam(url, html)
+
+        for row in parsed_rows:
+            if row["normalizedNumber"] in existing:
+                continue
+            if row["category"] == "unknown":
+                skipped_unknown += 1
+                continue
+            all_candidates.append(row)
+
+        for next_url in extract_links(html, url):
+            pu = urlparse(next_url)
+            if pu.scheme not in {"http", "https"}:
+                continue
+            if pu.netloc != host:
+                continue
+            if not is_detail_like(next_url):
+                continue
+            if next_url not in seen:
+                queue.append(next_url)
+
+        time.sleep(random.uniform(0.8, 1.5))
 
     dedup = {}
     for row in all_candidates:
         key = (row["normalizedNumber"], row["category"], row["sourceName"])
-        if key not in dedup:
-            dedup[key] = row
+        dedup[key] = row
     unique_candidates = list(dedup.values())
+
+    audit = {
+        "generated_at": now_iso(),
+        "pages_scanned_by_source": dict(pages_scanned),
+        "blocked_or_failed_sources": blocked,
+        "candidates_by_source": dict(Counter(x["sourceName"] for x in unique_candidates)),
+        "candidates_by_category": dict(Counter(x["category"] for x in unique_candidates)),
+        "estimated_new_unique_candidates_against_current_db": len({x["normalizedNumber"] for x in unique_candidates}),
+        "skipped_unknown": skipped_unknown,
+        "skipped_invalid": skipped_invalid,
+        "sample_candidates": unique_candidates[:50],
+        "recommendation": "Use seeded detail pages; keep preview-only until manual review.",
+    }
 
     preview = {
         "generated_at": now_iso(),
-        "preview_mode": True,
+        "preview_mode": bool(args.preview),
         "max_pages_per_source": max_pages,
         "candidate_count": len(unique_candidates),
         "records": unique_candidates[:MAX_PREVIEW_RECORDS],
     }
 
-    candidates_by_source = Counter(row["sourceName"] for row in unique_candidates)
-    candidates_by_category = Counter(row["category"] for row in unique_candidates)
-    current_db_numbers = load_current_db_numbers()
-    unique_candidate_numbers = {row["normalizedNumber"] for row in unique_candidates}
-    estimated_new = len(unique_candidate_numbers - current_db_numbers)
-
-    audit = {
-        "generated_at": now_iso(),
-        "sources_scanned": [s["name"] for s in SOURCE_CONFIGS],
-        "pages_scanned_by_source": pages_scanned_by_source,
-        "candidates_by_source": dict(candidates_by_source),
-        "candidates_by_category": dict(candidates_by_category),
-        "skipped_invalid": skipped_invalid,
-        "skipped_unknown": skipped_unknown,
-        "blocked_or_failed_sources": blocked_or_failed,
-        "sample_candidates": unique_candidates[:50],
-        "estimated_new_unique_candidates_against_current_db": estimated_new,
-        "recommendation": build_recommendation(dict(candidates_by_source), estimated_new),
-    }
-
-    PREVIEW_PATH.parent.mkdir(parents=True, exist_ok=True)
-    AUDIT_PATH.parent.mkdir(parents=True, exist_ok=True)
     PREVIEW_PATH.write_text(json.dumps(preview, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     AUDIT_PATH.write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-
     print(json.dumps({"preview_records": len(preview["records"]), "audit_written": True}, ensure_ascii=False))
 
 
