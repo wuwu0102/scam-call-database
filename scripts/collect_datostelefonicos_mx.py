@@ -61,7 +61,7 @@ def safe_write(path: Path, data):
     TMP.replace(path)
 
 
-def collect(dry_run=False, max_pages=MAX_PAGES, max_runtime_sec=1200, stall_pages=300):
+def collect(dry_run=False, max_pages=MAX_PAGES, max_runtime_sec=1200, stall_pages=300, timeout=15):
     s = requests.Session()
     s.headers.update({'User-Agent': UA, 'Accept-Language': 'es-MX,es;q=0.9'})
     q = deque([BASE + '/'])
@@ -80,7 +80,9 @@ def collect(dry_run=False, max_pages=MAX_PAGES, max_runtime_sec=1200, stall_page
         seen_pages.add(url)
 
         try:
-            r = s.get(url, timeout=15)
+            r = s.get(url, timeout=timeout)
+            if r.status_code in (403, 429):
+                continue
             if r.status_code != 200:
                 continue
             html = r.text
@@ -144,5 +146,14 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--max-pages', type=int, default=MAX_PAGES)
+    ap.add_argument('--max-runtime-sec', type=int, default=1200)
+    ap.add_argument('--stall-pages', type=int, default=300)
+    ap.add_argument('--timeout', type=int, default=15)
     args = ap.parse_args()
-    collect(dry_run=args.dry_run, max_pages=min(args.max_pages, MAX_PAGES))
+    collect(
+        dry_run=args.dry_run,
+        max_pages=min(args.max_pages, MAX_PAGES),
+        max_runtime_sec=max(60, args.max_runtime_sec),
+        stall_pages=max(50, args.stall_pages),
+        timeout=max(5, args.timeout),
+    )
