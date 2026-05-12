@@ -382,9 +382,9 @@ La presencia de una señal indica riesgo potencial, no confirmación legal.
       <p class="input-helper">Puedes escribirlo con o sin +52.</p>
       <p class="input-helper">Ayuda a la comunidad reportando números sospechosos. No publiques nombres, direcciones, datos bancarios ni información personal.</p>
       <select id="reportLabelInput" aria-label="Tipo de reporte">
-        <option value="scam">Sospechoso</option>
-        <option value="suspicious">Sospechoso</option>
-        <option value="safe">Seguro</option>
+        <option value="fraud">Posible fraude</option>
+        <option value="spam">Sospechoso</option>
+        <option value="debt_collection">Cobranza</option>
         <option value="unknown">Desconocido</option>
       </select>
       <input id="reportNoteInput" type="text" placeholder="Nota opcional" maxlength="160" autocomplete="off" />
@@ -446,9 +446,9 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
     };
 
     const LABELS = {
-      scam: { "zh-TW": "可疑", en: "Possible risk", "es-MX": "Posible riesgo" },
-      suspicious: { "zh-TW": "可疑", en: "Suspicious", "es-MX": "Sospechoso" },
-      safe: { "zh-TW": "安全", en: "Safe", "es-MX": "Seguro" },
+      fraud: { "zh-TW": "疑似詐騙", en: "Possible fraud", "es-MX": "Posible fraude" },
+      spam: { "zh-TW": "可疑", en: "Suspicious", "es-MX": "Sospechoso" },
+      debt_collection: { "zh-TW": "催收", en: "Debt collection", "es-MX": "Cobranza" },
       unknown: { "zh-TW": "未知", en: "Unknown", "es-MX": "Desconocido" }
     };
     const COLLECTION_NAME = "phone_numbers";
@@ -503,6 +503,32 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       return leftNormalized === rightNormalized;
     };
 
+    
+    const LEGACY_CATEGORY_MAP = {
+      scam: "fraud",
+      suspicious: "spam",
+      telemarketing: "spam",
+      cobranza: "debt_collection",
+      collection: "debt_collection",
+      fraud: "fraud",
+      spam: "spam",
+      debt_collection: "debt_collection",
+      safe: "unknown",
+      unknown: "unknown"
+    };
+
+    const normalizeDisplayCategory = (record = {}) => {
+      const candidates = [record?.category, record?.tag, record?.label, record?.riskType];
+      for (const raw of candidates) {
+        const key = String(raw || "").trim().toLowerCase();
+        if (!key) continue;
+        if (Object.hasOwn(LEGACY_CATEGORY_MAP, key)) {
+          return LEGACY_CATEGORY_MAP[key];
+        }
+      }
+      return "unknown";
+    };
+
     const isKnownLabel = (label) => Object.hasOwn(LABELS, label);
 
     const getDisplayLabel = (tag, label) => {
@@ -517,10 +543,10 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
     };
 
     const getStyleKey = (tag) => {
-      const normalized = String(tag || "").toLowerCase();
-      if (["scam", "suspicious", "safe", "unknown"].includes(normalized)) {
-        return normalized;
-      }
+      const normalized = normalizeDisplayCategory({ category: tag });
+      if (normalized === "fraud") return "scam";
+      if (normalized === "spam") return "suspicious";
+      if (normalized === "debt_collection") return "suspicious";
       return "unknown";
     };
 
@@ -606,29 +632,49 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       };
     };
 
-    const showResult = ({ number = "", tag = "unknown", label = null, note = "", sourceName = "", sourceType = "", confidence = "", reviewStatus = "" } = {}) => {
-      const styleKey = getStyleKey(tag);
-      const normalizedTag = String(tag || "unknown").toLowerCase();
-      const displayLabel = normalizedTag === "unknown" ? "Resultado: Desconocido" : "Resultado: Posible riesgo";
-      const badgeText = styleKey === "unknown" ? "Desconocido" : "Sospechoso";
+    const showResult = ({ number = "", normalizedNumber = "", tag = "unknown", label = null, note = "", sourceName = "", sourceType = "", confidence = "", reviewStatus = "" } = {}) => {
+      const normalizedCategory = normalizeDisplayCategory({ category: tag, label });
+      const styleKey = getStyleKey(normalizedCategory);
       const trustedMeta = getResolvedMeta({ sourceType, confidence, reviewStatus });
 
+      const contentMap = {
+        fraud: {
+          badge: "Fraude",
+          title: "Resultado: Posible fraude",
+          note: "Este número aparece en reportes de posible fraude."
+        },
+        spam: {
+          badge: "Sospechoso",
+          title: "Resultado: Sospechoso",
+          note: "Este número aparece en reportes comunitarios o señales sospechosas."
+        },
+        debt_collection: {
+          badge: "Cobranza",
+          title: "Resultado: Cobranza",
+          note: "Este número aparece en reportes relacionados con cobranza."
+        },
+        unknown: {
+          badge: "Desconocido",
+          title: "Resultado: Desconocido",
+          note: "No encontramos reportes comunitarios para este número."
+        }
+      };
+      const content = contentMap[normalizedCategory] || contentMap.unknown;
+
       resultCardEl.className = `result-card result-${styleKey}`;
-      resultBadgeEl.textContent = badgeText;
-      resultTextEl.textContent = displayLabel;
+      resultBadgeEl.textContent = content.badge;
+      resultTextEl.textContent = content.title;
 
       const metaBits = [];
+      if (number) metaBits.push(`Número consultado: ${number}`);
+      if (normalizedNumber) metaBits.push(`Número normalizado: +52${normalizedNumber}`);
       metaBits.push(`Fuente: ${trustedMeta.sourceType}`);
       metaBits.push(`Confianza: ${trustedMeta.confidence}`);
       metaBits.push(`Estado: ${trustedMeta.reviewStatus}`);
       if (sourceName) metaBits.push(`Referencia: ${sourceName}`);
       resultMetaEl.textContent = metaBits.join(" · ");
 
-      if (styleKey === "unknown") {
-        resultNoteEl.textContent = "No encontramos reportes comunitarios para este número.";
-      } else {
-        resultNoteEl.textContent = "Este número aparece en reportes comunitarios.";
-      }
+      resultNoteEl.textContent = note ? getLocalizedNote(note) : content.note;
     };
 
     const setReportMessage = (message, type) => {
@@ -736,7 +782,9 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
     }
     let firestore = null;
     let mexicoSeedRecords = [];
-    let fallbackRecords = [];
+    let scamFallbackRecords = [];
+    let iosFallbackRecords = [];
+    let collectedFallbackRecords = [];
 
     try {
       const app = initializeApp(firebaseConfig);
@@ -779,24 +827,26 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       records.find((record) => isPhoneMatch(record.normalizedNumber || record.normalizedPhone || record.number || record.phone || "", phoneNormalized));
 
     const search = async () => {
-      const phone = normalizeMXNumber(inputEl.value.trim());
+      const rawInput = inputEl.value.trim();
+      const phone = normalizeMXNumber(rawInput);
       searchMsgEl.textContent = "";
       if (!phone) {
         searchMsgEl.textContent = "Ingresa un número válido de México";
-        showResult();
+        showResult({ number: rawInput, normalizedNumber: phone });
         return;
       }
       if (!isValidMXNumber(phone)) {
         searchMsgEl.textContent = "Ingresa un número válido de México";
-        showResult();
+        showResult({ number: rawInput, normalizedNumber: phone });
         return;
       }
 
       const firestoreRecord = await findLatestFirestoreRecord(phone);
-      if (firestoreRecord && firestoreRecord.tag) {
+      if (firestoreRecord) {
         showResult({
-          tag: firestoreRecord.tag,
-          number: phone,
+          tag: normalizeDisplayCategory(firestoreRecord),
+          number: rawInput,
+          normalizedNumber: phone,
           label: firestoreRecord.label,
           note: firestoreRecord.note || "",
           sourceName: firestoreRecord.source || firestoreRecord.sourceName || "Reporte de usuario",
@@ -808,17 +858,20 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       }
 
       const mexicoSeedRecord = findRecordFromArray(mexicoSeedRecords, phone);
-      if (mexicoSeedRecord && mexicoSeedRecord.tag) {
-        showResult({ ...mexicoSeedRecord, number: phone });
+      if (mexicoSeedRecord) {
+        showResult({ ...mexicoSeedRecord, tag: normalizeDisplayCategory(mexicoSeedRecord), number: rawInput, normalizedNumber: phone });
         return;
       }
 
-      const fallbackRecord = findRecordFromArray(fallbackRecords, phone);
+      const fallbackRecord = findRecordFromArray(scamFallbackRecords, phone)
+        || findRecordFromArray(iosFallbackRecords, phone)
+        || findRecordFromArray(collectedFallbackRecords, phone);
       if (fallbackRecord) {
         showResult({
-          tag: fallbackRecord.label || "unknown",
-          number: phone,
-          label: fallbackRecord.tag || null,
+          tag: normalizeDisplayCategory(fallbackRecord),
+          number: rawInput,
+          normalizedNumber: phone,
+          label: fallbackRecord.label || fallbackRecord.tag || null,
           note: fallbackRecord.note || "",
           sourceName: fallbackRecord.sourceName || "scam_numbers.json",
           sourceType: fallbackRecord.sourceType || "fallback_json",
@@ -827,7 +880,7 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
         return;
       }
 
-      showResult();
+      showResult({ number: rawInput, normalizedNumber: phone });
     };
 
     const submitReport = async () => {
@@ -857,7 +910,7 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
 
         timestamps.push(now);
         localStorage.setItem(limitKey, JSON.stringify(timestamps));
-        reportPhoneEl.value = ""; reportLabelEl.value = "scam"; reportNoteEl.value = "";
+        reportPhoneEl.value = ""; reportLabelEl.value = "fraud"; reportNoteEl.value = "";
         setReportMessage("Gracias. Tu reporte fue recibido y será revisado automáticamente.", "success");
       } catch {
         setReportMessage("No se pudo guardar el reporte", "error");
@@ -902,15 +955,31 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
         return response.json();
       })
       .then((data) => {
-        const loaded = Array.isArray(data.records) ? data.records : [];
-        fallbackRecords = loaded.map((record) => ({
+        const loaded = Array.isArray(data) ? data : (Array.isArray(data.records) ? data.records : []);
+        scamFallbackRecords = loaded.map((record) => ({
           ...record,
-          normalizedPhone: normalizeMXNumber(record.phone || "")
+          normalizedPhone: normalizeMXNumber(record.number || record.phone || "")
         }));
       })
       .catch(() => {
-        fallbackRecords = [];
+        scamFallbackRecords = [];
       });
+
+    fetch("./data/ios_numbers.json")
+      .then((response) => response.ok ? response.json() : [])
+      .then((data) => {
+        const loaded = Array.isArray(data) ? data : [];
+        iosFallbackRecords = loaded.map((record) => ({ ...record, normalizedPhone: normalizeMXNumber(record.number || record.phone || "") }));
+      })
+      .catch(() => { iosFallbackRecords = []; });
+
+    fetch("./data/collected_mexico_numbers.json")
+      .then((response) => response.ok ? response.json() : [])
+      .then((data) => {
+        const loaded = Array.isArray(data) ? data : [];
+        collectedFallbackRecords = loaded.map((record) => ({ ...record, normalizedPhone: normalizeMXNumber(record.number || record.phone || "") }));
+      })
+      .catch(() => { collectedFallbackRecords = []; });
 
 
   </script>
