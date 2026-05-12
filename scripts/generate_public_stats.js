@@ -10,12 +10,11 @@ const collected = read('data/collected_mexico_numbers.json',[]);
 const scam = read('scam_numbers.json',[]);
 const catalog = read('data/source_catalog_mexico.json',[]);
 const runLog = read('data/collector_run_log.json', { sources: [], lastCollectorStatus:'partial' });
-const counts = { fraudCount: 0, spamCount: 0, telemarketingCount: 0, debtCollectionCount: 0, unknownCount: 0 };
+const counts = { fraudCount: 0, spamCount: 0, debtCollectionCount: 0, unknownCount: 0 };
 for (const row of scam) {
   const c = normalizeCategory(row.category || '', row.label || '');
   if (c === 'fraud') counts.fraudCount++;
   else if (c === 'spam') counts.spamCount++;
-  else if (c === 'telemarketing') counts.telemarketingCount++;
   else if (c === 'debt_collection') counts.debtCollectionCount++;
   else counts.unknownCount++;
 }
