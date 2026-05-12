@@ -2,7 +2,7 @@ name: Collect and import Mexico numbers
 
 on:
   schedule:
-    - cron: "0 3 */5 * *"
+    - cron: "17 8 * * *"
   workflow_dispatch:
 
 concurrency:
@@ -11,6 +11,10 @@ concurrency:
 
 permissions:
   contents: write
+
+env:
+  TARGET_TOTAL: "50000"
+  MAX_ADD_PER_RUN: "3000"
 
 jobs:
   collect-and-import:
@@ -42,11 +46,10 @@ jobs:
       - name: Run DatosTelefonicos collection pipeline
         id: datostelefonicos
         run: |
-          python scripts/collect_datostelefonicos_mx.py --max-pages 2500
-          python scripts/merge_mx_collected_numbers.py
+          python scripts/collect_datostelefonicos_mx.py --max-pages 2500 --timeout 15 --max-runtime-sec 1200 --stall-pages 300
+          python scripts/merge_mx_collected_numbers.py --target-total "$TARGET_TOTAL" --max-add-per-run "$MAX_ADD_PER_RUN"
           python scripts/validate_mx_database_integrity.py
 
-      - run: node scripts/generate_public_stats.js --allow-low-count || node scripts/build_public_stats.js
       - run: npm run validate
 
       - name: Ensure collection summary exists
@@ -65,10 +68,9 @@ jobs:
 
           git add \
             scam_numbers.json \
-            data/collected_mexico_numbers.json \
             data/mx_datostelefonicos_candidates.json \
             data/public_stats.json \
-            data/source_catalog_mexico.json \
+            data/ios_numbers.json \
             reports/mx_collection_summary.json \
             reports/collection-summary.json
 
