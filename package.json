@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "auto-review": "node scripts/auto_review_user_reports.js",
-    "validate": "node scripts/validate_public_count.js && node scripts/validate_ios_export.js"
+    "validate": "node scripts/validate_public_count.js && node scripts/validate_ios_export.js",
+    "generate-daily-growth-post": "node scripts/generate_daily_growth_post.js"
   },
   "dependencies": {
     "firebase-admin": "^12.0.0"
