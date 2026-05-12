@@ -1,0 +1,44 @@
+{
+  "generated_at": "2026-05-12T11:22:24.842345+00:00",
+  "sources_scanned": [
+    "tellows_mx",
+    "telefonospam_mx",
+    "miraquienhabla_mx"
+  ],
+  "pages_scanned_by_source": {
+    "tellows_mx": 0,
+    "telefonospam_mx": 0,
+    "miraquienhabla_mx": 0
+  },
+  "candidates_by_source": {},
+  "candidates_by_category": {},
+  "skipped_invalid": 0,
+  "skipped_unknown": 0,
+  "blocked_or_failed_sources": [
+    {
+      "source": "tellows_mx",
+      "url": "https://www.tellows.mx/",
+      "status": "request_error",
+      "detail": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "source": "telefonospam_mx",
+      "url": "https://www.telefonospam.com.mx/",
+      "status": "request_error",
+      "detail": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "source": "miraquienhabla_mx",
+      "url": "https://www.miraquienhabla.com.mx/",
+      "status": "request_error",
+      "detail": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    }
+  ],
+  "sample_candidates": [],
+  "estimated_new_unique_candidates_against_current_db": 0,
+  "recommendation": {
+    "which_source_should_be_promoted_next": "none",
+    "risk_level": "medium",
+    "expected_db_growth": "0-10"
+  }
+}
