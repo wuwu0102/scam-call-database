@@ -1,0 +1,142 @@
+{
+  "generated_at_utc": "2026-05-12T09:27:59.052948+00:00",
+  "input_file": "scam_numbers.json",
+  "row_count": 34122,
+  "current_file_bytes": 11905413,
+  "current_file_mb": 11.354,
+  "field_stats": {
+    "category": {
+      "present_count": 34122,
+      "present_ratio": 1.0,
+      "empty_ratio_within_present": 0.0,
+      "avg_string_length_non_empty": 9.392,
+      "estimated_json_bytes": 798182,
+      "estimated_json_mb": 0.761
+    },
+    "confidence": {
+      "present_count": 34122,
+      "present_ratio": 1.0,
+      "empty_ratio_within_present": 0.0,
+      "avg_string_length_non_empty": 3.964,
+      "estimated_json_bytes": 612951,
+      "estimated_json_mb": 0.585
+    },
+    "country": {
+      "present_count": 34122,
+      "present_ratio": 1.0,
+      "empty_ratio_within_present": 0.0,
+      "avg_string_length_non_empty": 2.0,
+      "estimated_json_bytes": 511830,
+      "estimated_json_mb": 0.488
+    },
+    "label": {
+      "present_count": 34122,
+      "present_ratio": 1.0,
+      "empty_ratio_within_present": 0.0,
+      "avg_string_length_non_empty": 10.656,
+      "estimated_json_bytes": 738934,
+      "estimated_json_mb": 0.705
+    },
+    "lastUpdated": {
+      "present_count": 2748,
+      "present_ratio": 0.080535,
+      "empty_ratio_within_present": 0.0,
+      "avg_string_length_non_empty": 24.0,
+      "estimated_json_bytes": 112668,
+      "estimated_json_mb": 0.107
+    },
+    "note": {
+      "present_count": 2748,
+      "present_ratio": 0.080535,
+      "empty_ratio_within_present": 0.0,
+      "avg_string_length_non_empty": 83.898,
+      "estimated_json_bytes": 258033,
+      "estimated_json_mb": 0.246
+    },
+    "number": {
+      "present_count": 34122,
+      "present_ratio": 1.0,
+      "empty_ratio_within_present": 0.0,
+      "avg_string_length_non_empty": 13.0,
+      "estimated_json_bytes": 853050,
+      "estimated_json_mb": 0.814
+    },
+    "riskReason": {
+      "present_count": 30146,
+      "present_ratio": 0.883477,
+      "empty_ratio_within_present": 0.0,
+      "avg_string_length_non_empty": 33.016,
+      "estimated_json_bytes": 1477623,
+      "estimated_json_mb": 1.409
+    },
+    "sourceName": {
+      "present_count": 34122,
+      "present_ratio": 1.0,
+      "empty_ratio_within_present": 0.0,
+      "avg_string_length_non_empty": 16.467,
+      "estimated_json_bytes": 1107825,
+      "estimated_json_mb": 1.057
+    },
+    "sourceType": {
+      "present_count": 2748,
+      "present_ratio": 0.080535,
+      "empty_ratio_within_present": 0.0,
+      "avg_string_length_non_empty": 16.007,
+      "estimated_json_bytes": 87954,
+      "estimated_json_mb": 0.084
+    },
+    "sourceUrl": {
+      "present_count": 34122,
+      "present_ratio": 1.0,
+      "empty_ratio_within_present": 0.0,
+      "avg_string_length_non_empty": 47.194,
+      "estimated_json_bytes": 2122167,
+      "estimated_json_mb": 2.024
+    },
+    "tag": {
+      "present_count": 2745,
+      "present_ratio": 0.080447,
+      "empty_ratio_within_present": 0.0,
+      "avg_string_length_non_empty": 36.993,
+      "estimated_json_bytes": 126250,
+      "estimated_json_mb": 0.12
+    },
+    "updatedAt": {
+      "present_count": 34122,
+      "present_ratio": 1.0,
+      "empty_ratio_within_present": 0.0,
+      "avg_string_length_non_empty": 11.739,
+      "estimated_json_bytes": 912398,
+      "estimated_json_mb": 0.87
+    }
+  },
+  "website_required_fields": {
+    "number": "查詢比對主鍵；前端 normalize 後以 number/phone 匹配。",
+    "category": "前端結果顏色與文案分類依賴 category。",
+    "label": "前端顯示友善標籤（回退可用）。",
+    "sourceName": "結果區塊顯示來源名稱。",
+    "sourceType": "前端會映射來源型態文字。"
+  },
+  "ios_export_required_fields": {
+    "number": "iOS 匯出必需的號碼來源欄位。",
+    "label": "iOS 匯出預設標籤來源。",
+    "updatedAt": "iOS 匯出/驗證常見日期欄位。"
+  },
+  "report_layer_candidate_fields": {
+    "riskReason": "內容長且偏敘述，可移至報告層或次要索引。",
+    "note": "偏自由文字，主要用於說明，不是查詢主鍵。",
+    "lastUpdated": "與 updatedAt 語意重疊，可合併。",
+    "sourceUrl": "可移至來源目錄以 ID 取代，減少重複 URL。",
+    "country": "全庫皆為 MX，常數欄位可下沉為全域設定。"
+  },
+  "estimated_savings_bytes": {
+    "drop_country": 511830,
+    "drop_lastUpdated_keep_updatedAt": 112668,
+    "drop_note": 258033,
+    "drop_riskReason": 1477623,
+    "replace_sourceUrl_with_sourceId_6chars": 1439727
+  },
+  "estimated_savings_total_bytes": 3799881,
+  "estimated_savings_total_mb": 3.624,
+  "estimated_savings_percent_of_file": 31.92
+}
