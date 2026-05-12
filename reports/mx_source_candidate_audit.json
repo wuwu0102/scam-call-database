@@ -1,44 +1,52 @@
 {
-  "generated_at": "2026-05-12T11:22:24.842345+00:00",
-  "sources_scanned": [
-    "tellows_mx",
-    "telefonospam_mx",
-    "miraquienhabla_mx"
-  ],
+  "generated_at": "2026-05-12T12:33:45.621333+00:00",
   "pages_scanned_by_source": {
-    "tellows_mx": 0,
-    "telefonospam_mx": 0,
-    "miraquienhabla_mx": 0
+    "tellows.mx": 0,
+    "miraquienhabla.com.mx": 0
   },
-  "candidates_by_source": {},
-  "candidates_by_category": {},
-  "skipped_invalid": 0,
-  "skipped_unknown": 0,
   "blocked_or_failed_sources": [
     {
-      "source": "tellows_mx",
-      "url": "https://www.tellows.mx/",
+      "source": "tellows.mx",
+      "url": "https://www.tellows.mx/num/5589932572",
       "status": "request_error",
       "detail": "<urlopen error Tunnel connection failed: 403 Forbidden>"
     },
     {
-      "source": "telefonospam_mx",
-      "url": "https://www.telefonospam.com.mx/",
+      "source": "tellows.mx",
+      "url": "https://www.tellows.mx/num/8001103990",
       "status": "request_error",
       "detail": "<urlopen error Tunnel connection failed: 403 Forbidden>"
     },
     {
-      "source": "miraquienhabla_mx",
+      "source": "tellows.mx",
+      "url": "https://www.tellows.mx/num/8002262639",
+      "status": "request_error",
+      "detail": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "source": "tellows.mx",
+      "url": "https://www.tellows.mx/num/5585259271",
+      "status": "request_error",
+      "detail": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "source": "tellows.mx",
+      "url": "https://www.tellows.mx/num/5622254213",
+      "status": "request_error",
+      "detail": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "source": "miraquienhabla.com.mx",
       "url": "https://www.miraquienhabla.com.mx/",
       "status": "request_error",
       "detail": "<urlopen error Tunnel connection failed: 403 Forbidden>"
     }
   ],
-  "sample_candidates": [],
+  "candidates_by_source": {},
+  "candidates_by_category": {},
   "estimated_new_unique_candidates_against_current_db": 0,
-  "recommendation": {
-    "which_source_should_be_promoted_next": "none",
-    "risk_level": "medium",
-    "expected_db_growth": "0-10"
-  }
+  "skipped_unknown": 0,
+  "skipped_invalid": 0,
+  "sample_candidates": [],
+  "recommendation": "Use seeded detail pages; keep preview-only until manual review."
 }
