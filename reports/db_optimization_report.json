@@ -1,0 +1,295 @@
+{
+  "input_file": "scam_numbers.json",
+  "generated_file": "reports/db_optimization_report.json",
+  "totals": {
+    "records": 34122,
+    "unique_numbers": 34122,
+    "duplicate_number_count": 0,
+    "duplicate_record_count": 0
+  },
+  "duplication_stats": {
+    "same_number_different_sources": 0,
+    "same_number_different_categories": 0,
+    "same_number_repeated_write": 0
+  },
+  "top20_largest_sources": [
+    {
+      "source": "datostelefonicos",
+      "records": 30146,
+      "unique_numbers": 30146,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "TelefonoSpam MX Top Spam",
+      "records": 2243,
+      "unique_numbers": 2243,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "El Universal",
+      "records": 439,
+      "unique_numbers": 439,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "public_dataset",
+      "records": 400,
+      "unique_numbers": 400,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "TelefonoSpam MX",
+      "records": 356,
+      "unique_numbers": 356,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "ADN40",
+      "records": 165,
+      "unique_numbers": 165,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "Números Teléfono México",
+      "records": 102,
+      "unique_numbers": 102,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "TelefonoSpam MX Pendientes",
+      "records": 93,
+      "unique_numbers": 93,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "LADA México Spam Telefónico",
+      "records": 70,
+      "unique_numbers": 70,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "Guanajuato Seguridad",
+      "records": 31,
+      "unique_numbers": 31,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "Estafatel Reportes Recientes",
+      "records": 12,
+      "unique_numbers": 12,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "Nuevo León Seguridad",
+      "records": 9,
+      "unique_numbers": 9,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "SAT México",
+      "records": 9,
+      "unique_numbers": 9,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "Zacatecas SSP",
+      "records": 8,
+      "unique_numbers": 8,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "Puebla Seguridad",
+      "records": 6,
+      "unique_numbers": 6,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "SSP Michoacán",
+      "records": 6,
+      "unique_numbers": 6,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "existing",
+      "records": 5,
+      "unique_numbers": 5,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "auto discovered source",
+      "records": 4,
+      "unique_numbers": 4,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "TelefonoSpam MX Top",
+      "records": 4,
+      "unique_numbers": 4,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "Baja California Seguridad",
+      "records": 3,
+      "unique_numbers": 3,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    }
+  ],
+  "top20_highest_duplicate_rate_sources": [
+    {
+      "source": "datostelefonicos",
+      "records": 30146,
+      "unique_numbers": 30146,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "ADN40",
+      "records": 165,
+      "unique_numbers": 165,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "TelefonoSpam MX Top Spam",
+      "records": 2243,
+      "unique_numbers": 2243,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "El Universal",
+      "records": 439,
+      "unique_numbers": 439,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "LADA México Spam Telefónico",
+      "records": 70,
+      "unique_numbers": 70,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "Números Teléfono México",
+      "records": 102,
+      "unique_numbers": 102,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "TelefonoSpam MX",
+      "records": 356,
+      "unique_numbers": 356,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "Estafatel Reportes Recientes",
+      "records": 12,
+      "unique_numbers": 12,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "Guanajuato Seguridad",
+      "records": 31,
+      "unique_numbers": 31,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "TelefonoSpam MX Pendientes",
+      "records": 93,
+      "unique_numbers": 93,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    },
+    {
+      "source": "public_dataset",
+      "records": 400,
+      "unique_numbers": 400,
+      "duplicate_rows": 0,
+      "duplicate_rate": 0.0
+    }
+  ],
+  "analysis": {
+    "merge_opportunities": {
+      "duplicate_number_groups": 0,
+      "merge_candidate_records": 0,
+      "suggestion": "針對同號碼保留一筆主記錄，並將來源與分類改為聚合欄位（sources/categories）。"
+    },
+    "low_quality_sources": [],
+    "low_utility_fields": {
+      "lastUpdated": {
+        "present": 2748,
+        "present_ratio": 0.080535
+      },
+      "note": {
+        "present": 2748,
+        "present_ratio": 0.080535
+      },
+      "sourceType": {
+        "present": 2748,
+        "present_ratio": 0.080535
+      },
+      "tag": {
+        "present": 2745,
+        "present_ratio": 0.080447
+      }
+    },
+    "top_categories": [
+      [
+        "cobranza",
+        13650
+      ],
+      [
+        "debt_collection",
+        11324
+      ],
+      [
+        "fraud",
+        4822
+      ],
+      [
+        "spam",
+        3976
+      ],
+      [
+        "scam",
+        350
+      ]
+    ]
+  },
+  "optimization_estimate": {
+    "safe_slimming_ratio": 0.0,
+    "estimated_remaining_records_after_dedupe": 34122,
+    "assumption": "僅移除同號碼重複列，不刪除唯一號碼。"
+  },
+  "methodology": {
+    "different_sources_definition": "同一 number 對應超過 1 個 sourceName。",
+    "different_categories_definition": "同一 number 對應超過 1 個 category。",
+    "repeated_write_definition": "同一 number 在相同 (sourceName, category) 組合下重複出現。",
+    "duplicate_rate_definition": "每個來源內 duplicate_rows / records。"
+  }
+}
