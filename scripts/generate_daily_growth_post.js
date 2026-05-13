@@ -22,27 +22,6 @@ function readJsonFileSafe(filePath) {
   }
 }
 
-function countCategories(entries) {
-  const counters = {
-    fraud: 0,
-    spam: 0,
-    debt_collection: 0,
-  };
-
-  if (!Array.isArray(entries)) {
-    return counters;
-  }
-
-  for (const entry of entries) {
-    const category = entry && typeof entry.category === 'string' ? entry.category : '';
-    if (category === 'fraud' || category === 'spam' || category === 'debt_collection') {
-      counters[category] += 1;
-    }
-  }
-
-  return counters;
-}
-
 function buildPosts(totalSignals) {
   const suggestedPostShort = `Hoy Alerta Número MX monitorea ${totalSignals} señales telefónicas en México. También mostramos principales categorías como fraude, spam y cobranza. Consulta gratuita y sin registro.`;
 
@@ -68,8 +47,8 @@ function main() {
   const publicStats = readJsonFileSafe(PUBLIC_STATS_PATH);
   const scamNumbers = readJsonFileSafe(SCAM_NUMBERS_PATH);
 
-  if (!publicStats || !Array.isArray(scamNumbers)) {
-    console.error('[generate_daily_growth_post] Salida segura: no se generó reporte por falta de datos válidos.');
+  if (!publicStats) {
+    console.error('[generate_daily_growth_post] Salida segura: no se generó reporte por falta de public_stats válido.');
     process.exit(1);
   }
 
@@ -79,16 +58,28 @@ function main() {
       ? publicStats.totalSearchableCount
       : null;
 
-  const totalSignals = Number.isFinite(fromStats) ? fromStats : scamNumbers.length;
-  const categoryCounts = countCategories(scamNumbers);
+  const fallbackTotal = Array.isArray(scamNumbers) ? scamNumbers.length : 0;
+  const totalSignals = Number.isFinite(fromStats) ? fromStats : fallbackTotal;
+
+  const fraudCount = Number.isFinite(publicStats.fraudCount) ? publicStats.fraudCount : 0;
+  const spamCount = Number.isFinite(publicStats.spamCount) ? publicStats.spamCount : 0;
+  const debtCollectionCount = Number.isFinite(publicStats.debtCollectionCount) ? publicStats.debtCollectionCount : 0;
+  const unknownCount = Number.isFinite(publicStats.unknownCount) ? publicStats.unknownCount : 0;
+
+  const knownCategoryTotal = fraudCount + spamCount + debtCollectionCount + unknownCount;
+  if (knownCategoryTotal !== totalSignals) {
+    const diff = totalSignals - knownCategoryTotal;
+    console.warn(`[generate_daily_growth_post] Advertencia de consistencia: totalSignals=${totalSignals}, categorías conocidas=${knownCategoryTotal}, diferencia=${diff}.`);
+  }
+
   const posts = buildPosts(totalSignals);
 
   const output = {
     generatedAt: new Date().toISOString(),
     totalSignals,
-    fraudCount: categoryCounts.fraud,
-    spamCount: categoryCounts.spam,
-    debtCollectionCount: categoryCounts.debt_collection,
+    fraudCount,
+    spamCount,
+    debtCollectionCount,
     suggestedPostShort: posts.suggestedPostShort,
     suggestedPostLong: posts.suggestedPostLong,
     hashtags: ['#AlertaNumeroMX', '#Mexico', '#FraudeTelefonico', '#Spam', '#Cobranza'],
