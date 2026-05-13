@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: "0 8 * * *"
 
+permissions:
+  contents: write
+
 jobs:
   generate-social-images:
     runs-on: ubuntu-latest
@@ -22,41 +25,37 @@ jobs:
 
       - name: Generate social images
         id: generate
-        continue-on-error: true
         run: python scripts/generate_social_images.py
 
       - name: Validate generated files
-        if: always()
         run: |
-          set +e
-          STATUS=0
+          set -euo pipefail
           for file in reports/social/daily-post.png reports/social/story.png reports/social/whatsapp-share.png; do
             if [ ! -f "$file" ]; then
-              echo "::warning::Missing file: $file"
-              STATUS=1
+              echo "::error::Missing file: $file"
+              exit 1
             elif [ ! -s "$file" ]; then
-              echo "::warning::File is empty: $file"
-              STATUS=1
+              echo "::error::File is empty: $file"
+              exit 1
             fi
           done
 
+      - name: Protected files check
+        run: |
+          set -euo pipefail
           git diff --name-only > changed_files.txt
-          if rg -q '^(website/|app/|ios/|android/|scam_numbers\.json$)' changed_files.txt; then
-            echo "::warning::Unexpected protected files modified."
-            STATUS=1
-          fi
-
-          if [ "$STATUS" -ne 0 ]; then
-            echo "Validation completed with warnings only."
+          if rg -q '^(scam_numbers\.json$|data/public_stats\.json$|data/ios_numbers\.json$|index\.html$|ios/|android/|app/)' changed_files.txt; then
+            echo "::error::Unexpected protected files modified."
+            cat changed_files.txt
+            exit 1
           fi
 
       - name: Commit updated social images
-        if: always()
         run: |
-          if [ -n "$(git status --porcelain reports/social)" ]; then
+          if [ -n "$(git status --porcelain reports/social/daily-post.png reports/social/story.png reports/social/whatsapp-share.png)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add reports/social/*.png
+            git add reports/social/daily-post.png reports/social/story.png reports/social/whatsapp-share.png
             git commit -m "Update social images"
             git push
           else
