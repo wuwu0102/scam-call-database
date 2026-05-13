@@ -61,6 +61,7 @@ def draw_card(filename: str, size: Tuple[int, int], stats: Dict[str, int]) -> No
     title_f = font(max(36, width // 18), bold=True)
     subtitle_f = font(max(22, width // 34))
     number_f = font(max(84, width // 7), bold=True)
+    category_title_f = font(max(20, width // 52), bold=True)
     label_f = font(max(26, width // 40), bold=True)
     value_f = font(max(32, width // 30), bold=True)
     footer_f = font(max(20, width // 52))
@@ -86,15 +87,25 @@ def draw_card(filename: str, size: Tuple[int, int], stats: Dict[str, int]) -> No
     box_top = top + int(height * 0.50)
     box_width = int(width * 0.84)
     row_height = int(height * 0.10)
+    title_gap = int(height * 0.015)
+    category_title = "Principales categorías detectadas"
     draw.rounded_rectangle(
-        (left, box_top, left + box_width, box_top + row_height * len(categories) + int(height * 0.02)),
+        (
+            left,
+            box_top,
+            left + box_width,
+            box_top + row_height * len(categories) + int(height * 0.02) + title_gap + int(height * 0.05),
+        ),
         radius=max(14, width // 80),
         outline=(80, 80, 80),
         width=max(2, width // 450),
     )
 
+    title_y = box_top + int(height * 0.018)
+    draw.text((left + int(width * 0.03), title_y), category_title, fill=TEXT_COLOR, font=category_title_f)
+
     for idx, (label, value) in enumerate(categories):
-        y = box_top + int(height * 0.02) + idx * row_height
+        y = box_top + int(height * 0.02) + int(height * 0.05) + title_gap + idx * row_height
         draw.text((left + int(width * 0.03), y), label, fill=TEXT_COLOR, font=label_f)
         value_text = f"{value}"
         text_bbox = draw.textbbox((0, 0), value_text, font=value_f)

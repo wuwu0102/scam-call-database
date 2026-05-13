@@ -44,12 +44,12 @@ function countCategories(entries) {
 }
 
 function buildPosts(totalSignals) {
-  const suggestedPostShort = `Hoy Alerta Número MX monitorea ${totalSignals} señales telefónicas en México. Consulta gratuita y sin registro. Las señales son reportes comunitarios de riesgo potencial.`;
+  const suggestedPostShort = `Hoy Alerta Número MX monitorea ${totalSignals} señales telefónicas en México. También mostramos principales categorías como fraude, spam y cobranza. Consulta gratuita y sin registro.`;
 
   const suggestedPostLong = [
     `Hoy Alerta Número MX monitorea ${totalSignals} señales telefónicas en México.`,
     '',
-    'Incluye reportes relacionados con:',
+    'Principales categorías detectadas:',
     '• Posible fraude',
     '• Spam',
     '• Cobranza',
@@ -59,7 +59,7 @@ function buildPosts(totalSignals) {
     'Las señales indican riesgo potencial y sirven como información de referencia, no confirmación legal.',
   ].join('\n');
 
-  const whatsappText = `Alerta Número MX: ${totalSignals} señales telefónicas monitoreadas en México. Revisa números sospechosos con consulta gratuita y sin registro. Reporte comunitario con riesgo potencial, no confirmación legal.`;
+  const whatsappText = `Alerta Número MX monitorea ${totalSignals} señales telefónicas en México. También muestra principales categorías como fraude, spam y cobranza. Consulta gratuita y sin registro. Riesgo potencial, no confirmación legal.`;
 
   return { suggestedPostShort, suggestedPostLong, whatsappText };
 }
