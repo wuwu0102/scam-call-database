@@ -712,14 +712,20 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       const nextEl = document.getElementById("next-update");
       let count = 0;
       let displayCount = "0";
+      let statsSource = "none";
 
       // ✅ 1. 嘗試抓 public_stats
       try {
-        const res = await fetch(`./data/public_stats.json?v=${Date.now()}`, { cache: "no-store" });
+        const cacheBust = Date.now();
+        const res = await fetch(`./data/public_stats.json?v=${cacheBust}`, {
+          cache: "no-store",
+          headers: { "Cache-Control": "no-cache, no-store, must-revalidate", Pragma: "no-cache", Expires: "0" }
+        });
         if (res.ok) {
           const data = await res.json();
           count = Number(data.monitoredSignalsCount || data.totalSearchableCount || data.iosExportCount || 0);
           displayCount = data.displayMonitoredSignals || String(count);
+          statsSource = "data/public_stats.json";
 
           if (data.nextUpdateAt) {
             nextEl.innerText =
@@ -734,36 +740,69 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       // ✅ 2. fallback → collected
       if (count === 0) {
         try {
-          const res = await fetch("./data/ios_numbers.json", { cache: "no-store" });
+          const res = await fetch(`./scam_numbers.json?v=${Date.now()}`, {
+            cache: "no-store",
+            headers: { "Cache-Control": "no-cache, no-store, must-revalidate", Pragma: "no-cache", Expires: "0" }
+          });
           if (res.ok) {
             const data = await res.json();
             count = data.length || 0;
+            displayCount = String(count);
+            statsSource = "scam_numbers.json";
           }
         } catch (e) {
-          console.warn("ios_numbers failed");
+          console.warn("scam_numbers failed");
         }
       }
 
       // ✅ 3. fallback → ios_numbers
       if (count === 0) {
         try {
-          const res = await fetch("./data/collected_mexico_numbers.json", { cache: "no-store" });
+          const res = await fetch(`./data/ios_numbers.json?v=${Date.now()}`, {
+            cache: "no-store",
+            headers: { "Cache-Control": "no-cache, no-store, must-revalidate", Pragma: "no-cache", Expires: "0" }
+          });
           if (res.ok) {
             const data = await res.json();
             count = data.length || 0;
+            displayCount = String(count);
+            statsSource = "data/ios_numbers.json";
+          }
+        } catch (e) {
+          console.warn("ios_numbers failed");
+        }
+      }
+
+      // ✅ 4. fallback → collected
+      if (count === 0) {
+        try {
+          const res = await fetch(`./data/collected_mexico_numbers.json?v=${Date.now()}`, {
+            cache: "no-store",
+            headers: { "Cache-Control": "no-cache, no-store, must-revalidate", Pragma: "no-cache", Expires: "0" }
+          });
+          if (res.ok) {
+            const data = await res.json();
+            count = data.length || 0;
+            displayCount = String(count);
+            statsSource = "data/collected_mexico_numbers.json";
           }
         } catch (e) {
           console.warn("collected failed");
         }
       }
 
-      // ✅ 4. fallback → seed
+      // ✅ 5. fallback → seed
       if (count === 0) {
         try {
-          const res = await fetch("./data/mexico_seed_phone_numbers.json", { cache: "no-store" });
+          const res = await fetch(`./data/mexico_seed_phone_numbers.json?v=${Date.now()}`, {
+            cache: "no-store",
+            headers: { "Cache-Control": "no-cache, no-store, must-revalidate", Pragma: "no-cache", Expires: "0" }
+          });
           if (res.ok) {
             const data = await res.json();
             count = data.length || 0;
+            displayCount = String(count);
+            statsSource = "data/mexico_seed_phone_numbers.json";
           }
         } catch (e) {
           console.warn("seed failed");
@@ -772,6 +811,7 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
 
       // ✅ 最終一定顯示
       countEl.innerText = `Señales monitoreadas: ${displayCount}`;
+      console.info("[ScamCall MX] Estadísticas cargadas:", { source: statsSource, count, displayCount });
       if (!nextEl.innerText.includes("Próxima")) {
         const next = new Date();
         next.setDate(next.getDate() + 5);
