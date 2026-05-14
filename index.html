@@ -705,113 +705,104 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
     if (noticeLink && siteConfig.noticeUrl) noticeLink.href = siteConfig.noticeUrl;
     if (contactLink && siteConfig.contactUrl) contactLink.href = siteConfig.contactUrl;
 
+    const CACHE_BUST_VERSION = "2026-05-14-dbcount-fix";
+
+    const fetchJsonNoCache = async (path) => {
+      const separator = path.includes("?") ? "&" : "?";
+      const url = `${path}${separator}v=${encodeURIComponent(CACHE_BUST_VERSION)}&t=${Date.now()}`;
+      const res = await fetch(url, {
+        cache: "no-store",
+        headers: { "Cache-Control": "no-cache, no-store, must-revalidate", Pragma: "no-cache", Expires: "0" }
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status} ${path}`);
+      return res.json();
+    };
+
     document.addEventListener("DOMContentLoaded", loadStats);
 
     async function loadStats() {
       const countEl = document.getElementById("registered-count");
       const nextEl = document.getElementById("next-update");
       let count = 0;
-      let displayCount = "0";
       let statsSource = "none";
+      let updatedTime = null;
+      const loadedCounts = [];
+      let failedSources = 0;
 
-      // ✅ 1. 嘗試抓 public_stats
+      const formatMonitoredCount = (n) => `${new Intl.NumberFormat("es-MX").format(n)} números monitoreados`;
+
+      // ✅ 1. 主來源：public_stats（僅當作候選，不直接信任）
       try {
-        const cacheBust = Date.now();
-        const res = await fetch(`./data/public_stats.json?v=${cacheBust}`, {
-          cache: "no-store",
-          headers: { "Cache-Control": "no-cache, no-store, must-revalidate", Pragma: "no-cache", Expires: "0" }
-        });
-        if (res.ok) {
-          const data = await res.json();
-          count = Number(data.monitoredSignalsCount || data.totalSearchableCount || data.iosExportCount || 0);
-          displayCount = data.displayMonitoredSignals || String(count);
-          statsSource = "data/public_stats.json";
-
-          if (data.nextUpdateAt) {
-            nextEl.innerText =
-              "Próxima actualización: " +
-              new Date(data.nextUpdateAt).toLocaleString("es-MX");
-          }
+        const data = await fetchJsonNoCache("./data/public_stats.json");
+        const statsCount = Number(data.monitoredSignalsCount || data.totalSearchableCount || data.iosExportCount || 0);
+        if (Number.isFinite(statsCount) && statsCount > 0) {
+          loadedCounts.push({ source: "data/public_stats.json", count: statsCount });
         }
+        if (data.nextUpdateAt) {
+          nextEl.innerText =
+            "Próxima actualización: " +
+            new Date(data.nextUpdateAt).toLocaleString("es-MX");
+        }
+        if (data.lastUpdated) updatedTime = data.lastUpdated;
+        statsSource = "data/public_stats.json";
       } catch (e) {
-        console.warn("public_stats failed");
+        failedSources++;
+        console.warn("public_stats failed", e);
       }
 
-      // ✅ 2. fallback → collected
-      if (count === 0) {
-        try {
-          const res = await fetch(`./scam_numbers.json?v=${Date.now()}`, {
-            cache: "no-store",
-            headers: { "Cache-Control": "no-cache, no-store, must-revalidate", Pragma: "no-cache", Expires: "0" }
-          });
-          if (res.ok) {
-            const data = await res.json();
-            count = data.length || 0;
-            displayCount = String(count);
-            statsSource = "scam_numbers.json";
-          }
-        } catch (e) {
-          console.warn("scam_numbers failed");
-        }
+      // ✅ 2. 驗證來源：scam_numbers
+      try {
+        const data = await fetchJsonNoCache("./scam_numbers.json");
+        const records = Array.isArray(data) ? data : (Array.isArray(data.records) ? data.records : []);
+        if (records.length > 0) loadedCounts.push({ source: "scam_numbers.json", count: records.length });
+      } catch (e) {
+        failedSources++;
+        console.warn("scam_numbers failed", e);
       }
 
-      // ✅ 3. fallback → ios_numbers
-      if (count === 0) {
-        try {
-          const res = await fetch(`./data/ios_numbers.json?v=${Date.now()}`, {
-            cache: "no-store",
-            headers: { "Cache-Control": "no-cache, no-store, must-revalidate", Pragma: "no-cache", Expires: "0" }
-          });
-          if (res.ok) {
-            const data = await res.json();
-            count = data.length || 0;
-            displayCount = String(count);
-            statsSource = "data/ios_numbers.json";
-          }
-        } catch (e) {
-          console.warn("ios_numbers failed");
-        }
+      // ✅ 3. 驗證來源：ios_numbers
+      try {
+        const data = await fetchJsonNoCache("./data/ios_numbers.json");
+        if (Array.isArray(data) && data.length > 0) loadedCounts.push({ source: "data/ios_numbers.json", count: data.length });
+      } catch (e) {
+        failedSources++;
+        console.warn("ios_numbers failed", e);
       }
 
-      // ✅ 4. fallback → collected
-      if (count === 0) {
-        try {
-          const res = await fetch(`./data/collected_mexico_numbers.json?v=${Date.now()}`, {
-            cache: "no-store",
-            headers: { "Cache-Control": "no-cache, no-store, must-revalidate", Pragma: "no-cache", Expires: "0" }
-          });
-          if (res.ok) {
-            const data = await res.json();
-            count = data.length || 0;
-            displayCount = String(count);
-            statsSource = "data/collected_mexico_numbers.json";
-          }
-        } catch (e) {
-          console.warn("collected failed");
-        }
+      // ✅ 4. 驗證來源：collected
+      try {
+        const data = await fetchJsonNoCache("./data/collected_mexico_numbers.json");
+        if (Array.isArray(data) && data.length > 0) loadedCounts.push({ source: "data/collected_mexico_numbers.json", count: data.length });
+      } catch (e) {
+        failedSources++;
+        console.warn("collected failed", e);
       }
 
-      // ✅ 5. fallback → seed
-      if (count === 0) {
-        try {
-          const res = await fetch(`./data/mexico_seed_phone_numbers.json?v=${Date.now()}`, {
-            cache: "no-store",
-            headers: { "Cache-Control": "no-cache, no-store, must-revalidate", Pragma: "no-cache", Expires: "0" }
-          });
-          if (res.ok) {
-            const data = await res.json();
-            count = data.length || 0;
-            displayCount = String(count);
-            statsSource = "data/mexico_seed_phone_numbers.json";
-          }
-        } catch (e) {
-          console.warn("seed failed");
-        }
+      // ✅ 5. 驗證來源：seed
+      try {
+        const data = await fetchJsonNoCache("./data/mexico_seed_phone_numbers.json");
+        if (Array.isArray(data) && data.length > 0) loadedCounts.push({ source: "data/mexico_seed_phone_numbers.json", count: data.length });
+      } catch (e) {
+        failedSources++;
+        console.warn("seed failed", e);
       }
 
-      // ✅ 最終一定顯示
-      countEl.innerText = `Señales monitoreadas: ${displayCount}`;
-      console.info("[ScamCall MX] Estadísticas cargadas:", { source: statsSource, count, displayCount });
+      const best = loadedCounts.sort((a, b) => b.count - a.count)[0];
+      if (best) {
+        count = best.count;
+        statsSource = best.source;
+        countEl.innerText = formatMonitoredCount(count);
+      } else {
+        countEl.innerText = "No se pudo actualizar el total en este momento.";
+      }
+      console.info("[ScamCall MX] Estadísticas cargadas:", {
+        source: statsSource,
+        loadedCount: count,
+        uniqueCount: count,
+        updatedTime: updatedTime || new Date().toISOString(),
+        candidates: loadedCounts,
+        failedSources
+      });
       if (!nextEl.innerText.includes("Próxima")) {
         const next = new Date();
         next.setDate(next.getDate() + 5);
@@ -973,12 +964,9 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       if (event.key === "Enter") submitReport();
     });
 
-    fetch("./data/mexico_seed_phone_numbers.json")
+    fetchJsonNoCache("./data/mexico_seed_phone_numbers.json")
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to load mexico seed data");
-        }
-        return response.json();
+        return response;
       })
       .then((data) => {
         mexicoSeedRecords = Array.isArray(data) ? data : [];
@@ -987,13 +975,7 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
         mexicoSeedRecords = [];
       });
 
-    fetch("./scam_numbers.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to load fallback data");
-        }
-        return response.json();
-      })
+    fetchJsonNoCache("./scam_numbers.json")
       .then((data) => {
         const loaded = Array.isArray(data) ? data : (Array.isArray(data.records) ? data.records : []);
         scamFallbackRecords = loaded.map((record) => ({
@@ -1005,16 +987,14 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
         scamFallbackRecords = [];
       });
 
-    fetch("./data/ios_numbers.json")
-      .then((response) => response.ok ? response.json() : [])
+    fetchJsonNoCache("./data/ios_numbers.json")
       .then((data) => {
         const loaded = Array.isArray(data) ? data : [];
         iosFallbackRecords = loaded.map((record) => ({ ...record, normalizedPhone: normalizeMXNumber(record.number || record.phone || "") }));
       })
       .catch(() => { iosFallbackRecords = []; });
 
-    fetch("./data/collected_mexico_numbers.json")
-      .then((response) => response.ok ? response.json() : [])
+    fetchJsonNoCache("./data/collected_mexico_numbers.json")
       .then((data) => {
         const loaded = Array.isArray(data) ? data : [];
         collectedFallbackRecords = loaded.map((record) => ({ ...record, normalizedPhone: normalizeMXNumber(record.number || record.phone || "") }));
