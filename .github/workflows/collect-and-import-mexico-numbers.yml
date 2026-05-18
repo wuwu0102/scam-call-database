@@ -13,7 +13,8 @@ permissions:
   contents: write
 
 env:
-  TARGET_TOTAL: "50000"
+  MX_TARGET_TOTAL: "100000"
+  TARGET_TOTAL: "100000"
   MAX_ADD_PER_RUN: "3000"
 
 jobs:
@@ -49,6 +50,8 @@ jobs:
           python scripts/collect_datostelefonicos_mx.py --max-pages 2500 --timeout 15 --max-runtime-sec 1200 --stall-pages 300
           python scripts/merge_mx_collected_numbers.py --target-total "$TARGET_TOTAL" --max-add-per-run "$MAX_ADD_PER_RUN"
           python scripts/validate_mx_database_integrity.py
+          node scripts/generate_mx_data_audit.js
+          node scripts/generate_public_stats.js --allow-low-count
 
       - run: npm run validate
 
@@ -70,6 +73,7 @@ jobs:
             scam_numbers.json \
             data/mx_datostelefonicos_candidates.json \
             data/public_stats.json \
+            data/mx_data_audit.json \
             data/ios_numbers.json \
             reports/mx_collection_summary.json \
             reports/collection-summary.json
@@ -79,7 +83,7 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Sync MX collection pipeline and public stats"
+          git commit -m "chore(data): update MX scam database with audit report"
 
           git fetch origin main
           LOCAL=$(git rev-parse HEAD)

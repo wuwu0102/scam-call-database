@@ -1,0 +1,58 @@
+{
+  "generatedAt": "2026-05-18T13:18:25.535Z",
+  "totalRecords": 50000,
+  "uniquePhoneNumbers": 50000,
+  "duplicatePhoneNumbers": 0,
+  "invalidPhoneNumbers": 0,
+  "validMxPhoneNumbers": 50000,
+  "sourceBreakdown": {
+    "datostelefonicos": 46024,
+    "ADN40": 165,
+    "TelefonoSpam MX Top Spam": 2243,
+    "El Universal": 439,
+    "LADA México Spam Telefónico": 70,
+    "Baja California Seguridad": 3,
+    "Números Teléfono México": 102,
+    "Fiscalía Jalisco": 1,
+    "auto discovered source": 4,
+    "TelefonoSpam MX": 356,
+    "Estafatel Reportes Recientes": 12,
+    "Guanajuato Seguridad": 31,
+    "Nuevo León Seguridad": 9,
+    "TelefonoSpam MX Pendientes": 93,
+    "Puebla Seguridad": 6,
+    "Zacatecas SSP": 8,
+    "SSP Michoacán": 6,
+    "SAT México": 9,
+    "Yucatán Seguridad": 2,
+    "existing": 5,
+    "Aguascalientes C5i Búsqueda de Números de Extorsión": 2,
+    "Tellows MX": 3,
+    "public_dataset": 400,
+    "TelefonoSpam MX Top": 4,
+    "Sonora Gobierno Antiextorsión": 1,
+    "Seguridad BC": 2
+  },
+  "confidenceBreakdown": {
+    "0.75": 24975,
+    "0.82": 21050,
+    "0.7": 1219,
+    "0.45": 2107,
+    "0.35": 623,
+    "0.4": 14,
+    "0.8": 11,
+    "0.5": 1
+  },
+  "statusBreakdown": {
+    "unknown": 50000
+  },
+  "riskLevelBreakdown": {
+    "cobranza": 13650,
+    "fraud": 20700,
+    "debt_collection": 11324,
+    "scam": 350,
+    "spam": 3976
+  },
+  "sampleInvalidRecords": [],
+  "warnings": []
+}
