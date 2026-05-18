@@ -158,3 +158,10 @@ Facebook 貼文先導流到網頁版，不直接導 App Store。
 
 Data source priority:
 This project prioritizes Guadalajara/Jalisco first, then CDMX, Estado de México, Monterrey/Nuevo León, and other major urban areas by practical caller-identification value. Community-reported numbers stay pending unless multiple independent signals support promotion.
+
+
+## Public stats and audit notes
+
+- `scamNumbersCount` 表示目前可查詢的風險訊號數量，不代表官方法律確認案件總數。
+- `verifiedCount`、`pendingCount` 與來源/信心分布請查看 `data/mx_data_audit.json`。
+- 資料流程明確禁止 fake/random/generated phone numbers。
