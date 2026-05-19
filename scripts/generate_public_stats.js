@@ -11,6 +11,8 @@ const collected = read('data/collected_mexico_numbers.json',[]);
 const scam = read('scam_numbers.json',[]);
 const catalog = read('data/source_catalog_mexico.json',[]);
 const runLog = read('data/collector_run_log.json', { sources: [], lastCollectorStatus:'partial' });
+const audit = read('data/mx_data_audit.json', {});
+const targetTotal = Number(process.env.MX_TARGET_TOTAL || 100000);
 const counts = { fraudCount: 0, spamCount: 0, debtCollectionCount: 0, unknownCount: 0 };
 for (const row of scam) {
   const c = normalizeCategory(row.category || '', row.label || '');
@@ -20,6 +22,9 @@ for (const row of scam) {
   else counts.unknownCount++;
 }
 const searchableCount = scam.length;
+const verifiedCount = scam.filter(r => ['verified','auto_approved_public_official','pending_review_high_confidence'].includes(String(r.status||''))).length;
+const pendingCount = Math.max(0, scam.length - verifiedCount);
+
 const output = {
   generatedAt: new Date().toISOString(),
   nextUpdateAt: new Date(Date.now()+5*24*60*60*1000).toISOString(),
@@ -31,6 +36,11 @@ const output = {
   sourceSuccessCount: (runLog.sources||[]).filter(s=>(s.accepted||0)>0).length,
   sourceFailedCount: (runLog.sources||[]).filter(s=>(s.errors||[]).length>0).length,
   lastCollectorStatus: runLog.lastCollectorStatus || 'partial',
+  verifiedCount,
+  pendingCount,
+  targetTotal,
+  lastUpdated: new Date().toISOString(),
+  auditFile: 'mx_data_audit.json',
   ...counts,
 };
 if (!dryRun) {

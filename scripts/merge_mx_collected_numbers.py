@@ -45,7 +45,9 @@ def normalize_category(cat):
         return 'debt_collection'
     return 'unknown'
 
-def merge(dry_run=False, target_total=50000, max_add_per_run=3000):
+DEFAULT_TARGET_TOTAL = int(__import__('os').getenv('MX_TARGET_TOTAL', '100000'))
+
+def merge(dry_run=False, target_total=DEFAULT_TARGET_TOTAL, max_add_per_run=3000):
     before = read_json(SCAM, [])
     cand_payload = read_json(CAND, {'records': []})
     candidates = cand_payload.get('records', []) if isinstance(cand_payload, dict) else []
@@ -67,7 +69,8 @@ def merge(dry_run=False, target_total=50000, max_add_per_run=3000):
     skip_invalid = skip_dup = skip_unknown = added = 0
 
     for c in candidates:
-        source_count[c.get('source', 'unknown')] += 1
+        source_name = c.get('source') or 'unknown_public_signal'
+        source_count[source_name] += 1
         num = c.get('number')
         cat = normalize_category(c.get('category'))
         src_url = c.get('source_url')
@@ -118,7 +121,7 @@ def merge(dry_run=False, target_total=50000, max_add_per_run=3000):
         'added_count': added, 'after_count': len(merged), 'skipped_invalid': skip_invalid,
         'skipped_duplicate': skip_dup, 'skipped_unknown': skip_unknown, 'sources': dict(source_count),
         'target_total': target_total, 'max_add_per_run': max_add_per_run,
-        'status': 'no_new_records' if added == 0 else 'added_records',
+        'status': 'candidate_exhausted' if added == 0 and len(merged) < target_total else ('target_reached' if len(merged) >= target_total else 'added_records'),
     }
     if not dry_run:
         atomic(REPORT, TMP_REPORT, summary)
@@ -127,7 +130,7 @@ def merge(dry_run=False, target_total=50000, max_add_per_run=3000):
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('--dry-run', action='store_true')
-    ap.add_argument('--target-total', type=int, default=50000)
+    ap.add_argument('--target-total', type=int, default=DEFAULT_TARGET_TOTAL)
     ap.add_argument('--max-add-per-run', type=int, default=3000)
     args = ap.parse_args()
     merge(dry_run=args.dry_run, target_total=max(1, args.target_total), max_add_per_run=max(1, args.max_add_per_run))
