@@ -4,6 +4,7 @@ Use this checklist before publishing changes.
 
 ## Data Safety
 
+- [ ] Run `npm run check:protected` before merge.
 - [ ] Phone-number database files were not unintentionally modified.
 - [ ] JSON / CSV / TXT exports were not unintentionally modified.
 - [ ] Generated files were not overwritten.
@@ -16,6 +17,7 @@ Use this checklist before publishing changes.
 - [ ] GitHub Pages still loads.
 - [ ] Public URLs are unchanged.
 - [ ] Website search still works if applicable.
+- [ ] Confirm website lookup still works for known and unknown numbers.
 - [ ] Mobile layout still works.
 - [ ] Spanish (Mexico) text is preserved.
 - [ ] Privacy/disclaimer text is preserved.
