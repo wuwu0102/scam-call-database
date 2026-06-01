@@ -43,3 +43,20 @@ Required fields per document:
   "createdAt": "2026-04-25"
 }
 ```
+
+## Phase 1 classification compatibility fields
+
+Phase 1 may add a `classification` object to `phone_numbers` documents, but it must not replace the legacy fields used by the website and released apps.
+
+Required compatibility rules:
+
+- Keep Firestore collection names unchanged: `phone_numbers` and `phone_number_reports`.
+- Keep existing `number`, `normalizedNumber`, `tag`, and `label` fields available.
+- Treat `classification.primaryTag` as an additive normalized view of the existing `tag` / `category` / `label` values.
+- Treat `classification.riskTags` as additive tags for future filtering and auditing.
+- Do not require the public website, iOS app, or CallKit export to read `classification` before they can continue working.
+
+Rollback rule:
+
+- Before applying Phase 1 to Firestore, run the migration with `--apply`; it creates `migration_backup.json` with original `phone_numbers` and `phone_number_reports` documents before writing additive fields.
+- To roll back, run the same script with `--rollback`; it restores `phone_numbers` documents from `migration_backup.json`.
