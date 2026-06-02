@@ -43,3 +43,52 @@ Required fields per document:
   "createdAt": "2026-04-25"
 }
 ```
+
+
+## Phase 1 category compatibility layer
+
+Phase 1 keeps the existing Firestore schema backward compatible. The required fields above remain required, and existing records do not need to change. In particular, `tag` remains the legacy field consumed by current lookup and export paths.
+
+The optional compatibility structure is reserved for future records or an explicitly executed maintenance migration:
+
+```json
+{
+  "classificationCompat": {
+    "version": 1,
+    "category": "scam",
+    "legacyTag": "scam",
+    "sourceField": "tag",
+    "allowedCategories": [
+      "scam",
+      "suspicious",
+      "telemarketing",
+      "cobranza",
+      "bank",
+      "government",
+      "delivery",
+      "safe"
+    ]
+  }
+}
+```
+
+Compatibility rules:
+
+- `classificationCompat` is optional in Phase 1.
+- `classificationCompat.category` must be one of `scam`, `suspicious`, `telemarketing`, `cobranza`, `bank`, `government`, `delivery`, or `safe`.
+- `tag` must not be removed or renamed.
+- Existing website lookup, app-facing files, and export scripts must continue to use their current fields until a later phase explicitly changes them.
+- Adding the optional structure must be merge-only and must not overwrite phone numbers, labels, notes, sources, confidence, timestamps, or existing category/tag fields.
+- Phase 1 does not execute a data migration and does not regenerate exports.
+
+Read-only audit command:
+
+```bash
+node scripts/audit_classification_compatibility.js --input=data/mexico_seed_phone_numbers.json
+```
+
+Dry-run migration preview command:
+
+```bash
+node scripts/migrate_classification_phase1.js --dry-run --input=data/mexico_seed_phone_numbers.json
+```
