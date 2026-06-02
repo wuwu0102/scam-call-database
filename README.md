@@ -171,3 +171,22 @@ This repository includes AI collaboration guardrails:
 - docs/PROMPT_TEMPLATES.md
 
 These files are intended to protect the database, website, GitHub Pages deployment, and app-facing outputs during AI-assisted development.
+
+## Classification upgrade plan
+
+The classification system is intentionally additive and phased so the public website, Firestore collections, and released apps remain backward compatible.
+
+1. **Phase 1: tag rules and audit**
+   - Add normalized tag rules in `scripts/lib/classification_compat.js`.
+   - Audit compatibility with `npm run audit:classification`.
+   - Preview Firestore changes with `npm run migration:classification:dry-run`.
+   - Apply only when ready with `node scripts/migrate_classification_phase1.js --apply`, which creates `migration_backup.json` before writing additive fields.
+2. **Phase 2: data reclassification**
+   - Reclassify records only after reviewing the Phase 1 audit.
+   - Do not delete, deduplicate, or renumber existing phone records.
+3. **Phase 3: iOS export**
+   - Keep `data/ios_numbers.json` compatible with released apps by preserving `number` and `label` for every exported record.
+4. **Phase 4: website validation**
+   - Re-test phone lookup, phone reporting, Firestore lookup, and seed database lookup.
+5. **Phase 5: deployment**
+   - Deploy only after confirming the website and app-facing fields remain compatible.
