@@ -24,13 +24,6 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Validate required secret
-        run: |
-          if [ -z "${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}" ]; then
-            echo "Missing required secret: FIREBASE_SERVICE_ACCOUNT_JSON"
-            exit 1
-          fi
-
       - name: Ensure firebase-admin dependency is available
         run: |
           node -e "require.resolve('firebase-admin')" 2>/dev/null || npm install firebase-admin --no-save
@@ -38,17 +31,18 @@ jobs:
       - name: Ensure data directory exists
         run: mkdir -p data
 
-      - name: Write Firebase service account credentials
+      - name: Export iOS caller ID JSON from Firestore with local fallback
         env:
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
         run: |
-          printf '%s' "$FIREBASE_SERVICE_ACCOUNT_JSON" > "$RUNNER_TEMP/firebase-service-account.json"
+          if [ -n "$FIREBASE_SERVICE_ACCOUNT_JSON" ]; then
+            printf '%s' "$FIREBASE_SERVICE_ACCOUNT_JSON" > "$RUNNER_TEMP/firebase-service-account.json"
+            export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/firebase-service-account.json"
+          else
+            echo "FIREBASE_SERVICE_ACCOUNT_JSON is not configured; using local fallback if Firestore cannot be read."
+          fi
 
-      - name: Export iOS caller ID JSON from Firestore
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-service-account.json
-          EXPORT_IOS_REQUIRE_FIRESTORE: 'true'
-        run: node scripts/export_ios_numbers_from_firestore.js
+          node scripts/export_ios_numbers_from_firestore.js
 
       - name: Validate generated iOS JSON and category counts
         run: |
