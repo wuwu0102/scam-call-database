@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-06-05T11:56:22.715367+00:00",
-  "before_count": 95000,
-  "candidate_count": 23387,
-  "added_count": 3000,
-  "after_count": 98000,
+  "generated_at": "2026-06-06T10:41:44.339831+00:00",
+  "before_count": 98000,
+  "candidate_count": 24667,
+  "added_count": 2000,
+  "after_count": 100000,
   "skipped_invalid": 0,
-  "skipped_duplicate": 6020,
+  "skipped_duplicate": 3818,
   "skipped_unknown": 0,
   "sources": {
-    "datostelefonicos": 9021
+    "datostelefonicos": 5819
   },
   "target_total": 100000,
   "max_add_per_run": 3000,
-  "status": "added_records"
+  "status": "target_reached"
 }
