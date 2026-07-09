@@ -12,7 +12,6 @@ const scam = read('scam_numbers.json',[]);
 const catalog = read('data/source_catalog_mexico.json',[]);
 const runLog = read('data/collector_run_log.json', { sources: [], lastCollectorStatus:'partial' });
 const audit = read('data/mx_data_audit.json', {});
-const targetTotal = Number(process.env.MX_TARGET_TOTAL || 100000);
 const counts = { fraudCount: 0, spamCount: 0, debtCollectionCount: 0, unknownCount: 0 };
 for (const row of scam) {
   const c = normalizeCategory(row.category || '', row.label || '');
@@ -38,7 +37,6 @@ const output = {
   lastCollectorStatus: runLog.lastCollectorStatus || 'partial',
   verifiedCount,
   pendingCount,
-  targetTotal,
   lastUpdated: new Date().toISOString(),
   auditFile: 'mx_data_audit.json',
   ...counts,

@@ -13,8 +13,6 @@ permissions:
   contents: write
 
 env:
-  MX_TARGET_TOTAL: "100000"
-  TARGET_TOTAL: "100000"
   MAX_ADD_PER_RUN: "3000"
 
 jobs:
@@ -48,7 +46,7 @@ jobs:
         id: datostelefonicos
         run: |
           python scripts/collect_datostelefonicos_mx.py --max-pages 2500 --timeout 15 --max-runtime-sec 1200 --stall-pages 300
-          python scripts/merge_mx_collected_numbers.py --target-total "$TARGET_TOTAL" --max-add-per-run "$MAX_ADD_PER_RUN"
+          python scripts/merge_mx_collected_numbers.py --max-add-per-run "$MAX_ADD_PER_RUN"
           python scripts/validate_mx_database_integrity.py
           node scripts/generate_mx_data_audit.js
           node scripts/generate_public_stats.js --allow-low-count
