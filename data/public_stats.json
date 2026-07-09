@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-08T03:41:01.399Z",
-  "nextUpdateAt": "2026-07-13T03:41:01.400Z",
+  "generatedAt": "2026-07-08T10:50:42.960Z",
+  "nextUpdateAt": "2026-07-13T10:50:42.960Z",
   "totalSearchableCount": 100000,
   "monitoredSignalsCount": 100000,
   "collectedCount": 3985,
@@ -11,7 +11,8 @@
   "lastCollectorStatus": "partial",
   "verifiedCount": 0,
   "pendingCount": 100000,
-  "lastUpdated": "2026-07-08T03:41:01.400Z",
+  "targetTotal": 100000,
+  "lastUpdated": "2026-07-08T10:50:42.960Z",
   "auditFile": "mx_data_audit.json",
   "fraudCount": 71050,
   "spamCount": 3976,
