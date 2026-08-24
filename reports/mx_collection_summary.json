@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-23T09:08:30.429445+00:00",
-  "before_count": 238000,
-  "candidate_count": 24515,
+  "generated_at": "2026-08-24T09:24:24.495352+00:00",
+  "before_count": 241000,
+  "candidate_count": 24984,
   "added_count": 3000,
-  "after_count": 241000,
+  "after_count": 244000,
   "skipped_invalid": 0,
-  "skipped_duplicate": 12221,
+  "skipped_duplicate": 12718,
   "skipped_unknown": 0,
   "sources": {
-    "datostelefonicos": 15222
+    "datostelefonicos": 15719
   },
   "max_add_per_run": 3000,
   "status": "added_records"
