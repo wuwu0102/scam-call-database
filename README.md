@@ -26,7 +26,14 @@ Lookup order is:
 3. fallback `scam_numbers.json`
 4. unknown result
 
-The report form still writes to Firestore collection `phone_numbers`.
+The report form in the web page is currently local-only (stored in browser `localStorage` for UX feedback).
+
+## Latest low-risk UX and safety updates
+
+- Added result transparency hints in the lookup result card (source/confidence/category/update context with conservative wording).
+- Added search history UI using browser `localStorage` only (max 10, clear button included).
+- Updated report UX to store user reports locally on device only (no backend write in this flow).
+- Added protected-file guard script: `npm run check:protected`.
 
 ## Shared Mexico seed database
 

@@ -129,6 +129,34 @@
       line-height: 1.35;
       word-break: break-word;
     }
+    .history-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: #374151;
+    }
+    .history-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .history-item {
+      width: auto;
+      min-width: auto;
+      margin: 0;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      color: #111827;
+      font-size: 0.9rem;
+    }
+    .history-item:hover {
+      background: #d1d5db;
+    }
 
     .result-scam {
       border-color: #fecaca;
@@ -365,6 +393,11 @@ La presencia de una señal indica riesgo potencial, no confirmación legal.
       <p class="input-helper">Puedes escribirlo con o sin +52.</p>
       <button id="searchBtn" type="button">Buscar</button>
       <div id="searchMsg" aria-live="polite"></div>
+      <div class="history-row">
+        <span>Búsquedas recientes (solo en este dispositivo)</span>
+        <button id="clearHistoryBtn" type="button" class="history-item">Borrar historial</button>
+      </div>
+      <div id="searchHistoryList" class="history-list"></div>
       <div id="resultCard" class="result-card result-unknown" aria-live="polite">
         <div class="result-header">
           <span>Resultado</span>
@@ -383,11 +416,15 @@ La presencia de una señal indica riesgo potencial, no confirmación legal.
       <p class="input-helper">Ayuda a la comunidad reportando números sospechosos. No publiques nombres, direcciones, datos bancarios ni información personal.</p>
       <select id="reportLabelInput" aria-label="Tipo de reporte">
         <option value="fraud">Posible fraude</option>
-        <option value="spam">Sospechoso</option>
+        <option value="spam">Spam</option>
         <option value="debt_collection">Cobranza</option>
-        <option value="unknown">Desconocido</option>
+        <option value="telemarketing">Telemarketing</option>
+        <option value="sms_suspicious">SMS sospechoso</option>
+        <option value="whatsapp_suspicious">WhatsApp sospechoso</option>
+        <option value="unknown">Otro</option>
       </select>
       <input id="reportNoteInput" type="text" placeholder="Nota opcional" maxlength="160" autocomplete="off" />
+      <p class="input-helper">Tu reporte se guarda solo en este dispositivo por ahora.</p>
       <button id="reportBtn" type="button">Guardar reporte</button>
       <div id="reportMsg" aria-live="polite"></div>
     </section>
@@ -427,7 +464,6 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       collection,
       getFirestore,
       getDocs,
-      addDoc,
       doc,
       setDoc,
       query,
@@ -449,6 +485,9 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       fraud: { "zh-TW": "疑似詐騙", en: "Possible fraud", "es-MX": "Posible fraude" },
       spam: { "zh-TW": "可疑", en: "Suspicious", "es-MX": "Sospechoso" },
       debt_collection: { "zh-TW": "催收", en: "Debt collection", "es-MX": "Cobranza" },
+      telemarketing: { "zh-TW": "電話行銷", en: "Telemarketing", "es-MX": "Telemarketing" },
+      sms_suspicious: { "zh-TW": "可疑簡訊", en: "Suspicious SMS", "es-MX": "SMS sospechoso" },
+      whatsapp_suspicious: { "zh-TW": "可疑 WhatsApp", en: "Suspicious WhatsApp", "es-MX": "WhatsApp sospechoso" },
       unknown: { "zh-TW": "未知", en: "Unknown", "es-MX": "Desconocido" }
     };
     const COLLECTION_NAME = "phone_numbers";
@@ -468,6 +507,10 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
     const reportNoteEl = document.getElementById("reportNoteInput");
     const reportBtn = document.getElementById("reportBtn");
     const reportMsgEl = document.getElementById("reportMsg");
+    const searchHistoryListEl = document.getElementById("searchHistoryList");
+    const clearHistoryBtn = document.getElementById("clearHistoryBtn");
+    const SEARCH_HISTORY_KEY = "search_history_v1";
+    const LOCAL_REPORTS_KEY = "local_reports_v1";
 
     const lang = "es-MX";
     function normalizeMXNumber(input) {
@@ -513,6 +556,9 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       fraud: "fraud",
       spam: "spam",
       debt_collection: "debt_collection",
+      telemarketing: "telemarketing",
+      sms_suspicious: "sms_suspicious",
+      whatsapp_suspicious: "whatsapp_suspicious",
       safe: "unknown",
       unknown: "unknown"
     };
@@ -632,7 +678,7 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       };
     };
 
-    const showResult = ({ number = "", normalizedNumber = "", tag = "unknown", label = null, note = "", sourceName = "", sourceType = "", confidence = "", reviewStatus = "" } = {}) => {
+    const showResult = ({ number = "", normalizedNumber = "", tag = "unknown", label = null, note = "", sourceName = "", sourceType = "", confidence = "", reviewStatus = "", updatedAt = "" } = {}) => {
       const normalizedCategory = normalizeDisplayCategory({ category: tag, label });
       const styleKey = getStyleKey(normalizedCategory);
       const trustedMeta = getResolvedMeta({ sourceType, confidence, reviewStatus });
@@ -668,13 +714,39 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       const metaBits = [];
       if (number) metaBits.push(`Número consultado: ${number}`);
       if (normalizedNumber) metaBits.push(`Número normalizado: +52${normalizedNumber}`);
-      metaBits.push(`Fuente: ${trustedMeta.sourceType}`);
-      metaBits.push(`Confianza: ${trustedMeta.confidence}`);
-      metaBits.push(`Estado: ${trustedMeta.reviewStatus}`);
+      metaBits.push(`Origen de señal: ${sourceName || "Señal comunitaria"}`);
+      metaBits.push(`Tipo de fuente: ${sourceType || trustedMeta.sourceType}`);
+      metaBits.push(`Nivel de confianza: ${confidence || trustedMeta.confidence}`);
+      metaBits.push(`Categoría: ${normalizeDisplayCategory({ category: tag, label })}`);
+      if (updatedAt) metaBits.push(`Última actualización: ${updatedAt}`);
       if (sourceName) metaBits.push(`Referencia: ${sourceName}`);
       resultMetaEl.textContent = metaBits.join(" · ");
 
-      resultNoteEl.textContent = note ? getLocalizedNote(note) : content.note;
+      resultNoteEl.textContent = note
+        ? `${getLocalizedNote(note)} · Señal comunitaria disponible. Úsalo como referencia, no como confirmación legal.`
+        : "Señal comunitaria disponible. Úsalo como referencia, no como confirmación legal.";
+    };
+    const getSearchHistory = () => {
+      try {
+        const parsed = JSON.parse(localStorage.getItem(SEARCH_HISTORY_KEY) || "[]");
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (_) {
+        return [];
+      }
+    };
+    const saveSearchHistory = (normalizedPhone) => {
+      const next = [normalizedPhone, ...getSearchHistory().filter((item) => item !== normalizedPhone)].slice(0, 10);
+      localStorage.setItem(SEARCH_HISTORY_KEY, JSON.stringify(next));
+      renderSearchHistory();
+    };
+    const renderSearchHistory = () => {
+      const records = getSearchHistory();
+      if (!searchHistoryListEl) return;
+      if (records.length === 0) {
+        searchHistoryListEl.innerHTML = '<span class=\"input-helper\">Sin búsquedas recientes.</span>';
+        return;
+      }
+      searchHistoryListEl.innerHTML = records.map((item) => `<button type=\"button\" class=\"history-item\" data-phone=\"${item}\">+52${item}</button>`).join("");
     };
 
     const setReportMessage = (message, type) => {
@@ -873,6 +945,7 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       }
 
       const firestoreRecord = await findLatestFirestoreRecord(phone);
+      saveSearchHistory(phone);
       if (firestoreRecord) {
         showResult({
           tag: normalizeDisplayCategory(firestoreRecord),
@@ -929,23 +1002,13 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
       const maxReports = 3;
       const timestamps = JSON.parse(localStorage.getItem(limitKey) || "[]").filter((ts) => now - ts < windowMs);
       if (timestamps.length >= maxReports) return setReportMessage("Has enviado varios reportes recientemente. Intenta de nuevo más tarde.", "error");
-      if (!firestore) return setReportMessage("Configuración de Firebase pendiente", "error");
-
-      try {
-        await addDoc(collection(firestore, REPORT_COLLECTION_NAME), {
-          normalizedNumber: normalizedPhone,
-          category: reportType,
-          note,
-          timestamp: Date.now()
-        });
-
-        timestamps.push(now);
-        localStorage.setItem(limitKey, JSON.stringify(timestamps));
-        reportPhoneEl.value = ""; reportLabelEl.value = "fraud"; reportNoteEl.value = "";
-        setReportMessage("Gracias. Tu reporte fue recibido y será revisado automáticamente.", "success");
-      } catch {
-        setReportMessage("No se pudo guardar el reporte", "error");
-      }
+      const localReports = JSON.parse(localStorage.getItem(LOCAL_REPORTS_KEY) || "[]");
+      localReports.unshift({ normalizedNumber: normalizedPhone, category: reportType, note, timestamp: now });
+      localStorage.setItem(LOCAL_REPORTS_KEY, JSON.stringify(localReports.slice(0, 50)));
+      timestamps.push(now);
+      localStorage.setItem(limitKey, JSON.stringify(timestamps));
+      reportPhoneEl.value = ""; reportLabelEl.value = "fraud"; reportNoteEl.value = "";
+      setReportMessage("Gracias. Tu reporte se guardó localmente en este dispositivo.", "success");
     };
 
     searchBtn.addEventListener("click", () => {
@@ -963,6 +1026,23 @@ La presencia de un número NO representa una acusación legal ni una confirmaci�
     reportPhoneEl.addEventListener("keydown", (event) => {
       if (event.key === "Enter") submitReport();
     });
+    if (clearHistoryBtn) {
+      clearHistoryBtn.addEventListener("click", () => {
+        localStorage.removeItem(SEARCH_HISTORY_KEY);
+        renderSearchHistory();
+      });
+    }
+    if (searchHistoryListEl) {
+      searchHistoryListEl.addEventListener("click", (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLElement)) return;
+        const phone = target.getAttribute("data-phone");
+        if (!phone) return;
+        inputEl.value = `+52${phone}`;
+        search();
+      });
+    }
+    renderSearchHistory();
 
     fetchJsonNoCache("./data/mexico_seed_phone_numbers.json")
       .then((response) => {
