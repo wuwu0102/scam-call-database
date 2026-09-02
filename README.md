@@ -35,6 +35,39 @@ The report form still writes to Firestore collection `phone_numbers`.
 - Shared schema: `data/schema.md`
 - Normalization helper: `data/normalize_phone.js`
 
+
+## Phase 1 database compatibility layer
+
+Phase 1 introduces a category compatibility structure for future Firestore records without changing current exports, lookup behavior, website UI, app behavior, CallKit behavior, or generated data files.
+
+Allowed compatibility categories are:
+
+- `scam`
+- `suspicious`
+- `telemarketing`
+- `cobranza`
+- `bank`
+- `government`
+- `delivery`
+- `safe`
+
+Backward compatibility rules:
+
+- Existing Firestore records keep their current `tag` values and existing fields.
+- Existing App Store versions keep reading the same public files and response fields.
+- Existing lookup results remain based on the current website and export logic.
+- `data/ios_numbers.json` generation is unchanged in Phase 1.
+- No data migration is executed as part of this repository change.
+
+Optional Phase 1 tools:
+
+```bash
+node scripts/audit_classification_compatibility.js --input=data/mexico_seed_phone_numbers.json
+node scripts/migrate_classification_phase1.js --dry-run --input=data/mexico_seed_phone_numbers.json
+```
+
+The migration tool is intentionally dry-run by default. It writes only if a maintainer explicitly runs it with `--execute` and valid Firestore credentials.
+
 ## Firestore admin docs
 
 - `admin/README.md`
