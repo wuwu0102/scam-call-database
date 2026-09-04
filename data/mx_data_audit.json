@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-03T13:09:46.324Z",
-  "totalRecords": 274000,
-  "uniquePhoneNumbers": 274000,
+  "generatedAt": "2026-09-04T13:03:41.070Z",
+  "totalRecords": 277000,
+  "uniquePhoneNumbers": 277000,
   "duplicatePhoneNumbers": 0,
   "invalidPhoneNumbers": 0,
-  "validMxPhoneNumbers": 274000,
+  "validMxPhoneNumbers": 277000,
   "sourceBreakdown": {
-    "datostelefonicos": 270024,
+    "datostelefonicos": 273024,
     "ADN40": 165,
     "TelefonoSpam MX Top Spam": 2243,
     "El Universal": 439,
@@ -34,7 +34,7 @@
     "Seguridad BC": 2
   },
   "confidenceBreakdown": {
-    "0.82": 245050,
+    "0.82": 248050,
     "0.75": 24975,
     "0.7": 1219,
     "0.45": 2107,
@@ -44,10 +44,10 @@
     "0.5": 1
   },
   "statusBreakdown": {
-    "unknown": 274000
+    "unknown": 277000
   },
   "riskLevelBreakdown": {
-    "fraud": 244700,
+    "fraud": 247700,
     "cobranza": 13650,
     "debt_collection": 11324,
     "scam": 350,
